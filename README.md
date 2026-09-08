@@ -16,6 +16,9 @@ Places to download Godot:
 ## Get the actual project
 
 ### Option A) Github Desktop
+
+For setup instructions via Github CLI, go [here](#option-b-github-cli)
+
 **1. Download Github Desktop**
 
 [Github Desktop downloads](https://desktop.github.com/download/)
@@ -61,8 +64,6 @@ Select two-sticks-and-a-rock/space-arcade from the list of repos you have permis
 <img src="readme/clone.png"/>
 
 This should clone the repo and get you a local copy of the project's source code.
-
-For setup instructions via Github CLI, go [here](#option-b-github-cli)
 
 ### Option B) Github CLI
 For setup instructions via Github Desktop (which has a GUI), go [here](#option-a-github-desktop).
