@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cekmijf83xupg"]
+
+[ext_resource type="Texture2D" uid="uid://bxqn8riy2auod" path="res://art/sprites/player/playerShip3_blue.png" id="1_3vyb7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kcn5b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_3vyb7")
+}],
+"loop": 1,
+"name": &"fly",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prw6y"]
+size = Vector2(58, 75)
+
+[node name="player" type="Area2D" unique_id=1841504681]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1546061967]
+sprite_frames = SubResource("SpriteFrames_kcn5b")
+animation = &"fly"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=697972149]
+shape = SubResource("RectangleShape2D_prw6y")
