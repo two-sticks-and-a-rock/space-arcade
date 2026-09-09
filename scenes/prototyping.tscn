@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cm852k2l8qddv"]
+
+[ext_resource type="Texture2D" uid="uid://dl4mwntwprtja" path="res://art/background/blue.png" id="1_to714"]
+[ext_resource type="PackedScene" uid="uid://cekmijf83xupg" path="res://scenes/player.tscn" id="2_v18i2"]
+
+[node name="Node2D" type="Node2D" unique_id=1139404765]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=903891636]
+position = Vector2(576.00006, 220.00006)
+scale = Vector2(4.5654297, 4.5654297)
+texture = ExtResource("1_to714")
+
+[node name="player" parent="." unique_id=1841504681 instance=ExtResource("2_v18i2")]
+position = Vector2(576, 596)
