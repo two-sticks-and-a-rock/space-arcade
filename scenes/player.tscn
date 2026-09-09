@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cekmijf83xupg"]
 
 [ext_resource type="Texture2D" uid="uid://bxqn8riy2auod" path="res://art/sprites/player/playerShip3_blue.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://d02iqtql42dlw" path="res://scenes/player.gd" id="1_g2els"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kcn5b"]
 animations = [{
@@ -17,6 +18,7 @@ animations = [{
 size = Vector2(58, 75)
 
 [node name="player" type="Area2D" unique_id=1841504681]
+script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1546061967]
 sprite_frames = SubResource("SpriteFrames_kcn5b")
