@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dl4mwntwprtja" path="res://art/background/blue.png" id="1_to714"]
 [ext_resource type="PackedScene" uid="uid://cekmijf83xupg" path="res://scenes/player.tscn" id="2_v18i2"]
+[ext_resource type="PackedScene" uid="uid://b1c8lbi40g0up" path="res://scenes/enemy.tscn" id="3_sj1a8"]
 
 [node name="Node2D" type="Node2D" unique_id=1139404765]
 
@@ -12,3 +13,7 @@ texture = ExtResource("1_to714")
 
 [node name="player" parent="." unique_id=1841504681 instance=ExtResource("2_v18i2")]
 position = Vector2(576, 596)
+
+[node name="enemy_ufo_red" parent="." unique_id=67188953 instance=ExtResource("3_sj1a8")]
+position = Vector2(491, 192)
+gravity_scale = 0.0

@@ -19,6 +19,7 @@ size = Vector2(58, 75)
 
 [node name="player" type="Area2D" unique_id=1841504681]
 script = ExtResource("1_g2els")
+metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1546061967]
 sprite_frames = SubResource("SpriteFrames_kcn5b")
@@ -26,3 +27,5 @@ animation = &"fly"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=697972149]
 shape = SubResource("RectangleShape2D_prw6y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
