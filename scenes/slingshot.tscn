@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://oliot5hwfyjd"]
+
+[ext_resource type="Script" uid="uid://c86baq52x1qho" path="res://scenes/slingshot.gd" id="1_d67ah"]
+
+[node name="slingshot" type="Line2D" unique_id=311823443]
+default_color = Color(1, 0.93333334, 0.32941177, 1)
+script = ExtResource("1_d67ah")
