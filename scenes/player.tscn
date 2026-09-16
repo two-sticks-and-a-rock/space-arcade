@@ -17,7 +17,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prw6y"]
 size = Vector2(58, 75)
 
-[node name="player" type="Area2D" unique_id=1841504681]
+[node name="player" type="RigidBody2D" unique_id=1728620990]
+gravity_scale = 0.0
 script = ExtResource("1_g2els")
 metadata/_edit_group_ = true
 

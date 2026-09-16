@@ -33,6 +33,6 @@ func _input(_event: InputEvent) -> void:
         add_point(end_vector, 1)
     if Input.is_action_just_released("click"):
         # When the player releases, set the direction of the ship
-        player.direction = ((start_vector - end_vector)*2).normalized()*100
+        player.direction = ((start_vector - end_vector)*2).normalized()
 
         
