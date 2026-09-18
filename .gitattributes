@@ -1,2 +1,10 @@
 # Normalize EOL for all files that Git considers text files.
 * text=auto eol=lf
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+
+# Force specific files to always use LF (Unix/Mac/Linux)
+*.tscn text eol=lf
+*.gd text eol=lf
+*.uid text eol=lf
+*.godot text eol=lf
