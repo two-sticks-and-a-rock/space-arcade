@@ -11,8 +11,20 @@ position = Vector2(578, 198)
 scale = Vector2(5.610808, 5.610808)
 texture = ExtResource("1_to714")
 
+[node name="player_camera" type="Camera2D" parent="." unique_id=704292249]
+position = Vector2(577, 326)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
 [node name="player" parent="." unique_id=1841504681 instance=ExtResource("2_v18i2")]
 position = Vector2(577, 326)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="player" unique_id=1489287653]
+remote_path = NodePath("../../player_camera")
+update_rotation = false
+update_scale = false
 
 [node name="enemy_ufo_red" parent="." unique_id=67188953 instance=ExtResource("3_sj1a8")]
 position = Vector2(175, -196)

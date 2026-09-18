@@ -10,14 +10,14 @@ var end_vector := Vector2.ZERO
 # func _ready():
 
 func _process(_delta):
+	start_vector = global_position
 	if (Input.is_action_pressed("click")):
 		end_vector = start_vector + (slingshot.points[0] - slingshot.points[1])		
-		remove_point(1)
-		remove_point(0)
+		clear_points()
 
-		add_point(start_vector)
-		add_point(end_vector)
+		add_point(to_local(start_vector))
+		add_point(to_local(end_vector))
 	if (Input.is_action_just_released("click")):
-		remove_point(1)
-		remove_point(0)
+		clear_points()
+
 	

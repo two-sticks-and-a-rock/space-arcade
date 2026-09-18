@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://bxqn8riy2auod" path="res://art/sprites/player/playerShip3_blue.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://d02iqtql42dlw" path="res://scenes/player.gd" id="1_g2els"]
 [ext_resource type="PackedScene" uid="uid://oliot5hwfyjd" path="res://scenes/slingshot.tscn" id="2_dqkch"]
-[ext_resource type="Script" uid="uid://b1c5baeih10s1" path="res://scenes/player_camera.gd" id="3_qhqgy"]
 [ext_resource type="Script" uid="uid://cjuqx7p055ftc" path="res://scenes/visualization.gd" id="3_qlg0r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kcn5b"]
@@ -39,15 +38,5 @@ animation = &"fly"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=697972149]
 shape = SubResource("CircleShape2D_4s1yf")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1856610160]
-position_smoothing_enabled = true
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.0
-drag_top_margin = 0.0
-drag_right_margin = 0.0
-drag_bottom_margin = 0.0
-script = ExtResource("3_qhqgy")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
