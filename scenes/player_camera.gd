@@ -17,4 +17,8 @@ func _ready():
 
 
 func _process(_delta):
+	if (position != Vector2.ZERO):
+		position -= position.normalized()
+	if position.length() < 1: 
+		position = Vector2(0,0)
 	global_position = global_position.clamp(min_coord, max_coord)
