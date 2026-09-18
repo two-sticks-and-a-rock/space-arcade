@@ -10,33 +10,33 @@
 [node name="slingshot" parent="." unique_id=311823443 instance=ExtResource("1_g7c1f")]
 
 [node name="background" type="Sprite2D" parent="." unique_id=903891636]
-position = Vector2(578.00006, 60.00003)
-scale = Vector2(4.5654297, 4.5654297)
+position = Vector2(578, 198)
+scale = Vector2(5.610808, 5.610808)
 texture = ExtResource("1_to714")
 
 [node name="player" parent="." unique_id=1841504681 instance=ExtResource("2_v18i2")]
-position = Vector2(576, 596)
+position = Vector2(577, 326)
 
 [node name="enemy_ufo_red" parent="." unique_id=67188953 instance=ExtResource("3_sj1a8")]
-position = Vector2(491, 192)
+position = Vector2(175, -196)
 
 [node name="enemy_ufo_red11" parent="." unique_id=1382670408 instance=ExtResource("3_sj1a8")]
 position = Vector2(492, -103)
 
 [node name="enemy_ufo_red2" parent="." unique_id=2016706513 instance=ExtResource("3_sj1a8")]
-position = Vector2(875, 326)
+position = Vector2(826, 171)
 
 [node name="enemy_ufo_red3" parent="." unique_id=1562125459 instance=ExtResource("3_sj1a8")]
 position = Vector2(315, 421)
 
 [node name="enemy_ufo_red4" parent="." unique_id=1564151820 instance=ExtResource("3_sj1a8")]
-position = Vector2(1084, 445)
+position = Vector2(1083, 272)
 
 [node name="enemy_ufo_red5" parent="." unique_id=1809661994 instance=ExtResource("3_sj1a8")]
 position = Vector2(664, 380)
 
 [node name="enemy_ufo_red6" parent="." unique_id=2124957888 instance=ExtResource("3_sj1a8")]
-position = Vector2(196, 167)
+position = Vector2(307, 167)
 
 [node name="enemy_ufo_red7" parent="." unique_id=1158439339 instance=ExtResource("3_sj1a8")]
 position = Vector2(963, 106)
@@ -48,4 +48,4 @@ position = Vector2(59, 392)
 position = Vector2(899, -267)
 
 [node name="enemy_ufo_red10" parent="." unique_id=1295524705 instance=ExtResource("3_sj1a8")]
-position = Vector2(840, 544)
+position = Vector2(829, 412)
