@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://d02iqtql42dlw" path="res://scenes/player.gd" id="1_g2els"]
 [ext_resource type="PackedScene" uid="uid://oliot5hwfyjd" path="res://scenes/slingshot.tscn" id="2_dqkch"]
 [ext_resource type="Script" uid="uid://b1c5baeih10s1" path="res://scenes/player_camera.gd" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://cjuqx7p055ftc" path="res://scenes/visualization.gd" id="3_qlg0r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kcn5b"]
 animations = [{
@@ -27,6 +28,10 @@ metadata/_edit_group_ = true
 [node name="slingshot" parent="." unique_id=311823443 instance=ExtResource("2_dqkch")]
 default_color = Color(1, 0.93333334, 0.32941177, 0)
 
+[node name="visualization" type="Line2D" parent="slingshot" unique_id=1078616549]
+default_color = Color(0.7411765, 0.7411765, 0, 1)
+script = ExtResource("3_qlg0r")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1546061967]
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_kcn5b")
@@ -37,7 +42,6 @@ shape = SubResource("CircleShape2D_4s1yf")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1856610160]
 position_smoothing_enabled = true
-position_smoothing_speed = 2.0
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_left_margin = 0.0
