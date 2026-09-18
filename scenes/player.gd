@@ -3,46 +3,28 @@ extends RigidBody2D
 signal hit
 
 @export var speed = 400
-var screen_size
+@onready var background = get_parent().get_node("background")
+
+var min_coord
+var max_coord
 var direction = Vector2.ZERO
 
 func _ready():
-	screen_size = get_viewport_rect().size
+	var background_sprite = background as Sprite2D
+	var background_texture = background_sprite.texture
+	var background_size = background_texture.get_size() * background_sprite.scale
+	var background_pos = background_sprite.position
 
-# func _process(delta):
-# 	var velocity = direction
-# 	# if Input.is_action_pressed("move_right"):
-# 	# 	velocity.x += 1
-# 	# if Input.is_action_pressed("move_left"):
-# 	# 	velocity.x -= 1
-# 	# if Input.is_action_pressed("move_back"):
-# 	# 	velocity.y += 1
-# 	# if Input.is_action_pressed("move_forward"):
-# 	# 	velocity.y -= 1
-
-# 	if velocity.length() > 0:
-# 		velocity = velocity.normalized() * speed
-
-# 	position += velocity * delta
-# 	position = position.clamp(Vector2.ZERO, screen_size)
+	min_coord = background_pos - background_size/2
+	max_coord = background_pos + background_size/2
 
 func _physics_process(_delta):
 	linear_velocity = direction * speed
 	direction = lerp(direction, Vector2.ZERO, 0.01)
-	# Steering, kind of unwieldy
-	# if Input.is_action_pressed("move_right"):
-	# 	linear_velocity.x += 1
-	# if Input.is_action_pressed("move_left"):
-	# 	linear_velocity.x -= 1
-	# if Input.is_action_pressed("move_back"):
-	# 	linear_velocity.y += 1
-	# if Input.is_action_pressed("move_forward"):
-	# 	linear_velocity.y -= 1
-	# linear_velocity *= speed
-	position = position.clamp(Vector2.ZERO, screen_size)
+	position = position.clamp(min_coord, max_coord)
+
 
 func _on_body_entered(_body):
-	print("_on_body_entered")
 	# disable player collision
 	# hide()
 	hit.emit()
