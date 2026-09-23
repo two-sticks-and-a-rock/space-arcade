@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b1c8lbi40g0up"]
 
 [ext_resource type="Texture2D" uid="uid://0u2jg8rk6hcl" path="res://art/sprites/enemy/ufoRed.png" id="1_7p1mj"]
-[ext_resource type="Script" uid="uid://btilt47p7ljqj" path="res://scenes/enemy.gd" id="1_md0e3"]
+[ext_resource type="Script" uid="uid://btilt47p7ljqj" path="res://scenes/enemies/enemy.gd" id="1_md0e3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
 radius = 45.0
