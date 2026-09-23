@@ -7,11 +7,5 @@
 
 [node name="background" parent="." unique_id=162470464 instance=ExtResource("1_o5qli")]
 
-[node name="player_background_pos" type="RemoteTransform2D" parent="background" unique_id=103069723]
-remote_path = NodePath("../../player")
-update_rotation = false
-update_scale = false
-
 [node name="player" parent="." unique_id=2109895852 instance=ExtResource("3_jyhfs")]
 position = Vector2(0, 0)
-rotation = 0.0

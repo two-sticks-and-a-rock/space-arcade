@@ -2,11 +2,10 @@ extends TileMapLayer
 
 @onready var blue_background = tile_set.get_source(0) as TileSetAtlasSource
 @onready var player = get_parent().get_node("player") as RigidBody2D
-@onready var player_background_pos = get_child(0) as RemoteTransform2D
 
 @onready var viewport_size = player.get_node("Camera2D").get_viewport_rect().size
 var screen_size = viewport_size
-var visible_buffer = 256
+var visible_buffer = 2048
 
 var rng = RandomNumberGenerator.new()
 
