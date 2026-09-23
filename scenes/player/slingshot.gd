@@ -24,4 +24,4 @@ func _input(_event: InputEvent) -> void:
     if Input.is_action_just_released("click"):
         # When the player releases, set the direction of the ship
         clear_points()
-        player.direction = ((start_vector - end_vector)*2).normalized()
+        player.direction = start_vector - end_vector

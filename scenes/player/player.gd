@@ -2,7 +2,7 @@ extends RigidBody2D
 
 signal hit
 
-@export var speed = 400
+@export var speed = 1
 var direction = Vector2.ZERO
 
 func _physics_process(_delta):
