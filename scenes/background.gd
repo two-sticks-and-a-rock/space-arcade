@@ -21,5 +21,4 @@ func _ready():
 	
 	for col in tile_cols:
 		for row in tile_rows:
-			print(Vector2(col,row))
 			set_random_tile(Vector2i(col, row), 0)
