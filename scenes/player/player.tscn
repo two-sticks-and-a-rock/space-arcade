@@ -33,4 +33,7 @@ shape = SubResource("RectangleShape2D_prw6y")
 [node name="slingshot" type="Line2D" parent="." unique_id=1362438699]
 script = ExtResource("3_gmlin")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1719499633]
+position_smoothing_enabled = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
