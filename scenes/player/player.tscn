@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bxqn8riy2auod" path="res://art/sprites/player/playerShip3_blue.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://d02iqtql42dlw" path="res://scenes/player/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://cg3xb6odenjtk" path="res://scenes/player/slingshot.gd" id="3_gmlin"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kcn5b"]
 animations = [{
@@ -17,7 +18,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_prw6y"]
 size = Vector2(58, 75)
 
-[node name="player" type="Area2D" unique_id=1841504681]
+[node name="player" type="RigidBody2D" unique_id=2109895852]
+gravity_scale = 0.0
 script = ExtResource("1_g2els")
 metadata/_edit_group_ = true
 
@@ -27,5 +29,8 @@ animation = &"fly"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=697972149]
 shape = SubResource("RectangleShape2D_prw6y")
+
+[node name="slingshot" type="Line2D" parent="." unique_id=1362438699]
+script = ExtResource("3_gmlin")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
