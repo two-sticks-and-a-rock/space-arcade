@@ -15,20 +15,23 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_prw6y"]
-size = Vector2(58, 75)
+[sub_resource type="CircleShape2D" id="CircleShape2D_gmlin"]
+radius = 26.019224
 
 [node name="player" type="RigidBody2D" unique_id=2109895852]
+position = Vector2(242, 325)
+rotation = 1.5707964
 gravity_scale = 0.0
 script = ExtResource("1_g2els")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1546061967]
+scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_kcn5b")
 animation = &"fly"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=697972149]
-shape = SubResource("RectangleShape2D_prw6y")
+shape = SubResource("CircleShape2D_gmlin")
 
 [node name="slingshot" type="Line2D" parent="." unique_id=1362438699]
 script = ExtResource("3_gmlin")
