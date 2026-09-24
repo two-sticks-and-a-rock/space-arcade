@@ -26,16 +26,5 @@ func _on_enemy_timer_timeout():
 	# Set the mob's position to the random location.
 	enemy.position = enemy_spawn_pos.position
 
-	# Set the mob's direction perpendicular to the path direction.
-	var direction = enemy_spawn_pos.rotation + PI / 2
-
-	# Add some randomness to the direction.
-	direction += randf_range(-PI / 4, PI / 4)
-	enemy.rotation = direction
-
-	# Choose the velocity for the mob.
-	var velocity = Vector2(randf_range(300.0, 500.0), 0.0)
-	enemy.linear_velocity = velocity.rotated(direction)
-
 	# Spawn the mob by adding it to the Main scene.
 	add_child(enemy)
