@@ -2,9 +2,6 @@ extends Line2D
 
 @onready var player = get_parent() as RigidBody2D
 
-enum speed_options { LINEAR, SQRT, SQUARE }
-var speed_type = speed_options.LINEAR
-
 var start_vector := Vector2.ZERO
 var end_vector := Vector2.ZERO
 
