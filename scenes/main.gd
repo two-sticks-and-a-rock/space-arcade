@@ -34,7 +34,7 @@ func _on_enemy_timer_timeout():
 	enemy.rotation = direction
 
 	# Choose the velocity for the mob.
-	var velocity = Vector2(randf_range(150.0, 250.0), 0.0)
+	var velocity = Vector2(randf_range(300.0, 500.0), 0.0)
 	enemy.linear_velocity = velocity.rotated(direction)
 
 	# Spawn the mob by adding it to the Main scene.

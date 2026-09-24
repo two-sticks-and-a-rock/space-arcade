@@ -34,5 +34,6 @@ rotation = 1.4759693
 [node name="EnemyTimer" type="Timer" parent="." unique_id=112328157]
 unique_name_in_owner = true
 process_callback = 0
+wait_time = 0.5
 
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]
