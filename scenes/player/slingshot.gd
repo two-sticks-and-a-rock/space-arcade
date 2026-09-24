@@ -5,7 +5,6 @@ extends Line2D
 var start_vector := Vector2.ZERO
 var end_vector := Vector2.ZERO
 
-
 func _input(_event: InputEvent) -> void:
     if Input.is_action_just_pressed("click"):
         clear_points()
