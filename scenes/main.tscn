@@ -38,5 +38,6 @@ process_callback = 0
 wait_time = 0.5
 
 [node name="Menu" parent="." unique_id=1623096271 instance=ExtResource("5_tbgi4")]
+visible = false
 
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]
