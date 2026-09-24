@@ -17,17 +17,17 @@ func _process(_delta):
 
 func _on_enemy_timer_timeout():
 	# Create a new instance of the Mob scene.
-	var enemy = enemy_scene.instantiate()
+	var enemy = enemy_scene.instantiate() as RigidBody2D
 
 	# Choose a random location on Path2D.
-	var mob_spawn_location = $player/EnemyPath/EnemySpawnLocation
-	mob_spawn_location.progress_ratio = randf()
+	var enemy_spawn_pos = $player/EnemyPath/EnemySpawnLocation
+	enemy_spawn_pos.progress_ratio = randf()
 
 	# Set the mob's position to the random location.
-	enemy.position = mob_spawn_location.position
+	enemy.position = enemy_spawn_pos.position
 
 	# Set the mob's direction perpendicular to the path direction.
-	var direction = mob_spawn_location.rotation + PI / 2
+	var direction = enemy_spawn_pos.rotation + PI / 2
 
 	# Add some randomness to the direction.
 	direction += randf_range(-PI / 4, PI / 4)
