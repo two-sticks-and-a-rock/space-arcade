@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://nchng1iwyms1" path="res://scenes/scrolling_background.tscn" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b1c8lbi40g0up" path="res://scenes/enemies/enemy.tscn" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cekmijf83xupg" path="res://scenes/player/player.tscn" id="3_jyhfs"]
+[ext_resource type="Script" uid="uid://d2tt0u6ddlowp" path="res://scenes/main_menu.gd" id="5_tbgi4"]
 
 [sub_resource type="Curve2D" id="Curve2D_0wfyh"]
 _data = {
@@ -35,5 +36,9 @@ rotation = 1.4759693
 unique_name_in_owner = true
 process_callback = 0
 wait_time = 0.5
+
+[node name="main_menu" type="CanvasLayer" parent="." unique_id=187451435]
+process_mode = 3
+script = ExtResource("5_tbgi4")
 
 [connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]

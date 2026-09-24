@@ -10,11 +10,6 @@ func new_game():
 func _ready():
 	new_game()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
-	pass
-
 func _on_enemy_timer_timeout():
 	# Create a new instance of the Mob scene.
 	var enemy = enemy_scene.instantiate() as RigidBody2D
