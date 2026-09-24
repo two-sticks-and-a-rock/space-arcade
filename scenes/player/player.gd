@@ -10,7 +10,6 @@ func _physics_process(_delta):
 	direction = lerp(direction, Vector2.ZERO, 0.01)
 
 func _on_body_entered(_body):
-	print("_on_body_entered")
 	# disable player collision
 	# hide()
 	hit.emit()

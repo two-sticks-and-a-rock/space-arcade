@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://be6oad5gocvyr"]
 
-[ext_resource type="PackedScene" uid="uid://by56sid707kss" path="res://scenes/background.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://nchng1iwyms1" path="res://scenes/scrolling_background.tscn" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://cekmijf83xupg" path="res://scenes/player/player.tscn" id="3_jyhfs"]
 
 [node name="Main" type="Node2D" unique_id=252374006]
 
-[node name="background" parent="." unique_id=162470464 instance=ExtResource("1_o5qli")]
+[node name="scrolling_background" parent="." unique_id=2059599330 instance=ExtResource("1_sugp2")]
 
 [node name="player" parent="." unique_id=2109895852 instance=ExtResource("3_jyhfs")]
+unique_name_in_owner = true
 position = Vector2(0, 0)
