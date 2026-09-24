@@ -19,7 +19,6 @@ animations = [{
 radius = 36.05551
 
 [node name="player" type="RigidBody2D" unique_id=2109895852]
-position = Vector2(242, 325)
 gravity_scale = 0.0
 script = ExtResource("1_g2els")
 metadata/_edit_group_ = true

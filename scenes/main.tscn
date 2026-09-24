@@ -35,7 +35,7 @@ rotation = 1.4759693
 [node name="EnemyTimer" type="Timer" parent="." unique_id=112328157]
 unique_name_in_owner = true
 process_callback = 0
-wait_time = 0.5
+wait_time = 0.25
 
 [node name="Menu" parent="." unique_id=1623096271 instance=ExtResource("5_tbgi4")]
 visible = false
