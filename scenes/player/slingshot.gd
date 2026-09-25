@@ -6,8 +6,19 @@ var start_vector := Vector2.ZERO
 var end_vector := Vector2.ZERO
 
 func handle_speed(slingshot_vector: Vector2):
-		player.direction = slingshot_vector.normalized()
-		player.velocity = slingshot_vector.length()
+	player.direction = slingshot_vector.normalized()
+	var velocity = slingshot_vector.length()
+	var slingshot_velocity = velocity
+	match SpeedCalc.speed_calc:
+		SpeedCalc.speed_calc_options.LINEAR:
+			player.slingshot_velocity = player.direction * (SpeedCalc.linear_base_speed + velocity * SpeedCalc.linear_speed_multiplier)
+			return
+		SpeedCalc.speed_calc_options.SQRT:
+			player.slingshot_velocity = player.direction * (SpeedCalc.sqrt_base_speed + sqrt(velocity) * SpeedCalc.sqrt_speed_multiplier)
+			return
+		SpeedCalc.speed_calc_options.POW:
+			player.slingshot_velocity = player.direction * (SpeedCalc.pow_base_speed + pow(velocity, SpeedCalc.pow_power) * SpeedCalc.pow_speed_multiplier)
+			return
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("click"):

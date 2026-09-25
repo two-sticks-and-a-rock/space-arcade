@@ -3,10 +3,10 @@ extends RigidBody2D
 signal hit
 
 var direction = Vector2.ZERO
-var velocity = 0
+var slingshot_velocity: Vector2
 
 func _physics_process(_delta):
-	linear_velocity = direction * velocity
+	linear_velocity = slingshot_velocity
 	direction = lerp(direction, Vector2.ZERO, 0.01)
 
 func _on_body_entered(_body):

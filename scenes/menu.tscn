@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://d2tt0u6ddlowp" path="res://scenes/menu.gd" id="1_yqeox"]
 
+[sub_resource type="ButtonGroup" id="ButtonGroup_lc2g2"]
+
 [node name="Menu" type="CanvasLayer" unique_id=1623096271]
 process_mode = 3
 script = ExtResource("1_yqeox")
@@ -18,11 +20,12 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -81.0
-offset_top = 86.0
+offset_top = -442.0
 offset_right = 81.0
-offset_bottom = 196.0
+offset_bottom = -332.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 40
 text = "Restart"
 
 [node name="quit" type="Button" parent="." unique_id=1931921609]
@@ -32,12 +35,330 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -81.0
-offset_top = 238.0
+offset_top = -290.0
 offset_right = 81.0
-offset_bottom = 348.0
+offset_bottom = -180.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 40
 text = "Quit"
+
+[node name="speed_debug" type="CanvasLayer" parent="." unique_id=542592472]
+
+[node name="linear_checkbox" type="CheckButton" parent="speed_debug" unique_id=1925092429]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -446.0
+offset_top = -12.0
+offset_right = -402.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+button_group = SubResource("ButtonGroup_lc2g2")
+
+[node name="linear_label" type="Label" parent="speed_debug/linear_checkbox" unique_id=538525493]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -230.0
+offset_top = -50.0
+offset_right = -32.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "linear"
+
+[node name="linear_base" type="TextEdit" parent="speed_debug/linear_checkbox" unique_id=1415047316]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 53.0
+offset_top = -50.0
+offset_right = 203.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+placeholder_text = "Base Speed"
+
+[node name="linear_+" type="Label" parent="speed_debug/linear_checkbox" unique_id=207833444]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 218.0
+offset_top = -50.0
+offset_right = 253.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "+"
+
+[node name="linear_multiplier" type="TextEdit" parent="speed_debug/linear_checkbox" unique_id=730359897]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 277.0
+offset_top = -50.0
+offset_right = 427.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+placeholder_text = "Multiplier"
+
+[node name="linear_x" type="Label" parent="speed_debug/linear_checkbox" unique_id=712201907]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 434.0
+offset_top = -50.0
+offset_right = 1006.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "x slingshot vector"
+
+[node name="sqrt_checkbox" type="CheckButton" parent="speed_debug" unique_id=565662433]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -446.0
+offset_top = 116.0
+offset_right = -402.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+button_group = SubResource("ButtonGroup_lc2g2")
+
+[node name="sqrt_label" type="Label" parent="speed_debug/sqrt_checkbox" unique_id=884991480]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -394.0
+offset_top = -50.0
+offset_right = -38.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "square root"
+
+[node name="sqrt_base" type="TextEdit" parent="speed_debug/sqrt_checkbox" unique_id=1767692077]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 53.0
+offset_top = -50.0
+offset_right = 203.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+placeholder_text = "Base Speed"
+
+[node name="sqrt_+" type="Label" parent="speed_debug/sqrt_checkbox" unique_id=2086454182]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 218.0
+offset_top = -50.0
+offset_right = 253.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "+"
+
+[node name="sqrt_multiplier" type="TextEdit" parent="speed_debug/sqrt_checkbox" unique_id=1525455857]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 277.0
+offset_top = -50.0
+offset_right = 427.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+placeholder_text = "Multiplier"
+
+[node name="sqrt_x" type="Label" parent="speed_debug/sqrt_checkbox" unique_id=1944353099]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 430.5
+offset_top = -50.0
+offset_right = 1009.5
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "x √(slingshot vector)"
+
+[node name="pow_checkbox" type="CheckButton" parent="speed_debug" unique_id=1725564679]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -446.0
+offset_top = 244.0
+offset_right = -402.0
+offset_bottom = 268.0
+grow_horizontal = 2
+grow_vertical = 2
+button_group = SubResource("ButtonGroup_lc2g2")
+
+[node name="pow_label" type="Label" parent="speed_debug/pow_checkbox" unique_id=81118455]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.0
+offset_top = -52.0
+offset_right = -26.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "exponent"
+
+[node name="pow_base" type="TextEdit" parent="speed_debug/pow_checkbox" unique_id=779894713]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 53.0
+offset_top = -52.0
+offset_right = 203.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+placeholder_text = "Base Speed"
+
+[node name="pow_+" type="Label" parent="speed_debug/pow_checkbox" unique_id=1689952927]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 218.0
+offset_top = -52.0
+offset_right = 253.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "+"
+
+[node name="pow_multiplier" type="TextEdit" parent="speed_debug/pow_checkbox" unique_id=943600722]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 277.0
+offset_top = -52.0
+offset_right = 427.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+placeholder_text = "Multiplier"
+
+[node name="pow_x" type="Label" parent="speed_debug/pow_checkbox" unique_id=1340523394]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 430.5
+offset_top = -52.0
+offset_right = 959.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 60
+text = "x slingshot vector"
+
+[node name="pow_power" type="TextEdit" parent="speed_debug/pow_checkbox" unique_id=198488456]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 951.0
+offset_top = -81.0
+offset_right = 1043.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+placeholder_text = "Power"
+
+[node name="settings_save" type="Button" parent="speed_debug" unique_id=909047689]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -372.5
+offset_top = -215.0
+offset_right = 375.5
+offset_bottom = -76.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 60
+text = "Save Speed Configuration"
 
 [connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="toggled" from="speed_debug/linear_checkbox" to="." method="_on_speed_calc_toggled"]
+[connection signal="pressed" from="speed_debug/settings_save" to="." method="_on_save"]
