@@ -18,8 +18,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_gmlin"]
 radius = 36.05551
 
-[node name="player" type="RigidBody2D" unique_id=2109895852]
-gravity_scale = 0.0
+[node name="player" type="StaticBody2D" unique_id=1664336922]
+collision_mask = 2
 script = ExtResource("1_g2els")
 metadata/_edit_group_ = true
 
@@ -37,5 +37,3 @@ script = ExtResource("3_gmlin")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1719499633]
 process_callback = 0
 position_smoothing_enabled = true
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]

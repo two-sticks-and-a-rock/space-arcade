@@ -1,6 +1,6 @@
 extends Line2D
 
-@onready var player = get_parent() as RigidBody2D
+@onready var player = get_parent() as StaticBody2D
 
 var start_vector := Vector2.ZERO
 var end_vector := Vector2.ZERO
