@@ -21,7 +21,6 @@ scroll_offset = Vector2(368, 382)
 
 [node name="player" parent="." unique_id=2109895852 instance=ExtResource("3_jyhfs")]
 unique_name_in_owner = true
-position = Vector2(0, 0)
 
 [node name="EnemyPath" type="Path2D" parent="player" unique_id=1257585160]
 position = Vector2(-65.89342, -507.8911)

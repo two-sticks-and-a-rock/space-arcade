@@ -12,7 +12,7 @@ func _ready():
 
 func _on_enemy_timer_timeout():
 	# Create a new instance of the Mob scene.
-	var enemy = enemy_scene.instantiate() as RigidBody2D
+	var enemy = enemy_scene.instantiate() as CharacterBody2D
 
 	# Choose a random location on Path2D.
 	var enemy_spawn_pos = $player/EnemyPath/EnemySpawnLocation
