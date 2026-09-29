@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://nchng1iwyms1" path="res://scenes/scrolling_background.tscn" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b1c8lbi40g0up" path="res://scenes/enemies/enemy.tscn" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cekmijf83xupg" path="res://scenes/player/player.tscn" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://dxpsbshn74e44" path="res://scenes/world/slingshot.tscn" id="3_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://b76bpw6s8dpb4" path="res://scenes/world/world.tscn" id="3_tefeu"]
 [ext_resource type="PackedScene" uid="uid://d2n8xy8ehp0ps" path="res://scenes/menu.tscn" id="5_tbgi4"]
 
 [sub_resource type="Curve2D" id="Curve2D_0wfyh"]
@@ -16,28 +18,31 @@ point_count = 15
 script = ExtResource("1_jyhfs")
 enemy_scene = ExtResource("2_tbgi4")
 
-[node name="scrolling_background" parent="." unique_id=2059599330 instance=ExtResource("1_sugp2")]
-scroll_offset = Vector2(368, 382)
-
-[node name="player" parent="." unique_id=2109895852 instance=ExtResource("3_jyhfs")]
-unique_name_in_owner = true
-position = Vector2(0, 0)
-
-[node name="EnemyPath" type="Path2D" parent="player" unique_id=1257585160]
+[node name="EnemyPath" type="Path2D" parent="." unique_id=1257585160]
 position = Vector2(-65.89342, -507.8911)
 scale = Vector2(0.8864685, 0.8369)
 curve = SubResource("Curve2D_0wfyh")
 
-[node name="EnemySpawnLocation" type="PathFollow2D" parent="player/EnemyPath" unique_id=2016221203]
+[node name="EnemySpawnLocation" type="PathFollow2D" parent="EnemyPath" unique_id=2016221203]
 position = Vector2(1836, -294)
 rotation = 1.4759693
 
-[node name="EnemyTimer" type="Timer" parent="." unique_id=112328157]
-unique_name_in_owner = true
-process_callback = 0
-wait_time = 0.25
+[node name="slingshot" parent="." unique_id=60153306 instance=ExtResource("3_o6xl0")]
 
 [node name="Menu" parent="." unique_id=1623096271 instance=ExtResource("5_tbgi4")]
 visible = false
 
-[connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]
+[node name="World" parent="." unique_id=1226086004 instance=ExtResource("3_tefeu")]
+
+[node name="scrolling_background" parent="World" unique_id=2059599330 instance=ExtResource("1_sugp2")]
+scroll_offset = Vector2(368, 382)
+
+[node name="EnemyTimer" type="Timer" parent="World" unique_id=112328157]
+unique_name_in_owner = true
+process_callback = 0
+wait_time = 0.5
+
+[node name="player" parent="." unique_id=2109895852 instance=ExtResource("3_jyhfs")]
+unique_name_in_owner = true
+
+[connection signal="timeout" from="World/EnemyTimer" to="." method="_on_enemy_timer_timeout"]
