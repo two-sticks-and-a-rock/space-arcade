@@ -27,8 +27,6 @@ curve = SubResource("Curve2D_0wfyh")
 position = Vector2(1836, -294)
 rotation = 1.4759693
 
-[node name="slingshot" parent="." unique_id=60153306 instance=ExtResource("3_o6xl0")]
-
 [node name="Menu" parent="." unique_id=1623096271 instance=ExtResource("5_tbgi4")]
 visible = false
 
@@ -44,5 +42,7 @@ wait_time = 0.5
 
 [node name="player" parent="." unique_id=2109895852 instance=ExtResource("3_jyhfs")]
 unique_name_in_owner = true
+
+[node name="slingshot" parent="." unique_id=60153306 instance=ExtResource("3_o6xl0")]
 
 [connection signal="timeout" from="World/EnemyTimer" to="." method="_on_enemy_timer_timeout"]

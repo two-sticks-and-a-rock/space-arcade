@@ -2,9 +2,6 @@ extends RigidBody2D
 
 signal hit
 
-var direction = Vector2.ZERO
-var velocity = 0
-
 func _on_body_entered(_body):
 	# disable player collision
 	# hide()

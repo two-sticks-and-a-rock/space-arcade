@@ -1,19 +1,14 @@
-extends RigidBody2D
+extends CharacterBody2D
 
 @onready var player = get_parent().get_parent().get_node("%player") as RigidBody2D
 
-var velocity = Vector2(randf_range(250.0, 300.0), 0.0)
-# Called when the node enters the scene tree for the first time.
+var speed = Vector2(randf_range(250.0, 300.0), 0.0)
 func _ready():
 	var mob_types = Array($AnimatedSprite2D.sprite_frames.get_animation_names())
 	$AnimatedSprite2D.animation = mob_types[0]
 	$AnimatedSprite2D.play()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(_delta):
-	look_at(Vector2.ZERO)
-	linear_velocity = velocity.rotated(rotation)
-
-func _on_visible_on_screen_notifier_2d_screen_exited():
-	queue_free()
+func _process(_delta):
+	look_at(player.global_position)
+	velocity = speed.rotated(rotation)
+	move_and_slide()

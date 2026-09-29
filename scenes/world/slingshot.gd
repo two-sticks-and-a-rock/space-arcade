@@ -1,6 +1,7 @@
 extends Line2D
 
 @onready var world = get_parent().get_node("World") as Node2D
+@onready var player = get_parent().get_node("player") as RigidBody2D
 
 var start_vector := Vector2.ZERO
 var end_vector := Vector2.ZERO
@@ -18,8 +19,8 @@ func _input(_event: InputEvent) -> void:
 		end_vector = get_global_mouse_position()
 		clear_points()
 
-		var visible_start_vector = to_local(world.global_position)
-		var visible_end_vector = to_local(world.global_position + (start_vector - end_vector))
+		var visible_start_vector = to_local(player.global_position)
+		var visible_end_vector = to_local(player.global_position + (start_vector - end_vector))
 		add_point(visible_start_vector, 0)
 		add_point(visible_end_vector, 1)
 
