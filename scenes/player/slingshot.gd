@@ -6,8 +6,8 @@ var start_vector := Vector2.ZERO
 var end_vector := Vector2.ZERO
 
 func handle_speed(slingshot_vector: Vector2):
-		player.direction = slingshot_vector.normalized()
-		player.velocity = slingshot_vector.length()
+		Mover.direction = slingshot_vector.normalized()
+		Mover.speed = slingshot_vector.length()
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("click"):

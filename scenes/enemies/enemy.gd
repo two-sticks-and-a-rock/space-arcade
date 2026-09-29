@@ -14,6 +14,7 @@ func _ready():
 func _physics_process(_delta):
 	look_at(player.position)
 	linear_velocity = velocity.rotated(rotation)
+	linear_velocity -= Mover.get_movement()
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
