@@ -1,7 +1,7 @@
 extends Line2D
 
 @onready var world = get_parent().get_node("World") as Node2D
-@onready var player = get_parent().get_node("player") as RigidBody2D
+@onready var player = get_parent().get_node("player") as Node2D
 
 var start_vector := Vector2.ZERO
 var end_vector := Vector2.ZERO
