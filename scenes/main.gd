@@ -3,10 +3,13 @@ extends Node2D
 @export var enemy_scene : PackedScene
 
 func new_game():
-	# $Player.start($StartPosition.position)
 	$EnemyTimer.start()
 
-# Called when the node enters the scene tree for the first time.
+func free_enemies():
+	for child in get_children():
+		if (child is CharacterBody2D):
+			child.queue_free()
+
 func _ready():
 	new_game()
 
