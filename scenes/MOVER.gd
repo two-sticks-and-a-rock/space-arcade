@@ -5,6 +5,10 @@ var speed : float = 0.0
 
 var velocity
 
+func reset() -> void:
+	direction = Vector2.ZERO
+	speed = 0.0
+
 func get_movement() -> Vector2:
 	return velocity
 
