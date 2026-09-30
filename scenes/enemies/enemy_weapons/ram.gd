@@ -7,7 +7,7 @@ func _ready():
     stun_timer.wait_time = 1
 
 func set_collision_radius(new_rad: float):
-    (($CollisionShape2D as CollisionShape2D).shape as CircleShape2D).radius = new_rad
+    (($CollisionShape2D as CollisionShape2D).shape as CircleShape2D).radius = new_rad + 4
 
 func _on_stun_timer_timeout():
     $CollisionShape2D.set_deferred("disabled", false)
