@@ -9,10 +9,6 @@ func _input(_event: InputEvent) -> void:
 		visible = !visible
 		get_tree().paused = !get_tree().paused
 
-func _on_quit_pressed():
-	main.free_enemies()
-	get_tree().quit()
-
 func _on_restart_pressed():
 	Mover.reset()
 	main.free_enemies()
