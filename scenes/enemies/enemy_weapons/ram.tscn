@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b0n2p23e66g8k"]
+
+[ext_resource type="Script" uid="uid://c2unftbpykcd7" path="res://scenes/enemies/enemy_weapons/ram.gd" id="1_upkme"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_avsdm"]
+
+[node name="Ram" type="Area2D" unique_id=636013997]
+collision_layer = 8
+script = ExtResource("1_upkme")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=649169745]
+shape = SubResource("CircleShape2D_avsdm")
+debug_color = Color(0.72556067, 0.4747556, 0.13746917, 0.41960785)
+
+[node name="StunTimer" type="Timer" parent="." unique_id=1878343667]
+
+[connection signal="body_entered" from="." to="." method="_on_ram_entered"]
