@@ -1,7 +1,5 @@
 extends CanvasLayer
 
-func _ready():
-	pass # Replace with function body.
 @onready var main = get_parent()
 
 func _input(_event: InputEvent) -> void:
@@ -9,8 +7,5 @@ func _input(_event: InputEvent) -> void:
 		visible = !visible
 		get_tree().paused = !get_tree().paused
 
-func _on_restart_pressed():
-	Mover.reset()
+func _on_restart_button_pressed():
 	main.free_enemies()
-	get_tree().paused = false
-	get_tree().reload_current_scene()

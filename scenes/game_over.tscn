@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://b4o0n34uwel0d"]
+
+[ext_resource type="Script" uid="uid://dljd3x1xw8ddi" path="res://scenes/game_over.gd" id="1_xeevv"]
+[ext_resource type="PackedScene" uid="uid://drh6cl70rtt78" path="res://scenes/restart_button.tscn" id="2_wqhvx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tefeu"]
+bg_color = Color(0.25565916, 0.2556586, 0.25565886, 0.6901961)
+
+[node name="GameOver" type="CanvasLayer" unique_id=922977592]
+script = ExtResource("1_xeevv")
+
+[node name="Panel" type="Panel" parent="." unique_id=1787029597]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tefeu")
+
+[node name="GameOver" type="Label" parent="." unique_id=682681196]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -406.5
+offset_top = -140.0
+offset_right = 406.5
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 150
+text = "Game Over"
+
+[node name="restart" parent="." unique_id=1164336806 instance=ExtResource("2_wqhvx")]
+
+[connection signal="restart_game" from="restart" to="." method="_on_restart_button_pressed"]

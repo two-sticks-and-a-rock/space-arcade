@@ -19,7 +19,13 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_gmlin"]
 radius = 36.05551
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p47bc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvxji"]
+bg_color = Color(0.29237694, 0.5903247, 0.33716953, 1)
+
 [node name="player" type="StaticBody2D" unique_id=1664336922]
+z_index = 10
 collision_mask = 2
 script = ExtResource("1_g2els")
 metadata/_edit_group_ = true
@@ -36,3 +42,21 @@ shape = SubResource("CircleShape2D_gmlin")
 
 [node name="slingshot" type="Line2D" parent="." unique_id=1362438699]
 script = ExtResource("3_gmlin")
+
+[node name="hp" type="ProgressBar" parent="." unique_id=1485871813]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -59.0
+offset_top = 56.0
+offset_right = 80.0
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_p47bc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_lvxji")
+step = 1.0
+value = 100.0
+show_percentage = false
