@@ -3,6 +3,13 @@ extends CharacterBody2D
 @onready var player = get_parent().get_node("%player") as StaticBody2D
 
 var speed = Vector2(randf_range(250.0, 300.0), 0.0)
+var max_hp = 40
+var curr_hp = max_hp
+
+func take_damage(dmg: int):
+	curr_hp -= dmg
+	if (curr_hp <= 0):
+		queue_free()
 
 func _ready():
 	var ram_scene = load("res://scenes/enemies/enemy_weapons/ram.tscn") as PackedScene

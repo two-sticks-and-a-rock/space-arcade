@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bxqn8riy2auod" path="res://art/sprites/player/playerShip3_blue.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://d02iqtql42dlw" path="res://scenes/player/player.gd" id="1_g2els"]
+[ext_resource type="PackedScene" uid="uid://dqil7iaf3mqvf" path="res://scenes/player/player_weapons/orbiter_ring.tscn" id="2_p47bc"]
 [ext_resource type="Script" uid="uid://cg3xb6odenjtk" path="res://scenes/player/slingshot.gd" id="3_gmlin"]
 [ext_resource type="PackedScene" uid="uid://dqg2sovwx03w3" path="res://scenes/player/player_cam.tscn" id="3_lvxji"]
 
@@ -28,6 +29,7 @@ bg_color = Color(0.29237694, 0.5903247, 0.33716953, 1)
 z_index = 10
 collision_mask = 2
 script = ExtResource("1_g2els")
+orbiter_ring_scene = ExtResource("2_p47bc")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1546061967]
