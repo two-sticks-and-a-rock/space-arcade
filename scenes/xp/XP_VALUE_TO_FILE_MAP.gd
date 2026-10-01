@@ -1,8 +1,10 @@
 extends Node
 
+var GEAR_VALUE = 1
+
 var xp_to_scene_file = {
-	1: { 
-		"value": 1,
+	GEAR_VALUE: { 
+		"value": GEAR_VALUE,
 		"location": "res://scenes/xp/xp_gear.tscn",
 		"name": "gear"
 	}
