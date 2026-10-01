@@ -12,10 +12,10 @@ func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("click"):
 		end_vector = get_global_mouse_position()
 	if Input.is_action_just_released("click"):
-		var slingshot_vector = end_vector
+		var slingshot_vector = -1*end_vector
 		handle_speed(slingshot_vector)
 
 func _physics_process(_delta):
 	clear_points()
 	add_point(Vector2.ZERO, 0)
-	add_point(get_global_mouse_position(), 1)
+	add_point(-1*get_global_mouse_position(), 1)
