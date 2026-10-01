@@ -6,7 +6,7 @@ var speed : float = 0.0
 var velocity
 
 var slingshot_length_clamp = 500
-var speed_mult = 4
+var speed_mult = 3
 
 func reset() -> void:
 	direction = Vector2.ZERO
