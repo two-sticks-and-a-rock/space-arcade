@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d2n8xy8ehp0ps"]
 
 [ext_resource type="Script" uid="uid://d2tt0u6ddlowp" path="res://scenes/menu.gd" id="1_yqeox"]
+[ext_resource type="PackedScene" uid="uid://drh6cl70rtt78" path="res://scenes/restart_button.tscn" id="2_vjb58"]
 
 [node name="Menu" type="CanvasLayer" unique_id=1623096271]
 process_mode = 3
@@ -11,19 +12,6 @@ offset_right = 1919.0
 offset_bottom = 1083.0
 color = Color(0, 0, 0, 0.36862746)
 
-[node name="restart" type="Button" parent="." unique_id=894199735]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -160.0
-offset_top = 82.0
-offset_right = 163.03638
-offset_bottom = 245.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 60
-text = "Restart"
+[node name="restart" parent="." unique_id=1164336806 instance=ExtResource("2_vjb58")]
 
-[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
+[connection signal="restart_game" from="restart" to="." method="_on_restart_button_pressed"]
