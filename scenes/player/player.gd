@@ -6,7 +6,7 @@ signal game_over
 
 @onready var hp_bar : ProgressBar = $hp
 
-var max_hp: int = 100
+var max_hp: int = 500
 var curr_hp: int = max_hp
 
 func _ready():

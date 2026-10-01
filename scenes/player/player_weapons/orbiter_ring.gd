@@ -9,7 +9,7 @@ var dmg = 50
 var size = 10
 var num_orbiters = 2
 var spin_speed = PI/36
-var distance_from_player = 300
+var distance_from_player = 200
 
 func _ready():
 	var child_pos = Vector2(distance_from_player, 0)
@@ -24,8 +24,10 @@ func _on_down_timer_timeout():
 	up_timer.start()
 	down_timer.stop()
 	ring.visible = true
+	ring.process_mode = Node.PROCESS_MODE_INHERIT
 
 func _on_up_timer_timeout():
 	down_timer.start()
 	up_timer.stop()
 	ring.visible = false
+	ring.process_mode = Node.PROCESS_MODE_DISABLED
