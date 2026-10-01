@@ -15,7 +15,8 @@ func _input(_event: InputEvent) -> void:
 		start_vector = get_global_mouse_position()
 		end_vector = start_vector
 	if Input.is_action_pressed("click"):
-		end_vector = get_global_mouse_position()
+		var mouse_pos = get_global_mouse_position()
+		end_vector = mouse_pos.limit_length(Mover.slingshot_length_clamp)
 		clear_points()
 
 		var visible_start_vector = to_local(player.global_position)
