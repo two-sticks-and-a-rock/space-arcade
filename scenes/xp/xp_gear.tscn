@@ -18,6 +18,7 @@ animations = [{
 }]
 
 [node name="XpGear" type="Area2D" unique_id=486585958]
+collision_layer = 16
 script = ExtResource("1_y5ppa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1079333680]
@@ -28,3 +29,5 @@ debug_color = Color(0.74342495, 0.42045522, 0.53199035, 0.41960785)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=575868147]
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_dcs6a")
+
+[connection signal="body_entered" from="." to="." method="_on_gear_entered"]
