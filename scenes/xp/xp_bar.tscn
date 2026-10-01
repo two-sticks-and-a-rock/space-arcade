@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dto3jjxkpeho1"]
+
+[node name="XpBar" type="TextureProgressBar" unique_id=327592141]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 15.0
+grow_horizontal = 2
+value = 100.0

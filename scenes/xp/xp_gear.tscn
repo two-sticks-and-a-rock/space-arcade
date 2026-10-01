@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://oaoj8eb8rbpv"]
+
+[ext_resource type="Texture2D" uid="uid://c0yoxnpfd24u3" path="res://art/sprites/xp/gear_placeholder.png" id="1_t6sfn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcb5e"]
+size = Vector2(66, 66)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dcs6a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_t6sfn")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="XpGear" type="Area2D" unique_id=486585958]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1079333680]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_vcb5e")
+debug_color = Color(0.74342495, 0.42045522, 0.53199035, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=575868147]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_dcs6a")
