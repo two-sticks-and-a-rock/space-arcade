@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dqil7iaf3mqvf" path="res://scenes/player/player_weapons/orbiter_ring.tscn" id="2_p47bc"]
 [ext_resource type="Script" uid="uid://cg3xb6odenjtk" path="res://scenes/player/slingshot.gd" id="3_gmlin"]
 [ext_resource type="PackedScene" uid="uid://dqg2sovwx03w3" path="res://scenes/player/player_cam.tscn" id="3_lvxji"]
+[ext_resource type="PackedScene" uid="uid://dto3jjxkpeho1" path="res://scenes/xp/xp_bar.tscn" id="6_75vfm"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kcn5b"]
 animations = [{
@@ -62,3 +63,12 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_lvxji")
 step = 1.0
 value = 100.0
 show_percentage = false
+
+[node name="XpCanvas" type="CanvasLayer" parent="." unique_id=852667993]
+offset = Vector2(-960, -540)
+transform = Transform2D(1, 0, 0, 1, -960, -540)
+follow_viewport_enabled = true
+
+[node name="XpBar" parent="XpCanvas" unique_id=804379581 instance=ExtResource("6_75vfm")]
+max_value = 1920.0
+value = 1920.0

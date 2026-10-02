@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 @onready var player = get_parent().get_node("%player") as StaticBody2D
 
-var xp_value = 1
-var xp_scene_path : Dictionary = XpValueToFileMap.xp_to_scene_file[1]
+var xp_value = Xp.GEAR_VALUE
+var xp_scene_path : Dictionary = Xp.xp_to_scene_file[xp_value]
 var xp_scene : PackedScene = null
 
 var speed = Vector2(randf_range(250.0, 300.0), 0.0)

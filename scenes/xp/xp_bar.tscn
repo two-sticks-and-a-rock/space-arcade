@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://dto3jjxkpeho1"]
 
-[node name="XpBar" type="TextureProgressBar" unique_id=327592141]
+[ext_resource type="Script" uid="uid://bqktfsfr2ugju" path="res://scenes/xp/xp_bar.gd" id="1_raep5"]
+
+[node name="XpBar" type="ProgressBar" unique_id=804379581]
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 15.0
+offset_bottom = 52.0
 grow_horizontal = 2
+step = 1.0
 value = 100.0
+show_percentage = false
+script = ExtResource("1_raep5")

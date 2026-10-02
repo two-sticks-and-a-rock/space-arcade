@@ -6,6 +6,6 @@ func _physics_process(delta):
 	position -= Mover.get_movement() * delta
 
 func _on_gear_entered(body: Node2D):
-	if (body.name == "player"):
-		# TODO: increase player XP
+	if (body.name == "player" && "gain_xp" in body):
+		body.gain_xp(Xp.GEAR_VALUE)
 		queue_free()		
