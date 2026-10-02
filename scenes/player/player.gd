@@ -6,14 +6,17 @@ signal game_over
 
 @onready var hp_bar : ProgressBar = $hp
 @onready var xp_bar : ProgressBar = $XpCanvas/XpBar
+@onready var level_up_debug : Label = $XpCanvas/XpBar/LevelUpDebug
 
 var max_hp: int = 500
 var curr_hp: int = max_hp
 
 var curr_xp: int = 0
-var xp_threshold : int = 100
+var xp_threshold : int = 100 
 
 func _ready():
+	level_up_debug.visible = false
+
 	hp_bar.max_value = max_hp
 	hp_bar.value = max_hp
 
@@ -30,9 +33,15 @@ func handle_game_over():
 	get_tree().paused = true
 	emit_signal("game_over")
 
+func wait(seconds: float) -> void:
+	await get_tree().create_timer(seconds).timeout
+	level_up_debug.visible = false
+
 func handle_level_up():
 	curr_xp -= max(xp_threshold, 0)
 	xp_threshold = xp_threshold * 2
+	level_up_debug.visible = true
+	wait.call_deferred(4)  
 
 func gain_xp(xp: int):
 	curr_xp += xp
