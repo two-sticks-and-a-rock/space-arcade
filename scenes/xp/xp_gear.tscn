@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://c0yoxnpfd24u3" path="res://art/sprites/xp/gear_placeholder.png" id="1_t6sfn"]
 [ext_resource type="Script" uid="uid://qys1efmg6cg7" path="res://scenes/xp/xp_gear.gd" id="1_y5ppa"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcb5e"]
-size = Vector2(66, 66)
+[sub_resource type="CircleShape2D" id="CircleShape2D_y5ppa"]
+radius = 30.004166
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dcs6a"]
 animations = [{
@@ -19,15 +19,18 @@ animations = [{
 
 [node name="XpGear" type="Area2D" unique_id=486585958]
 collision_layer = 16
+collision_mask = 33
 script = ExtResource("1_y5ppa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1079333680]
 position = Vector2(0, 1.5)
-shape = SubResource("RectangleShape2D_vcb5e")
+shape = SubResource("CircleShape2D_y5ppa")
 debug_color = Color(0.74342495, 0.42045522, 0.53199035, 0.41960785)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=575868147]
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_dcs6a")
 
+[connection signal="area_entered" from="." to="." method="_on_gear_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_gear_area_exited"]
 [connection signal="body_entered" from="." to="." method="_on_gear_entered"]
