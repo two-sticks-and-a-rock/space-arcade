@@ -1,6 +1,6 @@
 extends Node
 
-var GEAR_VALUE = 50
+var GEAR_VALUE = 1
 
 var xp_to_scene_file = {
 	GEAR_VALUE: { 

@@ -59,19 +59,3 @@ follow_viewport_enabled = true
 [node name="XpBar" parent="XpCanvas" unique_id=804379581 instance=ExtResource("6_75vfm")]
 max_value = 1920.0
 value = 1920.0
-
-[node name="LevelUpDebug" type="Label" parent="XpCanvas/XpBar" unique_id=1502129365]
-visible = false
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -235.0
-offset_top = 959.0
-offset_bottom = 1028.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_font_sizes/font_size = 50
-text = "Level Up!"
