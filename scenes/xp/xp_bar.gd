@@ -20,7 +20,6 @@ func _physics_process(delta):
 	position = lerp(position, Vector2.ZERO, 0.1)
 
 	value = curr_xp * step_mult
-	print(step_mult)
 
 func get_next_xp_threshold() -> int:
 	return xp_threshold * 2
@@ -44,5 +43,6 @@ func gain_xp(xp: int):
 		handle_level_up.call_deferred()
 
 func get_visible_step_mult() -> int:
-	# TODO: this might have rounding issues if we're not careful about XP gain spec
+	# TODO: this might have rounding issues if we're not careful 
+	# Also we have viewport width pinned right now, that might not be true later
 	return viewport_width / xp_threshold
