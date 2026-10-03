@@ -26,6 +26,9 @@ radius = 36.05551
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvxji"]
 bg_color = Color(0.29237694, 0.5903247, 0.33716953, 1)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kcn5b"]
+radius = 255.0
+
 [node name="player" type="StaticBody2D" unique_id=1664336922]
 z_index = 10
 collision_mask = 18
@@ -72,3 +75,11 @@ follow_viewport_enabled = true
 [node name="XpBar" parent="XpCanvas" unique_id=804379581 instance=ExtResource("6_75vfm")]
 max_value = 1920.0
 value = 1920.0
+
+[node name="XpMagnet" type="Area2D" parent="." unique_id=1871784061]
+collision_layer = 32
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="XpMagnet" unique_id=1272105766]
+shape = SubResource("CircleShape2D_kcn5b")
+debug_color = Color(0.6044142, 0.5131459, 0.48474836, 0.41960785)
