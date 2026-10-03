@@ -9,9 +9,6 @@ func _physics_process(delta):
 		position = lerp(position, player.global_position, Xp.XP_MAGNET_SPEED)
 
 func _on_gear_entered(body: Node2D):
-	if (body.name == "XpMagnet"):
-		move_to_player = true
-		
 	if (body.name == "player" && "gain_xp" in body):
 		body.gain_xp(Xp.GEAR_VALUE)
 		queue_free()
