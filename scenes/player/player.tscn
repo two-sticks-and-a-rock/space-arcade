@@ -27,7 +27,7 @@ radius = 36.05551
 bg_color = Color(0.29237694, 0.5903247, 0.33716953, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kcn5b"]
-radius = 255.0
+radius = 147.16656
 
 [node name="player" type="StaticBody2D" unique_id=1664336922]
 z_index = 10

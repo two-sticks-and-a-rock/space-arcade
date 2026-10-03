@@ -6,9 +6,11 @@ signal game_over
 
 @onready var hp_bar : ProgressBar = $hp
 @onready var xp_bar : ProgressBar = $XpCanvas/XpBar
+@onready var magnet_collider : CollisionShape2D = $XpMagnet/CollisionShape2D
 
-var max_hp: int = 500
-var curr_hp: int = max_hp
+var max_hp : int = 500
+var curr_hp : int = max_hp
+var magnet_radius : int = 150
 
 func _ready():
 	hp_bar.max_value = max_hp
@@ -16,6 +18,7 @@ func _ready():
 
 	var orbiter_ring = orbiter_ring_scene.instantiate() as Node2D
 	add_child(orbiter_ring)
+	(magnet_collider.shape as CircleShape2D).radius = magnet_radius
 
 func take_damage(dmg: int):
 	curr_hp -= dmg
