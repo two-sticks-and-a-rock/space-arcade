@@ -1,21 +1,10 @@
 [gd_scene format=3 uid="uid://cekmijf83xupg"]
 
-[ext_resource type="Texture2D" uid="uid://bxqn8riy2auod" path="res://art/sprites/player/playerShip3_blue.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://d02iqtql42dlw" path="res://scenes/player/player.gd" id="1_g2els"]
 [ext_resource type="PackedScene" uid="uid://dqil7iaf3mqvf" path="res://scenes/player/player_weapons/orbiter_ring.tscn" id="2_p47bc"]
 [ext_resource type="Script" uid="uid://cg3xb6odenjtk" path="res://scenes/player/slingshot.gd" id="3_gmlin"]
 [ext_resource type="PackedScene" uid="uid://dqg2sovwx03w3" path="res://scenes/player/player_cam.tscn" id="3_lvxji"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_kcn5b"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_3vyb7")
-}],
-"loop": 1,
-"name": &"fly",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://bc6vu7q8joqqq" path="res://art/sprites/player/player_panels_128.svg" id="3_p47bc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gmlin"]
 radius = 36.05551
@@ -32,10 +21,9 @@ script = ExtResource("1_g2els")
 orbiter_ring_scene = ExtResource("2_p47bc")
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1546061967]
-rotation = 1.5707964
-sprite_frames = SubResource("SpriteFrames_kcn5b")
-animation = &"fly"
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1031992017]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_p47bc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=697972149]
 shape = SubResource("CircleShape2D_gmlin")
