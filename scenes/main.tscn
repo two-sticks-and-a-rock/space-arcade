@@ -18,7 +18,7 @@ script = ExtResource("1_jyhfs")
 enemy_scene = ExtResource("2_tbgi4")
 
 [node name="scrolling_background" parent="." unique_id=2059599330 instance=ExtResource("1_sugp2")]
-scroll_offset = Vector2(368, 382)
+scroll_offset = Vector2(-1047, -464)
 
 [node name="player" parent="." unique_id=2109895852 instance=ExtResource("3_jyhfs")]
 unique_name_in_owner = true
