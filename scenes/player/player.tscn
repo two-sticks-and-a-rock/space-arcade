@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dyeikbrn1kse8" path="res://scenes/player/player_weapons/frost_nova/frost_nova.tscn" id="3_qek5x"]
 [ext_resource type="Texture2D" uid="uid://bgnjdc4v5vcgl" path="res://art/sprites/player/engine2.png" id="4_0owmy"]
 [ext_resource type="PackedScene" uid="uid://dto3jjxkpeho1" path="res://scenes/xp/xp_bar.tscn" id="6_75vfm"]
+[ext_resource type="Script" uid="uid://cw3fbrrf4n7ko" path="res://scenes/player/leading_cam.gd" id="8_qek5x"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gmlin"]
 radius = 64.0
@@ -39,7 +40,8 @@ texture = ExtResource("4_0owmy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=697972149]
 shape = SubResource("CircleShape2D_gmlin")
 
-[node name="PlayerCam" parent="." unique_id=366946419 instance=ExtResource("3_lvxji")]
+[node name="PlayerCam" parent="." unique_id=366946419 node_paths=PackedStringArray("leading_cam") instance=ExtResource("3_lvxji")]
+leading_cam = NodePath("../LeadingCam")
 
 [node name="slingshot" type="Line2D" parent="." unique_id=1362438699]
 script = ExtResource("3_gmlin")
@@ -67,9 +69,10 @@ offset = Vector2(-960, -540)
 transform = Transform2D(1, 0, 0, 1, -960, -540)
 follow_viewport_enabled = true
 
-[node name="XpBar" parent="XpCanvas" unique_id=804379581 instance=ExtResource("6_75vfm")]
+[node name="XpBar" parent="XpCanvas" unique_id=804379581 node_paths=PackedStringArray("leading_cam") instance=ExtResource("6_75vfm")]
 max_value = 1920.0
 value = 1920.0
+leading_cam = NodePath("../../LeadingCam")
 
 [node name="XpMagnet" type="Area2D" parent="." unique_id=1871784061]
 collision_layer = 32
@@ -78,3 +81,6 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="XpMagnet" unique_id=1272105766]
 shape = SubResource("CircleShape2D_kcn5b")
 debug_color = Color(0.6044142, 0.5131459, 0.48474836, 0.41960785)
+
+[node name="LeadingCam" type="Node2D" parent="." unique_id=987125613]
+script = ExtResource("8_qek5x")
