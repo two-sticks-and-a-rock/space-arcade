@@ -7,6 +7,7 @@ signal game_over
 @onready var hp_bar : ProgressBar = $hp
 @onready var xp_bar : ProgressBar = $XpCanvas/XpBar
 @onready var magnet_collider : CollisionShape2D = $XpMagnet/CollisionShape2D
+@onready var sprite : Sprite2D = $Sprite2D
 
 var max_hp : int = 500
 var curr_hp : int = max_hp
@@ -31,6 +32,7 @@ func handle_game_over():
 	emit_signal("game_over")
 
 func _physics_process(_delta):
+	sprite.look_at(-1*get_global_mouse_position())
 	hp_bar.value = curr_hp
 	if (curr_hp <= 0):
 		handle_game_over()
