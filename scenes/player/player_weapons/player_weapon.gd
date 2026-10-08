@@ -1,4 +1,6 @@
+class_name PlayerWeapon 
 extends Node2D
+
 @onready var up_timer : Timer = $UpTimer as Timer
 @onready var down_timer : Timer = $DownTimer as Timer
 
