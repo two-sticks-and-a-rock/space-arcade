@@ -1,4 +1,4 @@
-extends Area2D
+extends PlayerBullet
 
 @onready var orbiter_ring = get_parent()
 

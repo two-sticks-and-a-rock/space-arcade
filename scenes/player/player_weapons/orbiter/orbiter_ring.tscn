@@ -10,8 +10,6 @@ dmg = 50
 bullets = 2
 bullet_speed = 0.087
 
-[node name="Ring" type="Node2D" parent="." unique_id=405582111]
-
 [node name="UpTimer" type="Timer" parent="." unique_id=1361644208]
 wait_time = 8.0
 
