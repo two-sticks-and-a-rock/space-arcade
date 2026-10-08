@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://brcw3euscovcr"]
+
+[node name="Upgrade" type="PanelContainer" unique_id=1725094009]
+custom_minimum_size = Vector2(600, 1000)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=546052072]
+custom_minimum_size = Vector2(550, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Name" type="Label" parent="VBoxContainer" unique_id=1218070025]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Name"
+horizontal_alignment = 1
+
+[node name="UpgradeImg" type="TextureRect" parent="VBoxContainer" unique_id=1559121591]
+custom_minimum_size = Vector2(0, 350)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="UpgradeTexts" type="VBoxContainer" parent="VBoxContainer" unique_id=1177514575]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 30
+
+[node name="UpgradeText1" type="Label" parent="VBoxContainer/UpgradeTexts" unique_id=1001692365]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Original Value -> New Value"
+
+[node name="UpgradeText2" type="Label" parent="VBoxContainer/UpgradeTexts" unique_id=1295551719]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Original Value -> New Value"
+
+[node name="UpgradeText3" type="Label" parent="VBoxContainer/UpgradeTexts" unique_id=914099571]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Original Value -> New Value"
