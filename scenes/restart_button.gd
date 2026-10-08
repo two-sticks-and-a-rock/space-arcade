@@ -3,7 +3,7 @@ extends Button
 signal restart_game
 
 func _on_restart_pressed():
-	emit_signal("restart_game")
+	restart_game.emit()
 
 	Mover.reset()
 	get_tree().paused = false

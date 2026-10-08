@@ -29,7 +29,7 @@ func gain_xp(xp: int):
 
 func handle_game_over():
 	get_tree().paused = true
-	emit_signal("game_over")
+	game_over.emit()
 
 func _physics_process(_delta):
 	sprite.look_at(-1*get_global_mouse_position())

@@ -3,14 +3,11 @@ extends ProgressBar
 var xp_threshold : int = 5
 
 @onready var viewport_width = get_viewport().size.x
-@onready var level_up_debug : Label = $LevelUpDebug
 
 var curr_xp : int = 0
 var step_mult : int = 0
 
 func _ready():
-	level_up_debug.visible = false
-
 	max_value = viewport_width
 	value = 0
 	step_mult = get_visible_step_mult()
@@ -30,12 +27,7 @@ func handle_level_up():
 	xp_threshold = get_next_xp_threshold()
 	step_mult = get_visible_step_mult()
 
-	level_up_debug.visible = true
-	wait.call_deferred(4)
-
-func wait(seconds: float) -> void:
-	await get_tree().create_timer(seconds).timeout
-	level_up_debug.visible = false
+	EventBus.level_up.emit()
 
 func gain_xp(xp: int):
 	curr_xp += xp

@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Mover="*uid://dqp8wbinl3xpu"
 Xp="*uid://cd7c8f8imxvwi"
 UpgradeMenu="*uid://dvut5s4vkgs62"
+EventBus="*uid://dd1wjlanhx766"
 
 [display]
 
