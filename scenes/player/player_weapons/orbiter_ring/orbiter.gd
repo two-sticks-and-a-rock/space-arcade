@@ -7,4 +7,4 @@ func _physics_process(_delta):
 
 func _on_orbiter_entered(body: Node2D):
 	if ("take_damage" in body):
-		body.take_damage(orbiter_ring._get_dmg())
+		body.take_damage(orbiter_ring.dmg)
