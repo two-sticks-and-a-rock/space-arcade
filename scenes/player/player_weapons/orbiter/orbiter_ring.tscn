@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://dqil7iaf3mqvf"]
 
 [ext_resource type="Script" uid="uid://p0d44ojp4jaf" path="res://scenes/player/player_weapons/orbiter/orbiter_ring.gd" id="1_cd0fb"]
-[ext_resource type="PackedScene" uid="uid://c37a5i01alcdn" path="res://scenes/player/player_weapons/orbiter/orbiter.tscn" id="2_gpny0"]
+[ext_resource type="PackedScene" uid="uid://c37a5i01alcdn" path="res://scenes/player/player_weapons/orbiter/orbiter.tscn" id="2_ycwcd"]
 
-[node name="OrbiterRing" type="Node2D" unique_id=117958931]
+[node name="OrbiterRing" type="Node2D" unique_id=1448554099]
 script = ExtResource("1_cd0fb")
-orbiter_scene = ExtResource("2_gpny0")
+bullet_scene = ExtResource("2_ycwcd")
 dmg = 50
 bullets = 2
 bullet_speed = 0.087
+metadata/_custom_type_script = "uid://i4comh215wk1"
 
 [node name="UpTimer" type="Timer" parent="." unique_id=1361644208]
 wait_time = 8.0

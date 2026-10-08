@@ -17,10 +17,11 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_fxk38"]
 radius = 52.086468
 
-[node name="Orbiter" type="Area2D" unique_id=887075269]
+[node name="Orbiter" type="Area2D" unique_id=58498802]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_fxk38")
+metadata/_custom_type_script = "uid://dj2r2fdovwio"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1159933868]
 scale = Vector2(0.5, 0.5)
