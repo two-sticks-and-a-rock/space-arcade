@@ -1,12 +1,10 @@
 extends Area2D
 
-
-var dmg = 50
-var spin_speed = PI/36
+@onready var orbiter_ring = get_parent().get_parent()
 
 func _physics_process(_delta):
-	position = Vector2(position).rotated(spin_speed)
+	position = Vector2(position).rotated(orbiter_ring.spin_speed)
 
 func _on_orbiter_entered(body: Node2D):
 	if ("take_damage" in body):
-		body.take_damage(dmg)
+		body.take_damage(orbiter_ring.dmg)
