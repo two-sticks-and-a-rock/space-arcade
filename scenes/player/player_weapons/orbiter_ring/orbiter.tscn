@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c37a5i01alcdn"]
 
 [ext_resource type="Texture2D" uid="uid://c3tnm6dujlkue" path="res://art/sprites/bullets/orbiter_placeholder 2.png" id="1_0r6aq"]
-[ext_resource type="Script" uid="uid://3q5f424e7g40" path="res://scenes/player/player_weapons/orbiter.gd" id="1_fxk38"]
+[ext_resource type="Script" uid="uid://3q5f424e7g40" path="res://scenes/player/player_weapons/orbiter_ring/orbiter.gd" id="1_fxk38"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kcn5b"]
 animations = [{

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dqil7iaf3mqvf"]
 
-[ext_resource type="Script" uid="uid://p0d44ojp4jaf" path="res://scenes/player/player_weapons/orbiter_ring.gd" id="1_cd0fb"]
-[ext_resource type="PackedScene" uid="uid://c37a5i01alcdn" path="res://scenes/player/player_weapons/orbiter.tscn" id="2_gpny0"]
+[ext_resource type="Script" uid="uid://p0d44ojp4jaf" path="res://scenes/player/player_weapons/orbiter_ring/orbiter_ring.gd" id="1_cd0fb"]
+[ext_resource type="PackedScene" uid="uid://c37a5i01alcdn" path="res://scenes/player/player_weapons/orbiter_ring/orbiter.tscn" id="2_gpny0"]
 
 [node name="OrbiterRing" type="Node2D" unique_id=401222779]
 script = ExtResource("1_cd0fb")
