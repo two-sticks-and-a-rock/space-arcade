@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bppmovw26fbil"]
+
+[ext_resource type="Script" uid="uid://dre2xbusnngrs" path="res://scenes/upgrade_menu/upgrade_panel.gd" id="1_f0mv6"]
+[ext_resource type="PackedScene" uid="uid://cveep2sh12bse" path="res://scenes/upgrade_menu/upgrade_mechanic_label.tscn" id="2_vnt6j"]
+
+[node name="UpgradePanel" type="PanelContainer" unique_id=1519019406]
+custom_minimum_size = Vector2(600, 1000)
+script = ExtResource("1_f0mv6")
+mechanic_label_scene = ExtResource("2_vnt6j")
+upgrade_name = "Upgrade Test"
+img_filepath = "res://art/sprites/upgrades/orbiter_3_bullets_placeholder.png"
+mechanics = Array[String](["bullets 2 -> 3", "speed ->", "dmg 123 -> 124"])
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1697429282]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 25
+
+[node name="Name" type="Label" parent="VBoxContainer" unique_id=3502391]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Name"
+horizontal_alignment = 1
+
+[node name="Img" type="TextureRect" parent="VBoxContainer" unique_id=197703797]
+custom_minimum_size = Vector2(500, 400)
+custom_maximum_size = Vector2(-1, 400)
+layout_mode = 2
+stretch_mode = 3
+
+[node name="FlavorText" type="Label" parent="VBoxContainer" unique_id=1981154977]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.62967473, 0.62967473, 0.6296747, 1)
+theme_override_font_sizes/font_size = 30
+text = "Flavor Text"

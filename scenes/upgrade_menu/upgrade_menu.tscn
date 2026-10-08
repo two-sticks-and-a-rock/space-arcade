@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dvut5s4vkgs62"]
+
+[ext_resource type="Script" uid="uid://10krp3hhlyh" path="res://scenes/upgrade_menu/upgrade_menu.gd" id="1_vkj85"]
+
+[node name="UpgradeMenu" type="CanvasLayer" unique_id=1940005870]
+script = ExtResource("1_vkj85")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1536873974]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=964065561]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
