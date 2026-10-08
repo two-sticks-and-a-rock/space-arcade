@@ -11,3 +11,7 @@ extends Node2D
 @onready var down_timer : Timer = $DownTimer as Timer
 
 @export var upgrades : Array[PlayerWeaponUpgrade] = []
+
+func apply_upgrades():
+	for upgrade in upgrades:
+		upgrade._apply_upgrade(self as PlayerWeapon)

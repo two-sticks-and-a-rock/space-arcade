@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bc6vu7q8joqqq" path="res://art/sprites/player/player_panels_128.svg" id="3_p47bc"]
 [ext_resource type="Texture2D" uid="uid://bgnjdc4v5vcgl" path="res://art/sprites/player/engine2.png" id="4_0owmy"]
 [ext_resource type="PackedScene" uid="uid://dto3jjxkpeho1" path="res://scenes/xp/xp_bar.tscn" id="6_75vfm"]
+[ext_resource type="Script" uid="uid://xqjfkj728l4y" path="res://scenes/player/apply_upgrade_debug.gd" id="8_qek5x"]
+[ext_resource type="Script" uid="uid://conl2xhryktja" path="res://scenes/player/player_weapons/base_weapon_upgrades/damage_upgrade.gd" id="9_5gtgg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gmlin"]
 radius = 64.0
@@ -18,6 +20,10 @@ bg_color = Color(0.29237694, 0.5903247, 0.33716953, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kcn5b"]
 radius = 147.16656
+
+[sub_resource type="Resource" id="Resource_qek5x"]
+script = ExtResource("9_5gtgg")
+metadata/_custom_type_script = "uid://conl2xhryktja"
 
 [node name="player" type="StaticBody2D" unique_id=1664336922]
 z_index = 10
@@ -76,3 +82,15 @@ collision_mask = 16
 [node name="CollisionShape2D" type="CollisionShape2D" parent="XpMagnet" unique_id=1272105766]
 shape = SubResource("CircleShape2D_kcn5b")
 debug_color = Color(0.6044142, 0.5131459, 0.48474836, 0.41960785)
+
+[node name="ApplyUpgradeDebug" type="Button" parent="." unique_id=378307227]
+visible = false
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 100
+disabled = true
+text = "apply upgrade"
+script = ExtResource("8_qek5x")
+damage_upgrade = SubResource("Resource_qek5x")
+
+[connection signal="pressed" from="ApplyUpgradeDebug" to="ApplyUpgradeDebug" method="_on_apply_upgrade_debug_pressed"]
