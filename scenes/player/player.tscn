@@ -8,7 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://bgnjdc4v5vcgl" path="res://art/sprites/player/engine2.png" id="4_0owmy"]
 [ext_resource type="PackedScene" uid="uid://dto3jjxkpeho1" path="res://scenes/xp/xp_bar.tscn" id="6_75vfm"]
 [ext_resource type="Script" uid="uid://xqjfkj728l4y" path="res://scenes/player/apply_upgrade_debug.gd" id="8_qek5x"]
-[ext_resource type="Script" uid="uid://conl2xhryktja" path="res://scenes/player/player_weapons/base_weapon_upgrades/damage_upgrade.gd" id="9_5gtgg"]
+[ext_resource type="Resource" uid="uid://dtlsi3wofa5rp" path="res://scenes/player/player_weapons/base_weapon_upgrades/damage_upgrade.tres" id="9_gx1jg"]
+[ext_resource type="Resource" uid="uid://dj4q61r415aab" path="res://scenes/player/player_weapons/base_weapon_upgrades/bullets_upgrade.tres" id="10_gx1jg"]
+[ext_resource type="Resource" uid="uid://lo726hjkik4l" path="res://scenes/player/player_weapons/base_weapon_upgrades/speed_upgrade.tres" id="11_ugbui"]
+[ext_resource type="Resource" uid="uid://cqx0ucw1lk1aa" path="res://scenes/player/player_weapons/base_weapon_upgrades/up_timer_upgrade.tres" id="12_fcs02"]
+[ext_resource type="Resource" uid="uid://bwmju5gwm6yro" path="res://scenes/player/player_weapons/base_weapon_upgrades/down_timer_upgrade.tres" id="13_myrg7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gmlin"]
 radius = 64.0
@@ -20,10 +24,6 @@ bg_color = Color(0.29237694, 0.5903247, 0.33716953, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kcn5b"]
 radius = 147.16656
-
-[sub_resource type="Resource" id="Resource_qek5x"]
-script = ExtResource("9_5gtgg")
-metadata/_custom_type_script = "uid://conl2xhryktja"
 
 [node name="player" type="StaticBody2D" unique_id=1664336922]
 z_index = 10
@@ -75,6 +75,20 @@ follow_viewport_enabled = true
 max_value = 1920.0
 value = 1920.0
 
+[node name="ApplyUpgradeDebug" type="Button" parent="XpCanvas" unique_id=378307227]
+visible = false
+offset_right = 700.0
+offset_bottom = 145.0
+theme_override_font_sizes/font_size = 100
+disabled = true
+text = "apply upgrade"
+script = ExtResource("8_qek5x")
+damage_upgrade = ExtResource("9_gx1jg")
+bullets_upgrade = ExtResource("10_gx1jg")
+speed_upgrade = ExtResource("11_ugbui")
+up_timer_upgrade = ExtResource("12_fcs02")
+down_timer_upgrade = ExtResource("13_myrg7")
+
 [node name="XpMagnet" type="Area2D" parent="." unique_id=1871784061]
 collision_layer = 32
 collision_mask = 16
@@ -83,14 +97,4 @@ collision_mask = 16
 shape = SubResource("CircleShape2D_kcn5b")
 debug_color = Color(0.6044142, 0.5131459, 0.48474836, 0.41960785)
 
-[node name="ApplyUpgradeDebug" type="Button" parent="." unique_id=378307227]
-visible = false
-offset_right = 8.0
-offset_bottom = 8.0
-theme_override_font_sizes/font_size = 100
-disabled = true
-text = "apply upgrade"
-script = ExtResource("8_qek5x")
-damage_upgrade = SubResource("Resource_qek5x")
-
-[connection signal="pressed" from="ApplyUpgradeDebug" to="ApplyUpgradeDebug" method="_on_apply_upgrade_debug_pressed"]
+[connection signal="pressed" from="XpCanvas/ApplyUpgradeDebug" to="XpCanvas/ApplyUpgradeDebug" method="_on_apply_upgrade_debug_pressed"]

@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="DownTimerUpgrade" format=3 uid="uid://bwmju5gwm6yro"]
+
+[ext_resource type="Script" uid="uid://cekrjioayx2iy" path="res://scenes/player/player_weapons/base_weapon_upgrades/down_timer_upgrade.gd" id="1_do1p6"]
+
+[resource]
+script = ExtResource("1_do1p6")

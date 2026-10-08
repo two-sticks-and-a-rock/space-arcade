@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="SpeedUpgrade" format=3 uid="uid://lo726hjkik4l"]
+
+[ext_resource type="Script" uid="uid://btr4mbc3eg11k" path="res://scenes/player/player_weapons/base_weapon_upgrades/speed_upgrade.gd" id="1_gbjqr"]
+
+[resource]
+script = ExtResource("1_gbjqr")

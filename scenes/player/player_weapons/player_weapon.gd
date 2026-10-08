@@ -12,6 +12,7 @@ extends Node2D
 
 @export var upgrades : Array[PlayerWeaponUpgrade] = []
 
-func apply_upgrades():
+func _reset():
 	for upgrade in upgrades:
 		upgrade._apply_upgrade(self as PlayerWeapon)
+	upgrades = []
