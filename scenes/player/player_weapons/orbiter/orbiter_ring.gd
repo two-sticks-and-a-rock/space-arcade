@@ -5,7 +5,12 @@ var distance_from_player = 200
 func _ready():
 	var child_pos = Vector2(distance_from_player, 0)
 	up_timer.start()
+	
+	print(dmg)
+	for upgrade in upgrades:
+		upgrade._apply_upgrade(self as PlayerWeapon)
 
+	print(dmg)
 	for i in bullets:
 		var orbiter = bullet_scene.instantiate() as PlayerBullet
 		orbiter.position = child_pos

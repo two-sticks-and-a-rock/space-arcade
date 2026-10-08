@@ -9,3 +9,5 @@ extends Node2D
 
 @onready var up_timer : Timer = $UpTimer as Timer
 @onready var down_timer : Timer = $DownTimer as Timer
+
+@export var upgrades : Array[PlayerWeaponUpgrade] = []
