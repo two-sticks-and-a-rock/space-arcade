@@ -14,4 +14,4 @@ func _ready():
 
 func _on_player_level_up():
 	visible = true
-	print("on level up")
+	get_tree().paused = true
