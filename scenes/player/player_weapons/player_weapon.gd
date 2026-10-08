@@ -14,5 +14,6 @@ extends Node2D
 
 func _reset():
 	for upgrade in upgrades:
-		upgrade._apply_upgrade(self as PlayerWeapon)
-	upgrades = []
+		if (!upgrade.applied):
+			upgrade._apply_upgrade(self as PlayerWeapon)
+			upgrade.applied = true
