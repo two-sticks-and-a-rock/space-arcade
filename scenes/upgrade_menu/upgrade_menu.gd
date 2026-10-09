@@ -52,7 +52,7 @@ func populate_upgrade_panels():
 		num_displayed += 1
 
 		# Instantiate an upgrade panel and fill in fields
-		var upgrade_panel : Button = upgrade_panel_scene.instantiate() as Button
+		var upgrade_panel : MarginContainer = upgrade_panel_scene.instantiate()
 		
 		upgrade_panel.upgrade_name = possible_upgrade_set.resource_name
 
@@ -62,7 +62,7 @@ func populate_upgrade_panels():
 		for component_upgrade in possible_upgrade_set.upgrades:
 			upgrade_panel.mechanics.append(component_upgrade.resource_name)
 		
-		var _on_pressed = func():
+		upgrade_panel.on_panel_pressed = func():
 			var weapon = upgrade_set_name_to_weapon[possible_upgrade_set.resource_name]
 			weapon.upgrades += possible_upgrade_set.upgrades
 			possible_upgrade_set.applied = true
@@ -71,10 +71,7 @@ func populate_upgrade_panels():
 			if (all_possible_upgrades_length <= 1):
 				hit_max_level = true
 			EventBus.finish_level_up.emit()
-			
-
-		upgrade_panel.pressed.connect(_on_pressed)
-
+		
 		h_container.add_child(upgrade_panel)
 
 
