@@ -13,6 +13,9 @@ extends Node2D
 
 @export var upgrades : Array[PlayerWeaponUpgrade] = []
 
+func _get_upgrade_sets():
+	return []
+
 func _reset():
 	for upgrade in upgrades:
 		if (!upgrade.applied):

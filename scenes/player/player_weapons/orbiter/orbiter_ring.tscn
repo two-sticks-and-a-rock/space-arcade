@@ -12,10 +12,10 @@ bullet_speed = 0.087
 metadata/_custom_type_script = "uid://i4comh215wk1"
 
 [node name="UpTimer" type="Timer" parent="." unique_id=1361644208]
-wait_time = 8.0
+wait_time = 6.0
 
 [node name="DownTimer" type="Timer" parent="." unique_id=2011099929]
-wait_time = 6.0
+wait_time = 8.0
 
 [connection signal="timeout" from="UpTimer" to="." method="_on_up_timer_timeout"]
 [connection signal="timeout" from="DownTimer" to="." method="_on_down_timer_timeout"]
