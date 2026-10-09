@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://cekrjioayx2iy" path="res://scenes/player/player_weapons/base_weapon_upgrades/down_timer_upgrade.gd" id="6_inxn4"]
 [ext_resource type="Script" uid="uid://conl2xhryktja" path="res://scenes/player/player_weapons/base_weapon_upgrades/damage_upgrade.gd" id="7_sxqx5"]
 [ext_resource type="Script" uid="uid://ufajycg1sjlw" path="res://scenes/player/player_weapons/base_weapon_upgrades/bullets_upgrade.gd" id="8_rfiqj"]
+[ext_resource type="Script" uid="uid://cw087kxisrlw" path="res://scenes/player/player_weapons/base_weapon_upgrades/bullet_size_upgrade.gd" id="9_rfiqj"]
 
 [sub_resource type="Resource" id="Resource_inxn4"]
 script = ExtResource("5_tippe")
@@ -49,10 +50,15 @@ metadata/_custom_type_script = "uid://conl2xhryktja"
 script = ExtResource("8_rfiqj")
 metadata/_custom_type_script = "uid://ufajycg1sjlw"
 
+[sub_resource type="Resource" id="Resource_q4vif"]
+script = ExtResource("9_rfiqj")
+bullet_size_increase = 1.5
+metadata/_custom_type_script = "uid://cw087kxisrlw"
+
 [sub_resource type="Resource" id="Resource_oite6"]
 resource_name = "Even More Bullets"
 script = ExtResource("3_qgt3p")
-upgrades = Array[ExtResource("4_x6mqk")]([SubResource("Resource_vkj85"), SubResource("Resource_credd")])
+upgrades = Array[ExtResource("4_x6mqk")]([SubResource("Resource_vkj85"), SubResource("Resource_credd"), SubResource("Resource_q4vif")])
 metadata/_custom_type_script = "uid://5a85bdwnpkwx"
 
 [node name="OrbiterRing" type="Node2D" unique_id=1448554099]
@@ -61,6 +67,7 @@ bullet_scene = ExtResource("2_ycwcd")
 dmg = 50
 bullets = 2
 bullet_speed = 0.087
+bullet_size = 0.5
 possible_upgrade_sets = Array[ExtResource("3_qgt3p")]([SubResource("Resource_ycwcd"), SubResource("Resource_jwv4o"), SubResource("Resource_oite6")])
 metadata/_custom_type_script = "uid://i4comh215wk1"
 

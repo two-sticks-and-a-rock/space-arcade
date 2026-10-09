@@ -16,6 +16,7 @@ func new_orbiter():
 	for i in bullets:
 		var orbiter = bullet_scene.instantiate() as PlayerBullet
 		orbiter.position = child_pos
+		orbiter.bullet_scale = Vector2(bullet_size, bullet_size)
 		add_child(orbiter)
 		child_pos = child_pos.rotated(2*PI / bullets)
 		current_bullets.append(orbiter)
