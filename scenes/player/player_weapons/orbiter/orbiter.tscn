@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c37a5i01alcdn"]
 
 [ext_resource type="Texture2D" uid="uid://c3tnm6dujlkue" path="res://art/sprites/bullets/orbiter_placeholder 2.png" id="1_0r6aq"]
-[ext_resource type="Script" uid="uid://3q5f424e7g40" path="res://scenes/player/player_weapons/orbiter.gd" id="1_fxk38"]
+[ext_resource type="Script" uid="uid://3q5f424e7g40" path="res://scenes/player/player_weapons/orbiter/orbiter.gd" id="1_fxk38"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kcn5b"]
 animations = [{
@@ -15,15 +15,15 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fxk38"]
-radius = 52.086468
+radius = 105.076164
 
-[node name="Orbiter" type="Area2D" unique_id=188714646]
+[node name="Orbiter" type="Area2D" unique_id=662370399]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_fxk38")
+metadata/_custom_type_script = "uid://coecmsj6c3pm2"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1159933868]
-scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_kcn5b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=975077890]

@@ -1,12 +1,4 @@
-extends Area2D
-
-
-var dmg = 50
-var spin_speed = PI/36
+extends PlayerBullet
 
 func _physics_process(_delta):
-	position = Vector2(position).rotated(spin_speed)
-
-func _on_orbiter_entered(body: Node2D):
-	if ("take_damage" in body):
-		body.take_damage(dmg)
+	position = Vector2(position).rotated(weapon.bullet_speed)

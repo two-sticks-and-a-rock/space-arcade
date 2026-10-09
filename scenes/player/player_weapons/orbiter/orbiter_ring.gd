@@ -1,17 +1,18 @@
 extends PlayerWeapon
 
-var spin_speed = PI/36
 var distance_from_player = 200
 
 func _ready():
 	up_timer.start()
 
 	var child_pos = Vector2(distance_from_player, 0)
-	for i in bullets:
+	for i in num_bullets:
 		var orbiter = bullet_scene.instantiate() as Area2D
 		orbiter.position = child_pos
+
+		orbiter._scale_bullet(Vector2(bullet_size, bullet_size))
 		add_child(orbiter)
-		child_pos = child_pos.rotated(2*PI / bullets)
+		child_pos = child_pos.rotated(2*PI / num_bullets)
 
 func _on_down_timer_timeout():
 	up_timer.start()

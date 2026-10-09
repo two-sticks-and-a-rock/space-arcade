@@ -4,7 +4,7 @@ extends Node2D
 @export var bullet_scene : PackedScene
 
 @export var dmg: int
-@export var bullets: int
+@export var num_bullets: int
 @export var bullet_speed: float
 @export var bullet_size: float
 
