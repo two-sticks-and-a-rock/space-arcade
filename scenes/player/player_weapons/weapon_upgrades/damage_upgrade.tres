@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="DamageUpgrade" format=3 uid="uid://dkgeybgnlkex2"]
+
+[ext_resource type="Script" uid="uid://cfgllll1jbmru" path="res://scenes/player/player_weapons/weapon_upgrades/damage_upgrade.gd" id="1_lwsw7"]
+
+[resource]
+script = ExtResource("1_lwsw7")

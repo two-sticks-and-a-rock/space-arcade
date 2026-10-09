@@ -3,6 +3,7 @@ extends PlayerWeapon
 var distance_from_player = 200
 
 func _ready():
+	super()
 	up_timer.start()
 
 	var child_pos = Vector2(distance_from_player, 0)
@@ -26,7 +27,7 @@ func _on_down_timer_timeout():
 func _on_up_timer_timeout():
 	down_timer.start()
 	up_timer.stop()
-	
+
 	for child in get_children():
 		if child is Area2D:
 			child.visible = false

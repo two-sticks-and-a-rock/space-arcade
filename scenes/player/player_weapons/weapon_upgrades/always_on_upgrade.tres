@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="AlwaysOnUpgrade" format=3 uid="uid://botvan6vwd1so"]
+
+[ext_resource type="Script" uid="uid://bfs62i05gnbfo" path="res://scenes/player/player_weapons/weapon_upgrades/always_on_upgrade.gd" id="1_fjjnm"]
+
+[resource]
+script = ExtResource("1_fjjnm")

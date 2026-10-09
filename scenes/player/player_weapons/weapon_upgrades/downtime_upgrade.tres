@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="DowntimeUpgrade" format=3 uid="uid://c0ogjxcra1cko"]
+
+[ext_resource type="Script" uid="uid://jd2xcnw1xep3" path="res://scenes/player/player_weapons/weapon_upgrades/downtime_upgrade.gd" id="1_aocg7"]
+
+[resource]
+script = ExtResource("1_aocg7")
