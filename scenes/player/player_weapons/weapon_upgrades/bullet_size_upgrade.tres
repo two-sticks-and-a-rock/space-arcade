@@ -1,7 +1,0 @@
-[gd_resource type="Resource" script_class="BulletSizeUpgrade" format=3 uid="uid://bo8qrlpaofqw1"]
-
-[ext_resource type="Script" uid="uid://c0owbkeruir2v" path="res://scenes/player/player_weapons/weapon_upgrades/bullet_size_upgrade.gd" id="1_3s1ln"]
-
-[resource]
-script = ExtResource("1_3s1ln")
-metadata/_custom_type_script = "uid://c0owbkeruir2v"

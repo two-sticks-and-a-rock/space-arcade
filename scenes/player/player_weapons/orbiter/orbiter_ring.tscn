@@ -2,6 +2,120 @@
 
 [ext_resource type="Script" uid="uid://p0d44ojp4jaf" path="res://scenes/player/player_weapons/orbiter/orbiter_ring.gd" id="1_cd0fb"]
 [ext_resource type="PackedScene" uid="uid://c37a5i01alcdn" path="res://scenes/player/player_weapons/orbiter/orbiter.tscn" id="2_gpny0"]
+[ext_resource type="Script" uid="uid://cv1cwxelnr7jm" path="res://scenes/player/player_weapons/weapon_upgrades/weapon_upgrade_set.gd" id="3_tippe"]
+[ext_resource type="Script" uid="uid://dh8gni2x2uubt" path="res://scenes/player/player_weapons/weapon_upgrades/weapon_upgrade.gd" id="3_x6mqk"]
+[ext_resource type="Script" uid="uid://c0owbkeruir2v" path="res://scenes/player/player_weapons/weapon_upgrades/bullet_size_upgrade.gd" id="4_jwv4o"]
+[ext_resource type="Script" uid="uid://cfgllll1jbmru" path="res://scenes/player/player_weapons/weapon_upgrades/damage_upgrade.gd" id="4_tippe"]
+[ext_resource type="Script" uid="uid://dtutoa66ihr48" path="res://scenes/player/player_weapons/weapon_upgrades/num_bullets_upgrade.gd" id="4_x6mqk"]
+[ext_resource type="Script" uid="uid://jd2xcnw1xep3" path="res://scenes/player/player_weapons/weapon_upgrades/downtime_upgrade.gd" id="5_jwv4o"]
+[ext_resource type="Script" uid="uid://7aipbw1b1m47" path="res://scenes/player/player_weapons/weapon_upgrades/uptime_upgrade.gd" id="6_inxn4"]
+[ext_resource type="Script" uid="uid://bfs62i05gnbfo" path="res://scenes/player/player_weapons/weapon_upgrades/always_on_upgrade.gd" id="10_er65o"]
+[ext_resource type="Script" uid="uid://bwfv8jqyb0kx7" path="res://scenes/player/player_weapons/weapon_upgrades/bullet_speed_upgrade.gd" id="10_vxvyc"]
+
+[sub_resource type="Resource" id="Resource_qgt3p"]
+resource_name = "Downtime: 8s → 7s"
+script = ExtResource("5_jwv4o")
+downtimer_decrease = 1.0
+metadata/_custom_type_script = "uid://jd2xcnw1xep3"
+
+[sub_resource type="Resource" id="Resource_jwv4o"]
+resource_name = "Uptime: 6s → 7s"
+script = ExtResource("6_inxn4")
+uptimer_increase = 1.0
+metadata/_custom_type_script = "uid://7aipbw1b1m47"
+
+[sub_resource type="Resource" id="Resource_ycwcd"]
+resource_name = "Upgraded cooldown"
+script = ExtResource("3_tippe")
+upgrades = Array[ExtResource("3_x6mqk")]([SubResource("Resource_qgt3p"), SubResource("Resource_jwv4o")])
+
+[sub_resource type="Resource" id="Resource_6d4r7"]
+resource_name = "Damage: 50 → 75"
+script = ExtResource("4_tippe")
+
+[sub_resource type="Resource" id="Resource_246l1"]
+resource_name = "Size: 1.5x size"
+script = ExtResource("4_jwv4o")
+bullet_size_increase = 1.5
+metadata/_custom_type_script = "uid://c0owbkeruir2v"
+
+[sub_resource type="Resource" id="Resource_mjay7"]
+resource_name = "Bullets: 2 → 3"
+script = ExtResource("4_x6mqk")
+metadata/_custom_type_script = "uid://dtutoa66ihr48"
+
+[sub_resource type="Resource" id="Resource_tippe"]
+resource_name = "More bullets"
+script = ExtResource("3_tippe")
+upgrades = Array[ExtResource("3_x6mqk")]([SubResource("Resource_6d4r7"), SubResource("Resource_246l1"), SubResource("Resource_mjay7")])
+
+[sub_resource type="Resource" id="Resource_er65o"]
+resource_name = "Damage: 75 → 100"
+script = ExtResource("4_tippe")
+metadata/_custom_type_script = "uid://cfgllll1jbmru"
+
+[sub_resource type="Resource" id="Resource_vxvyc"]
+resource_name = "Size: 3x size"
+script = ExtResource("4_jwv4o")
+bullet_size_increase = 2.0
+metadata/_custom_type_script = "uid://c0owbkeruir2v"
+
+[sub_resource type="Resource" id="Resource_qot2w"]
+resource_name = "Bullets: 3 → 4"
+script = ExtResource("4_x6mqk")
+metadata/_custom_type_script = "uid://dtutoa66ihr48"
+
+[sub_resource type="Resource" id="Resource_inxn4"]
+resource_name = "Even more bullets"
+script = ExtResource("3_tippe")
+upgrades = Array[ExtResource("3_x6mqk")]([SubResource("Resource_er65o"), SubResource("Resource_vxvyc"), SubResource("Resource_qot2w")])
+
+[sub_resource type="Resource" id="Resource_epeq1"]
+resource_name = "Uptime: 7s → 10s"
+script = ExtResource("6_inxn4")
+uptimer_increase = 3.0
+metadata/_custom_type_script = "uid://7aipbw1b1m47"
+
+[sub_resource type="Resource" id="Resource_p3mfa"]
+resource_name = "Downtime: 7s → 5s"
+script = ExtResource("5_jwv4o")
+metadata/_custom_type_script = "uid://jd2xcnw1xep3"
+
+[sub_resource type="Resource" id="Resource_ef5g3"]
+resource_name = "Speed: 0.5 rev/s → 1 rev/s"
+script = ExtResource("10_vxvyc")
+bullet_speed_increase = 2.0
+
+[sub_resource type="Resource" id="Resource_sxqx5"]
+resource_name = "Faster bullets"
+script = ExtResource("3_tippe")
+upgrades = Array[ExtResource("3_x6mqk")]([SubResource("Resource_epeq1"), SubResource("Resource_p3mfa"), SubResource("Resource_ef5g3")])
+
+[sub_resource type="Resource" id="Resource_imrws"]
+resource_name = "Damage: 100 → 150"
+script = ExtResource("4_tippe")
+damage_increase = 50
+metadata/_custom_type_script = "uid://cfgllll1jbmru"
+
+[sub_resource type="Resource" id="Resource_vdvxc"]
+resource_name = "Bullets: 4 → 8"
+script = ExtResource("4_x6mqk")
+num_bullets_increase = 4
+metadata/_custom_type_script = "uid://dtutoa66ihr48"
+
+[sub_resource type="Resource" id="Resource_rfiqj"]
+resource_name = "Double bullets"
+script = ExtResource("3_tippe")
+upgrades = Array[ExtResource("3_x6mqk")]([SubResource("Resource_imrws"), SubResource("Resource_vdvxc")])
+
+[sub_resource type="Resource" id="Resource_0yjdd"]
+resource_name = "Bullets always up"
+script = ExtResource("10_er65o")
+
+[sub_resource type="Resource" id="Resource_fonbn"]
+resource_name = "Always on bullets"
+script = ExtResource("3_tippe")
+upgrades = Array[ExtResource("3_x6mqk")]([SubResource("Resource_0yjdd")])
 
 [node name="OrbiterRing" type="Node2D" unique_id=401222779]
 script = ExtResource("1_cd0fb")
@@ -10,6 +124,7 @@ dmg = 50
 num_bullets = 2
 bullet_speed = 0.087
 bullet_size = 0.5
+possible_upgrade_sets = Array[ExtResource("3_tippe")]([SubResource("Resource_ycwcd"), SubResource("Resource_tippe"), SubResource("Resource_inxn4"), SubResource("Resource_sxqx5"), SubResource("Resource_rfiqj"), SubResource("Resource_fonbn")])
 
 [node name="UpTimer" type="Timer" parent="." unique_id=1361644208]
 wait_time = 6.0

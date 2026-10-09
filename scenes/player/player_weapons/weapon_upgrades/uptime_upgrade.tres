@@ -1,6 +1,0 @@
-[gd_resource type="Resource" script_class="UptimeUpgrade" format=3 uid="uid://b3q0d2igbjfb2"]
-
-[ext_resource type="Script" uid="uid://7aipbw1b1m47" path="res://scenes/player/player_weapons/weapon_upgrades/uptime_upgrade.gd" id="1_e3hcw"]
-
-[resource]
-script = ExtResource("1_e3hcw")
