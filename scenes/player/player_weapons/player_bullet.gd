@@ -8,7 +8,6 @@ extends Area2D
 var bullet_scale: Vector2 = Vector2.ONE
 
 func _ready():
-    print(bullet_scale)
     sprite.scale = bullet_scale
     collider.scale = bullet_scale
 
