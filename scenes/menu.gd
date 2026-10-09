@@ -6,6 +6,7 @@ var prevent_input = false
 
 func _ready():
 	EventBus.level_up.connect(_on_player_level_up)
+	EventBus.finish_level_up.connect(_on_player_finish_level_up)
 
 func _input(_event: InputEvent) -> void:
 	if (prevent_input): 
@@ -17,6 +18,9 @@ func _input(_event: InputEvent) -> void:
 
 func _on_player_level_up():
 	prevent_input = true
+
+func _on_player_finish_level_up():
+	prevent_input = false
 
 func _on_restart_button_pressed():
 	main.free_enemies()
