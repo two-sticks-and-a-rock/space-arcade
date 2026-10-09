@@ -10,7 +10,7 @@ var step_mult : int = 0
 func _ready():
 	max_value = viewport_width
 	value = 0
-	step_mult = get_visible_step_mult()
+	set_visible_step_mult()
 
 func _physics_process(delta):
 	position -= Mover.get_movement()*delta
@@ -18,14 +18,14 @@ func _physics_process(delta):
 
 	value = curr_xp * step_mult
 
-func get_next_xp_threshold() -> int:
-	return xp_threshold * 2
+func set_next_xp_threshold() -> void:
+	xp_threshold = xp_threshold * 2
 
 func handle_level_up():
 	curr_xp -= max(xp_threshold, 0)
 
-	xp_threshold = get_next_xp_threshold()
-	step_mult = get_visible_step_mult()
+	set_next_xp_threshold.call_deferred()
+	set_visible_step_mult.call_deferred()
 
 	EventBus.level_up.emit()
 
@@ -34,7 +34,7 @@ func gain_xp(xp: int):
 	if (curr_xp >= xp_threshold):
 		handle_level_up.call_deferred()
 
-func get_visible_step_mult() -> int:
+func set_visible_step_mult() -> void:
 	# TODO: this might have rounding issues if we're not careful 
 	# Also we have viewport width pinned right now, that might not be true later
-	return viewport_width / xp_threshold
+	step_mult = viewport_width / xp_threshold
