@@ -12,9 +12,7 @@ extends Node2D
 @onready var down_timer : Timer = $DownTimer as Timer
 
 @export var upgrades : Array[PlayerWeaponUpgrade] = []
-
-func _get_upgrade_sets():
-	return []
+@export var possible_upgrade_sets : Array[WeaponUpgradeSet] = []
 
 func _reset():
 	for upgrade in upgrades:

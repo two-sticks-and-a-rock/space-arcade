@@ -2,6 +2,43 @@
 
 [ext_resource type="Script" uid="uid://p0d44ojp4jaf" path="res://scenes/player/player_weapons/orbiter/orbiter_ring.gd" id="1_cd0fb"]
 [ext_resource type="PackedScene" uid="uid://c37a5i01alcdn" path="res://scenes/player/player_weapons/orbiter/orbiter.tscn" id="2_ycwcd"]
+[ext_resource type="Script" uid="uid://5a85bdwnpkwx" path="res://scenes/player/player_weapons/base_weapon_upgrades/weapon_upgrade_set.gd" id="3_qgt3p"]
+[ext_resource type="Script" uid="uid://c8cfphtmg8jsu" path="res://scenes/player/player_weapons/player_weapon_upgrade.gd" id="4_x6mqk"]
+[ext_resource type="Script" uid="uid://cpk5v0k20v84p" path="res://scenes/player/player_weapons/base_weapon_upgrades/up_timer_upgrade.gd" id="5_tippe"]
+[ext_resource type="Script" uid="uid://cekrjioayx2iy" path="res://scenes/player/player_weapons/base_weapon_upgrades/down_timer_upgrade.gd" id="6_inxn4"]
+[ext_resource type="Script" uid="uid://conl2xhryktja" path="res://scenes/player/player_weapons/base_weapon_upgrades/damage_upgrade.gd" id="7_sxqx5"]
+[ext_resource type="Script" uid="uid://ufajycg1sjlw" path="res://scenes/player/player_weapons/base_weapon_upgrades/bullets_upgrade.gd" id="8_rfiqj"]
+
+[sub_resource type="Resource" id="Resource_inxn4"]
+script = ExtResource("5_tippe")
+up_timer_increase = 1.0
+metadata/_custom_type_script = "uid://cpk5v0k20v84p"
+
+[sub_resource type="Resource" id="Resource_sxqx5"]
+script = ExtResource("6_inxn4")
+down_timer_decrease = 1.0
+metadata/_custom_type_script = "uid://cekrjioayx2iy"
+
+[sub_resource type="Resource" id="Resource_ycwcd"]
+resource_name = "Better Cooldown"
+script = ExtResource("3_qgt3p")
+upgrades = Array[ExtResource("4_x6mqk")]([SubResource("Resource_inxn4"), SubResource("Resource_sxqx5")])
+metadata/_custom_type_script = "uid://5a85bdwnpkwx"
+
+[sub_resource type="Resource" id="Resource_er65o"]
+script = ExtResource("7_sxqx5")
+dmg_increase = 25
+metadata/_custom_type_script = "uid://conl2xhryktja"
+
+[sub_resource type="Resource" id="Resource_vxvyc"]
+script = ExtResource("8_rfiqj")
+metadata/_custom_type_script = "uid://ufajycg1sjlw"
+
+[sub_resource type="Resource" id="Resource_jwv4o"]
+resource_name = "More Bullets"
+script = ExtResource("3_qgt3p")
+upgrades = Array[ExtResource("4_x6mqk")]([SubResource("Resource_er65o"), SubResource("Resource_vxvyc")])
+metadata/_custom_type_script = "uid://5a85bdwnpkwx"
 
 [node name="OrbiterRing" type="Node2D" unique_id=1448554099]
 script = ExtResource("1_cd0fb")
@@ -9,6 +46,7 @@ bullet_scene = ExtResource("2_ycwcd")
 dmg = 50
 bullets = 2
 bullet_speed = 0.087
+possible_upgrade_sets = Array[ExtResource("3_qgt3p")]([SubResource("Resource_ycwcd"), SubResource("Resource_jwv4o")])
 metadata/_custom_type_script = "uid://i4comh215wk1"
 
 [node name="UpTimer" type="Timer" parent="." unique_id=1361644208]

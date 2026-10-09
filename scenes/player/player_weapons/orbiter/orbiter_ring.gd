@@ -4,46 +4,6 @@ var distance_from_player = 200
 
 var current_bullets : Array[PlayerBullet]
 
-func _get_upgrade_sets():
-	return [
-	{
-		"name": "Better Time",
-		"component_upgrades": [
-			{
-				"label": "Uptime 6s -> 7s (+1s)",
-				"resource": UpTimerUpgrade,
-				# "resource": "res://scenes/player/player_weapons/base_weapon_upgrades/up_timer_upgrade.tres",
-				"value": 1,
-			},
-			{
-				"label": "Downtime 8s -> 7s (-1s)",
-				# "resource": "res://scenes/player/player_weapons/base_weapon_upgrades/down_timer_upgrade.tres",
-				"resource": DownTimerUpgrade,
-				"value": 1,
-			},
-		],
-		"applied": false
-	},
-	{
-		"name": "More Bullets",
-		"component_upgrades": [
-			{
-				"label": "Damage 50 -> 75 (+25)",
-				"resource": DamageUpgrade,
-				# "resource": "res://scenes/player/player_weapons/base_weapon_upgrades/down_timer_upgrade.tres",
-				"value": 25,
-			},
-			{
-				"label": "Asteroids 2 -> 3 (+1)",
-				"resource": BulletsUpgrade,
-				# "resource": "res://scenes/player/player_weapons/base_weapon_upgrades/down_timer_upgrade.tres",
-				"value": 1,
-			},
-		],
-		"applied": false
-	},
-]
-
 func new_orbiter():
 	up_timer.start()
 
