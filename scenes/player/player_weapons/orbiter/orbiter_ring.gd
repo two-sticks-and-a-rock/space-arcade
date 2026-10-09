@@ -20,11 +20,12 @@ func new_orbiter():
 		child_pos = child_pos.rotated(2*PI / bullets)
 		current_bullets.append(orbiter)
 
-func _reset():
+func _reload():
 	super()
 	new_orbiter()
 
 func _ready():
+	super()
 	new_orbiter()
 
 func _on_down_timer_timeout():

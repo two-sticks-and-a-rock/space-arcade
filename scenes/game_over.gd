@@ -3,6 +3,8 @@ extends CanvasLayer
 @onready var main = get_parent()
 
 func _ready():
+	EventBus.restart_game.connect(_on_restart_button_pressed)
+	
 	visible = false
 
 func _on_restart_button_pressed():

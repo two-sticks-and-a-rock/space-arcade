@@ -14,4 +14,4 @@ func _on_apply_upgrade_debug_pressed():
 	# orbiter_ring.upgrades.append(speed_upgrade)
 	# orbiter_ring.upgrades.append(up_timer_upgrade)
 	# orbiter_ring.upgrades.append(down_timer_upgrade)
-	orbiter_ring._reset()
+	orbiter_ring._reload()

@@ -14,8 +14,20 @@ extends Node2D
 @export var upgrades : Array[PlayerWeaponUpgrade] = []
 @export var possible_upgrade_sets : Array[WeaponUpgradeSet] = []
 
-func _reset():
+func _reset_weapon():
+	for upgrade in upgrades:
+		upgrade._remove_upgrade(self as PlayerWeapon)
+		upgrade.applied = false
+
+	upgrades = [] as Array[PlayerWeaponUpgrade]
+	for possible_upgrade_set in possible_upgrade_sets:
+		possible_upgrade_set.applied = false
+
+func _reload():
 	for upgrade in upgrades:
 		if (!upgrade.applied):
 			upgrade._apply_upgrade(self as PlayerWeapon)
 			upgrade.applied = true
+
+func _ready():
+	EventBus.restart_game.connect(_reset_weapon)

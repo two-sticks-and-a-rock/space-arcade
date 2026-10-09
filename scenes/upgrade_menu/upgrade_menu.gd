@@ -8,7 +8,11 @@ var hit_max_level : bool = false
 func _ready():
 	EventBus.level_up.connect(_on_player_level_up)
 	EventBus.finish_level_up.connect(_on_player_finish_level_up)
+	EventBus.restart_game.connect(_on_restart)
 	visible = false
+
+func _on_restart():
+	hit_max_level = false
 	
 func clear_upgrade_panels():
 	for child in h_container.get_children():
@@ -67,7 +71,7 @@ func populate_upgrade_panels():
 			weapon.upgrades += possible_upgrade_set.upgrades
 			possible_upgrade_set.applied = true
 
-			weapon._reset()
+			weapon._reload()
 			if (all_possible_upgrades_length <= 1):
 				hit_max_level = true
 			EventBus.finish_level_up.emit()

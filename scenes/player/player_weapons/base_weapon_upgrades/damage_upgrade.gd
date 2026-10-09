@@ -5,3 +5,6 @@ extends PlayerWeaponUpgrade
 
 func _apply_upgrade(weapon: PlayerWeapon):
     weapon.dmg += dmg_increase
+
+func _remove_upgrade(weapon: PlayerWeapon):
+    weapon.dmg -= dmg_increase

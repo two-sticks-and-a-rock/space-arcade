@@ -5,3 +5,6 @@ extends PlayerWeaponUpgrade
 
 func _apply_upgrade(weapon: PlayerWeapon):
     weapon.down_timer.wait_time -= down_timer_decrease
+
+func _remove_upgrade(weapon: PlayerWeapon):
+    weapon.down_timer.wait_time += down_timer_decrease
