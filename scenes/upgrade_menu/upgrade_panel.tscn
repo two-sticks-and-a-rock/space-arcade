@@ -4,6 +4,7 @@
 
 [node name="UpgradePanel" type="MarginContainer" unique_id=1923112390]
 process_mode = 2
+z_index = 10
 custom_minimum_size = Vector2(600, 1000)
 offset_right = 600.0
 offset_bottom = 1000.0
@@ -36,3 +37,4 @@ theme_override_font_sizes/font_size = 30
 
 [node name="Button" type="Button" parent="." unique_id=2011456472]
 layout_mode = 2
+flat = true

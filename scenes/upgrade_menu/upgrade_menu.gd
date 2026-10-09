@@ -12,7 +12,7 @@ func _ready():
 	
 func clear_upgrade_panels():
 	for child in h_container.get_children():
-		if child is Button:
+		if child is MarginContainer:
 			child.queue_free()
 	
 func populate_upgrade_panels():
@@ -47,7 +47,7 @@ func populate_upgrade_panels():
 
 	var num_displayed = 0
 	for possible_upgrade_set in possible_upgrade_sets:
-		if (num_displayed == 3):
+		if (num_displayed >= 3):
 			break
 		num_displayed += 1
 
@@ -79,11 +79,11 @@ func _on_player_level_up():
 	if (hit_max_level):
 		return
 
-	populate_upgrade_panels()
+	populate_upgrade_panels.call_deferred()
 	visible = true
 	get_tree().paused = true
 
 func _on_player_finish_level_up():
-	clear_upgrade_panels()
+	clear_upgrade_panels.call_deferred()
 	visible = false
 	get_tree().paused = false
