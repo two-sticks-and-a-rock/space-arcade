@@ -33,5 +33,3 @@ theme_override_font_sizes/font_size = 150
 text = "Game Over"
 
 [node name="restart" parent="." unique_id=1164336806 instance=ExtResource("2_wqhvx")]
-
-[connection signal="restart_game" from="restart" to="." method="_on_restart_button_pressed"]

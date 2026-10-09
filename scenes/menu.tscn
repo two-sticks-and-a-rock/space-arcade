@@ -13,5 +13,3 @@ offset_bottom = 1083.0
 color = Color(0, 0, 0, 0.36862746)
 
 [node name="restart" parent="." unique_id=1164336806 instance=ExtResource("2_vjb58")]
-
-[connection signal="restart_game" from="restart" to="." method="_on_restart_button_pressed"]

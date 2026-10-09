@@ -8,6 +8,9 @@ var velocity
 var slingshot_length_clamp = 500
 var speed_mult = 3
 
+func _ready():
+	EventBus.restart_game.connect(reset)
+
 func reset() -> void:
 	direction = Vector2.ZERO
 	speed = 0.0

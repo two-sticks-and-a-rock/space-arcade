@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Mover="*uid://dqp8wbinl3xpu"
 Xp="*uid://cd7c8f8imxvwi"
+EventBus="*uid://b3fy4wnc1mgce"
 
 [display]
 
