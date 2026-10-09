@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://b4o0n34uwel0d"]
 
-[ext_resource type="Script" uid="uid://dljd3x1xw8ddi" path="res://scenes/game_over.gd" id="1_xeevv"]
-[ext_resource type="PackedScene" uid="uid://drh6cl70rtt78" path="res://scenes/restart_button.tscn" id="2_wqhvx"]
+[ext_resource type="Script" uid="uid://dljd3x1xw8ddi" path="res://scenes/ui/game_over.gd" id="1_fu4wh"]
+[ext_resource type="PackedScene" uid="uid://drh6cl70rtt78" path="res://scenes/ui/restart_button.tscn" id="2_x6o8e"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tefeu"]
 bg_color = Color(0.25565916, 0.2556586, 0.25565886, 0.6901961)
 
 [node name="GameOver" type="CanvasLayer" unique_id=922977592]
-script = ExtResource("1_xeevv")
+script = ExtResource("1_fu4wh")
 
 [node name="Panel" type="Panel" parent="." unique_id=1787029597]
 anchors_preset = 15
@@ -32,4 +32,4 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 150
 text = "Game Over"
 
-[node name="restart" parent="." unique_id=1164336806 instance=ExtResource("2_wqhvx")]
+[node name="restart" parent="." unique_id=1164336806 instance=ExtResource("2_x6o8e")]

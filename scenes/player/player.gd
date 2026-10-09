@@ -1,7 +1,5 @@
 extends StaticBody2D
 
-signal game_over
-
 @export var orbiter_ring_scene : PackedScene
 
 @onready var hp_bar : ProgressBar = $hp
@@ -28,13 +26,12 @@ func gain_xp(xp: int):
 	xp_bar.gain_xp(xp)
 
 func handle_game_over():
-	get_tree().paused = true
-	emit_signal("game_over")
+	EventBus.game_over.emit()
 
 func _physics_process(_delta):
 	sprite.look_at(-1*get_global_mouse_position())
 	hp_bar.value = curr_hp
 	if (curr_hp <= 0):
-		handle_game_over()
+		handle_game_over.call_deferred()
 
 	constant_linear_velocity = Mover.get_movement()
