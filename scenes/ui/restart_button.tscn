@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://drh6cl70rtt78"]
 
-[ext_resource type="Script" uid="uid://dgfykx4ojswhk" path="res://scenes/restart_button.gd" id="1_wbttw"]
+[ext_resource type="Script" uid="uid://dgfykx4ojswhk" path="res://scenes/ui/restart_button.gd" id="1_wbttw"]
 
 [node name="restart" type="Button" unique_id=1164336806]
 process_mode = 3

@@ -5,12 +5,16 @@ extends Node2D
 func new_game():
 	$EnemyTimer.start()
 
+func _on_restart():
+	free_enemies()
+
 func free_enemies():
 	for child in get_children():
 		if (child is CharacterBody2D):
 			child.queue_free()
 
 func _ready():
+	EventBus.restart_game.connect(_on_restart)
 	new_game()
 
 func _on_enemy_timer_timeout():
