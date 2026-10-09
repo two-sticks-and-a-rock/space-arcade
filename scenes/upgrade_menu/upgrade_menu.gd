@@ -14,8 +14,9 @@ func populate_upgrade_panels():
 		func(child):
 			return child is PlayerWeapon
 	)
+
 	# get all potential upgrades for those weapons
-	var potential_upgrades = []
+	var potential_upgrade_sets = []
 	for weapon in player_weapons:
 		var weapon_upgrade_sets = weapon._get_upgrade_sets().filter(
 			func(upgrade_set):
@@ -24,24 +25,25 @@ func populate_upgrade_panels():
 		if (weapon_upgrade_sets.size() == 0):
 			continue
 	
-		potential_upgrades.append(weapon_upgrade_sets[0])
-	# later will get the non-weapon items as well
+		potential_upgrade_sets.append(weapon_upgrade_sets[0])
+
+	# TODO: handle non-weapon upgrades
 	
 	var num_displayed = 0
-	for potential_upgrade in potential_upgrades:
+	for potential_upgrade_set in potential_upgrade_sets:
 		if (num_displayed == 3):
 			break
 
 		var upgrade_panel = upgrade_panel_scene.instantiate()
-		upgrade_panel.upgrade_name = potential_upgrade.name
-		potential_upgrade.applied = true
-
+		
+		upgrade_panel.upgrade_name = potential_upgrade_set.name
 		upgrade_panel.mechanics = ([] as Array[String])
-		for u in potential_upgrade["upgrades"]:
-			print(u)
-			upgrade_panel.mechanics.append(u.label)
+		for component_upgrade in potential_upgrade_set.component_upgrades:
+			upgrade_panel.mechanics.append(component_upgrade.label)
 
 		h_container.add_child(upgrade_panel)
+		potential_upgrade_set.applied = true
+
 		num_displayed += 1
 
 func _on_player_level_up():

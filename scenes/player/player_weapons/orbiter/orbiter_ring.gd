@@ -8,7 +8,7 @@ func _get_upgrade_sets():
 	return [
 	{
 		"name": "Better Time",
-		"upgrades": [
+		"component_upgrades": [
 			{
 				"label": "Uptime 6s -> 7s (+1s)",
 				"resource": UpTimerUpgrade,
@@ -26,7 +26,7 @@ func _get_upgrade_sets():
 	},
 	{
 		"name": "More Bullets",
-		"upgrades": [
+		"component_upgrades": [
 			{
 				"label": "Damage 50 -> 75 (+25)",
 				"resource": DamageUpgrade,

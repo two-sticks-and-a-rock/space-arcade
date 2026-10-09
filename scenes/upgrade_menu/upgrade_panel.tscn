@@ -2,15 +2,20 @@
 
 [ext_resource type="Script" uid="uid://dre2xbusnngrs" path="res://scenes/upgrade_menu/upgrade_panel.gd" id="1_f0mv6"]
 
-[node name="UpgradePanel" type="PanelContainer" unique_id=1519019406]
+[node name="UpgradePanel" type="Button" unique_id=2081176140]
 custom_minimum_size = Vector2(600, 1000)
+offset_right = 600.0
+offset_bottom = 1000.0
 script = ExtResource("1_f0mv6")
 upgrade_name = "Upgrade Test"
 img_filepath = "res://art/sprites/upgrades/orbiter_3_bullets_placeholder.png"
 mechanics = Array[String](["bullets 2 -> 3", "speed ->", "dmg 123 -> 124"])
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1697429282]
-layout_mode = 2
+layout_mode = 0
+offset_left = 50.0
+offset_right = 550.0
+offset_bottom = 1000.0
 size_flags_horizontal = 4
 theme_override_constants/separation = 25
 

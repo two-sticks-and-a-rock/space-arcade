@@ -1,4 +1,4 @@
-extends PanelContainer
+extends Button
 
 @onready var v_container : VBoxContainer = $VBoxContainer
 @onready var name_label : Label = $VBoxContainer/Name
