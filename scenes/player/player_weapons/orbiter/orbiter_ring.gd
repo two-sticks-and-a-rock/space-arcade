@@ -22,26 +22,9 @@ func _reinstantiate_weapon():
 
 	up_timer.start()
 
-func debug_handle_level_up():
-	var handle_level_up = func():
-		var nonapplied_upgrade_sets: Array[WeaponUpgradeSet] = possible_upgrade_sets.filter(
-			func(upgrade_set: WeaponUpgradeSet):
-				return !upgrade_set.applied
-		)
-		if (nonapplied_upgrade_sets.size() == 0):
-			return
-		
-		var set_to_apply = nonapplied_upgrade_sets[0]
-		upgrades += set_to_apply.upgrades
-		set_to_apply.applied = true
-		_reinstantiate_weapon()
-
-	handle_level_up.call_deferred()
-
 func _ready():
 	super()
 	up_timer.start()
-
 
 func _on_down_timer_timeout():
 	up_timer.start()
