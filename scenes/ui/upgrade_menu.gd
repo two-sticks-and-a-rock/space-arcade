@@ -10,6 +10,8 @@ class UpgradeSetMetadata:
 	var all_possible_upgrades_length: int = 0
 	var upgrade_set_name_to_weapon_map: Dictionary[String, PlayerWeapon] = {}
 
+# TODO: this gets mad for some reason when I try to specify "player_weapons: Array[PlayerWeapon]"
+# but the debugger says its the OrbiterRing is a PlayerWeapon so this might just be buggy
 func get_possible_upgrade_sets(player_weapons: Array) -> UpgradeSetMetadata:
 	var upgrade_set_metadata = UpgradeSetMetadata.new()
 
