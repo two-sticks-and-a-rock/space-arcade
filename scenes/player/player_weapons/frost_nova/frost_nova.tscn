@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dyeikbrn1kse8"]
+
+[ext_resource type="Script" uid="uid://cxpd0l0oyy4fh" path="res://scenes/player/player_weapons/frost_nova/frost_nova.gd" id="1_43v6x"]
+[ext_resource type="PackedScene" uid="uid://d3pffleq1i53h" path="res://scenes/player/player_weapons/frost_nova/nova_area.tscn" id="2_hm4nq"]
+
+[node name="FrostNova" type="Node2D" unique_id=529776342]
+script = ExtResource("1_43v6x")
+bullet_scene = ExtResource("2_hm4nq")
+num_bullets = 1
+bullet_size = 1.0
+
+[node name="UpTimer" type="Timer" parent="." unique_id=441701228]
+
+[node name="DownTimer" type="Timer" parent="." unique_id=932910231]
+wait_time = 5.0
+
+[connection signal="timeout" from="UpTimer" to="." method="_on_up_timer_timeout"]
+[connection signal="timeout" from="DownTimer" to="." method="_on_down_timer_timeout"]

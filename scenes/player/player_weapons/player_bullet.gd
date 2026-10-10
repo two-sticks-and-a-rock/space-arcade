@@ -8,12 +8,12 @@ extends Area2D
 var bullet_scale: Vector2 = Vector2.ONE
 
 func _ready():
-    sprite.scale = bullet_scale
-    collider.scale = bullet_scale
+	sprite.scale = bullet_scale
+	collider.scale = bullet_scale
 
 func _scale_bullet(new_scale: Vector2):
-    bullet_scale = new_scale
+	bullet_scale = new_scale
 
 func _on_orbiter_entered(body: Node2D):
-    if ("take_damage" in body):
-        body.take_damage(weapon.dmg)
+	if ("take_damage" in body):
+		body.take_damage(weapon.dmg)
