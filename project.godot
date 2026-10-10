@@ -22,6 +22,7 @@ Xp="*uid://cd7c8f8imxvwi"
 EventBus="*uid://b3fy4wnc1mgce"
 GameOver="*uid://b4o0n34uwel0d"
 Menu="*uid://d2n8xy8ehp0ps"
+UpgradeMenu="*uid://7objd5d07aj7"
 
 [display]
 

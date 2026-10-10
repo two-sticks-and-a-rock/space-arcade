@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dqp5rji23fo3i"]
+
+[ext_resource type="Script" uid="uid://btlxekjq0am2a" path="res://scenes/ui/upgrade_panel.gd" id="1_r60ue"]
+
+[node name="UpgradePanel" type="MarginContainer" unique_id=1694010216]
+custom_minimum_size = Vector2(500, 800)
+custom_maximum_size = Vector2(-1, 800)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -4.0
+offset_right = 8.0
+offset_bottom = 4.0
+grow_vertical = 2
+script = ExtResource("1_r60ue")
+
+[node name="Panel" type="Panel" parent="." unique_id=1497323291]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=817815659]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 24
+
+[node name="Name" type="Label" parent="VBoxContainer" unique_id=1863297255]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Name Placeholder"
+horizontal_alignment = 1
+
+[node name="Img" type="TextureRect" parent="VBoxContainer" unique_id=1720966437]
+custom_minimum_size = Vector2(450, 300)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="." unique_id=765895051]
+show_behind_parent = true
+layout_mode = 2
