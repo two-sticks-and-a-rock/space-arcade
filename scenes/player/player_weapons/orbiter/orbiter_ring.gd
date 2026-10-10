@@ -40,10 +40,6 @@ func debug_handle_level_up():
 
 func _ready():
 	super()
-	# FOR DEBUGGING #
-	EventBus.level_up.connect(debug_handle_level_up)
-	# FOR DEBUGGING #
-
 	up_timer.start()
 
 

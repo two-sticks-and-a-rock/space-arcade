@@ -2,7 +2,6 @@ extends CanvasLayer
 
 @onready var upgrade_panel_scene : PackedScene = load("res://scenes/ui/upgrade_panel.tscn")
 @onready var h_container : HBoxContainer = $PanelContainer/HBoxContainer
-@onready var player : StaticBody2D = get_tree().root.get_node("Main/player")
 
 var hit_max_level = false
 
@@ -40,7 +39,7 @@ func choose_at_most_three(possible_upgrade_sets: Array[WeaponUpgradeSet]):
 	return sliced.slice(0, num_to_choose)
 
 func populate_upgrade_panels():
-	var player_weapons = player.get_children().filter(
+	var player_weapons = get_tree().root.get_node("Main/player").get_children().filter(
 		func(child):
 			return child is PlayerWeapon
 	) as Array[PlayerWeapon]
@@ -68,7 +67,7 @@ func populate_upgrade_panels():
 			if (processed.all_possible_upgrades_length <= 1):
 				hit_max_level = true
 			EventBus.finish_level_up.emit()
-			_on_player_finish_level_up.call_deferred()
+			_on_player_finish_level_up()
 		
 		h_container.add_child(upgrade_panel)
 
@@ -80,27 +79,29 @@ func clear_upgrade_panels():
 func _on_player_level_up():
 	if (hit_max_level):
 		return
-
-	populate_upgrade_panels.call_deferred()
-	visible = true
 	get_tree().paused = true
+	visible = true
+	
+	populate_upgrade_panels()
+
 
 func _on_player_finish_level_up():
-	clear_upgrade_panels.call_deferred()
+	clear_upgrade_panels()
 	visible = false
 	get_tree().paused = false
 
-
-
 func new_upgrade_menu():
 	visible = false
-	clear_upgrade_panels.call_deferred()
+	clear_upgrade_panels()
 
 func _on_restart_game():
 	new_upgrade_menu()
 
 func _ready():
 	new_upgrade_menu()
-		
-	EventBus.level_up.connect(_on_player_level_up)
-	EventBus.restart_game.connect(_on_restart_game)
+	
+	if(!EventBus.level_up.is_connected(_on_player_level_up)):
+		EventBus.level_up.connect(_on_player_level_up)
+
+	if(!EventBus.restart_game.is_connected(_on_restart_game)):
+		EventBus.restart_game.connect(_on_restart_game)
