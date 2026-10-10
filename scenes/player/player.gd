@@ -1,6 +1,7 @@
 extends StaticBody2D
 
 @export var orbiter_ring_scene : PackedScene
+@export var frost_nova_scene : PackedScene
 
 @onready var hp_bar : ProgressBar = $hp
 @onready var xp_bar : ProgressBar = $XpCanvas/XpBar
@@ -17,6 +18,8 @@ func _ready():
 
 	var orbiter_ring = orbiter_ring_scene.instantiate() as Node2D
 	add_child(orbiter_ring)
+	var frost_nova = frost_nova_scene.instantiate() as Node2D
+	add_child(frost_nova)
 	(magnet_collider.shape as CircleShape2D).radius = magnet_radius
 
 func take_damage(dmg: int):
