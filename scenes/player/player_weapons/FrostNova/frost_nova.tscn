@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cdqovbuww35sx"]
+
+[ext_resource type="Script" uid="uid://cf17i0f0kuiq7" path="res://scenes/player/player_weapons/FrostNova/frost_nova.gd" id="1_1tiod"]
+[ext_resource type="Texture2D" uid="uid://djsrn420s044r" path="res://art/sprites/bullets/TempFrostNova.png" id="1_7nig5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vwuxn"]
+radius = 256.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vwuxn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_7nig5")
+}],
+"loop": 1,
+"name": &"FrostNova",
+"speed": 5.0
+}]
+
+[node name="FrostNova" type="Area2D" unique_id=937516989]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_1tiod")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1748275005]
+shape = SubResource("CircleShape2D_vwuxn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=958526759]
+position = Vector2(0.9999924, 7.999977)
+scale = Vector2(1.136, 1.14)
+sprite_frames = SubResource("SpriteFrames_vwuxn")
+animation = &"FrostNova"
+
+[node name="NovaUpTimer" type="Timer" parent="." unique_id=1386583722]
+
+[node name="NovaDownTimer" type="Timer" parent="." unique_id=1501146330]
+wait_time = 5.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="NovaUpTimer" to="." method="_on_nova_up_timer_timeout"]
+[connection signal="timeout" from="NovaDownTimer" to="." method="_on_nova_down_timer_timeout"]

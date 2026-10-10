@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cg3xb6odenjtk" path="res://scenes/player/slingshot.gd" id="3_gmlin"]
 [ext_resource type="PackedScene" uid="uid://dqg2sovwx03w3" path="res://scenes/player/player_cam.tscn" id="3_lvxji"]
 [ext_resource type="Texture2D" uid="uid://bc6vu7q8joqqq" path="res://art/sprites/player/player_panels_128.svg" id="3_p47bc"]
+[ext_resource type="PackedScene" uid="uid://cdqovbuww35sx" path="res://scenes/player/player_weapons/FrostNova/frost_nova.tscn" id="3_qek5x"]
 [ext_resource type="Texture2D" uid="uid://bgnjdc4v5vcgl" path="res://art/sprites/player/engine2.png" id="4_0owmy"]
 [ext_resource type="PackedScene" uid="uid://dto3jjxkpeho1" path="res://scenes/xp/xp_bar.tscn" id="6_75vfm"]
 
@@ -24,6 +25,7 @@ z_index = 10
 collision_mask = 18
 script = ExtResource("1_g2els")
 orbiter_ring_scene = ExtResource("2_p47bc")
+frost_nova_scene = ExtResource("3_qek5x")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1031992017]

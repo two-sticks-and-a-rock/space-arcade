@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
 @onready var player = get_parent().get_node("%player") as StaticBody2D
-
+@onready var stun: Timer = $stun as Timer
+var is_stunned = false
 var xp_value = Xp.GEAR_VALUE
 var xp_scene_path : Dictionary = Xp.xp_to_scene_file[xp_value]
 var xp_scene : PackedScene = null
@@ -9,6 +10,19 @@ var xp_scene : PackedScene = null
 var speed = Vector2(randf_range(250.0, 300.0), 0.0)
 var max_hp = 40
 var curr_hp = max_hp
+
+func stunned():
+	if not is_stunned:
+		modulate = Color.AQUA
+		is_stunned = true
+		speed = Vector2.ZERO
+		stun.start()
+		await stun.timeout
+		speed = Vector2(randf_range(250.0, 300.0), 0.0)
+		is_stunned = false
+		modulate = Color.WHITE
+	
+
 
 func take_damage(dmg: int):
 	curr_hp -= dmg

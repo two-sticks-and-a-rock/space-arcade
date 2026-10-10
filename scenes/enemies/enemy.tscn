@@ -32,3 +32,8 @@ sprite_frames = SubResource("SpriteFrames_kcn5b")
 shape = SubResource("CircleShape2D_md0e3")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1359017325]
+
+[node name="stun" type="Timer" parent="." unique_id=741544312]
+wait_time = 3.0
+
+[connection signal="timeout" from="stun" to="." method="_on_stun_timeout"]
