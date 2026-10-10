@@ -15,7 +15,7 @@ radius = 64.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p47bc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvxji"]
-bg_color = Color(0.29237694, 0.5903247, 0.33716953, 1)
+bg_color = Color(0.8392157, 0, 0.12156863, 1)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kcn5b"]
 radius = 147.16656
@@ -45,6 +45,7 @@ shape = SubResource("CircleShape2D_gmlin")
 script = ExtResource("3_gmlin")
 
 [node name="hp" type="ProgressBar" parent="." unique_id=1485871813]
+z_index = 100
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
