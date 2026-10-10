@@ -33,7 +33,8 @@ func debug_handle_level_up():
 		
 		var set_to_apply = nonapplied_upgrade_sets[0]
 		upgrades += set_to_apply.upgrades
-		_reinstantiate_weapon.call_deferred()
+		set_to_apply.applied = true
+		_reinstantiate_weapon()
 
 	handle_level_up.call_deferred()
 
