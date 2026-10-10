@@ -57,7 +57,7 @@ metadata/_custom_type_script = "uid://cfgllll1jbmru"
 [sub_resource type="Resource" id="Resource_vxvyc"]
 resource_name = "Size: 3x size"
 script = ExtResource("4_jwv4o")
-bullet_size_increase = 2.0
+bullet_size_increase = 1.5
 metadata/_custom_type_script = "uid://c0owbkeruir2v"
 
 [sub_resource type="Resource" id="Resource_qot2w"]
