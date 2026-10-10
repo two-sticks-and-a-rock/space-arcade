@@ -19,7 +19,7 @@ func _ready():
 	hp_bar.value = max_hp
 
 	var orbiter_ring = orbiter_ring_scene.instantiate() as Node2D
-	#add_child(orbiter_ring)
+	add_child(orbiter_ring)
 	var frost_nova = frost_nova_scene.instantiate() as Area2D
 	add_child(frost_nova)
 	(magnet_collider.shape as CircleShape2D).radius = magnet_radius
