@@ -17,8 +17,8 @@ extends Node2D
 func _ready():
 	_reinstantiate_weapon()
 
-    if (!EventBus.restart_game.is_connected(_on_restart)):
-        EventBus.restart_game.connect(_on_restart)
+	if (!EventBus.restart_game.is_connected(_on_restart)):
+		EventBus.restart_game.connect(_on_restart)
 
 func _reset_weapon():
 	for upgrade in upgrades:
@@ -30,8 +30,8 @@ func _reset_weapon():
 		possible_upgrade_set.applied = false
 
 func _on_restart():
-    _reset_weapon()
-    _reinstantiate_weapon()
+	_reset_weapon()
+	_reinstantiate_weapon()
 
 func _reinstantiate_weapon():
 	for upgrade in upgrades:
