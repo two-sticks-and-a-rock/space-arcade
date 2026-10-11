@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://nchng1iwyms1" path="res://scenes/scrolling_background.tscn" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://b1c8lbi40g0up" path="res://scenes/enemies/enemy.tscn" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cekmijf83xupg" path="res://scenes/player/player.tscn" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://cn4ty02lxqjoc" path="res://scenes/space_background/space_background.tscn" id="3_tbgi4"]
 
 [sub_resource type="Curve2D" id="Curve2D_0wfyh"]
 _data = {
@@ -15,7 +16,14 @@ point_count = 15
 script = ExtResource("1_jyhfs")
 enemy_scene = ExtResource("2_tbgi4")
 
+[node name="SpaceBackground" parent="." unique_id=1169845469 instance=ExtResource("3_tbgi4")]
+offset_left = -1920.0
+offset_top = -1080.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
 [node name="scrolling_background" parent="." unique_id=2059599330 instance=ExtResource("1_sugp2")]
+visible = false
 scroll_offset = Vector2(-1047, -464)
 
 [node name="player" parent="." unique_id=2109895852 instance=ExtResource("3_jyhfs")]
