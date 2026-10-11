@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cn4ty02lxqjoc"]
+
+[ext_resource type="Shader" uid="uid://cmfedp0pgtqp0" path="res://scenes/space_background.gdshader" id="1_gejcq"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_yll44"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gejcq"]
+noise = SubResource("FastNoiseLite_yll44")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l63hr"]
+shader = ExtResource("1_gejcq")
+shader_parameter/star_layer_1_noise = SubResource("NoiseTexture2D_gejcq")
+
+[node name="SpaceBackground" type="Control" unique_id=535488518]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1745227937]
+material = SubResource("ShaderMaterial_l63hr")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
