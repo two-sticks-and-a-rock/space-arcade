@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://47w8uyt501td" path="res://scenes/space_background/space_background.gd" id="2_g3vb6"]
 
 [sub_resource type="Gradient" id="Gradient_4lbsm"]
-offsets = PackedFloat32Array(0.6138015, 1)
-colors = PackedColorArray(0, 0, 0, 0, 0.10980392, 0.08627451, 0.3529412, 0.4745098)
+offsets = PackedFloat32Array(0.6138015, 0.99878937)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0.5)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_g3vb6"]
 noise_type = 5
@@ -21,7 +21,7 @@ seamless = true
 
 [sub_resource type="Gradient" id="Gradient_1hxin"]
 offsets = PackedFloat32Array(0.6138015, 1)
-colors = PackedColorArray(0, 0, 0, 0, 0.10980392, 0.18039216, 0.53333336, 0.4745098)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0.5)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_xds67"]
 noise_type = 5
@@ -36,7 +36,7 @@ seamless = true
 
 [sub_resource type="Gradient" id="Gradient_xds67"]
 offsets = PackedFloat32Array(0.6138015, 1)
-colors = PackedColorArray(0, 0, 0, 0, 0.027623104, 0.3205241, 0.70377284, 0.4745098)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0.5)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_n8jxq"]
 noise_type = 5
@@ -102,13 +102,16 @@ shader_parameter/star_2_scroll_mult = 0.05
 shader_parameter/star_3_scroll_mult = 1.0
 shader_parameter/dust_1_scroll_mult = 0.02
 shader_parameter/dust_2_scroll_mult = 0.025
-shader_parameter/dust_3_scroll_mult = 0.025
+shader_parameter/dust_3_scroll_mult = 0.04
 shader_parameter/star_layer_1_noise = SubResource("NoiseTexture2D_wjgca")
 shader_parameter/star_layer_2_noise = SubResource("NoiseTexture2D_4lbsm")
 shader_parameter/star_layer_3_noise = SubResource("NoiseTexture2D_1hxin")
 shader_parameter/dust_1_noise = SubResource("NoiseTexture2D_a0amr")
 shader_parameter/dust_2_noise = SubResource("NoiseTexture2D_5ffyu")
 shader_parameter/dust_3_noise = SubResource("NoiseTexture2D_rirp7")
+shader_parameter/dust_1_color = Color(0.10980392, 0.06666667, 0.31764707, 1)
+shader_parameter/dust_2_color = Color(0.22734588, 0.19032764, 0.6832668, 1)
+shader_parameter/dust_3_color = Color(0.41864347, 0.4388024, 0.9223997, 1)
 
 [node name="SpaceBackground" type="ColorRect" unique_id=1169845469]
 material = SubResource("ShaderMaterial_grjle")
