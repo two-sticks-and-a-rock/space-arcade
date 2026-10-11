@@ -41,7 +41,7 @@ func _ready():
 
 	var ram_scene = load("res://scenes/enemies/enemy_weapons/ram.tscn") as PackedScene
 	var ram_weapon = ram_scene.instantiate() as Area2D
-	ram_weapon.set_collision_radius((($CollisionShape2D as CollisionShape2D).shape as CircleShape2D).radius + 3)
+	ram_weapon.set_collision_rectangle((($CollisionShape2D as CollisionShape2D).shape as RectangleShape2D).size + Vector2(3, 3))
 
 	add_child(ram_weapon)
 

@@ -15,5 +15,5 @@ func _scale_bullet(new_scale: Vector2):
 	bullet_scale = new_scale
 
 func _on_orbiter_entered(body: Node2D):
-	if ("take_damage" in body):
+	if (body.is_in_group("enemy")):
 		body.take_damage(weapon.dmg)

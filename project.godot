@@ -31,6 +31,10 @@ window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[global_group]
+
+enemy=""
+
 [input]
 
 move_forward={
@@ -76,6 +80,7 @@ pause={
 2d_physics/layer_4="enemy_weapons"
 2d_physics/layer_5="xp"
 2d_physics/layer_6="xp_magnet"
+2d_physics/layer_7="enemies_for_enemies"
 
 [physics]
 
