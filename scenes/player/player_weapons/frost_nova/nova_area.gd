@@ -1,5 +1,5 @@
 extends PlayerBullet
 
 func _on_orbiter_entered(body: Node2D):
-	if ("take_damage" in body):
+	if body.is_in_group("enemy"):
 		body.freeze()
