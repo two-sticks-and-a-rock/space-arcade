@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc6vu7q8joqqq"
-path="res://.godot/imported/player_panels_128.svg-027a7bbacd7da1c3c51a0a35eb52ebe5.ctex"
+uid="uid://d1ket6flnqnch"
+path="res://.godot/imported/player_ship_v02_128x162.svg-139f7e4514dc354718837f3059d0b472.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/player/player_panels_128.svg"
-dest_files=["res://.godot/imported/player_panels_128.svg-027a7bbacd7da1c3c51a0a35eb52ebe5.ctex"]
+source_file="res://art/sprites/player/player_ship_v02_128x162.svg"
+dest_files=["res://.godot/imported/player_ship_v02_128x162.svg-139f7e4514dc354718837f3059d0b472.ctex"]
 
 [params]
 
