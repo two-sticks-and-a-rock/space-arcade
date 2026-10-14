@@ -49,9 +49,11 @@ func _ready():
 	$AnimatedSprite2D.animation = mob_types[0]
 	$AnimatedSprite2D.play()
 
-
 func _physics_process(_delta):
 	look_at(player.position)
 	velocity = speed.rotated(rotation)
 	velocity -= Mover.get_movement()
 	move_and_slide()
+
+func _on_screen_exited():
+	queue_free()

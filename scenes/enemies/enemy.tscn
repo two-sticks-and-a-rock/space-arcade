@@ -17,7 +17,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8e3ao"]
 size = Vector2(127, 48)
 
-[node name="enemy_ufo_red" type="CharacterBody2D" unique_id=202267076 groups=["enemy"]]
+[node name="EnemyCopCar" type="CharacterBody2D" unique_id=202267076 groups=["enemy"]]
 collision_layer = 66
 collision_mask = 65
 motion_mode = 1
@@ -29,6 +29,7 @@ rotation = 1.5707964
 sprite_frames = SubResource("SpriteFrames_kcn5b")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1359017325]
+rect = Rect2(-154, -138, 310, 272)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2022827087]
 position = Vector2(0.5, 0)
@@ -37,3 +38,5 @@ disabled = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=777857065]
 polygon = PackedVector2Array(-1, -16, 61, 0, 0, 16, -58, 0)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]
