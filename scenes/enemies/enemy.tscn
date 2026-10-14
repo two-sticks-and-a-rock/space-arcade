@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://btilt47p7ljqj" path="res://scenes/enemies/enemy.gd" id="1_md0e3"]
 [ext_resource type="Texture2D" uid="uid://b1celxowwo2dv" path="res://art/sprites/enemy/space_police_128.svg" id="2_8e3ao"]
+[ext_resource type="PackedScene" uid="uid://oaoj8eb8rbpv" path="res://scenes/xp/xp_gear.tscn" id="2_38ino"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kcn5b"]
 animations = [{
@@ -22,6 +23,7 @@ collision_layer = 66
 collision_mask = 65
 motion_mode = 1
 script = ExtResource("1_md0e3")
+xp_scene = ExtResource("2_38ino")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=249472969]

@@ -2,9 +2,7 @@ extends CharacterBody2D
 
 @onready var player = get_parent().get_node("%player") as StaticBody2D
 
-var xp_value = Xp.GEAR_VALUE
-var xp_scene_path : Dictionary = Xp.xp_to_scene_file[xp_value]
-var xp_scene : PackedScene = null
+@export var xp_scene : PackedScene
 
 var speed = Vector2(randf_range(250.0, 300.0), 0.0)
 var max_hp = 40
@@ -37,8 +35,6 @@ func freeze(time: int = 5):
 func _ready():
 	freeze_timer.one_shot = true
 	add_child(freeze_timer)
-	xp_scene = load(xp_scene_path["location"])
-
 	var ram_scene = load("res://scenes/enemies/enemy_weapons/ram.tscn") as PackedScene
 	var ram_weapon = ram_scene.instantiate() as Area2D
 	ram_weapon.set_collision_rectangle((($CollisionShape2D as CollisionShape2D).shape as RectangleShape2D).size + Vector2(3, 3))
