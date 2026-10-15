@@ -1,9 +1,21 @@
 [gd_scene format=3 uid="uid://dqg2sovwx03w3"]
 
 [ext_resource type="Script" uid="uid://dlldytuwniml8" path="res://scenes/player/player_cam.gd" id="1_rrte4"]
+[ext_resource type="Texture2D" uid="uid://c0yoxnpfd24u3" path="res://art/sprites/xp/gear_placeholder.png" id="2_0po85"]
 
 [node name="PlayerCam" type="Node2D" unique_id=371835484]
 script = ExtResource("1_rrte4")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2003178815]
-position_smoothing_enabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D" unique_id=1858942441]
+modulate = Color(0, 1, 1, 1)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_0po85")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=679393778]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=1333243252]
+modulate = Color(1, 0, 1, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_0po85")
