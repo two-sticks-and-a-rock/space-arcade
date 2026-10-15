@@ -21,10 +21,7 @@ func _ready():
 	value = 0
 	set_visible_step_mult()
 
-func _physics_process(delta):
-	position -= Mover.get_movement()*delta
-	position = lerp(position, Vector2.ZERO, 0.1)
-
+func _physics_process(_delta):
 	value = curr_xp * step_mult
 
 func set_next_xp_threshold() -> void:
