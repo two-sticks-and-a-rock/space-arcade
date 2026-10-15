@@ -4,6 +4,8 @@ var xp_threshold : int = 5
 
 @onready var viewport_width = get_viewport().size.x
 
+@export var leading_cam: Node2D
+
 var curr_xp : int = 0
 var step_mult : int = 0
 
@@ -21,9 +23,8 @@ func _ready():
 	value = 0
 	set_visible_step_mult()
 
-func _physics_process(delta):
-	position -= Mover.get_movement()*delta
-	position = lerp(position, Vector2.ZERO, 0.1)
+func _physics_process(_delta):
+	position = lerp(position, leading_cam.position, 0.1)
 
 	value = curr_xp * step_mult
 
