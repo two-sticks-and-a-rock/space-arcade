@@ -61,9 +61,6 @@ value = 100.0
 show_percentage = false
 
 [node name="XpCanvas" type="CanvasLayer" parent="." unique_id=852667993]
-offset = Vector2(-960, -540)
-transform = Transform2D(1, 0, 0, 1, -960, -540)
-follow_viewport_enabled = true
 
 [node name="XpBar" parent="XpCanvas" unique_id=804379581 instance=ExtResource("6_75vfm")]
 max_value = 1920.0
