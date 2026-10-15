@@ -2,5 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dlldytuwniml8" path="res://scenes/player/player_cam.gd" id="1_rrte4"]
 
-[node name="PlayerCam" type="Camera2D" unique_id=366946419]
+[node name="PlayerCam" type="Node2D" unique_id=371835484]
 script = ExtResource("1_rrte4")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2003178815]
+position_smoothing_enabled = true
