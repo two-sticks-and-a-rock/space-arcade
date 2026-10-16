@@ -7,6 +7,7 @@
 
 [node name="Menu" type="CanvasLayer" unique_id=1623096271]
 process_mode = 3
+layer = 2
 script = ExtResource("1_wedc3")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=855877974]
