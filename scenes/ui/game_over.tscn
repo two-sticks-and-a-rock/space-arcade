@@ -1,35 +1,88 @@
 [gd_scene format=3 uid="uid://b4o0n34uwel0d"]
 
 [ext_resource type="Script" uid="uid://dljd3x1xw8ddi" path="res://scenes/ui/game_over.gd" id="1_fu4wh"]
+[ext_resource type="Theme" uid="uid://drsxtvymgay2s" path="res://scenes/ui/themes/default/default.tres" id="2_vfrx6"]
 [ext_resource type="PackedScene" uid="uid://drh6cl70rtt78" path="res://scenes/ui/restart_button.tscn" id="2_x6o8e"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tefeu"]
-bg_color = Color(0.25565916, 0.2556586, 0.25565886, 0.6901961)
 
 [node name="GameOver" type="CanvasLayer" unique_id=922977592]
 script = ExtResource("1_fu4wh")
 
-[node name="Panel" type="Panel" parent="." unique_id=1787029597]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1677639649]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_tefeu")
 
-[node name="GameOver" type="Label" parent="." unique_id=682681196]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -406.5
-offset_top = -140.0
-offset_right = 406.5
-offset_bottom = 65.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 150
-text = "Game Over"
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=63661639]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_vfrx6")
+alignment = 1
 
-[node name="restart" parent="." unique_id=1164336806 instance=ExtResource("2_x6o8e")]
+[node name="GameOver" type="Label" parent="PanelContainer/VBoxContainer" unique_id=682681196]
+layout_mode = 2
+theme = ExtResource("2_vfrx6")
+text = "Run Ended"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FlavorText" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1835544098]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "\"Better luck next time, prisoner\""
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Actions" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1847531430]
+layout_mode = 2
+alignment = 1
+
+[node name="NewGameButton" parent="PanelContainer/VBoxContainer/Actions" unique_id=1164336806 instance=ExtResource("2_x6o8e")]
+custom_minimum_size = Vector2(400, 84)
+custom_maximum_size = Vector2(400, -1)
+layout_mode = 2
+
+[node name="MainMenuButton" type="Button" parent="PanelContainer/VBoxContainer/Actions" unique_id=671251716]
+custom_minimum_size = Vector2(400, 84)
+custom_maximum_size = Vector2(400, -1)
+layout_mode = 2
+text = "Main Menu"
+
+[node name="BrokenShipImage" type="TextureRect" parent="PanelContainer/VBoxContainer" unique_id=612990862]
+custom_minimum_size = Vector2(0, 240)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1335755810]
+layout_mode = 2
+theme = ExtResource("2_vfrx6")
+text = "Kills 206"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CurrentTime" type="Label" parent="." unique_id=258549648]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 100.0
+offset_top = -128.0
+offset_right = 411.0
+offset_bottom = -45.0
+grow_vertical = 0
+theme = ExtResource("2_vfrx6")
+text = "Time 01:10"
+
+[node name="BestTime" type="Label" parent="." unique_id=781703591]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -420.0
+offset_top = -128.0
+offset_right = -124.0
+offset_bottom = -45.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("2_vfrx6")
+text = "Best 02:23"
