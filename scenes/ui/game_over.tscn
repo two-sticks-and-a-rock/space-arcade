@@ -91,3 +91,5 @@ offset_transform_position = Vector2(-60, 0)
 offset_transform_visual_only = false
 theme = ExtResource("2_vfrx6")
 text = "Best 02:23"
+horizontal_alignment = 1
+vertical_alignment = 1
