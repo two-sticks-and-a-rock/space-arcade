@@ -61,29 +61,41 @@ text = "Kills 206"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CurrentTime" type="Label" parent="." unique_id=258549648]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 100.0
-offset_top = -128.0
-offset_right = 411.0
-offset_bottom = -45.0
-grow_vertical = 0
-theme = ExtResource("2_vfrx6")
-text = "Time 01:10"
-
-[node name="BestTime" type="Label" parent="." unique_id=781703591]
-anchors_preset = 3
-anchor_left = 1.0
+[node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=1876063807]
+anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -420.0
-offset_top = -128.0
-offset_right = -124.0
-offset_bottom = -45.0
-grow_horizontal = 0
+offset_top = -83.0
+grow_horizontal = 2
 grow_vertical = 0
+size_flags_vertical = 8
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -72)
+offset_transform_visual_only = false
+
+[node name="CurrentTime" type="Label" parent="HSplitContainer" unique_id=258549648]
+custom_minimum_size = Vector2(400, 84)
+custom_maximum_size = Vector2(400, -1)
+layout_mode = 2
+size_flags_vertical = 1
+offset_transform_enabled = true
+offset_transform_position = Vector2(60, 0)
+offset_transform_visual_only = false
+theme = ExtResource("2_vfrx6")
+text = "Time 01:10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BestTime" type="Label" parent="HSplitContainer" unique_id=781703591]
+custom_minimum_size = Vector2(400, 84)
+custom_maximum_size = Vector2(400, -1)
+layout_mode = 2
+size_flags_vertical = 1
+offset_transform_enabled = true
+offset_transform_position = Vector2(-60, 0)
+offset_transform_visual_only = false
 theme = ExtResource("2_vfrx6")
 text = "Best 02:23"
+horizontal_alignment = 1
+vertical_alignment = 1
