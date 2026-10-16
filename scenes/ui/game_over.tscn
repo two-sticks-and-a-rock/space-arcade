@@ -59,18 +59,14 @@ text = "Kills 206"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=1876063807]
+[node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=1551561553]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -83.0
+offset_top = -84.0
 grow_horizontal = 2
 grow_vertical = 0
-size_flags_vertical = 8
-offset_transform_enabled = true
-offset_transform_position = Vector2(0, -72)
-offset_transform_visual_only = false
 
 [node name="RunTime" type="Label" parent="HSplitContainer" unique_id=258549648]
 custom_minimum_size = Vector2(400, 84)
@@ -95,5 +91,3 @@ offset_transform_position = Vector2(-60, 0)
 offset_transform_visual_only = false
 theme = ExtResource("2_vfrx6")
 text = "Best 02:23"
-horizontal_alignment = 1
-vertical_alignment = 1
