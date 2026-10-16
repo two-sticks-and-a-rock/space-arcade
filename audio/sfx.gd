@@ -1,30 +1,36 @@
 extends Node
 
-# Short sounds that play once. Add new ones to this list.
+# Short sounds that play once
 const SOUNDS := {
 	"enemy_death": preload("res://audio/SFX/enemy_death.wav"),
+	"thruster_small": preload("res://audio/SFX/thruster_small.wav"),
 }
 
-# The three thruster sounds
-const THRUST_IGNITION := preload("res://audio/SFX/thruster_ignition.wav")
-const THRUST_LOOP := preload("res://audio/SFX/thruster_loop.wav")
-const THRUST_RELEASE := preload("res://audio/SFX/thruster_release.wav")
+# Volume of each sound
+const VOLUMES := {
+	"enemy_death": -6.0,
+	"thruster_small": -8.0,
+}
+
+# the constant sound of the player's ship engines
+const engine_idle := preload("res://audio/SFX/engine_idle.wav")
+const engine_idle_volume := -8.0
 
 var _players := {}
-var _thrust := AudioStreamPlayer.new()
-var _thrusting := false
+var _idle := AudioStreamPlayer2D.new()
 
 func _ready():
-	# Make one player for each short sound
 	for sound_name in SOUNDS:
 		var player := AudioStreamPlayer.new()
 		player.stream = SOUNDS[sound_name]
+		player.volume_db = VOLUMES.get(sound_name, 0.0)
 		player.max_polyphony = 6  # lets several play at once (lots of enemies dying)
 		add_child(player)
 		_players[sound_name] = player
-	# Make the thruster player
-	add_child(_thrust)
-	_thrust.finished.connect(_on_thrust_finished)
+		_idle.stream = engine_idle
+		_idle.volume_db = engine_idle_volume
+		add_child(_idle)
+		_idle.play()
 
 func play(sound_name: String):
 	if _players.has(sound_name):
@@ -32,22 +38,9 @@ func play(sound_name: String):
 	else:
 		push_warning("Sfx: no sound called " + sound_name)
 
+# Called by the slingshot script when the player lets go.
 func thrust_start():
-	if _thrusting:
+	# Don't play for a click with no drag
+	if Mover.speed < 10.0:
 		return
-	_thrusting = true
-	_thrust.stream = THRUST_IGNITION
-	_thrust.play()
-
-func thrust_stop():
-	if not _thrusting:
-		return
-	_thrusting = false
-	_thrust.stream = THRUST_RELEASE
-	_thrust.play()
-
-func _on_thrust_finished():
-	# When the ignition ends, switch to the loop if the player is still thrusting
-	if _thrusting and _thrust.stream == THRUST_IGNITION:
-		_thrust.stream = THRUST_LOOP
-		_thrust.play()
+	play("thruster_small")
