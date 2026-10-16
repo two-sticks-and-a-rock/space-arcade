@@ -2,14 +2,54 @@
 
 [ext_resource type="Script" uid="uid://d2tt0u6ddlowp" path="res://scenes/ui/menu.gd" id="1_wedc3"]
 [ext_resource type="PackedScene" uid="uid://drh6cl70rtt78" path="res://scenes/ui/restart_button.tscn" id="2_c2n5p"]
+[ext_resource type="Theme" uid="uid://drsxtvymgay2s" path="res://scenes/ui/themes/default/default.tres" id="2_w6y0u"]
+[ext_resource type="Theme" uid="uid://bwrgd0l5g7l04" path="res://scenes/ui/themes/secondary/secondary.tres" id="4_w6y0u"]
 
 [node name="Menu" type="CanvasLayer" unique_id=1623096271]
 process_mode = 3
 script = ExtResource("1_wedc3")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=881179686]
-offset_right = 1919.0
-offset_bottom = 1083.0
-color = Color(0, 0, 0, 0.36862746)
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=855877974]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="restart" parent="." unique_id=1164336806 instance=ExtResource("2_c2n5p")]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1633006133]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_w6y0u")
+alignment = 1
+
+[node name="PauseLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1377229854]
+layout_mode = 2
+theme = ExtResource("2_w6y0u")
+text = "Pause"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=168788940]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_w6y0u")
+alignment = 1
+
+[node name="ContinueRunButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1349163425]
+custom_minimum_size = Vector2(400, 84)
+custom_maximum_size = Vector2(400, -1)
+layout_mode = 2
+theme = ExtResource("2_w6y0u")
+text = "Continue Run"
+
+[node name="NewGameButton" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1164336806 instance=ExtResource("2_c2n5p")]
+custom_minimum_size = Vector2(400, 84)
+custom_maximum_size = Vector2(400, -1)
+layout_mode = 2
+
+[node name="MainMenuButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=169467694]
+custom_minimum_size = Vector2(400, 84)
+custom_maximum_size = Vector2(400, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("4_w6y0u")
+text = "Main Menu"
