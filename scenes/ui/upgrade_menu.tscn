@@ -4,6 +4,7 @@
 
 [node name="UpgradeMenu" type="CanvasLayer" unique_id=1651193659]
 process_mode = 2
+layer = 2
 script = ExtResource("1_211cs")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=795516997]

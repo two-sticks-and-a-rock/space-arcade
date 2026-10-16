@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dyeikbrn1kse8" path="res://scenes/player/player_weapons/frost_nova/frost_nova.tscn" id="3_qek5x"]
 [ext_resource type="Texture2D" uid="uid://d1ket6flnqnch" path="res://art/sprites/player/player_ship_v02_128x162.svg" id="4_0owmy"]
 [ext_resource type="PackedScene" uid="uid://dto3jjxkpeho1" path="res://scenes/xp/xp_bar.tscn" id="6_75vfm"]
+[ext_resource type="Theme" uid="uid://drsxtvymgay2s" path="res://scenes/ui/themes/default/default.tres" id="8_qek5x"]
+[ext_resource type="Texture2D" uid="uid://c3tnm6dujlkue" path="res://art/sprites/bullets/orbiter_placeholder 2.png" id="9_5gtgg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gmlin"]
 radius = 64.0
@@ -15,6 +17,14 @@ radius = 64.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvxji"]
 bg_color = Color(0.8392157, 0, 0.12156863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gtgg"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+corner_detail = 5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kcn5b"]
 radius = 147.16656
@@ -60,14 +70,102 @@ step = 1.0
 value = 100.0
 show_percentage = false
 
-[node name="XpCanvas" type="CanvasLayer" parent="." unique_id=852667993]
-offset = Vector2(-960, -540)
-transform = Transform2D(1, 0, 0, 1, -960, -540)
-follow_viewport_enabled = true
+[node name="Hud" type="CanvasLayer" parent="." unique_id=852667993]
 
-[node name="XpBar" parent="XpCanvas" unique_id=804379581 instance=ExtResource("6_75vfm")]
+[node name="XpBar" parent="Hud" unique_id=804379581 instance=ExtResource("6_75vfm")]
 max_value = 1920.0
 value = 1920.0
+
+[node name="PlayTimeDisplayed" type="Label" parent="Hud" unique_id=1379446046]
+offset_top = 57.0
+offset_right = 1920.0
+offset_bottom = 140.0
+theme = ExtResource("8_qek5x")
+text = "01:01"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="Hud" unique_id=658359512]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -84.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 8
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -4)
+split_offsets = PackedInt32Array(154)
+split_offset = 154
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Hud/HSplitContainer" unique_id=87254059]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="BestTimeLabel" type="Label" parent="Hud/HSplitContainer/VBoxContainer" unique_id=1061438833]
+custom_minimum_size = Vector2(240, 0)
+custom_maximum_size = Vector2(240, -1)
+layout_mode = 2
+theme = ExtResource("8_qek5x")
+theme_override_font_sizes/font_size = 48
+text = "Best"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BestTimeValue" type="Label" parent="Hud/HSplitContainer/VBoxContainer" unique_id=1390953460]
+custom_minimum_size = Vector2(240, 0)
+custom_maximum_size = Vector2(240, -1)
+layout_mode = 2
+theme = ExtResource("8_qek5x")
+text = "02:03"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Hud/HSplitContainer" unique_id=2107180886]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+alignment = 1
+
+[node name="KillsLabel" type="Label" parent="Hud/HSplitContainer/HBoxContainer" unique_id=398882436]
+custom_minimum_size = Vector2(100, 0)
+custom_maximum_size = Vector2(100, -1)
+layout_mode = 2
+theme = ExtResource("8_qek5x")
+theme_override_font_sizes/font_size = 48
+text = "Kills"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="KillsValue" type="Label" parent="Hud/HSplitContainer/HBoxContainer" unique_id=1480804138]
+custom_minimum_size = Vector2(160, 0)
+custom_maximum_size = Vector2(240, -1)
+layout_mode = 2
+theme = ExtResource("8_qek5x")
+text = "207"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WeaponTray" type="VBoxContainer" parent="Hud" unique_id=533004775]
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+alignment = 1
+
+[node name="WeaponIcon" type="PanelContainer" parent="Hud/WeaponTray" unique_id=2111764474]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(12, 0)
+theme_override_styles/panel = SubResource("StyleBoxFlat_5gtgg")
+
+[node name="TextureRect" type="TextureRect" parent="Hud/WeaponTray/WeaponIcon" unique_id=1428939661]
+custom_maximum_size = Vector2(84, 84)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("9_5gtgg")
 
 [node name="XpMagnet" type="Area2D" parent="." unique_id=1871784061]
 collision_layer = 32
