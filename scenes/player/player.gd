@@ -4,7 +4,7 @@ extends StaticBody2D
 @export var frost_nova_scene : PackedScene
 
 @onready var hp_bar : ProgressBar = $hp
-@onready var xp_bar : ProgressBar = $XpCanvas/XpBar
+@onready var xp_bar : ProgressBar = $Hud/XpBar
 @onready var magnet_collider : CollisionShape2D = $XpMagnet/CollisionShape2D
 @onready var sprite : Sprite2D = $Sprite2D
 
