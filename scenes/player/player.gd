@@ -8,7 +8,7 @@ extends StaticBody2D
 @onready var magnet_collider : CollisionShape2D = $XpMagnet/CollisionShape2D
 @onready var sprite : Sprite2D = $Sprite2D
 
-var max_hp : int = 500
+var max_hp : int = 25
 var curr_hp : int = max_hp
 var magnet_radius : int = 150
 
