@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dyeikbrn1kse8" path="res://scenes/player/player_weapons/frost_nova/frost_nova.tscn" id="3_qek5x"]
 [ext_resource type="Texture2D" uid="uid://d1ket6flnqnch" path="res://art/sprites/player/player_ship_v02_128x162.svg" id="4_0owmy"]
 [ext_resource type="PackedScene" uid="uid://dto3jjxkpeho1" path="res://scenes/xp/xp_bar.tscn" id="6_75vfm"]
+[ext_resource type="Script" uid="uid://6f5n0ek5ibig" path="res://scenes/player/hud.gd" id="7_h17s1"]
 [ext_resource type="Theme" uid="uid://drsxtvymgay2s" path="res://scenes/ui/themes/default/default.tres" id="8_qek5x"]
 [ext_resource type="Texture2D" uid="uid://c3tnm6dujlkue" path="res://art/sprites/bullets/orbiter_placeholder 2.png" id="9_5gtgg"]
 
@@ -71,6 +72,7 @@ value = 100.0
 show_percentage = false
 
 [node name="Hud" type="CanvasLayer" parent="." unique_id=852667993]
+script = ExtResource("7_h17s1")
 
 [node name="XpBar" parent="Hud" unique_id=804379581 instance=ExtResource("6_75vfm")]
 max_value = 1920.0
