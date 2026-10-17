@@ -38,7 +38,7 @@ func play(sound_name: String):
 	else:
 		push_warning("Sfx: no sound called " + sound_name)
 
-# Called by the slingshot script when the player lets go.
+# Called by the slingshot script when the player lets go of the mouse
 func thrust_start():
 	# Don't play for a click with no drag
 	if Mover.speed < 10.0:
