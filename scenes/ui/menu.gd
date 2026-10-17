@@ -23,7 +23,13 @@ func _on_restart():
 	get_tree().paused = false
 	allow_input = true
 
+func unpause():
+	visible = !visible
+	get_tree().paused = !get_tree().paused
+
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("pause") && allow_input:
-		visible = !visible
-		get_tree().paused = !get_tree().paused
+		unpause()
+
+func _on_continue_run_button_pressed() -> void:
+	unpause()
