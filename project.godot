@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Space Arcade"
-run/main_scene="uid://be6oad5gocvyr"
+run/main_scene="uid://qysnsonqoawh"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
