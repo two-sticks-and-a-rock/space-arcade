@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://0vbg44nks2ea"]
 
+[ext_resource type="Script" uid="uid://ccuc6amjstkec" path="res://scenes/intro/intro.gd" id="1_8twl8"]
 [ext_resource type="Theme" uid="uid://drsxtvymgay2s" path="res://scenes/ui/themes/default/default.tres" id="1_qeukb"]
-[ext_resource type="Script" uid="uid://cgdmeirg5oglk" path="res://scenes/intro/skip_button.gd" id="2_iatiw"]
+[ext_resource type="PackedScene" uid="uid://ba6j0n3w5fvkl" path="res://scenes/ui/typing_text.tscn" id="3_ir5dn"]
 
 [node name="Intro" type="CanvasLayer" unique_id=1243987004]
+script = ExtResource("1_8twl8")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1441582170]
 anchors_preset = 15
@@ -12,7 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1520501199]
+[node name="IntroTextBox" type="BoxContainer" parent="PanelContainer" unique_id=765670128]
 custom_minimum_size = Vector2(960, 960)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -20,28 +22,10 @@ size_flags_vertical = 4
 theme = ExtResource("1_qeukb")
 alignment = 1
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=364358952]
-custom_minimum_size = Vector2(1096, 0)
+[node name="IntroText" parent="PanelContainer/IntroTextBox" unique_id=1616030014 instance=ExtResource("3_ir5dn")]
 layout_mode = 2
-theme_override_font_sizes/normal_font_size = 36
-text = "After years of scraping together parts, you finally repair an old abandoned escape pod on Planet X Correctional Facility"
-fit_content = true
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=990243092]
-custom_minimum_size = Vector2(1096, 0)
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 36
-text = "You make your escape in Pod 06 while pursued by the Enforcers"
-fit_content = true
-
-[node name="RichTextLabel3" type="RichTextLabel" parent="PanelContainer/VBoxContainer" unique_id=1232224947]
-custom_minimum_size = Vector2(1096, 0)
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 36
-text = "Now you must fight to survive, desperately clinging to a life condemned by society"
-fit_content = true
-
-[node name="BoxContainer" type="BoxContainer" parent="PanelContainer" unique_id=1267520445]
+[node name="ButtonBox" type="BoxContainer" parent="PanelContainer" unique_id=1267520445]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -50,12 +34,11 @@ offset_transform_position = Vector2(0, 64)
 offset_transform_visual_only = false
 theme_override_constants/separation = 64
 
-[node name="SkipButton" type="Button" parent="PanelContainer/BoxContainer" unique_id=752937055]
+[node name="SkipButton" type="Button" parent="PanelContainer/ButtonBox" unique_id=752937055]
 custom_minimum_size = Vector2(400, 84)
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("1_qeukb")
 text = "Skip"
-script = ExtResource("2_iatiw")
 
-[connection signal="pressed" from="PanelContainer/BoxContainer/SkipButton" to="PanelContainer/BoxContainer/SkipButton" method="_on_skip_button_pressed"]
+[connection signal="pressed" from="PanelContainer/ButtonBox/SkipButton" to="." method="_on_skip_button_pressed"]
