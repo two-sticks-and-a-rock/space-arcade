@@ -27,3 +27,4 @@ func _input(_event: InputEvent) -> void:
 		clear_points()
 		var slingshot_vector = (start_vector - end_vector).limit_length(Mover.slingshot_length_clamp)
 		handle_speed(slingshot_vector)
+		Sfx.thrust_start()
