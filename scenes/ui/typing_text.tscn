@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ba6j0n3w5fvkl"]
+
+[ext_resource type="Script" uid="uid://dh1htnd5drs8c" path="res://scenes/ui/typing_text.gd" id="1_a4flc"]
+
+[node name="TypingText" type="RichTextLabel" unique_id=1616030014]
+custom_minimum_size = Vector2(1096, 0)
+size_flags_vertical = 4
+theme_override_font_sizes/normal_font_size = 36
+text = "After years of scraping together parts, you finally repair an old abandoned escape pod on Planet X Correctional Facility
+
+You make your escape in Pod 06 while pursued by the Enforcers
+
+Now you must fight to survive, desperately clinging to a life condemned by society"
+fit_content = true
+script = ExtResource("1_a4flc")
+
+[node name="TypingTimer" type="Timer" parent="." unique_id=920745141]
+wait_time = 0.05
