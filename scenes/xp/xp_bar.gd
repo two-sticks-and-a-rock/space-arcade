@@ -28,6 +28,7 @@ func set_next_xp_threshold() -> void:
 	xp_threshold *= 2
 
 func handle_level_up() -> void:
+	visible = false
 	curr_xp -= max(xp_threshold, 0)
 
 	EventBus.level_up.emit()
@@ -42,6 +43,7 @@ func gain_xp(xp: int) -> void:
 		handle_level_up.call_deferred()
 
 func _on_finish_level_up():
+	visible = true
 	is_leveling_up = false
 
 func set_visible_step_mult() -> void:

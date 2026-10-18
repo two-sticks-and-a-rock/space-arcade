@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var upgrade_panel_scene : PackedScene = load("res://scenes/ui/upgrade_panel.tscn")
-@onready var h_container : HBoxContainer = $PanelContainer/HBoxContainer
+@onready var h_container : HBoxContainer = $PanelContainer/VBoxContainer/HBoxContainer
 
 var hit_max_level = false
 
