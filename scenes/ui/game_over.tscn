@@ -3,8 +3,10 @@
 [ext_resource type="Script" uid="uid://dljd3x1xw8ddi" path="res://scenes/ui/game_over.gd" id="1_fu4wh"]
 [ext_resource type="Theme" uid="uid://drsxtvymgay2s" path="res://scenes/ui/themes/default/default.tres" id="2_vfrx6"]
 [ext_resource type="PackedScene" uid="uid://drh6cl70rtt78" path="res://scenes/ui/restart_button.tscn" id="2_x6o8e"]
+[ext_resource type="PackedScene" uid="uid://bemmgs3bisire" path="res://scenes/ui/main_menu_button.tscn" id="4_vfrx6"]
 
 [node name="GameOver" type="CanvasLayer" unique_id=922977592]
+process_mode = 3
 script = ExtResource("1_fu4wh")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1677639649]
@@ -43,17 +45,14 @@ custom_minimum_size = Vector2(400, 84)
 custom_maximum_size = Vector2(400, -1)
 layout_mode = 2
 
-[node name="MainMenuButton" type="Button" parent="PanelContainer/VBoxContainer/Actions" unique_id=671251716]
-custom_minimum_size = Vector2(400, 84)
-custom_maximum_size = Vector2(400, -1)
+[node name="MainMenuButton" parent="PanelContainer/VBoxContainer/Actions" unique_id=1811628303 instance=ExtResource("4_vfrx6")]
 layout_mode = 2
-text = "Main Menu"
 
 [node name="BrokenShipImage" type="TextureRect" parent="PanelContainer/VBoxContainer" unique_id=612990862]
 custom_minimum_size = Vector2(0, 240)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1335755810]
+[node name="KillsValue" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1335755810]
 layout_mode = 2
 theme = ExtResource("2_vfrx6")
 text = "Kills 206"
@@ -73,7 +72,7 @@ offset_transform_enabled = true
 offset_transform_position = Vector2(0, -72)
 offset_transform_visual_only = false
 
-[node name="CurrentTime" type="Label" parent="HSplitContainer" unique_id=258549648]
+[node name="RunTime" type="Label" parent="HSplitContainer" unique_id=258549648]
 custom_minimum_size = Vector2(400, 84)
 custom_maximum_size = Vector2(400, -1)
 layout_mode = 2

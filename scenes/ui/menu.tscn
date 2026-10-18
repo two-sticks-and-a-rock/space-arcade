@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://d2tt0u6ddlowp" path="res://scenes/ui/menu.gd" id="1_wedc3"]
 [ext_resource type="PackedScene" uid="uid://drh6cl70rtt78" path="res://scenes/ui/restart_button.tscn" id="2_c2n5p"]
 [ext_resource type="Theme" uid="uid://drsxtvymgay2s" path="res://scenes/ui/themes/default/default.tres" id="2_w6y0u"]
-[ext_resource type="Theme" uid="uid://bwrgd0l5g7l04" path="res://scenes/ui/themes/secondary/secondary.tres" id="4_w6y0u"]
+[ext_resource type="PackedScene" uid="uid://bemmgs3bisire" path="res://scenes/ui/main_menu_button.tscn" id="4_w6y0u"]
+[ext_resource type="Theme" uid="uid://bwrgd0l5g7l04" path="res://scenes/ui/themes/secondary/secondary.tres" id="5_cx0sj"]
 
 [node name="Menu" type="CanvasLayer" unique_id=1623096271]
 process_mode = 3
@@ -47,10 +48,9 @@ custom_minimum_size = Vector2(400, 84)
 custom_maximum_size = Vector2(400, -1)
 layout_mode = 2
 
-[node name="MainMenuButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=169467694]
-custom_minimum_size = Vector2(400, 84)
-custom_maximum_size = Vector2(400, -1)
+[node name="MainMenuButton" parent="PanelContainer/VBoxContainer" unique_id=1811628303 instance=ExtResource("4_w6y0u")]
 layout_mode = 2
 size_flags_horizontal = 4
-theme = ExtResource("4_w6y0u")
-text = "Main Menu"
+theme = ExtResource("5_cx0sj")
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/ContinueRunButton" to="." method="_on_continue_run_button_pressed"]

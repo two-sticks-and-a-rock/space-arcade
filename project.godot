@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Space Arcade"
-run/main_scene="uid://be6oad5gocvyr"
+run/main_scene="uid://qysnsonqoawh"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -23,6 +23,8 @@ GameOver="*uid://b4o0n34uwel0d"
 Menu="*uid://d2n8xy8ehp0ps"
 UpgradeMenu="*uid://7objd5d07aj7"
 Sfx="*uid://xu7s4ea4cqhs"
+Utils="*uid://ba8784ul7gm82"
+TempSaveData="*uid://dxs3kv2vcqt53"
 
 [display]
 

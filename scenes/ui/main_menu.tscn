@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://qysnsonqoawh"]
 
 [ext_resource type="Theme" uid="uid://drsxtvymgay2s" path="res://scenes/ui/themes/default/default.tres" id="1_sl1te"]
+[ext_resource type="Script" uid="uid://j72tyyyq6qx7" path="res://scenes/ui/start_button.gd" id="2_fe2o3"]
 
 [node name="MainMenu" type="CanvasLayer" unique_id=1257820333]
 
@@ -24,12 +25,14 @@ layout_mode = 2
 theme = ExtResource("1_sl1te")
 text = "Start
 "
+script = ExtResource("2_fe2o3")
 
 [node name="ScoreboardButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=210280593]
 custom_minimum_size = Vector2(400, 84)
 custom_maximum_size = Vector2(400, -1)
 layout_mode = 2
 theme = ExtResource("1_sl1te")
+disabled = true
 text = "Scoreboard"
 
 [node name="CreditsButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=903967324]
@@ -37,6 +40,7 @@ custom_minimum_size = Vector2(400, 84)
 custom_maximum_size = Vector2(400, -1)
 layout_mode = 2
 theme = ExtResource("1_sl1te")
+disabled = true
 text = "Credits"
 
 [node name="HSplitContainer" type="HSplitContainer" parent="PanelContainer" unique_id=139623170]
@@ -55,6 +59,7 @@ offset_transform_enabled = true
 offset_transform_position = Vector2(60, 0)
 offset_transform_visual_only = false
 theme = ExtResource("1_sl1te")
+disabled = true
 text = "Settings
 "
 
@@ -67,4 +72,7 @@ offset_transform_enabled = true
 offset_transform_position = Vector2(-60, 0)
 offset_transform_visual_only = false
 theme = ExtResource("1_sl1te")
+disabled = true
 text = "Accessibility"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/StartButton" to="PanelContainer/VBoxContainer/StartButton" method="_on_start_pressed"]
