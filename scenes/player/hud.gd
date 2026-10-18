@@ -18,20 +18,6 @@ func _ready():
 func _on_game_over(_game_over_data: EventBus.GameOverData):
 	visible = false
 
-func get_kills_with_leading_zeros(kills: int) -> String:
-	var kills_copy = kills
-	var num_nonzeros : int = 0
-	while kills_copy > 0:
-		num_nonzeros += 1
-		kills_copy /= 10
-	
-	var prepend_zeros = str(kills)
-	while num_nonzeros < displayed_zeros:
-		num_nonzeros += 1
-		prepend_zeros = "0" + prepend_zeros
-	
-	return prepend_zeros
-
 func _on_enemy_death():
 	total_kills += 1
 	kills_value.text = Utils.get_kills_with_leading_zeros(total_kills, displayed_zeros)
