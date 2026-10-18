@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://btlxekjq0am2a" path="res://scenes/ui/upgrade_panel.gd" id="1_r60ue"]
 
 [node name="UpgradePanel" type="MarginContainer" unique_id=1694010216]
-custom_minimum_size = Vector2(500, 800)
-custom_maximum_size = Vector2(-1, 800)
+custom_minimum_size = Vector2(500, 720)
+custom_maximum_size = Vector2(-1, 720)
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
