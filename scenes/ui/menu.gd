@@ -15,7 +15,7 @@ func _on_switch_scenes(sceneType: EventBus.SceneType) -> void:
 	else:
 		allow_input = true
 
-func _on_game_over():
+func _on_game_over(_game_over_data: EventBus.GameOverData):
 	allow_input = false
 
 func _on_restart():

@@ -19,6 +19,7 @@ func take_damage(dmg: int):
 			xp_drop.global_position = global_position
 			get_parent().add_child(xp_drop)
 		drop_xp.call_deferred()
+		EventBus.enemy_death.emit()
 		queue_free()
 
 func freeze(time: int = 5):
