@@ -78,7 +78,7 @@ script = ExtResource("7_h17s1")
 max_value = 1920.0
 value = 1920.0
 
-[node name="PlayTimeDisplayed" type="Label" parent="Hud" unique_id=1379446046]
+[node name="RunTime" type="Label" parent="Hud" unique_id=1379446046]
 offset_top = 57.0
 offset_right = 1920.0
 offset_bottom = 140.0
@@ -128,6 +128,9 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
+offset_transform_enabled = true
+offset_transform_position = Vector2(-36, 0)
+theme = ExtResource("8_qek5x")
 alignment = 1
 
 [node name="KillsLabel" type="Label" parent="Hud/HSplitContainer/HBoxContainer" unique_id=398882436]
@@ -135,9 +138,8 @@ custom_minimum_size = Vector2(100, 0)
 custom_maximum_size = Vector2(100, -1)
 layout_mode = 2
 theme = ExtResource("8_qek5x")
-theme_override_font_sizes/font_size = 48
 text = "Kills"
-horizontal_alignment = 2
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="KillsValue" type="Label" parent="Hud/HSplitContainer/HBoxContainer" unique_id=1480804138]
@@ -145,7 +147,7 @@ custom_minimum_size = Vector2(160, 0)
 custom_maximum_size = Vector2(240, -1)
 layout_mode = 2
 theme = ExtResource("8_qek5x")
-text = "0"
+text = "00000"
 horizontal_alignment = 1
 vertical_alignment = 1
 

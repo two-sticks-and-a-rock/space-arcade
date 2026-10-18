@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var kills_value : Label = $PanelContainer/VBoxContainer/KillsValue
+@onready var run_time_value : Label = $HSplitContainer/RunTime
 
 func _ready():
 	EventBus.restart_game.connect(_on_restart)
@@ -13,7 +14,8 @@ func _on_switch_scenes(_sceneType: EventBus.SceneType) -> void:
 	get_tree().paused = false
 
 func _on_player_game_over(game_over_data: EventBus.GameOverData):
-	kills_value.text = "Kills: " + str(game_over_data.kills)
+	kills_value.text = "Kills: " + game_over_data.kills_display
+	run_time_value.text = "Time: " + game_over_data.time_display
 	get_tree().paused = true
 	visible = true
 

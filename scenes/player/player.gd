@@ -8,9 +8,9 @@ extends StaticBody2D
 @onready var magnet_collider : CollisionShape2D = $XpMagnet/CollisionShape2D
 @onready var sprite : Sprite2D = $Sprite2D
 
-@onready var kills_value : Label = $Hud/HSplitContainer/HBoxContainer/KillsValue
+@onready var hud : CanvasLayer = $Hud
 
-var max_hp : int = 25
+var max_hp : int = 500
 var curr_hp : int = max_hp
 var magnet_radius : int = 150
 
@@ -31,8 +31,12 @@ func gain_xp(xp: int):
 	xp_bar.gain_xp(xp)
 
 func handle_game_over():
-	var kills_value_int = int(kills_value.text) if kills_value.text.is_valid_int() else 0
-	EventBus.game_over.emit(EventBus.GameOverData.new(kills_value_int))
+	EventBus.game_over.emit(EventBus.GameOverData.new(
+		hud.total_kills,
+		hud.kills_value.text,
+		hud.run_time,
+		hud.run_time_value.text,
+	))
 
 func _physics_process(_delta):
 	sprite.look_at(-1*get_global_mouse_position())
