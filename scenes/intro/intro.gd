@@ -6,7 +6,7 @@ extends CanvasLayer
 var num_presses = 0
 
 func _on_skip_button_pressed():
-	if num_presses >= 1:
+	if num_presses >= 1 || intro_text.visible_ratio == 1.0:
 		get_tree().change_scene_to_packed(level_scene)
 	else:
 		intro_text.show_all_text()
