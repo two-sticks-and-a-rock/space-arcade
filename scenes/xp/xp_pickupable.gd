@@ -24,6 +24,7 @@ func _on_gear_entered(body: Node2D) -> void:
 	if (body.name == "player" && "gain_xp" in body):
 		body.gain_xp(xp_value)
 		queue_free()
+		Sfx.play("xp_pickup")
 
 func _on_gear_area_exited(area: Area2D) -> void:
 	if (area.name == "XpMagnet"):

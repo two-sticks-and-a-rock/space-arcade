@@ -20,6 +20,7 @@ func take_damage(dmg: int):
 			get_parent().add_child(xp_drop)
 		drop_xp.call_deferred()
 		queue_free()
+		Sfx.play("enemy_death")
 
 func freeze(time: int = 5):
 	if not is_frozen:

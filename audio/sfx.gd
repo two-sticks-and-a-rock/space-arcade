@@ -2,14 +2,20 @@ extends Node
 
 # Short sounds that play once
 const SOUNDS := {
-	"enemy_death": preload("res://audio/SFX/enemy_death.wav"),
+	"enemy_death": preload("res://audio/SFX/laserRetro_001.ogg"),
 	"thruster_small": preload("res://audio/SFX/thruster_small.wav"),
+	"xp_pickup": preload("res://audio/SFX/XP_pickup.wav"),
 }
 
 # Volume of each sound
 const VOLUMES := {
 	"enemy_death": -6.0,
 	"thruster_small": -8.0,
+	"xp_pickup": -16.0,
+}
+
+const PITCH_VARIATION := {
+	"enemy_death": 1.2,
 }
 
 # the constant sound of the player's ship engines
@@ -22,7 +28,10 @@ var _idle := AudioStreamPlayer2D.new()
 func _ready():
 	for sound_name in SOUNDS:
 		var player := AudioStreamPlayer.new()
-		player.stream = SOUNDS[sound_name]
+		var randomizer := AudioStreamRandomizer.new()
+		randomizer.add_stream(-1, SOUNDS[sound_name])
+		randomizer.random_pitch = PITCH_VARIATION.get(sound_name, 1.0)
+		player.stream = randomizer
 		player.volume_db = VOLUMES.get(sound_name, 0.0)
 		player.max_polyphony = 6  # lets several play at once (lots of enemies dying)
 		add_child(player)
