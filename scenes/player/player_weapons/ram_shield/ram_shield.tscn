@@ -43,9 +43,22 @@ shape = SubResource("CircleShape2D_ks08d")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RamCap" unique_id=1792486684]
 sprite_frames = SubResource("SpriteFrames_fw3ta")
 
-[node name="PowerUp" type="Sprite2D" parent="RamCap" unique_id=1874069850]
-visible = false
-texture = ExtResource("3_fw3ta")
+[node name="TextureProgressBar" type="TextureProgressBar" parent="RamCap/AnimatedSprite2D" unique_id=1022541930]
+clip_contents = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -137.0
+offset_top = -144.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 5.0
+step = 0.1
+value = 2.0
+texture_progress = ExtResource("3_fw3ta")
+tint_progress = Color(1, 0.25882354, 0.6117647, 1)
 
 [connection signal="timeout" from="UpTimer" to="." method="_on_up_timer_timeout"]
 [connection signal="timeout" from="DownTimer" to="." method="_on_down_timer_timeout"]
