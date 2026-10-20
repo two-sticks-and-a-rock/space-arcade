@@ -3,6 +3,7 @@ extends StaticBody2D
 @export var orbiter_ring_scene : PackedScene
 @export var frost_nova_scene : PackedScene
 @export var missile_silo_scene : PackedScene
+@export var ram_shield_scene : PackedScene
 
 @onready var hp_bar : ProgressBar = $hp
 @onready var xp_bar : ProgressBar = $Hud/XpBar
@@ -23,6 +24,8 @@ func _ready():
 	#add_child(orbiter_ring)
 	# var frost_nova = frost_nova_scene.instantiate() as Node2D
 	# add_child(frost_nova)
+	var ram_shield = ram_shield_scene.instantiate() as Node2D
+	add_child(ram_shield)
 	(magnet_collider.shape as CircleShape2D).radius = magnet_radius
 	var missile_silo = missile_silo_scene.instantiate() as Node2D
 	add_child(missile_silo)

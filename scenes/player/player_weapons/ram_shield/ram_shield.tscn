@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cmlijvf1tcg3a"]
+
+[ext_resource type="Script" uid="uid://da3ix7tkfrvg6" path="res://scenes/player/player_weapons/ram_shield/ram_shield.gd" id="1_rl1gc"]
+[ext_resource type="Script" uid="uid://bcp3gl8x6c5u6" path="res://scenes/player/player_weapons/ram_shield/ram_cap.gd" id="2_fw3ta"]
+[ext_resource type="Texture2D" uid="uid://dr03oym73vfjn" path="res://art/sprites/bullets/shield3.png" id="3_fw3ta"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ks08d"]
+radius = 72.02777
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fw3ta"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fw3ta")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="RamShield" type="Node2D" unique_id=1339649772]
+script = ExtResource("1_rl1gc")
+dmg = 25
+num_bullets = 1
+bullet_size = 5.0
+metadata/_custom_type_script = "uid://ddp1c2rv414k4"
+
+[node name="UpTimer" type="Timer" parent="." unique_id=12921542]
+wait_time = 5.0
+
+[node name="DownTimer" type="Timer" parent="." unique_id=1879192355]
+wait_time = 5.0
+
+[node name="RamCap" type="Area2D" parent="." unique_id=890906733]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("2_fw3ta")
+metadata/_custom_type_script = "uid://coecmsj6c3pm2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RamCap" unique_id=209211925]
+shape = SubResource("CircleShape2D_ks08d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RamCap" unique_id=1792486684]
+sprite_frames = SubResource("SpriteFrames_fw3ta")
+
+[node name="PowerUp" type="Sprite2D" parent="RamCap" unique_id=1874069850]
+visible = false
+texture = ExtResource("3_fw3ta")
+
+[connection signal="timeout" from="UpTimer" to="." method="_on_up_timer_timeout"]
+[connection signal="timeout" from="DownTimer" to="." method="_on_down_timer_timeout"]
+[connection signal="body_entered" from="RamCap" to="RamCap" method="_on_orbiter_entered"]
