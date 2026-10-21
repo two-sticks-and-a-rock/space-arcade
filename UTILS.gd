@@ -18,6 +18,6 @@ func get_kills_with_leading_zeros(kills: int, displayed_zeros: int) -> String:
 func float_to_displayed_time(timer_time : float) -> String:
 	var minutes : int = int(timer_time / 60.0)
 	var seconds : int = int(timer_time) % 60
-	var minutes_with_leading_zeros = str(minutes) if minutes > 10 else "0"+str(minutes)
-	var seconds_with_leading_zeros = str(seconds) if seconds > 10 else "0"+str(seconds)
+	var minutes_with_leading_zeros = str(minutes) if minutes >= 10 else "0"+str(minutes)
+	var seconds_with_leading_zeros = str(seconds) if seconds >= 10 else "0"+str(seconds)
 	return minutes_with_leading_zeros + ":" + seconds_with_leading_zeros
