@@ -10,6 +10,43 @@ class UpgradeSetMetadata:
 	var all_possible_upgrades_length: int = 0
 	var upgrade_set_name_to_weapon_map: Dictionary[String, PlayerWeapon] = {}
 
+func get_unobtained_weapons(player_weapons: Array) -> Array[PlayerWeapon]:
+	var prefix : String = "res://scenes/player/player_weapons/"
+	var dirs : PackedStringArray = ResourceLoader.list_directory(prefix)
+
+	var all_weapon_dirs : Array[String] = []
+	for dir in dirs:
+		if !dir.contains("/") || dir.contains("weapon_upgrades"):
+			continue
+		all_weapon_dirs.append(prefix + dir)
+
+	var all_weapons : Array[PlayerWeapon] = []
+	for weapon_dir in all_weapon_dirs:
+		var weapon_files = ResourceLoader.list_directory(weapon_dir)
+		for weapon_file in weapon_files:
+			if !weapon_file.contains(".tscn"):
+				continue
+
+			var weapon_scene : Node2D = (load(weapon_dir + weapon_file) as PackedScene).instantiate()
+			var weapon_node : PlayerWeapon = weapon_scene as PlayerWeapon
+			if weapon_node == null:
+				weapon_scene.free()
+				continue
+			
+			all_weapons.append(weapon_node)
+
+
+	if player_weapons.size() == 0:
+		return all_weapons
+
+	var new_weapons : Array[PlayerWeapon] = []
+	for weapon in all_weapons:
+		for player_weapon in player_weapons:
+			if weapon.get_script() == player_weapon.get_script():
+				continue
+			new_weapons.append(weapon)
+	return new_weapons
+
 # TODO: this gets mad for some reason when I try to specify "player_weapons: Array[PlayerWeapon]"
 # but the debugger says its the OrbiterRing is a PlayerWeapon so this might just be buggy
 func get_possible_upgrade_sets(player_weapons: Array) -> UpgradeSetMetadata:
@@ -45,6 +82,7 @@ func populate_upgrade_panels():
 		func(child):
 			return child is PlayerWeapon
 	) as Array[PlayerWeapon]
+	# print(get_unobtained_weapons(player_weapons))
 
 	var processed = get_possible_upgrade_sets(player_weapons)
 	var choices = choose_at_most_three(processed.possible_upgrade_sets)
