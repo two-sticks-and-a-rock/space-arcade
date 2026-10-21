@@ -40,10 +40,13 @@ func get_unobtained_weapons(player_weapons: Array) -> Array[PlayerWeapon]:
 		return all_weapons
 
 	var new_weapons : Array[PlayerWeapon] = []
+
 	for weapon in all_weapons:
+		var player_has_weapon = false
 		for player_weapon in player_weapons:
 			if weapon.get_script() == player_weapon.get_script():
-				continue
+				player_has_weapon = true
+		if !player_has_weapon:
 			new_weapons.append(weapon)
 	return new_weapons
 
@@ -69,46 +72,60 @@ func get_possible_upgrade_sets(player_weapons: Array) -> UpgradeSetMetadata:
 
 	return upgrade_set_metadata
 
-func choose_at_most_three(possible_upgrade_sets: Array[WeaponUpgradeSet]):
-	var total_upgrades = possible_upgrade_sets.size()
-	var num_to_choose = min(total_upgrades, 3)
+func choose_at_most_n(to_choose_from: Array, n: int):
+	var total = to_choose_from.size()
+	if (n > total):
+		return to_choose_from
+
+	var num_to_choose = min(total, n)
 	
-	var sliced = possible_upgrade_sets
+	var sliced = to_choose_from
 	sliced.shuffle()
 	return sliced.slice(0, num_to_choose)
 
 func populate_upgrade_panels():
-	var player_weapons = get_tree().root.get_node("Main/player").get_children().filter(
+	var player = get_tree().root.get_node("Main/player")
+	var player_weapons = player.get_children().filter(
 		func(child):
 			return child is PlayerWeapon
 	) as Array[PlayerWeapon]
-	# print(get_unobtained_weapons(player_weapons))
 
 	var processed = get_possible_upgrade_sets(player_weapons)
-	var choices = choose_at_most_three(processed.possible_upgrade_sets)
+	var new_weapons = get_unobtained_weapons(player_weapons)
+
+	var all_choices = processed.possible_upgrade_sets + new_weapons
+	var choices = choose_at_most_n(all_choices, 3)
 
 	for choice in choices:
 		# Instantiate an upgrade panel and fill in fields
 		var upgrade_panel : MarginContainer = upgrade_panel_scene.instantiate()
 	
-		upgrade_panel.upgrade_name = choice.resource_name
-		# TODO: placeholder images
-		# upgrade_panel.img_filepath = 
-		upgrade_panel.mechanics = ([] as Array[String])
-		for component_upgrade in choice.upgrades:
-			upgrade_panel.mechanics.append(component_upgrade.resource_name)
-		
-		upgrade_panel.on_panel_pressed = func():
-			var weapon = processed.upgrade_set_name_to_weapon_map[choice.resource_name]
-			weapon.upgrades += choice.upgrades
-			choice.applied = true
-			weapon._reinstantiate_weapon()
+		if choice is WeaponUpgradeSet:
+			upgrade_panel.upgrade_name = choice.resource_name
+			# TODO: placeholder images
+			# upgrade_panel.img_filepath = 
+			upgrade_panel.mechanics = ([] as Array[String])
+			for component_upgrade in choice.upgrades:
+				upgrade_panel.mechanics.append(component_upgrade.resource_name)
+			
+			upgrade_panel.on_panel_pressed = func():
+				var weapon = processed.upgrade_set_name_to_weapon_map[choice.resource_name]
+				weapon.upgrades += choice.upgrades
+				choice.applied = true
+				weapon._reinstantiate_weapon()
 
-			if (processed.all_possible_upgrades_length <= 1):
-				hit_max_level = true
-			EventBus.finish_level_up.emit()
-			_on_player_finish_level_up()
-		
+				if (processed.all_possible_upgrades_length <= 1):
+					hit_max_level = true
+				EventBus.finish_level_up.emit()
+				_on_player_finish_level_up()
+		else:
+			upgrade_panel.upgrade_name = choice.name
+			upgrade_panel.mechanics = ([] as Array[String])
+			upgrade_panel.on_panel_pressed = func():
+				player.add_child(choice)
+				EventBus.finish_level_up.emit()
+				_on_player_finish_level_up()
+
 		h_container.add_child(upgrade_panel)
 
 func clear_upgrade_panels():
