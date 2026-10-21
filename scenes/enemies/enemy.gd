@@ -47,7 +47,8 @@ func _ready():
 	$AnimatedSprite2D.play()
 
 func _physics_process(_delta):
-	look_at(player.position)
+	if !is_frozen:
+		look_at(player.position)
 	velocity = speed.rotated(rotation)
 	velocity -= Mover.get_movement()
 	move_and_slide()
