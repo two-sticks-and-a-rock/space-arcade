@@ -1,5 +1,10 @@
 [gd_scene format=3 uid="uid://br4we7wbi1h4f"]
 
+[ext_resource type="Theme" uid="uid://drsxtvymgay2s" path="res://scenes/ui/themes/default/default.tres" id="1_h4srg"]
+
 [node name="UpgradeMechanicsText" type="Label" unique_id=616719383]
+custom_maximum_size = Vector2(-1, 450)
+theme = ExtResource("1_h4srg")
 theme_override_font_sizes/font_size = 24
 text = "Mechanics Text Example: 8s → 7s"
+autowrap_mode = 2

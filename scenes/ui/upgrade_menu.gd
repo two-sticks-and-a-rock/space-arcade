@@ -101,6 +101,8 @@ func populate_upgrade_panels():
 		var upgrade_panel : MarginContainer = upgrade_panel_scene.instantiate()
 	
 		if choice is WeaponUpgradeSet:
+			var weapon = processed.upgrade_set_name_to_weapon_map[choice.resource_name]
+			upgrade_panel.weapon_name = weapon.display_name if weapon.display_name != null else weapon.name 
 			upgrade_panel.upgrade_name = choice.resource_name
 			# TODO: placeholder images
 			# upgrade_panel.img_filepath = 
@@ -109,7 +111,6 @@ func populate_upgrade_panels():
 				upgrade_panel.mechanics.append(component_upgrade.resource_name)
 			
 			upgrade_panel.on_panel_pressed = func():
-				var weapon = processed.upgrade_set_name_to_weapon_map[choice.resource_name]
 				weapon.upgrades += choice.upgrades
 				choice.applied = true
 				weapon._reinstantiate_weapon()
@@ -119,8 +120,9 @@ func populate_upgrade_panels():
 				EventBus.finish_level_up.emit()
 				_on_player_finish_level_up()
 		else:
-			upgrade_panel.upgrade_name = choice.name
-			upgrade_panel.mechanics = ([] as Array[String])
+			upgrade_panel.upgrade_name = choice.display_name if choice.display_name != null else choice.name
+			upgrade_panel.weapon_name = "New weapon!"
+			upgrade_panel.mechanics = [choice.description if choice.description != null else "A new weapon!"] as Array[String]
 			upgrade_panel.on_panel_pressed = func():
 				player.add_child(choice)
 				EventBus.finish_level_up.emit()

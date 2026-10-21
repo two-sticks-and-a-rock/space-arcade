@@ -2,18 +2,21 @@ extends MarginContainer
 
 @onready var v_container : VBoxContainer = $VBoxContainer
 @onready var name_label : Label = $VBoxContainer/Name
+@onready var weapon_label : Label = $VBoxContainer/Weapon
 @onready var img : TextureRect = $VBoxContainer/Img
 @onready var button : Button = $Button as Button
 
 @onready var mechanic_label_scene : PackedScene = load("res://scenes/ui/upgrade_mechanics_text.tscn")
 
 @export var upgrade_name : String
+@export var weapon_name : String
 @export var img_filepath : String
 @export var mechanics : Array[String] = []
 var on_panel_pressed: Callable
 
 func _ready():
 	name_label.text = upgrade_name
+	weapon_label.text = weapon_name
 	if (img_filepath):
 		img.texture = load(img_filepath) as Texture2D
 
