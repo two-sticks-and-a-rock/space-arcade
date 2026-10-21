@@ -16,6 +16,8 @@ var max_hp : int = 500
 var curr_hp : int = max_hp
 var magnet_radius : int = 150
 
+var immune_to_damage : bool = false
+
 func _ready():
 	hp_bar.max_value = max_hp
 	hp_bar.value = max_hp
@@ -31,6 +33,8 @@ func _ready():
 	add_child(missile_silo)
 
 func take_damage(dmg: int):
+	if immune_to_damage:
+		return
 	curr_hp -= dmg
 
 func gain_xp(xp: int):
