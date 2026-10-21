@@ -5,6 +5,8 @@
 
 [node name="FrostNova" type="Node2D" unique_id=529776342]
 script = ExtResource("1_43v6x")
+display_name = "Frost Nova"
+description = "Freeze enemies in place to make a getaway"
 bullet_scene = ExtResource("2_hm4nq")
 num_bullets = 1
 bullet_size = 1.0

@@ -20,8 +20,8 @@ func _ready():
 
 	var orbiter_ring = orbiter_ring_scene.instantiate() as Node2D
 	add_child(orbiter_ring)
-	var frost_nova = frost_nova_scene.instantiate() as Node2D
-	add_child(frost_nova)
+	# var frost_nova = frost_nova_scene.instantiate() as Node2D
+	# add_child(frost_nova)
 	(magnet_collider.shape as CircleShape2D).radius = magnet_radius
 
 func take_damage(dmg: int):

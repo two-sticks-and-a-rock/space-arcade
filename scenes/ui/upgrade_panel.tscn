@@ -22,12 +22,23 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 24
 
-[node name="Name" type="Label" parent="VBoxContainer" unique_id=1863297255]
+[node name="Name" type="Label" parent="VBoxContainer" unique_id=1394569463]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Name Placeholder"
+text = "Upgrade Name"
 horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Weapon" type="Label" parent="VBoxContainer" unique_id=1863297255]
+custom_minimum_size = Vector2(0, 50)
+custom_maximum_size = Vector2(450, -1)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Weapon Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Img" type="TextureRect" parent="VBoxContainer" unique_id=1720966437]
 custom_minimum_size = Vector2(450, 300)

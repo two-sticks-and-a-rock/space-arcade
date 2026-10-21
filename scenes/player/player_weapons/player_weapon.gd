@@ -1,6 +1,9 @@
 class_name PlayerWeapon
 extends Node2D
 
+@export var display_name : String 
+@export var description : String
+
 @export var bullet_scene : PackedScene
 
 @export var dmg: int
