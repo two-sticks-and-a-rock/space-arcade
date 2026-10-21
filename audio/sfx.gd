@@ -27,10 +27,10 @@ func _ready():
 		player.max_polyphony = 6  # lets several play at once (lots of enemies dying)
 		add_child(player)
 		_players[sound_name] = player
-		_idle.stream = engine_idle
-		_idle.volume_db = engine_idle_volume
-		add_child(_idle)
-		_idle.play()
+	_idle.stream = engine_idle
+	_idle.volume_db = engine_idle_volume
+	add_child(_idle)
+	_idle.play()
 
 func play(sound_name: String):
 	if _players.has(sound_name):
