@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dyeikbrn1kse8" path="res://scenes/player/player_weapons/frost_nova/frost_nova.tscn" id="3_qek5x"]
 [ext_resource type="Texture2D" uid="uid://d1ket6flnqnch" path="res://art/sprites/player/player_ship_v02_128x162.svg" id="4_0owmy"]
 [ext_resource type="PackedScene" uid="uid://ixp2d2233w0e" path="res://scenes/player/player_weapons/Missile_Silo/missile_silo.tscn" id="4_je7p5"]
+[ext_resource type="PackedScene" uid="uid://cmlijvf1tcg3a" path="res://scenes/player/player_weapons/ram_shield/ram_shield.tscn" id="5_fm80t"]
 [ext_resource type="PackedScene" uid="uid://dto3jjxkpeho1" path="res://scenes/xp/xp_bar.tscn" id="6_75vfm"]
 [ext_resource type="Script" uid="uid://6f5n0ek5ibig" path="res://scenes/player/hud.gd" id="7_h17s1"]
 [ext_resource type="Theme" uid="uid://drsxtvymgay2s" path="res://scenes/ui/themes/default/default.tres" id="8_qek5x"]
@@ -38,6 +39,7 @@ script = ExtResource("1_g2els")
 orbiter_ring_scene = ExtResource("2_p47bc")
 frost_nova_scene = ExtResource("3_qek5x")
 missile_silo_scene = ExtResource("4_je7p5")
+ram_shield_scene = ExtResource("5_fm80t")
 metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1031992017]

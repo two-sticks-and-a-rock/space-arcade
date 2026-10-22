@@ -3,6 +3,7 @@ extends StaticBody2D
 @export var orbiter_ring_scene : PackedScene
 @export var frost_nova_scene : PackedScene
 @export var missile_silo_scene : PackedScene
+@export var ram_shield_scene : PackedScene
 
 @onready var hp_bar : ProgressBar = $hp
 @onready var xp_bar : ProgressBar = $Hud/XpBar
@@ -15,6 +16,8 @@ var max_hp : int = 500
 var curr_hp : int = max_hp
 var magnet_radius : int = 150
 
+var immune_to_damage : bool = false
+
 func _ready():
 	hp_bar.max_value = max_hp
 	hp_bar.value = max_hp
@@ -23,11 +26,15 @@ func _ready():
 	#add_child(orbiter_ring)
 	# var frost_nova = frost_nova_scene.instantiate() as Node2D
 	# add_child(frost_nova)
+	var ram_shield = ram_shield_scene.instantiate() as Node2D
+	add_child(ram_shield)
 	(magnet_collider.shape as CircleShape2D).radius = magnet_radius
-	var missile_silo = missile_silo_scene.instantiate() as Node2D
-	add_child(missile_silo)
+	# var missile_silo = missile_silo_scene.instantiate() as Node2D
+	# add_child(missile_silo)
 
 func take_damage(dmg: int):
+	if immune_to_damage:
+		return
 	curr_hp -= dmg
 
 func gain_xp(xp: int):
