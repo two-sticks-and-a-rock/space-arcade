@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="FreezeTimeUpgrade" format=3 uid="uid://c02a6c4ynqdk7"]
+
+[ext_resource type="Script" uid="uid://b76m57i5lxfem" path="res://scenes/player/player_weapons/frost_nova/upgrades/freeze_time_upgrade.gd" id="1_oqrp0"]
+
+[resource]
+script = ExtResource("1_oqrp0")
+freeze_time_increase = 4.0
+metadata/_custom_type_script = "uid://b76m57i5lxfem"
