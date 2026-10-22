@@ -10,6 +10,7 @@ var curr_hp = max_hp
 
 @onready var freeze_timer : Timer = Timer.new()
 var is_frozen: bool = false
+var is_marked: bool = false
 
 func take_damage(dmg: int):
 	curr_hp -= dmg

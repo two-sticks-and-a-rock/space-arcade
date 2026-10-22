@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://ixp2d2233w0e"]
+
+[ext_resource type="Script" uid="uid://boa81m0e18a1n" path="res://scenes/player/player_weapons/Missile_Silo/missile_silo.gd" id="1_e740r"]
+[ext_resource type="Texture2D" uid="uid://cdo1hmi1povfe" path="res://art/sprites/bullets/Missile_Silo/MissileSiloDone-Sheet-Sheet.png" id="2_minx4"]
+[ext_resource type="PackedScene" uid="uid://4gto1ijk7tqs" path="res://scenes/player/player_weapons/Missile_Silo/missile.tscn" id="2_wy3lk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tjbvn"]
+atlas = ExtResource("2_minx4")
+region = Rect2(576, 0, 192, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1blx"]
+atlas = ExtResource("2_minx4")
+region = Rect2(384, 0, 192, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ceof2"]
+atlas = ExtResource("2_minx4")
+region = Rect2(192, 0, 192, 108)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6a76n"]
+atlas = ExtResource("2_minx4")
+region = Rect2(0, 0, 192, 108)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wy3lk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tjbvn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q1blx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ceof2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6a76n")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 0.3
+}]
+
+[node name="Missile_Silo" type="Node2D" unique_id=356839213]
+script = ExtResource("1_e740r")
+bullet_scene = ExtResource("2_wy3lk")
+dmg = 100
+num_bullets = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=825337014]
+sprite_frames = SubResource("SpriteFrames_wy3lk")
+
+[node name="UpTimer" type="Timer" parent="." unique_id=781783780]
+wait_time = 0.1
+
+[node name="DownTimer" type="Timer" parent="." unique_id=1088500671]
+wait_time = 2.9
+
+[connection signal="timeout" from="UpTimer" to="." method="_on_up_timer_timeout"]
+[connection signal="timeout" from="DownTimer" to="." method="_on_down_timer_timeout"]
