@@ -29,8 +29,8 @@ func _ready():
 	var ram_shield = ram_shield_scene.instantiate() as Node2D
 	add_child(ram_shield)
 	(magnet_collider.shape as CircleShape2D).radius = magnet_radius
-	var missile_silo = missile_silo_scene.instantiate() as Node2D
-	add_child(missile_silo)
+	# var missile_silo = missile_silo_scene.instantiate() as Node2D
+	# add_child(missile_silo)
 
 func take_damage(dmg: int):
 	if immune_to_damage:

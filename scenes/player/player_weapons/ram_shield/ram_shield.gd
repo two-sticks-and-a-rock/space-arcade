@@ -18,6 +18,7 @@ func _on_down_timer_timeout():
 	up_timer.start()
 	down_timer.stop()
 
+	ram_cap.sprite.self_modulate.a = 1
 	player.immune_to_damage = true
 	ram_cap.collider.disabled = false
 
@@ -25,6 +26,7 @@ func _on_up_timer_timeout():
 	down_timer.start()
 	up_timer.stop()
 
+	ram_cap.sprite.self_modulate.a = 0.5
 	player.immune_to_damage = false
 	power_up.max_value = down_timer.wait_time
 	ram_cap.collider.disabled = true
