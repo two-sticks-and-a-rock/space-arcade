@@ -36,7 +36,7 @@ script = ExtResource("4_tippe")
 [sub_resource type="Resource" id="Resource_246l1"]
 resource_name = "Size: 1.5x size"
 script = ExtResource("4_jwv4o")
-bullet_size_increase = 1.5
+bullet_scale = 1.5
 metadata/_custom_type_script = "uid://c0owbkeruir2v"
 
 [sub_resource type="Resource" id="Resource_mjay7"]
@@ -57,7 +57,7 @@ metadata/_custom_type_script = "uid://cfgllll1jbmru"
 [sub_resource type="Resource" id="Resource_vxvyc"]
 resource_name = "Size: 3x size"
 script = ExtResource("4_jwv4o")
-bullet_size_increase = 1.5
+bullet_scale = 3.0
 metadata/_custom_type_script = "uid://c0owbkeruir2v"
 
 [sub_resource type="Resource" id="Resource_qot2w"]
@@ -125,7 +125,7 @@ bullet_scene = ExtResource("2_gpny0")
 dmg = 50
 num_bullets = 2
 bullet_speed = 0.087
-bullet_size = 0.5
+bullet_size = 1.0
 possible_upgrade_sets = Array[ExtResource("3_tippe")]([SubResource("Resource_ycwcd"), SubResource("Resource_tippe"), SubResource("Resource_inxn4"), SubResource("Resource_sxqx5"), SubResource("Resource_rfiqj"), SubResource("Resource_fonbn")])
 metadata/_custom_type_script = "uid://ddp1c2rv414k4"
 

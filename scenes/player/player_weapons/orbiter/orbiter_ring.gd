@@ -15,7 +15,8 @@ func _reinstantiate_weapon():
 	for i in num_bullets:
 		var orbiter = bullet_scene.instantiate() as PlayerBullet
 		orbiter.position = child_pos
-		orbiter.bullet_scale = Vector2(bullet_size, bullet_size)
+		orbiter.bullet_scale = Vector2(bullet_size, bullet_size)*orbiter.scale_for_sprite
+		print(str(orbiter.bullet_scale) + " = size:" + str(bullet_size) + " * " + str(orbiter.scale_for_sprite))
 		add_child(orbiter)
 		child_pos = child_pos.rotated(2*PI / num_bullets)
 		current_bullets.append(orbiter)
