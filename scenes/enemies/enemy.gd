@@ -23,7 +23,7 @@ func take_damage(dmg: int):
 		EventBus.enemy_death.emit()
 		queue_free()
 
-func freeze(time: int = 5):
+func freeze(time: int):
 	if not is_frozen:
 		modulate = Color.AQUA
 		is_frozen = true

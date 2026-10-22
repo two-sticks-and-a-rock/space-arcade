@@ -2,6 +2,8 @@ extends PlayerWeapon
 
 var current_bullets : Array[PlayerBullet]
 
+@export var freeze_time: float = 5.0
+
 func _reinstantiate_weapon():
 	super()
 	for current_bullet in current_bullets:
@@ -13,6 +15,7 @@ func _reinstantiate_weapon():
 		var area = bullet_scene.instantiate() as PlayerBullet
 		area.position = Vector2(0, 0)
 		area.bullet_scale = Vector2(bullet_size, bullet_size)
+		area.freeze_time = freeze_time
 		add_child(area)
 		current_bullets.append(area)
 
@@ -21,7 +24,6 @@ func _reinstantiate_weapon():
 func _ready() -> void:
 	super()
 	up_timer.start()
-
 
 func _on_down_timer_timeout():
 	up_timer.start()

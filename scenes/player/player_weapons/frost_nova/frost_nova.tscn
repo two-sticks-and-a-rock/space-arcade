@@ -2,19 +2,115 @@
 
 [ext_resource type="Script" uid="uid://cxpd0l0oyy4fh" path="res://scenes/player/player_weapons/frost_nova/frost_nova.gd" id="1_43v6x"]
 [ext_resource type="PackedScene" uid="uid://d3pffleq1i53h" path="res://scenes/player/player_weapons/frost_nova/nova_area.tscn" id="2_hm4nq"]
+[ext_resource type="Script" uid="uid://cv1cwxelnr7jm" path="res://scenes/player/player_weapons/weapon_upgrades/weapon_upgrade_set.gd" id="3_vopsm"]
+[ext_resource type="Script" uid="uid://dh8gni2x2uubt" path="res://scenes/player/player_weapons/weapon_upgrades/weapon_upgrade.gd" id="4_1n8mx"]
+[ext_resource type="Script" uid="uid://c0owbkeruir2v" path="res://scenes/player/player_weapons/weapon_upgrades/bullet_size_upgrade.gd" id="5_o2xxi"]
+[ext_resource type="Script" uid="uid://b76m57i5lxfem" path="res://scenes/player/player_weapons/frost_nova/upgrades/freeze_time_upgrade.gd" id="6_8f2kg"]
+[ext_resource type="Script" uid="uid://jd2xcnw1xep3" path="res://scenes/player/player_weapons/weapon_upgrades/downtime_upgrade.gd" id="7_8f2kg"]
+[ext_resource type="Script" uid="uid://cfgllll1jbmru" path="res://scenes/player/player_weapons/weapon_upgrades/damage_upgrade.gd" id="8_t3w76"]
+[ext_resource type="Script" uid="uid://7aipbw1b1m47" path="res://scenes/player/player_weapons/weapon_upgrades/uptime_upgrade.gd" id="9_t3w76"]
+
+[sub_resource type="Resource" id="Resource_5qj5v"]
+script = ExtResource("5_o2xxi")
+bullet_size_increase = 1.2
+metadata/_custom_type_script = "uid://c0owbkeruir2v"
+
+[sub_resource type="Resource" id="Resource_jyh4y"]
+resource_name = "Wider radius"
+script = ExtResource("3_vopsm")
+upgrades = Array[ExtResource("4_1n8mx")]([SubResource("Resource_5qj5v")])
+metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
+
+[sub_resource type="Resource" id="Resource_lmqlq"]
+script = ExtResource("6_8f2kg")
+metadata/_custom_type_script = "uid://b76m57i5lxfem"
+
+[sub_resource type="Resource" id="Resource_1n8mx"]
+resource_name = "Longer Freeze"
+script = ExtResource("3_vopsm")
+upgrades = Array[ExtResource("4_1n8mx")]([SubResource("Resource_lmqlq")])
+metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
+
+[sub_resource type="Resource" id="Resource_vopsm"]
+script = ExtResource("7_8f2kg")
+downtimer_decrease = 1.0
+metadata/_custom_type_script = "uid://jd2xcnw1xep3"
+
+[sub_resource type="Resource" id="Resource_ekw0x"]
+script = ExtResource("8_t3w76")
+metadata/_custom_type_script = "uid://cfgllll1jbmru"
+
+[sub_resource type="Resource" id="Resource_8f2kg"]
+script = ExtResource("5_o2xxi")
+bullet_size_increase = 1.3
+metadata/_custom_type_script = "uid://c0owbkeruir2v"
+
+[sub_resource type="Resource" id="Resource_hm4nq"]
+resource_name = "More Damage"
+script = ExtResource("3_vopsm")
+upgrades = Array[ExtResource("4_1n8mx")]([SubResource("Resource_vopsm"), SubResource("Resource_ekw0x"), SubResource("Resource_8f2kg")])
+metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
+
+[sub_resource type="Resource" id="Resource_t3w76"]
+script = ExtResource("9_t3w76")
+metadata/_custom_type_script = "uid://7aipbw1b1m47"
+
+[sub_resource type="Resource" id="Resource_kts0k"]
+script = ExtResource("7_8f2kg")
+metadata/_custom_type_script = "uid://jd2xcnw1xep3"
+
+[sub_resource type="Resource" id="Resource_2bdki"]
+script = ExtResource("6_8f2kg")
+metadata/_custom_type_script = "uid://b76m57i5lxfem"
+
+[sub_resource type="Resource" id="Resource_s116l"]
+resource_name = "Improved Times"
+script = ExtResource("3_vopsm")
+upgrades = Array[ExtResource("4_1n8mx")]([SubResource("Resource_t3w76"), SubResource("Resource_kts0k"), SubResource("Resource_2bdki")])
+metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
+
+[sub_resource type="Resource" id="Resource_0hj3c"]
+script = ExtResource("5_o2xxi")
+bullet_size_increase = 1.5
+metadata/_custom_type_script = "uid://c0owbkeruir2v"
+
+[sub_resource type="Resource" id="Resource_baakl"]
+resource_name = "Even Wider Radius"
+script = ExtResource("3_vopsm")
+upgrades = Array[ExtResource("4_1n8mx")]([SubResource("Resource_0hj3c"), null])
+metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
+
+[sub_resource type="Resource" id="Resource_hidp8"]
+script = ExtResource("6_8f2kg")
+metadata/_custom_type_script = "uid://b76m57i5lxfem"
+
+[sub_resource type="Resource" id="Resource_5vf04"]
+script = ExtResource("5_o2xxi")
+bullet_size_increase = 2.0
+metadata/_custom_type_script = "uid://c0owbkeruir2v"
+
+[sub_resource type="Resource" id="Resource_er8ws"]
+resource_name = "Long Freeze"
+script = ExtResource("3_vopsm")
+upgrades = Array[ExtResource("4_1n8mx")]([SubResource("Resource_hidp8"), SubResource("Resource_5vf04")])
+metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
 
 [node name="FrostNova" type="Node2D" unique_id=529776342]
 script = ExtResource("1_43v6x")
+freeze_time = 3.0
 display_name = "Frost Nova"
 description = "Freeze enemies in place to make a getaway"
 bullet_scene = ExtResource("2_hm4nq")
+dmg = 25
 num_bullets = 1
 bullet_size = 1.0
+possible_upgrade_sets = Array[ExtResource("3_vopsm")]([SubResource("Resource_jyh4y"), SubResource("Resource_1n8mx"), SubResource("Resource_hm4nq"), SubResource("Resource_s116l"), SubResource("Resource_baakl"), SubResource("Resource_er8ws")])
 
 [node name="UpTimer" type="Timer" parent="." unique_id=441701228]
+wait_time = 2.0
 
 [node name="DownTimer" type="Timer" parent="." unique_id=932910231]
-wait_time = 5.0
+wait_time = 8.0
 
 [connection signal="timeout" from="UpTimer" to="." method="_on_up_timer_timeout"]
 [connection signal="timeout" from="DownTimer" to="." method="_on_down_timer_timeout"]

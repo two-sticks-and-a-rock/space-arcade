@@ -7,7 +7,24 @@ extends Node2D
 @export var bullet_scene : PackedScene
 
 @export var dmg: int
+
+
+"""
+===== UPGRADEABLE ATTRIBUTES ====
+This is not expected to be a full complete list that all weapons ever need
+If more upgradeable attributes are needed for a particular weapon, add them directly to that weapon
+See the "res://scenes/player/player_weapons/frost_nova/frost_nova.gd" for an example. 
+It adds a "freeze_time" attribute
+
+Only add an attribute here if multiple weapons will need it
+"""
+
 @export var num_bullets: int
+"""
+ Note: Some weapons only ever have one bullet. It's fine to just not use num_bullets
+ Feel free to just instantiate the bullet directly like we do in "res://scenes/player/player_weapons/frost_nova/frost_nova.gd"
+ for the Frost Nova/Cryo Pulse weapon
+"""
 @export var bullet_speed: float
 @export var bullet_size: float
 
