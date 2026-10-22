@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="WeaponUpgrade" format=3 uid="uid://bxi5td8pn3cwr"]
+
+[ext_resource type="Script" uid="uid://dh8gni2x2uubt" path="res://scenes/player/player_weapons/weapon_upgrades/weapon_upgrade.gd" id="1_lmqlq"]
+
+[resource]
+script = ExtResource("1_lmqlq")
+metadata/_custom_type_script = "uid://dh8gni2x2uubt"
