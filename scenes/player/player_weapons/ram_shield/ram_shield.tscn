@@ -20,6 +20,7 @@ animations = [{
 
 [node name="RamShield" type="Node2D" unique_id=1339649772]
 script = ExtResource("1_rl1gc")
+weapon_img_path = "res://art/sprites/bullets/shield3.png"
 display_name = "Stellar Shockwave"
 description = "Ram through enemies"
 base_mechanics = Array[String](["Damage: 25", "Up timer: 5.0s", "Down timer: 5.0s"])

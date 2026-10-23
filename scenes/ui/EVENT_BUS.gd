@@ -1,5 +1,7 @@
 extends Node
 
+signal get_starting_weapon
+signal start_tutorial
 
 signal level_up
 signal finish_level_up

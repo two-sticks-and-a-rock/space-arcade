@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://be6oad5gocvyr"]
 
 [ext_resource type="PackedScene" uid="uid://byxd2bm2bgxqj" path="res://scenes/enemies/enemy_spawner.tscn" id="1_sugp2"]
+[ext_resource type="Script" uid="uid://d172g7hhh4vkg" path="res://scenes/main.gd" id="1_tefeu"]
 [ext_resource type="PackedScene" uid="uid://b1c8lbi40g0up" path="res://scenes/enemies/enemy.tscn" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cekmijf83xupg" path="res://scenes/player/player.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://cn4ty02lxqjoc" path="res://scenes/space_background/space_background.tscn" id="3_tbgi4"]
-[ext_resource type="PackedScene" uid="uid://d0k6h4rj6a42e" path="res://scenes/ui/tutorial/click_and_drag.tscn" id="5_tbgi4"]
 
 [node name="Main" type="Node2D" unique_id=252374006]
+script = ExtResource("1_tefeu")
 
 [node name="EnemySpawner" parent="." unique_id=684440522 instance=ExtResource("1_sugp2")]
 enemy_scene = ExtResource("2_tbgi4")
@@ -20,5 +21,3 @@ offset_bottom = 1080.0
 
 [node name="player" parent="." unique_id=2109895852 instance=ExtResource("3_jyhfs")]
 unique_name_in_owner = true
-
-[node name="ClickAndDrag" parent="." unique_id=436817955 instance=ExtResource("5_tbgi4")]
