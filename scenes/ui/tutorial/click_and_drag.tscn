@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://d0k6h4rj6a42e"]
+
+[ext_resource type="Script" uid="uid://ce7055uomlkcb" path="res://scenes/ui/tutorial/cursor_visual.gd" id="1_0p3xr"]
+[ext_resource type="Script" uid="uid://b8p2lply7d05x" path="res://scenes/ui/tutorial/click_and_drag_visual.gd" id="1_tatct"]
+
+[sub_resource type="Gradient" id="Gradient_ilxco"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.5)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+metadata/_snap_enabled = true
+metadata/_snap_count = 100
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_33luw"]
+gradient = SubResource("Gradient_ilxco")
+width = 200
+repeat = 1
+
+[node name="ClickAndDrag" type="Node2D" unique_id=436817955]
+z_index = 10
+script = ExtResource("1_tatct")
+
+[node name="SlingLine" type="Line2D" parent="." unique_id=582516588]
+visible = false
+texture_repeat = 2
+texture_mode = 1
+begin_cap_mode = 1
+end_cap_mode = 1
+
+[node name="DragLine" type="Line2D" parent="." unique_id=916733235]
+texture_repeat = 2
+default_color = Color(1, 1, 1, 0.6156863)
+texture = SubResource("GradientTexture2D_33luw")
+texture_mode = 1
+
+[node name="Cursor" type="Node2D" parent="." unique_id=1837339260]
+rotation = -0.5235988
+script = ExtResource("1_0p3xr")
