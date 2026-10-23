@@ -23,6 +23,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_cqxas")
 
+[node name="Panel" type="Panel" parent="PanelContainer" unique_id=1913156313]
+layout_mode = 2
+
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1804274574]
 layout_mode = 2
 offset_transform_position = Vector2(0, 12)

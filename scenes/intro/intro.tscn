@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ccuc6amjstkec" path="res://scenes/intro/intro.gd" id="1_8twl8"]
 [ext_resource type="Theme" uid="uid://drsxtvymgay2s" path="res://scenes/ui/themes/default/default.tres" id="1_qeukb"]
+[ext_resource type="Theme" uid="uid://bgbg745kbdvs" path="res://scenes/ui/themes/menu_panel.tres" id="2_1rrv8"]
 [ext_resource type="PackedScene" uid="uid://ba6j0n3w5fvkl" path="res://scenes/ui/typing_text.tscn" id="3_ir5dn"]
 [ext_resource type="Theme" uid="uid://bin02r2f4xqh2" path="res://scenes/ui/themes/secondary_button.tres" id="4_8twl8"]
 [ext_resource type="FontFile" uid="uid://cf4k1f8oc0bdm" path="res://art/fonts/DotGothic16-Regular.ttf" id="4_ir5dn"]
@@ -15,6 +16,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_1rrv8")
+
+[node name="Panel" type="Panel" parent="PanelContainer" unique_id=1591956543]
+layout_mode = 2
 
 [node name="IntroTextBox" type="BoxContainer" parent="PanelContainer" unique_id=765670128]
 custom_minimum_size = Vector2(960, 960)

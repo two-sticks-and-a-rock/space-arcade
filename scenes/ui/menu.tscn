@@ -23,6 +23,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_cghgw")
 
+[node name="Panel" type="Panel" parent="PanelContainer" unique_id=2134578347]
+layout_mode = 2
+
 [node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer" unique_id=821683245]
 layout_mode = 2
 size_flags_horizontal = 4

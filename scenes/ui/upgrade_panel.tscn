@@ -3,10 +3,10 @@
 [ext_resource type="Theme" uid="uid://caagyi3mx40y1" path="res://scenes/ui/themes/upgrade_panel.tres" id="1_cdmev"]
 [ext_resource type="Script" uid="uid://btlxekjq0am2a" path="res://scenes/ui/upgrade_panel.gd" id="1_r60ue"]
 [ext_resource type="FontFile" uid="uid://dmw4grl0633hq" path="res://art/fonts/Saira-SemiBold.ttf" id="3_naqhr"]
-[ext_resource type="Theme" uid="uid://bin02r2f4xqh2" path="res://scenes/ui/themes/secondary_button.tres" id="4_naqhr"]
+[ext_resource type="Theme" uid="uid://c18hn2sbqqhby" path="res://scenes/ui/themes/tertiary_button.tres" id="4_naqhr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_naqhr"]
-bg_color = Color(0.9019608, 0.91764706, 0.9843137, 0.3764706)
+bg_color = Color(0.9019608, 0.91764706, 0.9843137, 0.2509804)
 corner_radius_top_left = 48
 corner_radius_top_right = 48
 corner_radius_bottom_right = 48
