@@ -12,5 +12,5 @@ func _physics_process(_delta):
 func _on_ram_cap_entered(body: Node2D):
 	if (body.is_in_group("enemy")):
 		var cast_body = body as CharacterBody2D
-		cast_body.shove_enemy(-1*cast_body.velocity)
+		cast_body.shove_enemy(-2*cast_body.velocity)
 		body.take_damage(weapon.dmg)
