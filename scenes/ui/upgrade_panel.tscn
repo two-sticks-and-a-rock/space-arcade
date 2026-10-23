@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://caagyi3mx40y1" path="res://scenes/ui/themes/upgrade_panel.tres" id="1_cdmev"]
 [ext_resource type="Script" uid="uid://btlxekjq0am2a" path="res://scenes/ui/upgrade_panel.gd" id="1_r60ue"]
 [ext_resource type="Theme" uid="uid://c2a4fd742m3xs" path="res://scenes/ui/themes/primary_button.tres" id="3_jgoho"]
+[ext_resource type="FontFile" uid="uid://dmw4grl0633hq" path="res://art/fonts/Saira-SemiBold.ttf" id="3_naqhr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_naqhr"]
 bg_color = Color(0.9019608, 0.91764706, 0.9843137, 0.3764706)
@@ -12,8 +13,13 @@ corner_radius_bottom_right = 48
 corner_radius_bottom_left = 48
 
 [sub_resource type="LabelSettings" id="LabelSettings_jgoho"]
-font_size = 36
-outline_size = 5
+font = ExtResource("3_naqhr")
+font_size = 30
+font_color = Color(0.9019608, 0.91764706, 0.9843137, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_naqhr"]
+font_size = 24
+font_color = Color(0.9019608, 0.91764706, 0.9843137, 1)
 
 [node name="UpgradePanel" type="MarginContainer" unique_id=1694010216]
 custom_minimum_size = Vector2(500, 720)
@@ -53,7 +59,6 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="VSplitContainer" unique_id=817815659]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_constants/separation = 24
 
 [node name="PanelContainer" type="PanelContainer" parent="VSplitContainer/VBoxContainer" unique_id=1403588721]
 custom_minimum_size = Vector2(360, 0)
@@ -65,9 +70,10 @@ offset_transform_position = Vector2(0, -20)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VSplitContainer/VBoxContainer/PanelContainer" unique_id=647642282]
 custom_minimum_size = Vector2(360, 0)
-custom_maximum_size = Vector2(480, -1)
+custom_maximum_size = Vector2(480, 150)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_constants/separation = -8
 alignment = 1
 
 [node name="Name" type="Label" parent="VSplitContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1394569463]
@@ -81,16 +87,16 @@ vertical_alignment = 2
 autowrap_mode = 2
 
 [node name="Weapon" type="Label" parent="VSplitContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1863297255]
-custom_minimum_size = Vector2(0, 50)
 custom_maximum_size = Vector2(360, -1)
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
 text = "Weapon Name"
+label_settings = SubResource("LabelSettings_naqhr")
 horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Img" type="TextureRect" parent="VSplitContainer/VBoxContainer" unique_id=1720966437]
-custom_minimum_size = Vector2(450, 200)
+custom_minimum_size = Vector2(400, 150)
+custom_maximum_size = Vector2(-1, 150)
 layout_mode = 2
 
 [node name="MechanicsContainer" type="MarginContainer" parent="VSplitContainer/VBoxContainer" unique_id=131069695]
@@ -100,6 +106,7 @@ theme_override_constants/margin_right = 48
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VSplitContainer/VBoxContainer/MechanicsContainer" unique_id=193242907]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="Button" type="Button" parent="VSplitContainer" unique_id=765895051]
 show_behind_parent = true

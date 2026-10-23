@@ -119,9 +119,10 @@ upgrades = Array[ExtResource("3_x6mqk")]([SubResource("Resource_0yjdd")])
 
 [node name="OrbiterRing" type="Node2D" unique_id=956994433]
 script = ExtResource("1_cd0fb")
+bullet_scene = ExtResource("2_gpny0")
 display_name = "Personalized Asteroid Belt"
 description = "A ring of your very own asteroids for damaging enemies"
-bullet_scene = ExtResource("2_gpny0")
+base_mechanics = Array[String](["Bullets: 2", "Damage: 50", "Up timer: 6.0s", "Down timer: 8.0s", "Speed: 1/2 rev/s"])
 dmg = 50
 num_bullets = 2
 bullet_speed = 0.087

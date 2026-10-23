@@ -42,11 +42,14 @@ animations = [{
 
 [node name="Missile_Silo" type="Node2D" unique_id=356839213]
 script = ExtResource("1_e740r")
+bullet_scene = ExtResource("2_wy3lk")
 display_name = "Missile Silo"
 description = "Homing missiles for distance kills"
-bullet_scene = ExtResource("2_wy3lk")
+base_mechanics = Array[String](["Bullets: 3", "Damage: 100", "Cooldown: 3.0s", "Speed: 200"])
 dmg = 100
 num_bullets = 3
+bullet_speed = 200.0
+bullet_size = 1.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=825337014]
 sprite_frames = SubResource("SpriteFrames_wy3lk")

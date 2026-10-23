@@ -1,13 +1,14 @@
 class_name PlayerWeapon
 extends Node2D
 
-@export var display_name : String 
-@export var description : String
-
 @export var bullet_scene : PackedScene
 
-@export var dmg: int
-
+"""
+===== FOR UPGRADES PANEL DISPLAY ====
+"""
+@export var display_name : String 
+@export var description : String
+@export var base_mechanics : Array[String] = []
 
 """
 ===== UPGRADEABLE ATTRIBUTES ====
@@ -18,6 +19,7 @@ It adds a "freeze_time" attribute
 
 Only add an attribute here if multiple weapons will need it
 """
+@export var dmg: int
 
 @export var num_bullets: int
 """

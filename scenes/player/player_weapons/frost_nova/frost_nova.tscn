@@ -109,9 +109,10 @@ metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
 [node name="FrostNova" type="Node2D" unique_id=529776342]
 script = ExtResource("1_43v6x")
 freeze_time = 3.0
+bullet_scene = ExtResource("2_hm4nq")
 display_name = "Cryo Pulse"
 description = "Freeze enemies in place to make a getaway"
-bullet_scene = ExtResource("2_hm4nq")
+base_mechanics = Array[String](["Freeze Time: 3.0s", "Damage: 25", "Up time: 2.0s", "Down time: 8.0s"])
 dmg = 25
 num_bullets = 1
 bullet_size = 1.0

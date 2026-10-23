@@ -22,6 +22,7 @@ animations = [{
 script = ExtResource("1_rl1gc")
 display_name = "Stellar Shockwave"
 description = "Ram through enemies"
+base_mechanics = Array[String](["Damage: 25", "Up timer: 5.0s", "Down timer: 5.0s"])
 dmg = 25
 num_bullets = 1
 bullet_size = 5.0
