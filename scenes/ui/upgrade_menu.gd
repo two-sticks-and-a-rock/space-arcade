@@ -1,8 +1,7 @@
 extends CanvasLayer
 
 @onready var upgrade_panel_scene : PackedScene = load("res://scenes/ui/upgrade_panel.tscn")
-@onready var h_container : HBoxContainer = $PanelContainer/VBoxContainer/HBoxContainer
-
+@onready var h_container : HBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer
 var hit_max_level = false
 
 class UpgradeSetMetadata:
@@ -109,6 +108,7 @@ func populate_upgrade_panels():
 			upgrade_panel.mechanics = ([] as Array[String])
 			for component_upgrade in choice.upgrades:
 				upgrade_panel.mechanics.append(component_upgrade.resource_name)
+			upgrade_panel.img_filepath = weapon.weapon_img_path
 			
 			upgrade_panel.on_panel_pressed = func():
 				weapon.upgrades += choice.upgrades
@@ -121,8 +121,10 @@ func populate_upgrade_panels():
 				_on_player_finish_level_up()
 		else:
 			upgrade_panel.upgrade_name = choice.display_name if choice.display_name != null else choice.name
-			upgrade_panel.weapon_name = "New weapon!"
+			upgrade_panel.img_filepath = choice.weapon_img_path
 			upgrade_panel.mechanics = [choice.description if choice.description != null else "A new weapon!"] as Array[String]
+			for mechanic in choice.base_mechanics:
+				upgrade_panel.mechanics.append(mechanic as String)
 			upgrade_panel.on_panel_pressed = func():
 				player.add_child(choice)
 				EventBus.finish_level_up.emit()

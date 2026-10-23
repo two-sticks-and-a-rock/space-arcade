@@ -18,8 +18,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		global_position = lerp(global_position, target.global_position, .01)
 		global_rotation = rotate_toward(global_rotation, get_angle_to(target.global_position), 0.1)
-		global_position -= Mover.get_movement()*delta
-
+	global_position -= Mover.get_movement()*delta
 	
 
 func _on_missile_entered(body: Node2D) -> void:

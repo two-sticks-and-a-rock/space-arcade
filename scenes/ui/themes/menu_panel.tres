@@ -1,5 +1,19 @@
 [gd_resource type="Theme" format=3 uid="uid://bgbg745kbdvs"]
 
+[sub_resource type="Gradient" id="Gradient_2g330"]
+interpolation_mode = 2
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0.5359375, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.20392157, 0.22745098, 0.27450982, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cqxas"]
+gradient = SubResource("Gradient_2g330")
+fill = 1
+fill_from = Vector2(0.5, 0.55)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kcn5b"]
+texture = SubResource("GradientTexture2D_cqxas")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uofuh"]
 bg_color = Color(0, 0, 0, 1)
 border_width_left = 12
@@ -9,4 +23,5 @@ border_width_bottom = 12
 border_color = Color(0.44705883, 0.7176471, 1, 1)
 
 [resource]
+Panel/styles/panel = SubResource("StyleBoxTexture_kcn5b")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_uofuh")

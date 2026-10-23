@@ -7,9 +7,10 @@ func _ready() -> void:
 	
 func _on_down_timer_timeout():
 	for i in (num_bullets):
-		var childangle = bullet_scene.instantiate()
-		childangle.rotate(randf_range(-PI / 4, PI / 4))
-		add_child(childangle)
+		var missile = bullet_scene.instantiate()
+		missile.rotate(randf_range(-PI / 4, PI / 4))
+		missile.speed = Vector2(bullet_speed, 0)
+		add_child(missile)
 	up_timer.start()
 	down_timer.stop()
 

@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://b4o0n34uwel0d"]
 
 [ext_resource type="Script" uid="uid://dljd3x1xw8ddi" path="res://scenes/ui/game_over.gd" id="1_fu4wh"]
+[ext_resource type="Theme" uid="uid://bgbg745kbdvs" path="res://scenes/ui/themes/menu_panel.tres" id="2_r6ix2"]
 [ext_resource type="Theme" uid="uid://drsxtvymgay2s" path="res://scenes/ui/themes/default/default.tres" id="2_vfrx6"]
 [ext_resource type="PackedScene" uid="uid://drh6cl70rtt78" path="res://scenes/ui/restart_button.tscn" id="2_x6o8e"]
 [ext_resource type="Theme" uid="uid://tl6su32daw8w" path="res://scenes/ui/themes/title.tres" id="3_o6b8n"]
 [ext_resource type="PackedScene" uid="uid://bemmgs3bisire" path="res://scenes/ui/main_menu_button.tscn" id="4_vfrx6"]
 [ext_resource type="Theme" uid="uid://c2a4fd742m3xs" path="res://scenes/ui/themes/primary_button.tres" id="5_4583b"]
 [ext_resource type="Theme" uid="uid://bin02r2f4xqh2" path="res://scenes/ui/themes/secondary_button.tres" id="7_b6337"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r6ix2"]
 
 [node name="GameOver" type="CanvasLayer" unique_id=922977592]
 process_mode = 3
@@ -18,6 +21,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_r6ix2")
+theme_override_styles/panel = SubResource("StyleBoxFlat_r6ix2")
+
+[node name="Panel" type="Panel" parent="PanelContainer" unique_id=1706193501]
+layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=63661639]
 layout_mode = 2
@@ -55,10 +63,12 @@ custom_minimum_size = Vector2(400, 84)
 custom_maximum_size = Vector2(400, -1)
 layout_mode = 2
 theme = ExtResource("5_4583b")
+text = "NEW GAME"
 
 [node name="MainMenuButton" parent="PanelContainer/VBoxContainer/Actions" unique_id=1811628303 instance=ExtResource("4_vfrx6")]
 layout_mode = 2
 theme = ExtResource("7_b6337")
+text = "MAIN MENU"
 
 [node name="BrokenShipImage" type="TextureRect" parent="PanelContainer/VBoxContainer" unique_id=612990862]
 custom_minimum_size = Vector2(0, 240)
