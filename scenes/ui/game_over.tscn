@@ -63,10 +63,12 @@ custom_minimum_size = Vector2(400, 84)
 custom_maximum_size = Vector2(400, -1)
 layout_mode = 2
 theme = ExtResource("5_4583b")
+text = "NEW GAME"
 
 [node name="MainMenuButton" parent="PanelContainer/VBoxContainer/Actions" unique_id=1811628303 instance=ExtResource("4_vfrx6")]
 layout_mode = 2
 theme = ExtResource("7_b6337")
+text = "MAIN MENU"
 
 [node name="BrokenShipImage" type="TextureRect" parent="PanelContainer/VBoxContainer" unique_id=612990862]
 custom_minimum_size = Vector2(0, 240)

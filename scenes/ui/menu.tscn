@@ -57,14 +57,14 @@ custom_minimum_size = Vector2(400, 84)
 custom_maximum_size = Vector2(400, -1)
 layout_mode = 2
 theme = ExtResource("5_cghgw")
-text = "Resume"
+text = "RESUME"
 
 [node name="NewGameButton" parent="PanelContainer/VSplitContainer/VBoxContainer" unique_id=1164336806 instance=ExtResource("2_c2n5p")]
 custom_minimum_size = Vector2(400, 84)
 custom_maximum_size = Vector2(400, -1)
 layout_mode = 2
 theme = ExtResource("7_1pxh0")
-text = "New Run"
+text = "NEW RUN"
 
 [node name="MainMenuButton" parent="PanelContainer/VSplitContainer" unique_id=1811628303 instance=ExtResource("4_w6y0u")]
 custom_maximum_size = Vector2(400, 100)
@@ -74,5 +74,6 @@ offset_transform_enabled = true
 offset_transform_position = Vector2(0, -48)
 offset_transform_visual_only = false
 theme = ExtResource("7_1pxh0")
+text = "MAIN MENU"
 
 [connection signal="pressed" from="PanelContainer/VSplitContainer/VBoxContainer/ContinueRunButton" to="." method="_on_continue_run_button_pressed"]
