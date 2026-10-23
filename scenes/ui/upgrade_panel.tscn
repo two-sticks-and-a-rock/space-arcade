@@ -83,8 +83,9 @@ layout_mode = 2
 text = "Upgrade Name"
 label_settings = SubResource("LabelSettings_jgoho")
 horizontal_alignment = 1
-vertical_alignment = 2
+vertical_alignment = 1
 autowrap_mode = 2
+uppercase = true
 
 [node name="Weapon" type="Label" parent="VSplitContainer/VBoxContainer/PanelContainer/VBoxContainer" unique_id=1863297255]
 custom_maximum_size = Vector2(360, -1)

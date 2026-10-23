@@ -26,12 +26,16 @@ theme = ExtResource("2_cqxas")
 [node name="Panel" type="Panel" parent="PanelContainer" unique_id=1913156313]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1804274574]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1847737050]
+layout_mode = 2
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1804274574]
 layout_mode = 2
 offset_transform_position = Vector2(0, 12)
 theme = ExtResource("2_j2skl")
 
-[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer" unique_id=1825981137]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1825981137]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -39,19 +43,19 @@ offset_transform_enabled = true
 offset_transform_position = Vector2(0, -20)
 theme = ExtResource("3_b03nv")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/PanelContainer" unique_id=425239811]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer" unique_id=425239811]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
 theme = ExtResource("3_b03nv")
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=518747619]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=518747619]
 layout_mode = 2
 text = "UPGRADES"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=488218056]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=488218056]
 layout_mode = 2
 size_flags_vertical = 4
 theme = ExtResource("2_j2skl")
