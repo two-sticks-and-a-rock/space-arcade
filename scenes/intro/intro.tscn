@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://drsxtvymgay2s" path="res://scenes/ui/themes/default/default.tres" id="1_qeukb"]
 [ext_resource type="PackedScene" uid="uid://ba6j0n3w5fvkl" path="res://scenes/ui/typing_text.tscn" id="3_ir5dn"]
 [ext_resource type="Theme" uid="uid://bin02r2f4xqh2" path="res://scenes/ui/themes/secondary_button.tres" id="4_8twl8"]
+[ext_resource type="FontFile" uid="uid://cf4k1f8oc0bdm" path="res://art/fonts/DotGothic16-Regular.ttf" id="4_ir5dn"]
 
 [node name="Intro" type="CanvasLayer" unique_id=1243987004]
 script = ExtResource("1_8twl8")
@@ -25,6 +26,7 @@ alignment = 1
 
 [node name="IntroText" parent="PanelContainer/IntroTextBox" unique_id=1616030014 instance=ExtResource("3_ir5dn")]
 layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("4_ir5dn")
 
 [node name="ButtonBox" type="BoxContainer" parent="PanelContainer" unique_id=1267520445]
 layout_mode = 2
