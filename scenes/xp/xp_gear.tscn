@@ -1,14 +1,26 @@
 [gd_scene format=3 uid="uid://oaoj8eb8rbpv"]
 
 [ext_resource type="Script" uid="uid://l0rugoixbkvi" path="res://scenes/xp/xp_pickupable.gd" id="1_y5ppa"]
+[ext_resource type="Texture2D" uid="uid://c0yoxnpfd24u3" path="res://art/sprites/xp/gear_placeholder.png" id="2_y5ppa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y5ppa"]
 radius = 30.004166
+
+[sub_resource type="Gradient" id="Gradient_y5ppa"]
+offsets = PackedFloat32Array(0.4984375, 0.85)
+colors = PackedColorArray(0.14117648, 0.41960785, 0.99215686, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_y5ppa"]
+gradient = SubResource("Gradient_y5ppa")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.9, 0.9)
 
 [node name="XpGear" type="Area2D" unique_id=524505885]
 collision_layer = 16
 collision_mask = 33
 script = ExtResource("1_y5ppa")
+xp_sprite = ExtResource("2_y5ppa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1079333680]
 position = Vector2(0, 1.5)
@@ -16,7 +28,24 @@ shape = SubResource("CircleShape2D_y5ppa")
 debug_color = Color(0.74342495, 0.42045522, 0.53199035, 0.41960785)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=191004246]
+self_modulate = Color(0.44705883, 0.7176471, 1, 1)
 scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_y5ppa")
+
+[node name="TextureRect" type="TextureRect" parent="Sprite2D" unique_id=311590848]
+show_behind_parent = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -489.5
+offset_top = -475.0
+offset_right = 145.49994
+offset_bottom = 159.99994
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_y5ppa")
 
 [connection signal="area_entered" from="." to="." method="_on_gear_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_gear_area_exited"]
