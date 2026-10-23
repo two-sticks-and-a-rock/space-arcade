@@ -23,14 +23,14 @@ script = ExtResource("1_rl1gc")
 weapon_img_path = "res://art/sprites/bullets/shield3.png"
 display_name = "Stellar Shockwave"
 description = "Ram through enemies"
-base_mechanics = Array[String](["Damage: 25", "Up timer: 5.0s", "Down timer: 5.0s"])
+base_mechanics = Array[String](["Damage: 25", "Up timer: 6.0s", "Down timer: 5.0s"])
 dmg = 25
 num_bullets = 1
 bullet_size = 5.0
 metadata/_custom_type_script = "uid://ddp1c2rv414k4"
 
 [node name="UpTimer" type="Timer" parent="." unique_id=12921542]
-wait_time = 5.0
+wait_time = 6.0
 
 [node name="DownTimer" type="Timer" parent="." unique_id=1879192355]
 wait_time = 5.0
@@ -66,4 +66,4 @@ tint_progress = Color(0.41960785, 0.1764706, 1, 1)
 
 [connection signal="timeout" from="UpTimer" to="." method="_on_up_timer_timeout"]
 [connection signal="timeout" from="DownTimer" to="." method="_on_down_timer_timeout"]
-[connection signal="body_entered" from="RamCap" to="RamCap" method="_on_orbiter_entered"]
+[connection signal="body_entered" from="RamCap" to="RamCap" method="_on_ram_cap_entered"]
