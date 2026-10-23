@@ -26,8 +26,8 @@ func _ready():
 	#add_child(orbiter_ring)
 	# var frost_nova = frost_nova_scene.instantiate() as Node2D
 	# add_child(frost_nova)
-	var ram_shield = ram_shield_scene.instantiate() as Node2D
-	add_child(ram_shield)
+	# var ram_shield = ram_shield_scene.instantiate() as Node2D
+	# add_child(ram_shield)
 	(magnet_collider.shape as CircleShape2D).radius = magnet_radius
 	# var missile_silo = missile_silo_scene.instantiate() as Node2D
 	# add_child(missile_silo)

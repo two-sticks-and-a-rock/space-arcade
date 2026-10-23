@@ -4,6 +4,8 @@ extends CanvasLayer
 @onready var h_container : HBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer
 var hit_max_level = false
 
+var starting_weapon_scene : PackedScene = load("res://scenes/player/player_weapons/ram_shield/ram_shield.tscn")
+
 class UpgradeSetMetadata:
 	var possible_upgrade_sets: Array[WeaponUpgradeSet] = []
 	var all_possible_upgrades_length: int = 0
@@ -151,6 +153,24 @@ func _on_player_finish_level_up():
 	visible = false
 	get_tree().paused = false
 
+func create_start_weapon_upgrade_menu():
+	visible = true
+
+	var player = get_tree().root.get_node("Main/player")
+	var starting_weapon = starting_weapon_scene.instantiate() as PlayerWeapon
+
+	var upgrade_panel : MarginContainer = upgrade_panel_scene.instantiate()
+	upgrade_panel.upgrade_name = starting_weapon.display_name if starting_weapon.display_name != null else starting_weapon.name
+	upgrade_panel.img_filepath = starting_weapon.weapon_img_path
+	upgrade_panel.mechanics = [starting_weapon.description if starting_weapon.description != null else "A new weapon!"] as Array[String]
+	for mechanic in starting_weapon.base_mechanics:
+		upgrade_panel.mechanics.append(mechanic as String)
+	upgrade_panel.on_panel_pressed = func():
+		player.add_child(starting_weapon)
+		EventBus.start_tutorial.emit()
+		_on_player_finish_level_up()
+	h_container.add_child(upgrade_panel)
+
 func new_upgrade_menu():
 	visible = false
 	clear_upgrade_panels()
@@ -160,7 +180,10 @@ func _on_restart_game():
 
 func _ready():
 	new_upgrade_menu()
-	
+
+	if !EventBus.get_starting_weapon.is_connected(create_start_weapon_upgrade_menu):
+		EventBus.get_starting_weapon.connect(create_start_weapon_upgrade_menu)
+
 	if(!EventBus.level_up.is_connected(_on_player_level_up)):
 		EventBus.level_up.connect(_on_player_level_up)
 

@@ -11,7 +11,6 @@ func _physics_process(_delta):
 
 func _on_ram_cap_entered(body: Node2D):
 	if (body.is_in_group("enemy")):
-		if (Mover.slingshot_length_clamp - Mover.get_movement().length()) < 50:
-			body.take_damage(weapon.dmg * 2)
-		else:
-			body.take_damage(weapon.dmg)
+		var cast_body = body as CharacterBody2D
+		cast_body.shove_enemy(-1*cast_body.velocity)
+		body.take_damage(weapon.dmg)

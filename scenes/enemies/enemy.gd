@@ -12,6 +12,9 @@ var curr_hp = max_hp
 var is_frozen: bool = false
 var is_marked: bool = false
 
+var just_shoved: bool = false
+var shove_velocity: Vector2 = Vector2.ZERO
+
 func take_damage(dmg: int):
 	curr_hp -= dmg
 	if (curr_hp <= 0):
@@ -47,12 +50,25 @@ func _ready():
 	$AnimatedSprite2D.animation = mob_types[0]
 	$AnimatedSprite2D.play()
 
-func _physics_process(_delta):
-	if !is_frozen:
+func _physics_process(delta):
+	if !is_frozen && !just_shoved:
 		look_at(player.position)
-	velocity = speed.rotated(rotation)
+		velocity = speed.rotated(rotation)
+
+	if just_shoved:
+		velocity = shove_velocity
+		just_shoved = false
+	
+	if (shove_velocity != Vector2.ZERO):
+		shove_velocity = Utils.exp_velocity_decay(shove_velocity, Vector2.ZERO, 0.01)
+		velocity = shove_velocity
+
 	velocity -= Mover.get_movement()
 	move_and_slide()
+
+func shove_enemy(new_velocity: Vector2):
+	just_shoved = true
+	shove_velocity = new_velocity
 
 func _on_screen_exited():
 	queue_free()
