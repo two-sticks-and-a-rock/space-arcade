@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://caagyi3mx40y1" path="res://scenes/ui/themes/upgrade_panel.tres" id="1_cdmev"]
 [ext_resource type="Script" uid="uid://btlxekjq0am2a" path="res://scenes/ui/upgrade_panel.gd" id="1_r60ue"]
-[ext_resource type="Theme" uid="uid://drsxtvymgay2s" path="res://scenes/ui/themes/default/default.tres" id="3_jgoho"]
+[ext_resource type="Theme" uid="uid://c2a4fd742m3xs" path="res://scenes/ui/themes/primary_button.tres" id="3_jgoho"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_naqhr"]
 bg_color = Color(0.9019608, 0.91764706, 0.9843137, 0.3764706)
@@ -103,6 +103,7 @@ layout_mode = 2
 
 [node name="Button" type="Button" parent="VSplitContainer" unique_id=765895051]
 show_behind_parent = true
+custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8

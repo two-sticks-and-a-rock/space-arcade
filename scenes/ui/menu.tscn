@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://drsxtvymgay2s" path="res://scenes/ui/themes/default/default.tres" id="2_w6y0u"]
 [ext_resource type="Theme" uid="uid://tl6su32daw8w" path="res://scenes/ui/themes/title.tres" id="3_ntye7"]
 [ext_resource type="PackedScene" uid="uid://bemmgs3bisire" path="res://scenes/ui/main_menu_button.tscn" id="4_w6y0u"]
+[ext_resource type="Theme" uid="uid://c2a4fd742m3xs" path="res://scenes/ui/themes/primary_button.tres" id="5_cghgw"]
 
 [node name="Menu" type="CanvasLayer" unique_id=1623096271]
 process_mode = 3
@@ -51,7 +52,7 @@ alignment = 1
 custom_minimum_size = Vector2(400, 84)
 custom_maximum_size = Vector2(400, -1)
 layout_mode = 2
-theme = ExtResource("2_w6y0u")
+theme = ExtResource("5_cghgw")
 text = "Resume"
 
 [node name="NewGameButton" parent="PanelContainer/VSplitContainer/VBoxContainer" unique_id=1164336806 instance=ExtResource("2_c2n5p")]

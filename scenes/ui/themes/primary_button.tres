@@ -1,0 +1,31 @@
+[gd_resource type="Theme" format=3 uid="uid://c2a4fd742m3xs"]
+
+[ext_resource type="FontFile" uid="uid://dmw4grl0633hq" path="res://art/fonts/Saira-SemiBold.ttf" id="1_nhf7g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhf7g"]
+bg_color = Color(0.5245074, 0.68957925, 0.99898607, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
+bg_color = Color(0.14117648, 0.41960785, 0.99215686, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_axxan"]
+bg_color = Color(7.542089e-05, 0.19411331, 0.6038558, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+
+[resource]
+default_font_size = 48
+Button/fonts/font = ExtResource("1_nhf7g")
+Button/styles/hover = SubResource("StyleBoxFlat_nhf7g")
+Button/styles/normal = SubResource("StyleBoxFlat_8ln24")
+Button/styles/pressed = SubResource("StyleBoxFlat_axxan")

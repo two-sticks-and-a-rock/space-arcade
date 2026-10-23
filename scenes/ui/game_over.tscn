@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://drh6cl70rtt78" path="res://scenes/ui/restart_button.tscn" id="2_x6o8e"]
 [ext_resource type="Theme" uid="uid://tl6su32daw8w" path="res://scenes/ui/themes/title.tres" id="3_o6b8n"]
 [ext_resource type="PackedScene" uid="uid://bemmgs3bisire" path="res://scenes/ui/main_menu_button.tscn" id="4_vfrx6"]
+[ext_resource type="Theme" uid="uid://c2a4fd742m3xs" path="res://scenes/ui/themes/primary_button.tres" id="5_4583b"]
 
 [node name="GameOver" type="CanvasLayer" unique_id=922977592]
 process_mode = 3
@@ -52,6 +53,7 @@ alignment = 1
 custom_minimum_size = Vector2(400, 84)
 custom_maximum_size = Vector2(400, -1)
 layout_mode = 2
+theme = ExtResource("5_4583b")
 
 [node name="MainMenuButton" parent="PanelContainer/VBoxContainer/Actions" unique_id=1811628303 instance=ExtResource("4_vfrx6")]
 layout_mode = 2
