@@ -42,6 +42,8 @@ animations = [{
 
 [node name="Missile_Silo" type="Node2D" unique_id=356839213]
 script = ExtResource("1_e740r")
+display_name = "Missile Silo"
+description = "Homing missiles for distance kills"
 bullet_scene = ExtResource("2_wy3lk")
 dmg = 100
 num_bullets = 3

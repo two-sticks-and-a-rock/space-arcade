@@ -20,7 +20,7 @@ animations = [{
 
 [node name="RamShield" type="Node2D" unique_id=1339649772]
 script = ExtResource("1_rl1gc")
-dmg = 25
+dmg = 100
 num_bullets = 1
 bullet_size = 5.0
 metadata/_custom_type_script = "uid://ddp1c2rv414k4"

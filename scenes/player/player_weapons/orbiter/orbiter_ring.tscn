@@ -13,13 +13,13 @@
 [ext_resource type="Script" uid="uid://bwfv8jqyb0kx7" path="res://scenes/player/player_weapons/weapon_upgrades/bullet_speed_upgrade.gd" id="10_vxvyc"]
 
 [sub_resource type="Resource" id="Resource_qgt3p"]
-resource_name = "Downtime: 8s → 7s"
+resource_name = "Downtime: 8s -> 7s"
 script = ExtResource("5_jwv4o")
 downtimer_decrease = 1.0
 metadata/_custom_type_script = "uid://jd2xcnw1xep3"
 
 [sub_resource type="Resource" id="Resource_jwv4o"]
-resource_name = "Uptime: 6s → 7s"
+resource_name = "Uptime: 6s -> 7s"
 script = ExtResource("6_inxn4")
 uptimer_increase = 1.0
 metadata/_custom_type_script = "uid://7aipbw1b1m47"
@@ -30,7 +30,7 @@ script = ExtResource("3_tippe")
 upgrades = Array[ExtResource("3_x6mqk")]([SubResource("Resource_qgt3p"), SubResource("Resource_jwv4o")])
 
 [sub_resource type="Resource" id="Resource_6d4r7"]
-resource_name = "Damage: 50 → 75"
+resource_name = "Damage: 50 -> 75"
 script = ExtResource("4_tippe")
 
 [sub_resource type="Resource" id="Resource_246l1"]
@@ -40,7 +40,7 @@ bullet_scale = 1.5
 metadata/_custom_type_script = "uid://c0owbkeruir2v"
 
 [sub_resource type="Resource" id="Resource_mjay7"]
-resource_name = "Bullets: 2 → 3"
+resource_name = "Bullets: 2 -> 3"
 script = ExtResource("4_x6mqk")
 metadata/_custom_type_script = "uid://dtutoa66ihr48"
 
@@ -50,7 +50,7 @@ script = ExtResource("3_tippe")
 upgrades = Array[ExtResource("3_x6mqk")]([SubResource("Resource_6d4r7"), SubResource("Resource_246l1"), SubResource("Resource_mjay7")])
 
 [sub_resource type="Resource" id="Resource_er65o"]
-resource_name = "Damage: 75 → 100"
+resource_name = "Damage: 75 -> 100"
 script = ExtResource("4_tippe")
 metadata/_custom_type_script = "uid://cfgllll1jbmru"
 
@@ -61,7 +61,7 @@ bullet_scale = 3.0
 metadata/_custom_type_script = "uid://c0owbkeruir2v"
 
 [sub_resource type="Resource" id="Resource_qot2w"]
-resource_name = "Bullets: 3 → 4"
+resource_name = "Bullets: 3 -> 4"
 script = ExtResource("4_x6mqk")
 metadata/_custom_type_script = "uid://dtutoa66ihr48"
 
@@ -71,18 +71,18 @@ script = ExtResource("3_tippe")
 upgrades = Array[ExtResource("3_x6mqk")]([SubResource("Resource_er65o"), SubResource("Resource_vxvyc"), SubResource("Resource_qot2w")])
 
 [sub_resource type="Resource" id="Resource_epeq1"]
-resource_name = "Uptime: 7s → 10s"
+resource_name = "Uptime: 7s -> 10s"
 script = ExtResource("6_inxn4")
 uptimer_increase = 3.0
 metadata/_custom_type_script = "uid://7aipbw1b1m47"
 
 [sub_resource type="Resource" id="Resource_p3mfa"]
-resource_name = "Downtime: 7s → 5s"
+resource_name = "Downtime: 7s -> 5s"
 script = ExtResource("5_jwv4o")
 metadata/_custom_type_script = "uid://jd2xcnw1xep3"
 
 [sub_resource type="Resource" id="Resource_ef5g3"]
-resource_name = "Speed: 0.5 rev/s → 1 rev/s"
+resource_name = "Speed: 0.5 rev/s -> 1 rev/s"
 script = ExtResource("10_vxvyc")
 bullet_speed_increase = 2.0
 
@@ -98,7 +98,7 @@ damage_increase = 50
 metadata/_custom_type_script = "uid://cfgllll1jbmru"
 
 [sub_resource type="Resource" id="Resource_vdvxc"]
-resource_name = "Bullets: 4 → 8"
+resource_name = "Bullets: 4 -> 8"
 script = ExtResource("4_x6mqk")
 num_bullets_increase = 4
 metadata/_custom_type_script = "uid://dtutoa66ihr48"
