@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dljd3x1xw8ddi" path="res://scenes/ui/game_over.gd" id="1_fu4wh"]
 [ext_resource type="Theme" uid="uid://drsxtvymgay2s" path="res://scenes/ui/themes/default/default.tres" id="2_vfrx6"]
 [ext_resource type="PackedScene" uid="uid://drh6cl70rtt78" path="res://scenes/ui/restart_button.tscn" id="2_x6o8e"]
+[ext_resource type="Theme" uid="uid://tl6su32daw8w" path="res://scenes/ui/themes/title.tres" id="3_o6b8n"]
 [ext_resource type="PackedScene" uid="uid://bemmgs3bisire" path="res://scenes/ui/main_menu_button.tscn" id="4_vfrx6"]
 
 [node name="GameOver" type="CanvasLayer" unique_id=922977592]
@@ -19,13 +20,19 @@ grow_vertical = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=63661639]
 layout_mode = 2
 size_flags_horizontal = 4
-theme = ExtResource("2_vfrx6")
-alignment = 1
+theme_override_constants/separation = 60
 
-[node name="GameOver" type="Label" parent="PanelContainer/VBoxContainer" unique_id=682681196]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VBoxContainer" unique_id=628789470]
+layout_mode = 2
+theme = ExtResource("3_o6b8n")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/PanelContainer" unique_id=1484906032]
+layout_mode = 2
+
+[node name="GameOver" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=682681196]
 layout_mode = 2
 theme = ExtResource("2_vfrx6")
-text = "Run Ended"
+text = "RUN ENDED"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -38,6 +45,7 @@ vertical_alignment = 1
 
 [node name="Actions" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1847531430]
 layout_mode = 2
+theme = ExtResource("2_vfrx6")
 alignment = 1
 
 [node name="NewGameButton" parent="PanelContainer/VBoxContainer/Actions" unique_id=1164336806 instance=ExtResource("2_x6o8e")]
@@ -68,7 +76,7 @@ offset_top = -84.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="RunTime" type="Label" parent="HSplitContainer" unique_id=258549648]
+[node name="BestTime" type="Label" parent="HSplitContainer" unique_id=781703591]
 custom_minimum_size = Vector2(400, 84)
 custom_maximum_size = Vector2(400, -1)
 layout_mode = 2
@@ -77,11 +85,11 @@ offset_transform_enabled = true
 offset_transform_position = Vector2(60, 0)
 offset_transform_visual_only = false
 theme = ExtResource("2_vfrx6")
-text = "Time 01:10"
+text = "Best 02:23"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BestTime" type="Label" parent="HSplitContainer" unique_id=781703591]
+[node name="RunTime" type="Label" parent="HSplitContainer" unique_id=258549648]
 custom_minimum_size = Vector2(400, 84)
 custom_maximum_size = Vector2(400, -1)
 layout_mode = 2
@@ -90,6 +98,6 @@ offset_transform_enabled = true
 offset_transform_position = Vector2(-60, 0)
 offset_transform_visual_only = false
 theme = ExtResource("2_vfrx6")
-text = "Best 02:23"
+text = "Time 01:10"
 horizontal_alignment = 1
 vertical_alignment = 1
