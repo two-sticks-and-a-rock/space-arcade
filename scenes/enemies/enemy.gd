@@ -50,18 +50,20 @@ func _ready():
 	$AnimatedSprite2D.animation = mob_types[0]
 	$AnimatedSprite2D.play()
 
-func _physics_process(delta):
-	if !is_frozen && !just_shoved:
+func _physics_process(_delta):
+	if !is_frozen:
 		look_at(player.position)
-		velocity = speed.rotated(rotation)
+	velocity = speed.rotated(rotation)
 
 	if just_shoved:
 		velocity = shove_velocity
 		just_shoved = false
 	
-	if (shove_velocity != Vector2.ZERO):
-		shove_velocity = Utils.exp_velocity_decay(shove_velocity, Vector2.ZERO, 0.01)
+	if (abs((shove_velocity-Vector2.ZERO).length()) >= 0.001):
+		shove_velocity = Utils.exp_velocity_decay(shove_velocity, Vector2.ZERO, 0.1)
 		velocity = shove_velocity
+	else:
+		shove_velocity = Vector2.ZERO
 
 	velocity -= Mover.get_movement()
 	move_and_slide()
