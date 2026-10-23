@@ -1,10 +1,11 @@
 extends MarginContainer
 
-@onready var v_container : VBoxContainer = $VBoxContainer
-@onready var name_label : Label = $VBoxContainer/Name
-@onready var weapon_label : Label = $VBoxContainer/Weapon
-@onready var img : TextureRect = $VBoxContainer/Img
-@onready var button : Button = $Button as Button
+@onready var name_label : Label = $VSplitContainer/VBoxContainer/PanelContainer/VBoxContainer/Name
+@onready var weapon_label : Label = $VSplitContainer/VBoxContainer/PanelContainer/VBoxContainer/Weapon
+@onready var img : TextureRect = $VSplitContainer/VBoxContainer/Img
+
+@onready var mechanics_container: VBoxContainer = $VSplitContainer/VBoxContainer/MechanicsContainer/VBoxContainer
+@onready var button : Button = $VSplitContainer/Button as Button
 
 @onready var mechanic_label_scene : PackedScene = load("res://scenes/ui/upgrade_mechanics_text.tscn")
 
@@ -23,5 +24,5 @@ func _ready():
 	for mechanic in mechanics:
 		var mechanic_label = mechanic_label_scene.instantiate() as Label
 		mechanic_label.text = mechanic
-		v_container.add_child(mechanic_label)
+		mechanics_container.add_child(mechanic_label)
 	button.pressed.connect(on_panel_pressed)

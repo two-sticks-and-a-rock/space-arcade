@@ -11,6 +11,7 @@ layer = 2
 script = ExtResource("1_211cs")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=795516997]
+custom_minimum_size = Vector2(0, 840)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
