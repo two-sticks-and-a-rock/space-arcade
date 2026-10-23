@@ -19,7 +19,7 @@ radius = 64.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p47bc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvxji"]
-bg_color = Color(0.8392157, 0, 0.12156863, 1)
+bg_color = Color(1, 0.8235294, 0.2901961, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gtgg"]
 bg_color = Color(1, 1, 1, 1)
