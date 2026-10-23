@@ -13,10 +13,6 @@ func _on_down_timer_timeout():
 	up_timer.start()
 	down_timer.stop()
 
-func _process(delta: float) -> void:
-	pass
-
-
 func _on_up_timer_timeout() -> void:
 	up_timer.stop()
 	down_timer.start()

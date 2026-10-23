@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://7aipbw1b1m47" path="res://scenes/player/player_weapons/weapon_upgrades/uptime_upgrade.gd" id="9_t3w76"]
 
 [sub_resource type="Resource" id="Resource_5qj5v"]
+resource_name = "Size: 1.2x"
 script = ExtResource("5_o2xxi")
 bullet_scale = 1.2
 metadata/_custom_type_script = "uid://c0owbkeruir2v"
@@ -22,6 +23,7 @@ upgrades = Array[ExtResource("4_1n8mx")]([SubResource("Resource_5qj5v")])
 metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
 
 [sub_resource type="Resource" id="Resource_lmqlq"]
+resource_name = "Freeze Time: 3s -> 4s"
 script = ExtResource("6_8f2kg")
 metadata/_custom_type_script = "uid://b76m57i5lxfem"
 
@@ -32,15 +34,18 @@ upgrades = Array[ExtResource("4_1n8mx")]([SubResource("Resource_lmqlq")])
 metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
 
 [sub_resource type="Resource" id="Resource_vopsm"]
+resource_name = "Down Time: 8s -> 7s"
 script = ExtResource("7_8f2kg")
 downtimer_decrease = 1.0
 metadata/_custom_type_script = "uid://jd2xcnw1xep3"
 
 [sub_resource type="Resource" id="Resource_ekw0x"]
+resource_name = "Damage: 25 -> 50"
 script = ExtResource("8_t3w76")
 metadata/_custom_type_script = "uid://cfgllll1jbmru"
 
 [sub_resource type="Resource" id="Resource_8f2kg"]
+resource_name = "Size: 1.5x"
 script = ExtResource("5_o2xxi")
 bullet_scale = 1.5
 metadata/_custom_type_script = "uid://c0owbkeruir2v"
@@ -52,14 +57,17 @@ upgrades = Array[ExtResource("4_1n8mx")]([SubResource("Resource_vopsm"), SubReso
 metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
 
 [sub_resource type="Resource" id="Resource_t3w76"]
+resource_name = "Up time: 3s -> 5s"
 script = ExtResource("9_t3w76")
 metadata/_custom_type_script = "uid://7aipbw1b1m47"
 
 [sub_resource type="Resource" id="Resource_kts0k"]
+resource_name = "Down time: 7s -> 5s"
 script = ExtResource("7_8f2kg")
 metadata/_custom_type_script = "uid://jd2xcnw1xep3"
 
 [sub_resource type="Resource" id="Resource_2bdki"]
+resource_name = "Freeze time: 4s -> 5s"
 script = ExtResource("6_8f2kg")
 metadata/_custom_type_script = "uid://b76m57i5lxfem"
 
@@ -70,6 +78,7 @@ upgrades = Array[ExtResource("4_1n8mx")]([SubResource("Resource_t3w76"), SubReso
 metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
 
 [sub_resource type="Resource" id="Resource_0hj3c"]
+resource_name = "Size: 2x"
 script = ExtResource("5_o2xxi")
 bullet_scale = 2.0
 metadata/_custom_type_script = "uid://c0owbkeruir2v"
@@ -81,12 +90,14 @@ upgrades = Array[ExtResource("4_1n8mx")]([SubResource("Resource_0hj3c")])
 metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
 
 [sub_resource type="Resource" id="Resource_hidp8"]
+resource_name = "Freeze Time: 5s -> 6s"
 script = ExtResource("6_8f2kg")
-freeze_time_increase = 3.0
 metadata/_custom_type_script = "uid://b76m57i5lxfem"
 
 [sub_resource type="Resource" id="Resource_5vf04"]
+resource_name = "Size: 3x"
 script = ExtResource("5_o2xxi")
+bullet_scale = 3.0
 metadata/_custom_type_script = "uid://c0owbkeruir2v"
 
 [sub_resource type="Resource" id="Resource_er8ws"]
@@ -98,7 +109,7 @@ metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
 [node name="FrostNova" type="Node2D" unique_id=529776342]
 script = ExtResource("1_43v6x")
 freeze_time = 3.0
-display_name = "Frost Nova"
+display_name = "Cryo Pulse"
 description = "Freeze enemies in place to make a getaway"
 bullet_scene = ExtResource("2_hm4nq")
 dmg = 25
