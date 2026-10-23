@@ -41,6 +41,10 @@ project/assembly_name="Space Arcade"
 
 enemy=""
 
+[gui]
+
+theme/custom_font="uid://bbk25t3b81xsi"
+
 [input]
 
 move_forward={
