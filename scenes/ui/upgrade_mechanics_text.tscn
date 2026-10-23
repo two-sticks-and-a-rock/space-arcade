@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://br4we7wbi1h4f"]
 
-[ext_resource type="Theme" uid="uid://drsxtvymgay2s" path="res://scenes/ui/themes/default/default.tres" id="1_h4srg"]
+[sub_resource type="LabelSettings" id="LabelSettings_h4srg"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
 
 [node name="UpgradeMechanicsText" type="Label" unique_id=616719383]
 custom_maximum_size = Vector2(-1, 450)
-theme = ExtResource("1_h4srg")
 theme_override_font_sizes/font_size = 24
 text = "Mechanics Text Example: 8s → 7s"
+label_settings = SubResource("LabelSettings_h4srg")
 autowrap_mode = 2

@@ -1,0 +1,19 @@
+[gd_resource type="Theme" format=3 uid="uid://tl6su32daw8w"]
+
+[ext_resource type="FontFile" uid="uid://b2ts7vai6rxct" path="res://art/fonts/ZenDots-Regular.ttf" id="1_4nlsb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b03nv"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(1, 0.8235294, 0.2901961, 1)
+
+[resource]
+Label/fonts/font = ExtResource("1_4nlsb")
+MarginContainer/constants/margin_bottom = 16
+MarginContainer/constants/margin_left = 16
+MarginContainer/constants/margin_right = 16
+MarginContainer/constants/margin_top = 16
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_b03nv")

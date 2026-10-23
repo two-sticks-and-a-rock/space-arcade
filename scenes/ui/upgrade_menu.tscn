@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://7objd5d07aj7"]
 
 [ext_resource type="Script" uid="uid://cegmd2abpbpge" path="res://scenes/ui/upgrade_menu.gd" id="1_211cs"]
+[ext_resource type="Theme" uid="uid://bgbg745kbdvs" path="res://scenes/ui/themes/menu_panel.tres" id="2_cqxas"]
 [ext_resource type="Theme" uid="uid://drsxtvymgay2s" path="res://scenes/ui/themes/default/default.tres" id="2_j2skl"]
+[ext_resource type="Theme" uid="uid://tl6su32daw8w" path="res://scenes/ui/themes/title.tres" id="3_b03nv"]
 
 [node name="UpgradeMenu" type="CanvasLayer" unique_id=1651193659]
 process_mode = 2
@@ -9,19 +11,20 @@ layer = 2
 script = ExtResource("1_211cs")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=795516997]
+custom_minimum_size = Vector2(0, 840)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 96.0
+offset_left = 97.0
 offset_top = 96.0
-offset_right = -96.0
+offset_right = -95.0
 offset_bottom = -96.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_cqxas")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1804274574]
 layout_mode = 2
-offset_transform_enabled = true
 offset_transform_position = Vector2(0, 12)
 theme = ExtResource("2_j2skl")
 
@@ -29,22 +32,21 @@ theme = ExtResource("2_j2skl")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme = ExtResource("2_j2skl")
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -20)
+theme = ExtResource("3_b03nv")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VBoxContainer/PanelContainer" unique_id=425239811]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_constants/margin_left = 512
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 512
-theme_override_constants/margin_bottom = 8
+theme = ExtResource("3_b03nv")
 
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=518747619]
 layout_mode = 2
-theme = ExtResource("2_j2skl")
-theme_override_font_sizes/font_size = 48
-text = "Upgrades"
+text = "UPGRADES"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=488218056]
 layout_mode = 2

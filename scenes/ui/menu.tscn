@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" uid="uid://d2tt0u6ddlowp" path="res://scenes/ui/menu.gd" id="1_wedc3"]
 [ext_resource type="PackedScene" uid="uid://drh6cl70rtt78" path="res://scenes/ui/restart_button.tscn" id="2_c2n5p"]
+[ext_resource type="Theme" uid="uid://bgbg745kbdvs" path="res://scenes/ui/themes/menu_panel.tres" id="2_cghgw"]
 [ext_resource type="Theme" uid="uid://drsxtvymgay2s" path="res://scenes/ui/themes/default/default.tres" id="2_w6y0u"]
+[ext_resource type="Theme" uid="uid://tl6su32daw8w" path="res://scenes/ui/themes/title.tres" id="3_ntye7"]
 [ext_resource type="PackedScene" uid="uid://bemmgs3bisire" path="res://scenes/ui/main_menu_button.tscn" id="4_w6y0u"]
-[ext_resource type="Theme" uid="uid://bwrgd0l5g7l04" path="res://scenes/ui/themes/secondary/secondary.tres" id="5_cx0sj"]
-[ext_resource type="PackedScene" uid="uid://bemmgs3bisire" path="res://scenes/ui/main_menu_button.tscn" id="4_w6y0u"]
-[ext_resource type="Theme" uid="uid://bwrgd0l5g7l04" path="res://scenes/ui/themes/secondary/secondary.tres" id="5_cx0sj"]
+[ext_resource type="Theme" uid="uid://c2a4fd742m3xs" path="res://scenes/ui/themes/primary_button.tres" id="5_cghgw"]
+[ext_resource type="Theme" uid="uid://bin02r2f4xqh2" path="res://scenes/ui/themes/secondary_button.tres" id="7_1pxh0"]
 
 [node name="Menu" type="CanvasLayer" unique_id=1623096271]
 process_mode = 3
@@ -14,45 +15,61 @@ layer = 2
 script = ExtResource("1_wedc3")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=855877974]
+custom_maximum_size = Vector2(1000, 980)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_cghgw")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1633006133]
+[node name="VSplitContainer" type="VSplitContainer" parent="PanelContainer" unique_id=821683245]
 layout_mode = 2
 size_flags_horizontal = 4
-theme = ExtResource("2_w6y0u")
-alignment = 1
+split_offsets = PackedInt32Array(0, 0)
 
-[node name="PauseLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1377229854]
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/VSplitContainer" unique_id=1220950092]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -20)
+theme = ExtResource("3_ntye7")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/VSplitContainer/PanelContainer" unique_id=128619195]
+layout_mode = 2
+
+[node name="PauseLabel" type="Label" parent="PanelContainer/VSplitContainer/PanelContainer/MarginContainer" unique_id=1377229854]
 layout_mode = 2
 theme = ExtResource("2_w6y0u")
-text = "Pause"
+text = "PAUSE"
 horizontal_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=168788940]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VSplitContainer" unique_id=2016449128]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_w6y0u")
 alignment = 1
 
-[node name="ContinueRunButton" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1349163425]
+[node name="ContinueRunButton" type="Button" parent="PanelContainer/VSplitContainer/VBoxContainer" unique_id=1349163425]
 custom_minimum_size = Vector2(400, 84)
 custom_maximum_size = Vector2(400, -1)
 layout_mode = 2
-theme = ExtResource("2_w6y0u")
-text = "Continue Run"
+theme = ExtResource("5_cghgw")
+text = "Resume"
 
-[node name="NewGameButton" parent="PanelContainer/VBoxContainer/HBoxContainer" unique_id=1164336806 instance=ExtResource("2_c2n5p")]
+[node name="NewGameButton" parent="PanelContainer/VSplitContainer/VBoxContainer" unique_id=1164336806 instance=ExtResource("2_c2n5p")]
 custom_minimum_size = Vector2(400, 84)
 custom_maximum_size = Vector2(400, -1)
 layout_mode = 2
+theme = ExtResource("7_1pxh0")
+text = "New Run"
 
-[node name="MainMenuButton" parent="PanelContainer/VBoxContainer" unique_id=1811628303 instance=ExtResource("4_w6y0u")]
+[node name="MainMenuButton" parent="PanelContainer/VSplitContainer" unique_id=1811628303 instance=ExtResource("4_w6y0u")]
+custom_maximum_size = Vector2(400, 100)
 layout_mode = 2
 size_flags_horizontal = 4
-theme = ExtResource("5_cx0sj")
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -48)
+offset_transform_visual_only = false
+theme = ExtResource("7_1pxh0")
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/ContinueRunButton" to="." method="_on_continue_run_button_pressed"]
+[connection signal="pressed" from="PanelContainer/VSplitContainer/VBoxContainer/ContinueRunButton" to="." method="_on_continue_run_button_pressed"]
