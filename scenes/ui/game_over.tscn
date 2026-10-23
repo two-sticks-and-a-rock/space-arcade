@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://tl6su32daw8w" path="res://scenes/ui/themes/title.tres" id="3_o6b8n"]
 [ext_resource type="PackedScene" uid="uid://bemmgs3bisire" path="res://scenes/ui/main_menu_button.tscn" id="4_vfrx6"]
 [ext_resource type="Theme" uid="uid://c2a4fd742m3xs" path="res://scenes/ui/themes/primary_button.tres" id="5_4583b"]
+[ext_resource type="Theme" uid="uid://bin02r2f4xqh2" path="res://scenes/ui/themes/secondary_button.tres" id="7_b6337"]
 
 [node name="GameOver" type="CanvasLayer" unique_id=922977592]
 process_mode = 3
@@ -57,6 +58,7 @@ theme = ExtResource("5_4583b")
 
 [node name="MainMenuButton" parent="PanelContainer/VBoxContainer/Actions" unique_id=1811628303 instance=ExtResource("4_vfrx6")]
 layout_mode = 2
+theme = ExtResource("7_b6337")
 
 [node name="BrokenShipImage" type="TextureRect" parent="PanelContainer/VBoxContainer" unique_id=612990862]
 custom_minimum_size = Vector2(0, 240)
