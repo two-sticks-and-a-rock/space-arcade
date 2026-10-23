@@ -6,6 +6,7 @@ extends Node2D
 """
 ===== FOR UPGRADES PANEL DISPLAY ====
 """
+@export var weapon_img_path : String
 @export var display_name : String 
 @export var description : String
 @export var base_mechanics : Array[String] = []

@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ixp2d2233w0e"]
 
-[ext_resource type="Script" uid="uid://boa81m0e18a1n" path="res://scenes/player/player_weapons/Missile_Silo/missile_silo.gd" id="1_e740r"]
+[ext_resource type="Script" uid="uid://boa81m0e18a1n" path="res://scenes/player/player_weapons/missile_silo/missile_silo.gd" id="1_e740r"]
 [ext_resource type="Texture2D" uid="uid://cdo1hmi1povfe" path="res://art/sprites/bullets/Missile_Silo/MissileSiloDone-Sheet-Sheet.png" id="2_minx4"]
-[ext_resource type="PackedScene" uid="uid://4gto1ijk7tqs" path="res://scenes/player/player_weapons/Missile_Silo/missile.tscn" id="2_wy3lk"]
+[ext_resource type="PackedScene" uid="uid://4gto1ijk7tqs" path="res://scenes/player/player_weapons/missile_silo/missile.tscn" id="2_wy3lk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tjbvn"]
 atlas = ExtResource("2_minx4")
@@ -43,6 +43,7 @@ animations = [{
 [node name="Missile_Silo" type="Node2D" unique_id=356839213]
 script = ExtResource("1_e740r")
 bullet_scene = ExtResource("2_wy3lk")
+weapon_img_path = "res://art/sprites/bullets/Missile_Silo/Missile.png"
 display_name = "Missile Silo"
 description = "Homing missiles for distance kills"
 base_mechanics = Array[String](["Bullets: 3", "Damage: 100", "Cooldown: 3.0s", "Speed: 200"])

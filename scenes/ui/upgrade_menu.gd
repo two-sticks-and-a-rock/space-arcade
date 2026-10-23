@@ -121,7 +121,7 @@ func populate_upgrade_panels():
 				_on_player_finish_level_up()
 		else:
 			upgrade_panel.upgrade_name = choice.display_name if choice.display_name != null else choice.name
-			# upgrade_panel.weapon_name = "New weapon!"
+			upgrade_panel.img_filepath = choice.weapon_img_path
 			upgrade_panel.mechanics = [choice.description if choice.description != null else "A new weapon!"] as Array[String]
 			for mechanic in choice.base_mechanics:
 				upgrade_panel.mechanics.append(mechanic as String)
