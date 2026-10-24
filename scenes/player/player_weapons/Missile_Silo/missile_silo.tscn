@@ -35,7 +35,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6a76n")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"default",
 "speed": 0.3
 }]
@@ -49,17 +49,19 @@ description = "Homing missiles for distance kills"
 base_mechanics = Array[String](["Bullets: 3", "Damage: 100", "Cooldown: 3.0s", "Speed: 200"])
 dmg = 100
 num_bullets = 3
-bullet_speed = 200.0
+bullet_speed = 300.0
 bullet_size = 1.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=825337014]
 sprite_frames = SubResource("SpriteFrames_wy3lk")
+frame = 2
+frame_progress = 0.49345353
 
 [node name="UpTimer" type="Timer" parent="." unique_id=781783780]
 wait_time = 0.1
 
 [node name="DownTimer" type="Timer" parent="." unique_id=1088500671]
-wait_time = 2.9
+wait_time = 3.0
 
 [connection signal="timeout" from="UpTimer" to="." method="_on_up_timer_timeout"]
 [connection signal="timeout" from="DownTimer" to="." method="_on_down_timer_timeout"]
