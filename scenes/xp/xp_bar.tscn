@@ -1,18 +1,39 @@
 [gd_scene format=3 uid="uid://dto3jjxkpeho1"]
 
 [ext_resource type="Script" uid="uid://bqktfsfr2ugju" path="res://scenes/xp/xp_bar.gd" id="1_raep5"]
+[ext_resource type="Texture2D" uid="uid://c0yoxnpfd24u3" path="res://art/sprites/xp/gear_placeholder.png" id="2_y768c"]
+[ext_resource type="FontFile" uid="uid://b2ts7vai6rxct" path="res://art/fonts/ZenDots-Regular.ttf" id="3_n17u2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n17u2"]
+bg_color = Color(0.72156864, 0.7529412, 0.8, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_raep5"]
 bg_color = Color(0.14117648, 0.41960785, 0.99215686, 1)
+
+[sub_resource type="Gradient" id="Gradient_y768c"]
+offsets = PackedFloat32Array(0.4984375, 0.85)
+colors = PackedColorArray(0.14117648, 0.41960785, 0.99215686, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_n17u2"]
+gradient = SubResource("Gradient_y768c")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.9, 0.9)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kcn5b"]
+font = ExtResource("3_n17u2")
+font_size = 24
+font_color = Color(0.20392157, 0.22745098, 0.27450982, 1)
 
 [node name="XpBar" type="ProgressBar" unique_id=804379581]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 52.0
 grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_n17u2")
 theme_override_styles/fill = SubResource("StyleBoxFlat_raep5")
 step = 1.0
-value = 100.0
+value = 50.0
 show_percentage = false
 script = ExtResource("1_raep5")
 
@@ -31,3 +52,50 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 50
 text = "Level Up!"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1414269874]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 0
+grow_vertical = 2
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=1913314726]
+layout_mode = 2
+theme_override_constants/margin_right = 16
+
+[node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/MarginContainer" unique_id=2026589771]
+self_modulate = Color(0.44705883, 0.7176471, 1, 1)
+position = Vector2(-29, 12)
+scale = Vector2(0.13636364, 0.13636364)
+texture = ExtResource("2_y768c")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/MarginContainer/Sprite2D" unique_id=1504877107]
+visible = false
+show_behind_parent = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -489.5
+offset_top = -475.0
+offset_right = 145.49994
+offset_bottom = 159.99994
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_n17u2")
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer" unique_id=287096242]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "xp"
+label_settings = SubResource("LabelSettings_kcn5b")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

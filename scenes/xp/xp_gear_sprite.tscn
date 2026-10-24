@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://8j4tf131rora"]
+
+[ext_resource type="Texture2D" uid="uid://c0yoxnpfd24u3" path="res://art/sprites/xp/gear_placeholder.png" id="1_ecgwb"]
+
+[sub_resource type="Gradient" id="Gradient_y5ppa"]
+offsets = PackedFloat32Array(0.4984375, 0.85)
+colors = PackedColorArray(0.14117648, 0.41960785, 0.99215686, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_y5ppa"]
+gradient = SubResource("Gradient_y5ppa")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.9, 0.9)
+
+[node name="Sprite2D" type="Sprite2D" unique_id=1474318657]
+self_modulate = Color(0.44705883, 0.7176471, 1, 1)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_ecgwb")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1205728183]
+show_behind_parent = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -489.5
+offset_top = -475.0
+offset_right = 145.49994
+offset_bottom = 159.99994
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_y5ppa")
