@@ -2,6 +2,7 @@ extends PlayerBullet
 
 var speed = Vector2(200, 0.0)
 var target : CharacterBody2D = null
+var target_position : Vector2 = Vector2.ZERO
 
 @onready var detector : RayCast2D = $RayCast2D
 var launched : bool = false
@@ -13,12 +14,15 @@ func _physics_process(delta: float) -> void:
 			if !(colliding_with.is_marked):
 				colliding_with.is_marked = true
 				target = colliding_with
+				target_position = target.global_position
 
 	if (target == null):
 		rotate(.05)
 	else:
-		global_position = lerp(global_position, target.global_position, .01)
-		global_rotation = rotate_toward(global_rotation, get_angle_to(target.global_position), 0.1)
+		global_position = lerp(global_position, target_position, .01)
+		if abs((global_position-target_position).length()) < 0.1:
+			target = null
+			target_position = Vector2.ZERO
 	
 	if abs((position - Vector2.ZERO).length()) > 0.1:
 		launched = true
