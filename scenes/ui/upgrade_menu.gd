@@ -178,8 +178,14 @@ func new_upgrade_menu():
 func _on_restart_game():
 	new_upgrade_menu()
 
+func _on_switch_scenes(_scene: int):
+	new_upgrade_menu()
+
 func _ready():
 	new_upgrade_menu()
+
+	if !EventBus.switch_scenes.is_connected(_on_switch_scenes):
+		EventBus.switch_scenes.connect(_on_switch_scenes)
 
 	if !EventBus.get_starting_weapon.is_connected(create_start_weapon_upgrade_menu):
 		EventBus.get_starting_weapon.connect(create_start_weapon_upgrade_menu)
