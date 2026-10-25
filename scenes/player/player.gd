@@ -62,7 +62,7 @@ func handle_game_over():
 	))
 
 func _physics_process(_delta):
-	#sprite.look_at(-1*get_global_mouse_position())
+	sprite.look_at(-1*get_global_mouse_position())
 		
 	hp_bar.value = curr_hp
 	if (curr_hp <= 0):
