@@ -7,6 +7,7 @@ script = ExtResource("1_47hdm")
 
 [node name="Timer" type="Timer" parent="." unique_id=1716436612]
 process_callback = 0
+wait_time = 3.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_free_timer_timeout"]
