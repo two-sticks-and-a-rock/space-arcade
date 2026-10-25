@@ -74,7 +74,8 @@ func _input(_event: InputEvent) -> void:
 		
 func _physics_process(_delta: float) -> void:
 	#if use_wasd == false: 
-		sprite.look_at(-1*get_global_mouse_position())
+		#sprite.look_at(-1*get_global_mouse_position())
+		pass
 		
 	#if use_wasd == true: 
 		#sprite.rotate(rotate_wasd_direction * rotate_wasd_speed * _delta)
