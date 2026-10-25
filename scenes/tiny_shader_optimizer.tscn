@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://iuuyvsjys37a"]
+
+[ext_resource type="Material" uid="uid://bsorqcvx74ggk" path="res://scenes/enemies/enemy_shader.tres" id="2_drfli"]
+[ext_resource type="Material" uid="uid://motnsh3ktar8" path="res://scenes/player/player_blink_shader.tres" id="3_drfli"]
+
+[node name="TinyShaderOptimizer" type="Node2D" unique_id=2137514872]
+
+[node name="enemy_shader" type="Node2D" parent="." unique_id=1229626831]
+material = ExtResource("2_drfli")
+
+[node name="player_blink_shader" type="Node2D" parent="." unique_id=1118253916]
+material = ExtResource("3_drfli")

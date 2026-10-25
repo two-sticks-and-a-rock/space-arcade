@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bsorqcvx74ggk"]
+
+[ext_resource type="Shader" uid="uid://cytwnjpq61s7w" path="res://scenes/enemies/enemy.gdshader" id="1_gate8"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_gate8")
+shader_parameter/blink_color = Color(1, 0, 0, 1)
+shader_parameter/blink_intensity = 0.0
