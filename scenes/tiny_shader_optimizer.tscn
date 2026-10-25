@@ -2,6 +2,8 @@
 
 [ext_resource type="Material" uid="uid://bsorqcvx74ggk" path="res://scenes/enemies/enemy_shader.tres" id="2_drfli"]
 [ext_resource type="Material" uid="uid://motnsh3ktar8" path="res://scenes/player/player_blink_shader.tres" id="3_drfli"]
+[ext_resource type="Material" uid="uid://d1chfq4lcsocs" path="res://scenes/sparks_material.tres" id="3_os6tg"]
+[ext_resource type="PackedScene" uid="uid://blvvtghlt3kca" path="res://scenes/player/engine_particles.tscn" id="4_os6tg"]
 
 [node name="TinyShaderOptimizer" type="Node2D" unique_id=2137514872]
 
@@ -10,3 +12,14 @@ material = ExtResource("2_drfli")
 
 [node name="player_blink_shader" type="Node2D" parent="." unique_id=1118253916]
 material = ExtResource("3_drfli")
+
+[node name="sparks" type="GPUParticles2D" parent="." unique_id=667690004]
+position = Vector2(61, 1)
+emitting = false
+amount = 15
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+process_material = ExtResource("3_os6tg")
+
+[node name="engine_pulse" parent="." unique_id=720350292 instance=ExtResource("4_os6tg")]
