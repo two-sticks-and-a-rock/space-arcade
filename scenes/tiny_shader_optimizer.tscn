@@ -1,11 +1,9 @@
 [gd_scene format=3 uid="uid://iuuyvsjys37a"]
 
-[ext_resource type="Script" uid="uid://bdntqgvo2s3ia" path="res://tiny_shader_optimizer.gd" id="1_drfli"]
 [ext_resource type="Material" uid="uid://bsorqcvx74ggk" path="res://scenes/enemies/enemy_shader.tres" id="2_drfli"]
 [ext_resource type="Material" uid="uid://motnsh3ktar8" path="res://scenes/player/player_blink_shader.tres" id="3_drfli"]
 
 [node name="TinyShaderOptimizer" type="Node2D" unique_id=2137514872]
-script = ExtResource("1_drfli")
 
 [node name="enemy_shader" type="Node2D" parent="." unique_id=1229626831]
 material = ExtResource("2_drfli")
