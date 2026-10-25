@@ -53,12 +53,6 @@ material = ExtResource("6_myrg7")
 rotation = 1.5707964
 texture = ExtResource("4_0owmy")
 
-[node name="Polygon2D" type="Polygon2D" parent="Sprite2D/Sprite2D" unique_id=2026557608]
-visible = false
-position = Vector2(10.000004, 79)
-color = Color(1, 0, 0.916667, 1)
-polygon = PackedVector2Array(-4, 0, 2, 105, 8, 0)
-
 [node name="engine_burn" type="Node2D" parent="Sprite2D/Sprite2D" unique_id=879097901]
 script = ExtResource("8_fcs02")
 
