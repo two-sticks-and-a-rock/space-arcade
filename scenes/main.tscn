@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b1c8lbi40g0up" path="res://scenes/enemies/enemy.tscn" id="2_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cekmijf83xupg" path="res://scenes/player/player.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://cn4ty02lxqjoc" path="res://scenes/space_background/space_background.tscn" id="3_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://iuuyvsjys37a" path="res://scenes/tiny_shader_optimizer.tscn" id="6_tefeu"]
 
 [node name="Main" type="Node2D" unique_id=252374006]
 script = ExtResource("1_tefeu")
@@ -21,3 +22,5 @@ offset_bottom = 1080.0
 
 [node name="player" parent="." unique_id=2109895852 instance=ExtResource("3_jyhfs")]
 unique_name_in_owner = true
+
+[node name="TinyShaderOptimizer" parent="." unique_id=2137514872 instance=ExtResource("6_tefeu")]

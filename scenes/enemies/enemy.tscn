@@ -3,14 +3,8 @@
 [ext_resource type="Script" uid="uid://btilt47p7ljqj" path="res://scenes/enemies/enemy.gd" id="1_md0e3"]
 [ext_resource type="Texture2D" uid="uid://b1celxowwo2dv" path="res://art/sprites/enemy/space_police_128.svg" id="2_8e3ao"]
 [ext_resource type="PackedScene" uid="uid://oaoj8eb8rbpv" path="res://scenes/xp/xp_gear.tscn" id="2_38ino"]
-[ext_resource type="Shader" uid="uid://cytwnjpq61s7w" path="res://scenes/enemies/enemy.gdshader" id="3_fcftc"]
 [ext_resource type="PackedScene" uid="uid://fsu3hsfbo4ju" path="res://scenes/enemies/explosion.tscn" id="3_lu5c6"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fw3ta"]
-resource_local_to_scene = true
-shader = ExtResource("3_fcftc")
-shader_parameter/blink_color = Color(1, 0, 0, 1)
-shader_parameter/blink_intensity = 0.0
+[ext_resource type="Material" uid="uid://bsorqcvx74ggk" path="res://scenes/enemies/enemy_shader.tres" id="4_lu5c6"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kcn5b"]
 animations = [{
@@ -65,7 +59,7 @@ explosion = ExtResource("3_lu5c6")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=249472969]
-material = SubResource("ShaderMaterial_fw3ta")
+material = ExtResource("4_lu5c6")
 rotation = 1.5707964
 sprite_frames = SubResource("SpriteFrames_kcn5b")
 
