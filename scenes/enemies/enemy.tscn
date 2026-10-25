@@ -3,6 +3,14 @@
 [ext_resource type="Script" uid="uid://btilt47p7ljqj" path="res://scenes/enemies/enemy.gd" id="1_md0e3"]
 [ext_resource type="Texture2D" uid="uid://b1celxowwo2dv" path="res://art/sprites/enemy/space_police_128.svg" id="2_8e3ao"]
 [ext_resource type="PackedScene" uid="uid://oaoj8eb8rbpv" path="res://scenes/xp/xp_gear.tscn" id="2_38ino"]
+[ext_resource type="Shader" uid="uid://cytwnjpq61s7w" path="res://scenes/enemies/enemy.gdshader" id="3_fcftc"]
+[ext_resource type="PackedScene" uid="uid://fsu3hsfbo4ju" path="res://scenes/enemies/explosion.tscn" id="3_lu5c6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fw3ta"]
+resource_local_to_scene = true
+shader = ExtResource("3_fcftc")
+shader_parameter/blink_color = Color(1, 0, 0, 1)
+shader_parameter/blink_intensity = 0.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kcn5b"]
 animations = [{
@@ -18,15 +26,46 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8e3ao"]
 size = Vector2(127, 48)
 
+[sub_resource type="Gradient" id="Gradient_lu5c6"]
+offsets = PackedFloat32Array(0.11277174, 0.27038044, 0.6576087, 0.9456522)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 0.9289618, 0.9289618, 0.9289618, 1, 0, 1, 0.98333335, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fcs02"]
+gradient = SubResource("Gradient_lu5c6")
+
+[sub_resource type="Gradient" id="Gradient_fcftc"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_mvvwu"]
+gradient = SubResource("Gradient_fcftc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jhca6"]
+lifetime_randomness = 1.0
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(2, 25, 0)
+direction = Vector3(-0.5, 0, 0)
+spread = 135.0
+initial_velocity_min = 100.0
+initial_velocity_max = 300.0
+gravity = Vector3(0, 0, 0)
+damping_min = 50.000004
+damping_max = 400.00003
+scale_max = 4.0
+color_ramp = SubResource("GradientTexture1D_mvvwu")
+color_initial_ramp = SubResource("GradientTexture1D_fcs02")
+
 [node name="EnemyCopCar" type="CharacterBody2D" unique_id=202267076 groups=["enemy"]]
 collision_layer = 66
 collision_mask = 65
 motion_mode = 1
 script = ExtResource("1_md0e3")
 xp_scene = ExtResource("2_38ino")
+explosion = ExtResource("3_lu5c6")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=249472969]
+material = SubResource("ShaderMaterial_fw3ta")
 rotation = 1.5707964
 sprite_frames = SubResource("SpriteFrames_kcn5b")
 
@@ -40,5 +79,14 @@ disabled = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=777857065]
 polygon = PackedVector2Array(-1, -16, 61, 0, 0, 16, -58, 0)
+
+[node name="sparks" type="GPUParticles2D" parent="." unique_id=383698339]
+position = Vector2(61, 1)
+emitting = false
+amount = 15
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_jhca6")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]
