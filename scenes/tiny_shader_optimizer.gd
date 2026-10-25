@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var sparks_mat : Resource = preload("res://scenes/sparks_material.tres")
 @onready var engine_pulse_mat : Resource = preload("res://scenes/player/player_engine_particles.tres")
+@onready var enemy_explosion_mat : Resource = preload("res://scenes/enemies/enemy_explosion.tres")
 
 @onready var enemy_blink_shader : Resource = preload("res://scenes/enemies/enemy_shader.tres")
 @onready var player_blink_shader : Resource = preload("res://scenes/player/player_blink_shader.tres")
@@ -20,6 +21,7 @@ func force_load_shaders(shader: Resource):
 func _ready():
 	force_load_particles(sparks_mat)
 	force_load_particles(engine_pulse_mat)
+	force_load_particles(enemy_explosion_mat)
 
 	force_load_shaders(enemy_blink_shader)
 	force_load_shaders(player_blink_shader)

@@ -37,12 +37,13 @@ func take_damage(dmg: int):
 		drop_xp.call_deferred()
 		EventBus.enemy_death.emit()
 		
-		var _explosion = explosion.instantiate()
-		_explosion.position = global_position
-		_explosion.rotation = global_rotation
-		_explosion.emitting = true
-		get_parent().add_child(_explosion)
-		
+		var explode = func():
+			var _explosion = explosion.instantiate()
+			_explosion.position = global_position
+			_explosion.rotation = global_rotation
+			_explosion.emitting = true
+			get_parent().add_child(_explosion)
+		explode.call_deferred()
 		queue_free()
 		
 		
