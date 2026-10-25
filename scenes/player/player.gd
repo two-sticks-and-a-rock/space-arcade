@@ -9,6 +9,8 @@ extends StaticBody2D
 @onready var xp_bar : ProgressBar = $Hud/XpBar
 @onready var magnet_collider : CollisionShape2D = $XpMagnet/CollisionShape2D
 @onready var sprite : Sprite2D = $Sprite2D
+@onready var sprite_2d: Sprite2D = $Sprite2D/Sprite2D
+@onready var sparks: GPUParticles2D = $sparks
 
 @onready var hud : CanvasLayer = $Hud
 
@@ -17,6 +19,7 @@ var curr_hp : int = max_hp
 var magnet_radius : int = 150
 
 var immune_to_damage : bool = false
+
 
 func _ready():
 	hp_bar.max_value = max_hp
@@ -32,10 +35,20 @@ func _ready():
 	# var missile_silo = missile_silo_scene.instantiate() as Node2D
 	# add_child(missile_silo)
 
+# for blinking on taking damage
+func set_shader_intensity(newValue: float): 
+	sprite_2d.material.set_shader_parameter("blink_intensity", newValue)
+
 func take_damage(dmg: int):
 	if immune_to_damage:
 		return
 	curr_hp -= dmg
+	
+	# blink tween and kick off animation for sparks
+	var tween = get_tree().create_tween()
+	tween.tween_method(set_shader_intensity, 1.0, 0.0, 0.5)
+	sparks.restart()
+	sparks.emitting = true
 
 func gain_xp(xp: int):
 	xp_bar.gain_xp(xp)
@@ -50,6 +63,7 @@ func handle_game_over():
 
 func _physics_process(_delta):
 	sprite.look_at(-1*get_global_mouse_position())
+		
 	hp_bar.value = curr_hp
 	if (curr_hp <= 0):
 		handle_game_over.call_deferred()

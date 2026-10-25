@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dr03oym73vfjn" path="res://art/sprites/bullets/shield3.png" id="3_fw3ta"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ks08d"]
-radius = 72.02777
+radius = 116.01724
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_fw3ta"]
 animations = [{
@@ -17,6 +17,72 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="Animation" id="Animation_fw3ta"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShieldBubble:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.14999998, 0.9433334, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ks08d"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShieldBubble:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0.14999998, 0.9433334, 1), Color(1, 0.14999998, 0.17833328, 0.078431375)]
+}
+
+[sub_resource type="Animation" id="Animation_y5ytx"]
+resource_name = "time_out_warning"
+length = 0.6666667
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ShieldBubble:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0.14999998, 0.9433334, 1), Color(1, 0.14999998, 0.9433334, 0.19607843)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y5ytx"]
+_data = {
+&"RESET": SubResource("Animation_fw3ta"),
+&"fade_out": SubResource("Animation_ks08d"),
+&"time_out_warning": SubResource("Animation_y5ytx")
+}
+
+[sub_resource type="Gradient" id="Gradient_mvvwu"]
+offsets = PackedFloat32Array(0.5012136, 0.85679615, 0.9368932, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jhca6"]
+gradient = SubResource("Gradient_mvvwu")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.17948718, 0.16239317)
 
 [node name="RamShield" type="Node2D" unique_id=1339649772]
 script = ExtResource("1_rl1gc")
@@ -45,6 +111,7 @@ metadata/_custom_type_script = "uid://coecmsj6c3pm2"
 shape = SubResource("CircleShape2D_ks08d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RamCap" unique_id=1792486684]
+visible = false
 sprite_frames = SubResource("SpriteFrames_fw3ta")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="RamCap/AnimatedSprite2D" unique_id=1022541930]
@@ -61,8 +128,18 @@ grow_vertical = 2
 max_value = 5.0
 step = 0.1
 value = 2.0
+texture_under = ExtResource("3_fw3ta")
 texture_progress = ExtResource("3_fw3ta")
-tint_progress = Color(0.41960785, 0.1764706, 1, 1)
+tint_under = Color(1, 0.14901961, 1, 1)
+tint_progress = Color(0.4117647, 0.29411766, 1, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=137672045]
+libraries/ = SubResource("AnimationLibrary_y5ytx")
+
+[node name="ShieldBubble" type="Sprite2D" parent="." unique_id=1167272965]
+self_modulate = Color(1, 0.14999998, 0.9433334, 1)
+scale = Vector2(2, 2)
+texture = SubResource("GradientTexture2D_jhca6")
 
 [connection signal="timeout" from="UpTimer" to="." method="_on_up_timer_timeout"]
 [connection signal="timeout" from="DownTimer" to="." method="_on_down_timer_timeout"]

@@ -1,8 +1,11 @@
 extends CharacterBody2D
 
 @onready var player = get_parent().get_node("%player") as StaticBody2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var sparks: GPUParticles2D = $sparks
 
 @export var xp_scene : PackedScene
+@export var explosion : PackedScene
 
 var speed = Vector2(randf_range(250.0, 300.0), 0.0)
 var max_hp = 40
@@ -15,8 +18,17 @@ var is_marked: bool = false
 var just_shoved: bool = false
 var shove_velocity: Vector2 = Vector2.ZERO
 
+func set_shader_intensity(newValue: float): 
+	animated_sprite_2d.material.set_shader_parameter("blink_intensity", newValue)
+
 func take_damage(dmg: int):
 	curr_hp -= dmg
+	
+	var tween = get_tree().create_tween()
+	tween.tween_method(set_shader_intensity, 1.0, 0.0, 0.5)
+	sparks.restart()
+	sparks.emitting = true
+	
 	if (curr_hp <= 0):
 		var drop_xp = func():
 			var xp_drop = xp_scene.instantiate()
@@ -24,7 +36,16 @@ func take_damage(dmg: int):
 			get_parent().add_child(xp_drop)
 		drop_xp.call_deferred()
 		EventBus.enemy_death.emit()
+		
+		var _explosion = explosion.instantiate()
+		_explosion.position = global_position
+		_explosion.rotation = global_rotation
+		_explosion.emitting = true
+		get_parent().add_child(_explosion)
+		
 		queue_free()
+		
+		
 
 func freeze(time: int):
 	if not is_frozen:
