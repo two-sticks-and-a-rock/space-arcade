@@ -1,12 +1,20 @@
 [gd_scene format=3 uid="uid://iuuyvsjys37a"]
 
+[ext_resource type="Script" uid="uid://cg8kfxbvvsds1" path="res://scenes/tiny_shader_optimizer.gd" id="1_47hdm"]
 [ext_resource type="Material" uid="uid://bsorqcvx74ggk" path="res://scenes/enemies/enemy_shader.tres" id="2_drfli"]
 [ext_resource type="Material" uid="uid://motnsh3ktar8" path="res://scenes/player/player_blink_shader.tres" id="3_drfli"]
 
 [node name="TinyShaderOptimizer" type="Node2D" unique_id=2137514872]
+script = ExtResource("1_47hdm")
 
-[node name="enemy_shader" type="Node2D" parent="." unique_id=1229626831]
+[node name="Timer" type="Timer" parent="." unique_id=1716436612]
+process_callback = 0
+autostart = true
+
+[node name="EnemyShader" type="Node2D" parent="." unique_id=1229626831]
 material = ExtResource("2_drfli")
 
-[node name="player_blink_shader" type="Node2D" parent="." unique_id=1118253916]
+[node name="PlayerBlinkShader" type="Node2D" parent="." unique_id=1118253916]
 material = ExtResource("3_drfli")
+
+[connection signal="timeout" from="Timer" to="." method="_on_free_timer_timeout"]
