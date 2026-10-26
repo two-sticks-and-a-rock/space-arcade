@@ -86,6 +86,8 @@ func choose_at_most_n(to_choose_from: Array, n: int):
 	return sliced.slice(0, num_to_choose)
 
 func populate_upgrade_panels():
+	heal_label.visible = true
+
 	var player = get_tree().root.get_node("Main/player")
 	var player_weapons = player.get_children().filter(
 		func(child):
