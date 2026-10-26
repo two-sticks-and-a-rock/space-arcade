@@ -1,3 +1,4 @@
+class_name Player
 extends StaticBody2D
 
 @export var orbiter_ring_scene : PackedScene
@@ -19,7 +20,6 @@ var curr_hp : int = max_hp
 var magnet_radius : int = 150
 
 var immune_to_damage : bool = false
-
 
 func _ready():
 	hp_bar.max_value = max_hp
@@ -49,6 +49,14 @@ func take_damage(dmg: int):
 	tween.tween_method(set_shader_intensity, 1.0, 0.0, 0.5)
 	sparks.restart()
 	sparks.emitting = true
+
+func heal_damage(dmg: int):
+	var overheal = (curr_hp + dmg) - max_hp
+	if (overheal > 0):
+		curr_hp = max_hp
+		#print("Overhealed " + str(overheal))
+	else:
+		curr_hp += dmg
 
 func gain_xp(xp: int):
 	xp_bar.gain_xp(xp)

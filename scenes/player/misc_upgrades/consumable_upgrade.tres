@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ConsumableUpgrade" format=3 uid="uid://b26v82r12fgtu"]
+
+[ext_resource type="Script" uid="uid://brsjqsjvr2iv3" path="res://scenes/player/misc_upgrades/consumable_upgrade.gd" id="1_ugnqn"]
+
+[resource]
+script = ExtResource("1_ugnqn")
+metadata/_custom_type_script = "uid://brsjqsjvr2iv3"
