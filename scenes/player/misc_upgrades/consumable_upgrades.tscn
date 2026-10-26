@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c01ywpam8u2f2"]
+[gd_scene format=3 uid="uid://j30plhcw8v3s"]
 
 [ext_resource type="Script" uid="uid://cmuylfk24te1g" path="res://scenes/player/misc_upgrades/consumable_upgrades.gd" id="1_8jcsx"]
 [ext_resource type="Script" uid="uid://brsjqsjvr2iv3" path="res://scenes/player/misc_upgrades/consumable_upgrade.gd" id="2_8jcsx"]
