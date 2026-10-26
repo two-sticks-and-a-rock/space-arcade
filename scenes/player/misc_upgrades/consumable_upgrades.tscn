@@ -4,15 +4,14 @@
 [ext_resource type="Script" uid="uid://brsjqsjvr2iv3" path="res://scenes/player/misc_upgrades/consumable_upgrade.gd" id="2_8jcsx"]
 [ext_resource type="Script" uid="uid://cceg5cly46iya" path="res://scenes/player/misc_upgrades/heal_upgrade.gd" id="3_egju8"]
 
-[sub_resource type="Resource" id="Resource_myaiu"]
+[sub_resource type="Resource" id="Resource_nwtux"]
 script = ExtResource("3_egju8")
 heal_percent = 0.3
-heal_value = 0
-display_name = "One-Time Repair"
+display_name = "One Time Repair!"
 img_filepath = "res://art/sprites/upgrades/gear_heart.png"
-mechanics = Array[String](["Repair +30% of ship's HP"])
+mechanics = Array[String](["Heal +30% of max HP"])
 metadata/_custom_type_script = "uid://cceg5cly46iya"
 
 [node name="ConsumableUpgrades" type="Node2D" unique_id=1797358396]
 script = ExtResource("1_8jcsx")
-upgrades = Array[ExtResource("2_8jcsx")]([SubResource("Resource_myaiu")])
+upgrades = Array[ExtResource("2_8jcsx")]([SubResource("Resource_nwtux")])
