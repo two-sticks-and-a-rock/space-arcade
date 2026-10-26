@@ -17,6 +17,9 @@ signal engine_burn
 #var sling_charge : float = 0
 #var use_wasd : bool = false
 
+func _ready():
+	modulate = self_modulate * 4.0
+
 func handle_speed(slingshot_vector: Vector2):
 		Mover.direction = slingshot_vector.normalized()
 		Mover.speed = slingshot_vector.length()
@@ -30,8 +33,9 @@ func _input(_event: InputEvent) -> void:
 		end_vector = get_global_mouse_position()
 		clear_points()
 
-		var visible_start_vector = to_local(player.global_position)
-		var visible_end_vector = to_local(player.global_position + (start_vector - end_vector).limit_length(Mover.slingshot_length_clamp))
+		var visible_direction = (start_vector - end_vector).normalized()*80
+		var visible_start_vector = to_local(player.global_position + visible_direction)  
+		var visible_end_vector = to_local(player.global_position + (start_vector - end_vector).limit_length(Mover.slingshot_length_clamp) + visible_direction) 
 		add_point(visible_start_vector, 0)
 		add_point(visible_end_vector, 1)
 

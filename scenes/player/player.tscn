@@ -74,6 +74,7 @@ shape = SubResource("CircleShape2D_gmlin")
 [node name="PlayerCam" parent="." unique_id=366946419 instance=ExtResource("3_lvxji")]
 
 [node name="slingshot" parent="." unique_id=1690289278 instance=ExtResource("11_myrg7")]
+points = PackedVector2Array()
 
 [node name="hp" type="ProgressBar" parent="." unique_id=1485871813]
 z_index = 100
