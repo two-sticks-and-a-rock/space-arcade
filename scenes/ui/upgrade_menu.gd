@@ -5,6 +5,7 @@ extends CanvasLayer
 var hit_max_level = false
 
 var starting_weapon_scene : PackedScene = load("res://scenes/player/player_weapons/ram_shield/ram_shield.tscn")
+@onready var heal_label : Label = $PanelContainer/MarginContainer/VBoxContainer/HealLabel
 
 class UpgradeSetMetadata:
 	var possible_upgrade_sets: Array[WeaponUpgradeSet] = []
@@ -155,6 +156,7 @@ func _on_player_finish_level_up():
 
 func create_start_weapon_upgrade_menu():
 	visible = true
+	heal_label.visible = false
 
 	var player = get_tree().root.get_node("Main/player")
 	var starting_weapon = starting_weapon_scene.instantiate() as PlayerWeapon

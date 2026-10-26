@@ -5,6 +5,9 @@
 [ext_resource type="Theme" uid="uid://drsxtvymgay2s" path="res://scenes/ui/themes/default/default.tres" id="2_j2skl"]
 [ext_resource type="Theme" uid="uid://tl6su32daw8w" path="res://scenes/ui/themes/title.tres" id="3_b03nv"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_kcn5b"]
+font_size = 24
+
 [node name="UpgradeMenu" type="CanvasLayer" unique_id=1651193659]
 process_mode = 2
 layer = 2
@@ -52,6 +55,13 @@ theme = ExtResource("3_b03nv")
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=518747619]
 layout_mode = 2
 text = "UPGRADES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HealLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=468375662]
+layout_mode = 2
+text = "Heal +10%"
+label_settings = SubResource("LabelSettings_kcn5b")
 horizontal_alignment = 1
 vertical_alignment = 1
 
