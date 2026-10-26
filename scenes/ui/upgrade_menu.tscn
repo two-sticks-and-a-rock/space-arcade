@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://bgbg745kbdvs" path="res://scenes/ui/themes/menu_panel.tres" id="2_cqxas"]
 [ext_resource type="Theme" uid="uid://drsxtvymgay2s" path="res://scenes/ui/themes/default/default.tres" id="2_j2skl"]
 [ext_resource type="Theme" uid="uid://tl6su32daw8w" path="res://scenes/ui/themes/title.tres" id="3_b03nv"]
+[ext_resource type="PackedScene" uid="uid://c01ywpam8u2f2" path="res://scenes/player/misc_upgrades/consumable_upgrades.tscn" id="5_uofuh"]
 
 [node name="UpgradeMenu" type="CanvasLayer" unique_id=1651193659]
 process_mode = 2
@@ -61,3 +62,5 @@ size_flags_vertical = 4
 theme = ExtResource("2_j2skl")
 theme_override_constants/separation = 24
 alignment = 1
+
+[node name="ConsumableUpgrades" parent="." unique_id=1797358396 instance=ExtResource("5_uofuh")]

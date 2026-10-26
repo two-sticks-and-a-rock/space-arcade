@@ -6,6 +6,8 @@ var hit_max_level = false
 
 var starting_weapon_scene : PackedScene = load("res://scenes/player/player_weapons/ram_shield/ram_shield.tscn")
 
+@onready var misc_upgrades_node : Node2D = $ConsumableUpgrades
+
 class UpgradeSetMetadata:
 	var possible_upgrade_sets: Array[WeaponUpgradeSet] = []
 	var all_possible_upgrades_length: int = 0
@@ -73,6 +75,9 @@ func get_possible_upgrade_sets(player_weapons: Array) -> UpgradeSetMetadata:
 
 	return upgrade_set_metadata
 
+func get_misc_upgrades():
+	return misc_upgrades_node.upgrades
+
 func choose_at_most_n(to_choose_from: Array, n: int):
 	var total = to_choose_from.size()
 	if (n > total):
@@ -94,7 +99,7 @@ func populate_upgrade_panels():
 	var processed = get_possible_upgrade_sets(player_weapons)
 	var new_weapons = get_unobtained_weapons(player_weapons)
 
-	var all_choices = processed.possible_upgrade_sets + new_weapons
+	var all_choices = processed.possible_upgrade_sets + new_weapons + get_misc_upgrades()
 	var choices = choose_at_most_n(all_choices, 3)
 
 	for choice in choices:
@@ -121,7 +126,7 @@ func populate_upgrade_panels():
 					hit_max_level = true
 				EventBus.finish_level_up.emit()
 				_on_player_finish_level_up()
-		else:
+		elif choice is PlayerWeapon:
 			upgrade_panel.upgrade_name = choice.display_name if choice.display_name != null else choice.name
 			upgrade_panel.img_filepath = choice.weapon_img_path
 			upgrade_panel.mechanics = [choice.description if choice.description != null else "A new weapon!"] as Array[String]
@@ -129,6 +134,15 @@ func populate_upgrade_panels():
 				upgrade_panel.mechanics.append(mechanic as String)
 			upgrade_panel.on_panel_pressed = func():
 				player.add_child(choice)
+				EventBus.finish_level_up.emit()
+				_on_player_finish_level_up()
+		elif choice is ConsumableUpgrade:
+			upgrade_panel.upgrade_name = choice.display_name
+			upgrade_panel.img_filepath = choice.img_filepath
+			for mechanic in choice.mechanics:
+				upgrade_panel.mechanics.append(mechanic as String)
+			upgrade_panel.on_panel_pressed = func():
+				choice._apply_upgrade(player)
 				EventBus.finish_level_up.emit()
 				_on_player_finish_level_up()
 

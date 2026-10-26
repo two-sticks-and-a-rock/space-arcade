@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="HealUpgrade" format=3 uid="uid://grj2aln55avm"]
+
+[ext_resource type="Script" uid="uid://cceg5cly46iya" path="res://scenes/player/misc_upgrades/heal_upgrade.gd" id="1_o3tdm"]
+
+[resource]
+script = ExtResource("1_o3tdm")
+display_name = "10% Heal"
+img_filepath = "res://art/sprites/upgrades/gear_heart.png"
+mechanics = Array[String](["Heal +10% HP"])
+metadata/_custom_type_script = "uid://cceg5cly46iya"
