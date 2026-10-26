@@ -9,7 +9,7 @@ script = ExtResource("3_egju8")
 heal_percent = 0.3
 display_name = "One Time Repair!"
 img_filepath = "res://art/sprites/upgrades/gear_heart.png"
-mechanics = Array[String](["Heal +30% of max HP"])
+mechanics = Array[String](["Repair +30% of ship's HP"])
 metadata/_custom_type_script = "uid://cceg5cly46iya"
 
 [node name="ConsumableUpgrades" type="Node2D" unique_id=1797358396]
