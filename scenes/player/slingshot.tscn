@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d3igb07h3ngjh"]
+
+[ext_resource type="Texture2D" uid="uid://dy1f7chsihknf" path="res://art/sprites/player/arrow.svg" id="1_i841r"]
+[ext_resource type="Script" uid="uid://cg3xb6odenjtk" path="res://scenes/player/slingshot.gd" id="2_sc6vs"]
+
+[node name="slingshot" type="Line2D" unique_id=1690289278]
+self_modulate = Color(1, 0.8235294, 0.2901961, 1)
+texture_repeat = 2
+points = PackedVector2Array(0, 0, 0, 300)
+width = 70.0
+texture = ExtResource("1_i841r")
+texture_mode = 1
+script = ExtResource("2_sc6vs")

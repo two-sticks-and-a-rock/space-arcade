@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://ck1t4q08pl40k"]
+
+[ext_resource type="Texture2D" uid="uid://dy1f7chsihknf" path="res://art/sprites/player/arrow.svg" id="1_y8pi5"]
+
+[node name="TextureRect" type="TextureRect" unique_id=1923148975]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_y8pi5")

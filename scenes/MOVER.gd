@@ -5,7 +5,7 @@ var speed : float = 0.0
 
 var velocity
 
-var slingshot_length_clamp = 500
+var slingshot_length_clamp = 513
 var speed_mult = 3
 
 func _ready():
