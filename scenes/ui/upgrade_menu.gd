@@ -5,6 +5,7 @@ extends CanvasLayer
 var hit_max_level = false
 
 var starting_weapon_scene : PackedScene = load("res://scenes/player/player_weapons/ram_shield/ram_shield.tscn")
+@onready var heal_label : Label = $PanelContainer/MarginContainer/VBoxContainer/HealLabel
 
 @onready var misc_upgrades_node : Node2D = $ConsumableUpgrades
 
@@ -90,6 +91,8 @@ func choose_at_most_n(to_choose_from: Array, n: int):
 	return sliced.slice(0, num_to_choose)
 
 func populate_upgrade_panels():
+	heal_label.visible = true
+
 	var player = get_tree().root.get_node("Main/player")
 	var player_weapons = player.get_children().filter(
 		func(child):
@@ -169,6 +172,7 @@ func _on_player_finish_level_up():
 
 func create_start_weapon_upgrade_menu():
 	visible = true
+	heal_label.visible = false
 
 	var player = get_tree().root.get_node("Main/player")
 	var starting_weapon = starting_weapon_scene.instantiate() as PlayerWeapon
