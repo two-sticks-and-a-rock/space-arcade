@@ -7,3 +7,5 @@ resource_local_to_scene = true
 shader = ExtResource("1_gate8")
 shader_parameter/blink_color = Color(1, 0, 0, 1)
 shader_parameter/blink_intensity = 0.0
+shader_parameter/status_color = Color(0, 1, 1, 1)
+shader_parameter/status_intensity = 0.0

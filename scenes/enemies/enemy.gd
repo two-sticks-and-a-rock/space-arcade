@@ -50,14 +50,14 @@ func take_damage(dmg: int):
 
 func freeze(time: int):
 	if not is_frozen:
-		modulate = Color.AQUA
+		animated_sprite_2d.material.set_shader_parameter("status_intensity", 1.0)
 		is_frozen = true
 		speed = Vector2.ZERO
 		freeze_timer.start(time)
 		await freeze_timer.timeout
 		speed = Vector2(randf_range(250.0, 300.0), 0.0)
 		is_frozen = false
-		modulate = Color.WHITE
+		animated_sprite_2d.material.set_shader_parameter("status_intensity", 0.0)
 
 func _ready():
 	freeze_timer.one_shot = true
