@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3tnm6dujlkue"
-path="res://.godot/imported/orbiter_placeholder 2.png-baad3ca8e6081f9ea2036ca3ab42e3aa.ctex"
+uid="uid://i4t3g5bkudeo"
+path="res://.godot/imported/asteroid_03.svg-81569c4c6b42bf34957f33c4a1eda804.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/bullets/orbiter_placeholder 2.png"
-dest_files=["res://.godot/imported/orbiter_placeholder 2.png-baad3ca8e6081f9ea2036ca3ab42e3aa.ctex"]
+source_file="res://art/sprites/bullets/asteroids/asteroid_03.svg"
+dest_files=["res://.godot/imported/asteroid_03.svg-81569c4c6b42bf34957f33c4a1eda804.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

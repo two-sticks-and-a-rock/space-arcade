@@ -120,7 +120,7 @@ upgrades = Array[ExtResource("3_x6mqk")]([SubResource("Resource_0yjdd")])
 [node name="OrbiterRing" type="Node2D" unique_id=956994433]
 script = ExtResource("1_cd0fb")
 bullet_scene = ExtResource("2_gpny0")
-weapon_img_path = "res://art/sprites/bullets/orbiter_placeholder 2.png"
+weapon_img_path = "res://art/sprites/bullets/asteroids/asteroid_01.svg"
 display_name = "Asteroid Belt"
 description = "A ring of your very own asteroids for damaging enemies"
 base_mechanics = Array[String](["Bullets: 2", "Damage: 50", "Up timer: 6.0s", "Down timer: 8.0s", "Speed: 1/2 rev/s"])
