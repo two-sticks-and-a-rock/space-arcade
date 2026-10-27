@@ -18,7 +18,6 @@ var show_button : bool = true
 @export var mechanics : Array[MechanicsText] = []
 @export var description : String = ""
 
-var on_panel_pressed: Callable
 var on_panel_pressed: Callable = func(): pass
 
 func _ready():

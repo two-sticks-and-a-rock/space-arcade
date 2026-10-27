@@ -16,9 +16,8 @@ func create_start_weapon_upgrade_menu():
 
 	upgrade_panel.upgrade_name = starting_weapon.display_name
 	upgrade_panel.img_filepath = starting_weapon.weapon_img_path
-	upgrade_panel.mechanics = [starting_weapon.description] as Array[String]
-	for mechanic in starting_weapon.base_mechanics:
-		upgrade_panel.mechanics.append(mechanic as String)
+	upgrade_panel.description = starting_weapon.description
+	upgrade_panel.mechanics = starting_weapon.base_mechanics
 	upgrade_panel.show_button = false
 
 	h_container.add_child(upgrade_panel)
