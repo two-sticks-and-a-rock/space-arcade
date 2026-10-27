@@ -18,7 +18,9 @@ func _physics_process(delta: float) -> void:
 
 	if (target == null):
 		rotate(.05)
+		$AnimatedSprite2D/Sprite2D.visible = false
 	else:
+		$AnimatedSprite2D/Sprite2D.visible = true
 		global_position = lerp(global_position, target_position, .01)
 		if abs((global_position-target_position).length()) < 0.1:
 			target = null

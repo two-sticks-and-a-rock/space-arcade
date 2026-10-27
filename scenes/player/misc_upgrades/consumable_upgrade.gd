@@ -6,7 +6,7 @@ extends Resource
 @export  var mechanics : Array[MechanicsText] = []
 
 func _apply_upgrade(_player: Player):
-    pass
+	pass
 
 func _remove_upgrade(_player: Player):
-    pass
+	pass
