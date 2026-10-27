@@ -1,13 +1,11 @@
 [gd_scene format=3 uid="uid://br4we7wbi1h4f"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_h4srg"]
-line_spacing = -4.0
-font_size = 20
-font_color = Color(0, 0, 0, 1)
+[ext_resource type="LabelSettings" uid="uid://b553wlcmxe468" path="res://scenes/ui/themes/upgrade_body_text.tres" id="1_h4srg"]
 
 [node name="UpgradeMechanicsText" type="Label" unique_id=616719383]
 theme_override_font_sizes/font_size = 24
 text = "Mechanics Text Example: 8s → 7s"
-label_settings = SubResource("LabelSettings_h4srg")
+label_settings = ExtResource("1_h4srg")
+horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
