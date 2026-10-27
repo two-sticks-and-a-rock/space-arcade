@@ -9,11 +9,14 @@ extends MarginContainer
 
 @onready var mechanic_label_scene : PackedScene = load("res://scenes/ui/upgrade_mechanics_text.tscn")
 @onready var mechanic_subheader_label_scene : PackedScene = load("res://scenes/ui/upgrade_mechanics_subheader.tscn")
+@onready var description_label_scene : PackedScene = load("res://scenes/ui/upgrade_description.tscn")
 
 @export var upgrade_name : String
 @export var weapon_name : String
 @export var img_filepath : String
 @export var mechanics : Array[MechanicsText] = []
+@export var description : String = ""
+
 var on_panel_pressed: Callable
 
 func _ready():
@@ -21,6 +24,11 @@ func _ready():
 	weapon_label.text = weapon_name
 	if (img_filepath):
 		img.texture = load(img_filepath) as Texture2D
+
+	if (description.length() > 0):
+		var description_label = description_label_scene.instantiate() as Label
+		description_label.text = description
+		mechanics_container.add_child(description_label)
 
 	for mechanic in mechanics:
 		var mechanic_subheader_label = mechanic_subheader_label_scene.instantiate() as Label

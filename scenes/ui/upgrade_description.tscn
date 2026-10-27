@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cnncu12523rpp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p5d0k"]
+line_spacing = -8.0
+font_size = 28
+font_color = Color(0, 0, 0, 1)
+
+[node name="UpgradeMechanicsText" type="Label" unique_id=616719383]
+theme_override_font_sizes/font_size = 24
+text = "Mechanics Text Example: 8s → 7s"
+label_settings = SubResource("LabelSettings_p5d0k")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
