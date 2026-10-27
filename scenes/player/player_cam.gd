@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var visible_icons: bool = false
-@export_range(0.0, 0.5, 0.01) var camera_dist : float = 0.15
+@export_range(0.0, 0.5, 0.01) var camera_dist : float = 0.10
 @export_range(0.0, 0.2, 0.001) var cam_target_speed : float = 0.075
 @export_range(0.0, 0.2, 0.001) var cam_follow_speed : float = 0.05
 
