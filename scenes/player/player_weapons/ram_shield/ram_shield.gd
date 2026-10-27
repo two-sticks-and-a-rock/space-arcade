@@ -8,8 +8,13 @@ extends PlayerWeapon
 @onready var animationPlayer : AnimationPlayer = $AnimationPlayer
 @export var time_warning : float = 2.0
 
+@export var lifesteal : int = 0
+
+func steal_life():
+	player.heal_damage(lifesteal)
 
 func _reinstantiate_weapon():
+	super()
 	up_timer.start()
 
 func _ready():

@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://da3ix7tkfrvg6" path="res://scenes/player/player_weapons/ram_shield/ram_shield.gd" id="1_rl1gc"]
 [ext_resource type="Script" uid="uid://bcp3gl8x6c5u6" path="res://scenes/player/player_weapons/ram_shield/ram_cap.gd" id="2_fw3ta"]
 [ext_resource type="Script" uid="uid://dq724vlrm8a05" path="res://scenes/ui/mechanics_text.gd" id="2_ks08d"]
+[ext_resource type="Script" uid="uid://cv1cwxelnr7jm" path="res://scenes/player/player_weapons/weapon_upgrades/weapon_upgrade_set.gd" id="3_aqsbs"]
 [ext_resource type="Texture2D" uid="uid://dr03oym73vfjn" path="res://art/sprites/bullets/shield3.png" id="3_fw3ta"]
+[ext_resource type="Script" uid="uid://dh8gni2x2uubt" path="res://scenes/player/player_weapons/weapon_upgrades/weapon_upgrade.gd" id="4_6t3hi"]
+[ext_resource type="Script" uid="uid://dfjm2254mi3qy" path="res://scenes/player/player_weapons/ram_shield/upgrades/lifesteal_upgrade.gd" id="5_jixl4"]
 
 [sub_resource type="Resource" id="Resource_kj1qa"]
 script = ExtResource("2_ks08d")
@@ -22,6 +25,24 @@ script = ExtResource("2_ks08d")
 mechanic_name = "Cooldown"
 mechanic_value = "5 seconds"
 metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_5siwe"]
+script = ExtResource("2_ks08d")
+mechanic_name = "Lifesteal"
+mechanic_value = "0 HP -> 10 HP"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_krr1n"]
+resource_name = "Lifesteal"
+script = ExtResource("5_jixl4")
+lifesteal_increase = 10
+mechanics_text = SubResource("Resource_5siwe")
+metadata/_custom_type_script = "uid://dfjm2254mi3qy"
+
+[sub_resource type="Resource" id="Resource_ssekj"]
+script = ExtResource("3_aqsbs")
+upgrades = Array[ExtResource("4_6t3hi")]([SubResource("Resource_krr1n")])
+metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ks08d"]
 radius = 116.01724
@@ -108,10 +129,11 @@ script = ExtResource("1_rl1gc")
 weapon_img_path = "res://art/sprites/bullets/shield3.png"
 display_name = "Stellar Shockwave"
 description = "Slingshot through enemies while active"
-base_mechanics = Array[Resource]([SubResource("Resource_kj1qa"), SubResource("Resource_fw3ta"), SubResource("Resource_ks08d")])
+base_mechanics = Array[ExtResource("2_ks08d")]([SubResource("Resource_kj1qa"), SubResource("Resource_fw3ta"), SubResource("Resource_ks08d")])
 dmg = 25
 num_bullets = 1
 bullet_size = 5.0
+possible_upgrade_sets = Array[ExtResource("3_aqsbs")]([SubResource("Resource_ssekj")])
 metadata/_custom_type_script = "uid://ddp1c2rv414k4"
 
 [node name="UpTimer" type="Timer" parent="." unique_id=12921542]
