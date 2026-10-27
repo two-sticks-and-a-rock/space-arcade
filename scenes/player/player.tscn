@@ -95,8 +95,7 @@ step = 1.0
 value = 100.0
 show_percentage = false
 
-[node name="Hud" type="CanvasLayer" parent="." unique_id=852667993]
-script = ExtResource("7_h17s1")
+[node name="XpCanvas" type="CanvasLayer" parent="." unique_id=852667993]
 
 [node name="XpBar" parent="Hud" unique_id=804379581 instance=ExtResource("6_75vfm")]
 max_value = 1920.0
