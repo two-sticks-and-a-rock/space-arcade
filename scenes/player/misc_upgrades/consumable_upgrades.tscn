@@ -5,20 +5,18 @@
 [ext_resource type="Script" uid="uid://cceg5cly46iya" path="res://scenes/player/misc_upgrades/heal_upgrade.gd" id="3_egju8"]
 [ext_resource type="Script" uid="uid://dq724vlrm8a05" path="res://scenes/ui/mechanics_text.gd" id="3_gxy1x"]
 
-[sub_resource type="Resource" id="Resource_gxy1x"]
+[sub_resource type="Resource" id="Resource_t0cpw"]
 script = ExtResource("3_gxy1x")
 mechanic_name = "Repair"
-mechanic_value = "+10% HP"
+mechanic_value = "+30% of ship's HP"
 metadata/_custom_type_script = "uid://dq724vlrm8a05"
 
-[sub_resource type="Resource" id="Resource_nwtux"]
+[sub_resource type="Resource" id="Resource_hjiyj"]
 script = ExtResource("3_egju8")
-heal_percent = 0.3
 display_name = "One Time Repair!"
-img_filepath = "res://art/sprites/upgrades/gear_heart.png"
-mechanics = Array[ExtResource("3_gxy1x")]([SubResource("Resource_gxy1x")])
+mechanics = Array[ExtResource("3_gxy1x")]([SubResource("Resource_t0cpw")])
 metadata/_custom_type_script = "uid://cceg5cly46iya"
 
 [node name="ConsumableUpgrades" type="Node2D" unique_id=1797358396]
 script = ExtResource("1_8jcsx")
-upgrades = Array[ExtResource("2_8jcsx")]([SubResource("Resource_nwtux")])
+upgrades = Array[ExtResource("2_8jcsx")]([SubResource("Resource_hjiyj")])
