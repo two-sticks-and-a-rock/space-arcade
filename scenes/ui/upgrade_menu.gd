@@ -4,9 +4,6 @@ extends CanvasLayer
 @onready var h_container : HBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer
 var hit_max_level = false
 
-var starting_weapon_scene : PackedScene = load("res://scenes/player/player_weapons/ram_shield/ram_shield.tscn")
-@onready var heal_label : Label = $PanelContainer/MarginContainer/VBoxContainer/HealLabel
-
 @onready var misc_upgrades_node : Node2D = $ConsumableUpgrades
 
 class UpgradeSetMetadata:
@@ -91,8 +88,6 @@ func choose_at_most_n(to_choose_from: Array, n: int):
 	return sliced.slice(0, num_to_choose)
 
 func populate_upgrade_panels():
-	heal_label.visible = true
-
 	var player = get_tree().root.get_node("Main/player")
 	var player_weapons = player.get_children().filter(
 		func(child):
@@ -125,7 +120,7 @@ func populate_upgrade_panels():
 				choice.applied = true
 				weapon._reinstantiate_weapon()
 
-				if (processed.all_possible_upgrades_length + new_weapons.size() <= 1):
+				if (processed.all_possible_upgrades_length <= 1 && new_weapons.length + new_weapons.size() <= 1):
 					hit_max_level = true
 				EventBus.finish_level_up.emit()
 				_on_player_finish_level_up()
@@ -169,24 +164,6 @@ func _on_player_finish_level_up():
 	visible = false
 	get_tree().paused = false
 
-func create_start_weapon_upgrade_menu():
-	visible = true
-	heal_label.visible = false
-
-	var player = get_tree().root.get_node("Main/player")
-	var starting_weapon = starting_weapon_scene.instantiate() as PlayerWeapon
-
-	var upgrade_panel : MarginContainer = upgrade_panel_scene.instantiate()
-	upgrade_panel.upgrade_name = starting_weapon.display_name if starting_weapon.display_name != null else starting_weapon.name
-	upgrade_panel.img_filepath = starting_weapon.weapon_img_path
-	upgrade_panel.description = starting_weapon.description
-	upgrade_panel.mechanics = starting_weapon.base_mechanics
-	upgrade_panel.on_panel_pressed = func():
-		player.add_child(starting_weapon)
-		EventBus.start_tutorial.emit()
-		_on_player_finish_level_up()
-	h_container.add_child(upgrade_panel)
-
 func new_upgrade_menu():
 	visible = false
 	clear_upgrade_panels()
@@ -202,9 +179,6 @@ func _ready():
 
 	if !EventBus.switch_scenes.is_connected(_on_switch_scenes):
 		EventBus.switch_scenes.connect(_on_switch_scenes)
-
-	if !EventBus.get_starting_weapon.is_connected(create_start_weapon_upgrade_menu):
-		EventBus.get_starting_weapon.connect(create_start_weapon_upgrade_menu)
 
 	if(!EventBus.level_up.is_connected(_on_player_level_up)):
 		EventBus.level_up.connect(_on_player_level_up)

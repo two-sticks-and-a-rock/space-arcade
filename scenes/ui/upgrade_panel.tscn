@@ -55,6 +55,8 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_naqhr")
 
 [node name="VSplitContainer" type="VSplitContainer" parent="." unique_id=227808025]
 layout_mode = 2
+split_offsets = PackedInt32Array(243)
+split_offset = 243
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VSplitContainer" unique_id=817815659]
 layout_mode = 2

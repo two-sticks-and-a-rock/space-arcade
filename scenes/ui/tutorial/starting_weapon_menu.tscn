@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cit5ai4x7l25n"]
+
+[ext_resource type="Script" uid="uid://b4w7rqmm3fgs1" path="res://scenes/ui/tutorial/starting_weapon_menu.gd" id="1_arbmg"]
+[ext_resource type="Theme" uid="uid://bgbg745kbdvs" path="res://scenes/ui/themes/menu_panel.tres" id="2_arbmg"]
+[ext_resource type="Theme" uid="uid://bin02r2f4xqh2" path="res://scenes/ui/themes/secondary_button.tres" id="3_yoea8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_arbmg"]
+font_size = 36
+font_color = Color(0.9019608, 0.91764706, 0.9843137, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hwnpr"]
+font_size = 36
+font_color = Color(1, 0.5411765, 0, 1)
+
+[node name="StartingWeapon" type="CanvasLayer" unique_id=1651193659]
+process_mode = 2
+layer = 2
+script = ExtResource("1_arbmg")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=795516997]
+custom_minimum_size = Vector2(0, 840)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 97.0
+offset_top = 96.0
+offset_right = -95.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_arbmg")
+
+[node name="Panel" type="Panel" parent="PanelContainer" unique_id=1913156313]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1847737050]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1420900529]
+layout_mode = 2
+
+[node name="ContinueButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=994090016]
+show_behind_parent = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("3_yoea8")
+text = "CONTINUE"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1881144327]
+layout_mode = 2
+alignment = 1
+
+[node name="Text" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1230071001]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Text" unique_id=1284626772]
+layout_mode = 2
+text = "YOUR FIRST WEAPON IS THE "
+label_settings = SubResource("LabelSettings_arbmg")
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Text" unique_id=1358114313]
+layout_mode = 2
+text = "STELLAR SHOCKWAVE"
+label_settings = SubResource("LabelSettings_hwnpr")

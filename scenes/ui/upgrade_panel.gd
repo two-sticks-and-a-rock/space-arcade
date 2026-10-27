@@ -6,6 +6,7 @@ extends MarginContainer
 
 @onready var mechanics_container: VBoxContainer = $VSplitContainer/VBoxContainer/MechanicsContainer/VBoxContainer
 @onready var button : Button = $VSplitContainer/Button as Button
+var show_button : bool = true
 
 @onready var mechanic_label_scene : PackedScene = load("res://scenes/ui/upgrade_mechanics_text.tscn")
 @onready var mechanic_subheader_label_scene : PackedScene = load("res://scenes/ui/upgrade_mechanics_subheader.tscn")
@@ -18,6 +19,7 @@ extends MarginContainer
 @export var description : String = ""
 
 var on_panel_pressed: Callable
+var on_panel_pressed: Callable = func(): pass
 
 func _ready():
 	name_label.text = upgrade_name
@@ -38,4 +40,7 @@ func _ready():
 		var mechanic_label = mechanic_label_scene.instantiate() as Label
 		mechanic_label.text = mechanic.mechanic_value
 		mechanics_container.add_child(mechanic_label)
+
+	if !show_button:
+		button.visible = false
 	button.pressed.connect(on_panel_pressed)
