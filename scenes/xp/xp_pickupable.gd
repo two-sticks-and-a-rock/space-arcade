@@ -23,6 +23,7 @@ func _physics_process(delta) -> void:
 func _on_gear_entered(body: Node2D) -> void:
 	if (body.name == "player" && "gain_xp" in body):
 		body.gain_xp(xp_value)
+		Sfx.play("XP_pickup")
 		queue_free()
 
 func _on_gear_area_exited(area: Area2D) -> void:
