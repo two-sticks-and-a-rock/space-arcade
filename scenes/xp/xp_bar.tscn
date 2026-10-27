@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dto3jjxkpeho1"]
 
 [ext_resource type="Script" uid="uid://bqktfsfr2ugju" path="res://scenes/xp/xp_bar.gd" id="1_raep5"]
-[ext_resource type="Texture2D" uid="uid://c0yoxnpfd24u3" path="res://art/sprites/xp/gear_placeholder.png" id="2_y768c"]
+[ext_resource type="Texture2D" uid="uid://cax173dos1bxq" path="res://art/sprites/xp/xp_drop.svg" id="2_n17u2"]
 [ext_resource type="FontFile" uid="uid://b2ts7vai6rxct" path="res://art/fonts/ZenDots-Regular.ttf" id="3_n17u2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n17u2"]
@@ -71,9 +71,9 @@ theme_override_constants/margin_right = 16
 
 [node name="Sprite2D" type="Sprite2D" parent="HBoxContainer/MarginContainer" unique_id=2026589771]
 self_modulate = Color(0.44705883, 0.7176471, 1, 1)
-position = Vector2(-29, 12)
-scale = Vector2(0.13636364, 0.13636364)
-texture = ExtResource("2_y768c")
+position = Vector2(-29, 14)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_n17u2")
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/MarginContainer/Sprite2D" unique_id=1504877107]
 visible = false

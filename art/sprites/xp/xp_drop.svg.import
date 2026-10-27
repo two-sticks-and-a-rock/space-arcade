@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0yoxnpfd24u3"
-path="res://.godot/imported/gear_placeholder.png-a4bb492c687f899750810acff1477fe0.ctex"
+uid="uid://cax173dos1bxq"
+path="res://.godot/imported/xp_drop.svg-81ad01046460d59f1b044f0fc942f19a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/sprites/xp/gear_placeholder.png"
-dest_files=["res://.godot/imported/gear_placeholder.png-a4bb492c687f899750810acff1477fe0.ctex"]
+source_file="res://art/sprites/xp/xp_drop.svg"
+dest_files=["res://.godot/imported/xp_drop.svg-81ad01046460d59f1b044f0fc942f19a.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
