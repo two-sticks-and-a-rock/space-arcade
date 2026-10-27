@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://p0d44ojp4jaf" path="res://scenes/player/player_weapons/orbiter/orbiter_ring.gd" id="1_cd0fb"]
 [ext_resource type="PackedScene" uid="uid://c37a5i01alcdn" path="res://scenes/player/player_weapons/orbiter/orbiter.tscn" id="2_gpny0"]
+[ext_resource type="Script" uid="uid://dq724vlrm8a05" path="res://scenes/ui/mechanics_text.gd" id="3_6d4r7"]
 [ext_resource type="Script" uid="uid://cv1cwxelnr7jm" path="res://scenes/player/player_weapons/weapon_upgrades/weapon_upgrade_set.gd" id="3_tippe"]
 [ext_resource type="Script" uid="uid://dh8gni2x2uubt" path="res://scenes/player/player_weapons/weapon_upgrades/weapon_upgrade.gd" id="3_x6mqk"]
 [ext_resource type="Script" uid="uid://c0owbkeruir2v" path="res://scenes/player/player_weapons/weapon_upgrades/bullet_size_upgrade.gd" id="4_jwv4o"]
@@ -12,57 +13,143 @@
 [ext_resource type="Script" uid="uid://bfs62i05gnbfo" path="res://scenes/player/player_weapons/weapon_upgrades/always_on_upgrade.gd" id="10_er65o"]
 [ext_resource type="Script" uid="uid://bwfv8jqyb0kx7" path="res://scenes/player/player_weapons/weapon_upgrades/bullet_speed_upgrade.gd" id="10_vxvyc"]
 
-[sub_resource type="Resource" id="Resource_qgt3p"]
-resource_name = "Downtime: 8s -> 7s"
-script = ExtResource("5_jwv4o")
-downtimer_decrease = 1.0
-metadata/_custom_type_script = "uid://jd2xcnw1xep3"
+[sub_resource type="Resource" id="Resource_kts0k"]
+script = ExtResource("3_6d4r7")
+mechanic_name = "Damage"
+mechanic_value = "50"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_ks08d"]
+script = ExtResource("3_6d4r7")
+mechanic_name = "Active"
+mechanic_value = "6 seconds"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_y5ytx"]
+script = ExtResource("3_6d4r7")
+mechanic_name = "Cooldown"
+mechanic_value = "8 seconds"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_246l1"]
+script = ExtResource("3_6d4r7")
+mechanic_name = "Asteroids"
+mechanic_value = "2"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_mjay7"]
+script = ExtResource("3_6d4r7")
+mechanic_name = "Speed"
+mechanic_value = "0.5 revolutions per second"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_xku7g"]
+script = ExtResource("3_6d4r7")
+mechanic_name = "Active"
+mechanic_value = "6 seconds -> 7 seconds"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
 
 [sub_resource type="Resource" id="Resource_jwv4o"]
 resource_name = "Uptime: 6s -> 7s"
 script = ExtResource("6_inxn4")
 uptimer_increase = 1.0
+mechanics_text = SubResource("Resource_xku7g")
 metadata/_custom_type_script = "uid://7aipbw1b1m47"
+
+[sub_resource type="Resource" id="Resource_6d4r7"]
+script = ExtResource("3_6d4r7")
+mechanic_name = "Cooldown"
+mechanic_value = "8 seconds -> 7 seconds"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_qgt3p"]
+resource_name = "Downtime: 8s -> 7s"
+script = ExtResource("5_jwv4o")
+downtimer_decrease = 1.0
+mechanics_text = SubResource("Resource_6d4r7")
+metadata/_custom_type_script = "uid://jd2xcnw1xep3"
 
 [sub_resource type="Resource" id="Resource_ycwcd"]
 resource_name = "Upgraded cooldown"
 script = ExtResource("3_tippe")
-upgrades = Array[ExtResource("3_x6mqk")]([SubResource("Resource_qgt3p"), SubResource("Resource_jwv4o")])
+upgrades = Array[ExtResource("3_x6mqk")]([SubResource("Resource_jwv4o"), SubResource("Resource_qgt3p")])
 
-[sub_resource type="Resource" id="Resource_6d4r7"]
+[sub_resource type="Resource" id="Resource_8fsay"]
+script = ExtResource("3_6d4r7")
+mechanic_name = "Damage"
+mechanic_value = "50 -> 75"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_sf5w3"]
 resource_name = "Damage: 50 -> 75"
 script = ExtResource("4_tippe")
+mechanics_text = SubResource("Resource_8fsay")
 
-[sub_resource type="Resource" id="Resource_246l1"]
+[sub_resource type="Resource" id="Resource_iugvl"]
+script = ExtResource("3_6d4r7")
+mechanic_name = "Size"
+mechanic_value = "1x -> 1.5x"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_1porj"]
 resource_name = "Size: 1.5x size"
 script = ExtResource("4_jwv4o")
 bullet_scale = 1.5
+mechanics_text = SubResource("Resource_iugvl")
 metadata/_custom_type_script = "uid://c0owbkeruir2v"
 
-[sub_resource type="Resource" id="Resource_mjay7"]
+[sub_resource type="Resource" id="Resource_kq8mr"]
+script = ExtResource("3_6d4r7")
+mechanic_name = "Asteroids"
+mechanic_value = "2 -> 3"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_jrbx4"]
 resource_name = "Bullets: 2 -> 3"
 script = ExtResource("4_x6mqk")
+mechanics_text = SubResource("Resource_kq8mr")
 metadata/_custom_type_script = "uid://dtutoa66ihr48"
 
 [sub_resource type="Resource" id="Resource_tippe"]
 resource_name = "More bullets"
 script = ExtResource("3_tippe")
-upgrades = Array[ExtResource("3_x6mqk")]([SubResource("Resource_6d4r7"), SubResource("Resource_246l1"), SubResource("Resource_mjay7")])
+upgrades = Array[ExtResource("3_x6mqk")]([SubResource("Resource_sf5w3"), SubResource("Resource_1porj"), SubResource("Resource_jrbx4")])
+
+[sub_resource type="Resource" id="Resource_olavy"]
+script = ExtResource("3_6d4r7")
+mechanic_name = "Damage"
+mechanic_value = "75 -> 100"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
 
 [sub_resource type="Resource" id="Resource_er65o"]
 resource_name = "Damage: 75 -> 100"
 script = ExtResource("4_tippe")
+mechanics_text = SubResource("Resource_olavy")
 metadata/_custom_type_script = "uid://cfgllll1jbmru"
+
+[sub_resource type="Resource" id="Resource_6vt4d"]
+script = ExtResource("3_6d4r7")
+mechanic_name = "Size"
+mechanic_value = "1.5x -> 3x"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
 
 [sub_resource type="Resource" id="Resource_vxvyc"]
 resource_name = "Size: 3x size"
 script = ExtResource("4_jwv4o")
 bullet_scale = 3.0
+mechanics_text = SubResource("Resource_6vt4d")
 metadata/_custom_type_script = "uid://c0owbkeruir2v"
+
+[sub_resource type="Resource" id="Resource_3rvw6"]
+script = ExtResource("3_6d4r7")
+mechanic_name = "Asteroids"
+mechanic_value = "3 -> 4"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
 
 [sub_resource type="Resource" id="Resource_qot2w"]
 resource_name = "Bullets: 3 -> 4"
 script = ExtResource("4_x6mqk")
+mechanics_text = SubResource("Resource_3rvw6")
 metadata/_custom_type_script = "uid://dtutoa66ihr48"
 
 [sub_resource type="Resource" id="Resource_inxn4"]
@@ -70,37 +157,72 @@ resource_name = "Even more bullets"
 script = ExtResource("3_tippe")
 upgrades = Array[ExtResource("3_x6mqk")]([SubResource("Resource_er65o"), SubResource("Resource_vxvyc"), SubResource("Resource_qot2w")])
 
+[sub_resource type="Resource" id="Resource_kdbfg"]
+script = ExtResource("3_6d4r7")
+mechanic_name = "Active"
+mechanic_value = "7 seconds -> 10 seconds"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
 [sub_resource type="Resource" id="Resource_epeq1"]
 resource_name = "Uptime: 7s -> 10s"
 script = ExtResource("6_inxn4")
 uptimer_increase = 3.0
+mechanics_text = SubResource("Resource_kdbfg")
 metadata/_custom_type_script = "uid://7aipbw1b1m47"
+
+[sub_resource type="Resource" id="Resource_lf3ff"]
+script = ExtResource("3_6d4r7")
+mechanic_name = "Cooldown"
+mechanic_value = "7 seconds -> 5 seconds"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
 
 [sub_resource type="Resource" id="Resource_p3mfa"]
 resource_name = "Downtime: 7s -> 5s"
 script = ExtResource("5_jwv4o")
+mechanics_text = SubResource("Resource_lf3ff")
 metadata/_custom_type_script = "uid://jd2xcnw1xep3"
+
+[sub_resource type="Resource" id="Resource_inbjb"]
+script = ExtResource("3_6d4r7")
+mechanic_name = "Speed"
+mechanic_value = "0.5 revolutions/s -> 1 revolutions/s"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
 
 [sub_resource type="Resource" id="Resource_ef5g3"]
 resource_name = "Speed: 0.5 rev/s -> 1 rev/s"
 script = ExtResource("10_vxvyc")
 bullet_speed_increase = 2.0
+mechanics_text = SubResource("Resource_inbjb")
 
 [sub_resource type="Resource" id="Resource_sxqx5"]
 resource_name = "Faster bullets"
 script = ExtResource("3_tippe")
 upgrades = Array[ExtResource("3_x6mqk")]([SubResource("Resource_epeq1"), SubResource("Resource_p3mfa"), SubResource("Resource_ef5g3")])
 
+[sub_resource type="Resource" id="Resource_gjht7"]
+script = ExtResource("3_6d4r7")
+mechanic_name = "Damage"
+mechanic_value = "100 -> 150"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
 [sub_resource type="Resource" id="Resource_imrws"]
-resource_name = "Damage: 100 → 150"
+resource_name = "Damage: 100-> 150"
 script = ExtResource("4_tippe")
 damage_increase = 50
+mechanics_text = SubResource("Resource_gjht7")
 metadata/_custom_type_script = "uid://cfgllll1jbmru"
+
+[sub_resource type="Resource" id="Resource_tj3f4"]
+script = ExtResource("3_6d4r7")
+mechanic_name = "Asteroids"
+mechanic_value = "4 -> 8"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
 
 [sub_resource type="Resource" id="Resource_vdvxc"]
 resource_name = "Bullets: 4 -> 8"
 script = ExtResource("4_x6mqk")
 num_bullets_increase = 4
+mechanics_text = SubResource("Resource_tj3f4")
 metadata/_custom_type_script = "uid://dtutoa66ihr48"
 
 [sub_resource type="Resource" id="Resource_rfiqj"]
@@ -108,9 +230,16 @@ resource_name = "Double bullets"
 script = ExtResource("3_tippe")
 upgrades = Array[ExtResource("3_x6mqk")]([SubResource("Resource_imrws"), SubResource("Resource_vdvxc")])
 
+[sub_resource type="Resource" id="Resource_a2kdl"]
+script = ExtResource("3_6d4r7")
+mechanic_name = "Active"
+mechanic_value = "∞"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
 [sub_resource type="Resource" id="Resource_0yjdd"]
 resource_name = "Bullets always up"
 script = ExtResource("10_er65o")
+mechanics_text = SubResource("Resource_a2kdl")
 
 [sub_resource type="Resource" id="Resource_fonbn"]
 resource_name = "Always on bullets"
@@ -123,7 +252,7 @@ bullet_scene = ExtResource("2_gpny0")
 weapon_img_path = "res://art/sprites/bullets/orbiter_placeholder 2.png"
 display_name = "Asteroid Belt"
 description = "A ring of your very own asteroids for damaging enemies"
-base_mechanics = Array[String](["Bullets: 2", "Damage: 50", "Up timer: 6.0s", "Down timer: 8.0s", "Speed: 1/2 rev/s"])
+base_mechanics = Array[ExtResource("3_6d4r7")]([SubResource("Resource_kts0k"), SubResource("Resource_ks08d"), SubResource("Resource_y5ytx"), SubResource("Resource_246l1"), SubResource("Resource_mjay7")])
 dmg = 50
 num_bullets = 2
 bullet_speed = 0.087

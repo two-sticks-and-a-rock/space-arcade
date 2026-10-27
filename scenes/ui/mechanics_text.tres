@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MechanicsText" format=3 uid="uid://8gn0chvhgjac"]
+
+[ext_resource type="Script" uid="uid://dq724vlrm8a05" path="res://scenes/ui/mechanics_text.gd" id="1_ylco2"]
+
+[resource]
+script = ExtResource("1_ylco2")
+mechanic_name = "Damage"
+mechanic_value = "25"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"

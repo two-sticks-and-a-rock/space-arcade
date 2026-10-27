@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cxpd0l0oyy4fh" path="res://scenes/player/player_weapons/frost_nova/frost_nova.gd" id="1_43v6x"]
 [ext_resource type="PackedScene" uid="uid://d3pffleq1i53h" path="res://scenes/player/player_weapons/frost_nova/nova_area.tscn" id="2_hm4nq"]
+[ext_resource type="Script" uid="uid://dq724vlrm8a05" path="res://scenes/ui/mechanics_text.gd" id="3_kts0k"]
 [ext_resource type="Script" uid="uid://cv1cwxelnr7jm" path="res://scenes/player/player_weapons/weapon_upgrades/weapon_upgrade_set.gd" id="3_vopsm"]
 [ext_resource type="Script" uid="uid://dh8gni2x2uubt" path="res://scenes/player/player_weapons/weapon_upgrades/weapon_upgrade.gd" id="4_1n8mx"]
 [ext_resource type="Script" uid="uid://c0owbkeruir2v" path="res://scenes/player/player_weapons/weapon_upgrades/bullet_size_upgrade.gd" id="5_o2xxi"]
@@ -10,10 +11,41 @@
 [ext_resource type="Script" uid="uid://cfgllll1jbmru" path="res://scenes/player/player_weapons/weapon_upgrades/damage_upgrade.gd" id="8_t3w76"]
 [ext_resource type="Script" uid="uid://7aipbw1b1m47" path="res://scenes/player/player_weapons/weapon_upgrades/uptime_upgrade.gd" id="9_t3w76"]
 
+[sub_resource type="Resource" id="Resource_2bdki"]
+script = ExtResource("3_kts0k")
+mechanic_name = "Damage"
+mechanic_value = "25"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_sf5w3"]
+script = ExtResource("3_kts0k")
+mechanic_name = "Active"
+mechanic_value = "2 seconds"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_xku7g"]
+script = ExtResource("3_kts0k")
+mechanic_name = "Downtime"
+mechanic_value = "8 seconds"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_baakl"]
+script = ExtResource("3_kts0k")
+mechanic_name = "Enemy Freeze Time"
+mechanic_value = "3 seconds"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_6d4r7"]
+script = ExtResource("3_kts0k")
+mechanic_name = "Size"
+mechanic_value = "1x -> 1.2x"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
 [sub_resource type="Resource" id="Resource_5qj5v"]
 resource_name = "Size: 1.2x"
 script = ExtResource("5_o2xxi")
 bullet_scale = 1.2
+mechanics_text = SubResource("Resource_6d4r7")
 metadata/_custom_type_script = "uid://c0owbkeruir2v"
 
 [sub_resource type="Resource" id="Resource_jyh4y"]
@@ -22,9 +54,16 @@ script = ExtResource("3_vopsm")
 upgrades = Array[ExtResource("4_1n8mx")]([SubResource("Resource_5qj5v")])
 metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
 
+[sub_resource type="Resource" id="Resource_kts0k"]
+script = ExtResource("3_kts0k")
+mechanic_name = "Enemy Freeze Time"
+mechanic_value = "3 seconds -> 4 seconds"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
 [sub_resource type="Resource" id="Resource_lmqlq"]
 resource_name = "Freeze Time: 3s -> 4s"
 script = ExtResource("6_8f2kg")
+mechanics_text = SubResource("Resource_kts0k")
 metadata/_custom_type_script = "uid://b76m57i5lxfem"
 
 [sub_resource type="Resource" id="Resource_1n8mx"]
@@ -33,71 +72,134 @@ script = ExtResource("3_vopsm")
 upgrades = Array[ExtResource("4_1n8mx")]([SubResource("Resource_lmqlq")])
 metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
 
-[sub_resource type="Resource" id="Resource_vopsm"]
-resource_name = "Down Time: 8s -> 7s"
-script = ExtResource("7_8f2kg")
-downtimer_decrease = 1.0
-metadata/_custom_type_script = "uid://jd2xcnw1xep3"
+[sub_resource type="Resource" id="Resource_gr71n"]
+script = ExtResource("3_kts0k")
+mechanic_name = "Damage"
+mechanic_value = "25 -> 50"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
 
 [sub_resource type="Resource" id="Resource_ekw0x"]
 resource_name = "Damage: 25 -> 50"
 script = ExtResource("8_t3w76")
+mechanics_text = SubResource("Resource_gr71n")
 metadata/_custom_type_script = "uid://cfgllll1jbmru"
+
+[sub_resource type="Resource" id="Resource_tfftp"]
+script = ExtResource("3_kts0k")
+mechanic_name = "Cooldown"
+mechanic_value = "8 seconds -> 7 seconds"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_vopsm"]
+resource_name = "Down Time: 8s -> 7s"
+script = ExtResource("7_8f2kg")
+downtimer_decrease = 1.0
+mechanics_text = SubResource("Resource_tfftp")
+metadata/_custom_type_script = "uid://jd2xcnw1xep3"
+
+[sub_resource type="Resource" id="Resource_4ui4k"]
+script = ExtResource("3_kts0k")
+mechanic_name = "Size"
+mechanic_value = "1.2x -> 1.5x"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
 
 [sub_resource type="Resource" id="Resource_8f2kg"]
 resource_name = "Size: 1.5x"
 script = ExtResource("5_o2xxi")
 bullet_scale = 1.5
+mechanics_text = SubResource("Resource_4ui4k")
 metadata/_custom_type_script = "uid://c0owbkeruir2v"
 
 [sub_resource type="Resource" id="Resource_hm4nq"]
 resource_name = "More Damage"
 script = ExtResource("3_vopsm")
-upgrades = Array[ExtResource("4_1n8mx")]([SubResource("Resource_vopsm"), SubResource("Resource_ekw0x"), SubResource("Resource_8f2kg")])
+upgrades = Array[ExtResource("4_1n8mx")]([SubResource("Resource_ekw0x"), SubResource("Resource_vopsm"), SubResource("Resource_8f2kg")])
 metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
+
+[sub_resource type="Resource" id="Resource_c4hux"]
+script = ExtResource("3_kts0k")
+mechanic_name = "Active"
+mechanic_value = "3 seconds -> 5 seconds"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
 
 [sub_resource type="Resource" id="Resource_t3w76"]
 resource_name = "Up time: 3s -> 5s"
 script = ExtResource("9_t3w76")
+mechanics_text = SubResource("Resource_c4hux")
 metadata/_custom_type_script = "uid://7aipbw1b1m47"
 
-[sub_resource type="Resource" id="Resource_kts0k"]
+[sub_resource type="Resource" id="Resource_wrtel"]
+script = ExtResource("3_kts0k")
+mechanic_name = "Cooldown"
+mechanic_value = "7 seconds -> 5 seconds"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_wdgps"]
 resource_name = "Down time: 7s -> 5s"
 script = ExtResource("7_8f2kg")
+mechanics_text = SubResource("Resource_wrtel")
 metadata/_custom_type_script = "uid://jd2xcnw1xep3"
 
-[sub_resource type="Resource" id="Resource_2bdki"]
+[sub_resource type="Resource" id="Resource_ofe21"]
+script = ExtResource("3_kts0k")
+mechanic_name = "Enemy Freeze Time"
+mechanic_value = "4 seconds -> 5 seconds"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_hcpgw"]
 resource_name = "Freeze time: 4s -> 5s"
 script = ExtResource("6_8f2kg")
+mechanics_text = SubResource("Resource_ofe21")
 metadata/_custom_type_script = "uid://b76m57i5lxfem"
 
 [sub_resource type="Resource" id="Resource_s116l"]
 resource_name = "Improved Times"
 script = ExtResource("3_vopsm")
-upgrades = Array[ExtResource("4_1n8mx")]([SubResource("Resource_t3w76"), SubResource("Resource_kts0k"), SubResource("Resource_2bdki")])
+upgrades = Array[ExtResource("4_1n8mx")]([SubResource("Resource_t3w76"), SubResource("Resource_wdgps"), SubResource("Resource_hcpgw")])
 metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
+
+[sub_resource type="Resource" id="Resource_ago2g"]
+script = ExtResource("3_kts0k")
+mechanic_name = "Size"
+mechanic_value = "1.5x -> 2x"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
 
 [sub_resource type="Resource" id="Resource_0hj3c"]
 resource_name = "Size: 2x"
 script = ExtResource("5_o2xxi")
 bullet_scale = 2.0
+mechanics_text = SubResource("Resource_ago2g")
 metadata/_custom_type_script = "uid://c0owbkeruir2v"
 
-[sub_resource type="Resource" id="Resource_baakl"]
+[sub_resource type="Resource" id="Resource_a4fpy"]
 resource_name = "Even Wider Radius"
 script = ExtResource("3_vopsm")
 upgrades = Array[ExtResource("4_1n8mx")]([SubResource("Resource_0hj3c")])
 metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
 
+[sub_resource type="Resource" id="Resource_70lpv"]
+script = ExtResource("3_kts0k")
+mechanic_name = "Enemy Freeze Time"
+mechanic_value = "5 seconds -> 6 seconds"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
 [sub_resource type="Resource" id="Resource_hidp8"]
 resource_name = "Freeze Time: 5s -> 6s"
 script = ExtResource("6_8f2kg")
+mechanics_text = SubResource("Resource_70lpv")
 metadata/_custom_type_script = "uid://b76m57i5lxfem"
+
+[sub_resource type="Resource" id="Resource_fp5h1"]
+script = ExtResource("3_kts0k")
+mechanic_name = "Size"
+mechanic_value = "2x -> 3x"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
 
 [sub_resource type="Resource" id="Resource_5vf04"]
 resource_name = "Size: 3x"
 script = ExtResource("5_o2xxi")
 bullet_scale = 3.0
+mechanics_text = SubResource("Resource_fp5h1")
 metadata/_custom_type_script = "uid://c0owbkeruir2v"
 
 [sub_resource type="Resource" id="Resource_er8ws"]
@@ -113,11 +215,11 @@ bullet_scene = ExtResource("2_hm4nq")
 weapon_img_path = "res://art/sprites/bullets/TempFrostNova.png"
 display_name = "Cryo Pulse"
 description = "Freeze enemies in place to make a getaway"
-base_mechanics = Array[String](["Freeze Time: 3.0s", "Damage: 25", "Up time: 2.0s", "Down time: 8.0s"])
+base_mechanics = Array[ExtResource("3_kts0k")]([SubResource("Resource_2bdki"), SubResource("Resource_sf5w3"), SubResource("Resource_xku7g"), SubResource("Resource_baakl")])
 dmg = 25
 num_bullets = 1
 bullet_size = 1.0
-possible_upgrade_sets = Array[ExtResource("3_vopsm")]([SubResource("Resource_jyh4y"), SubResource("Resource_1n8mx"), SubResource("Resource_hm4nq"), SubResource("Resource_s116l"), SubResource("Resource_baakl"), SubResource("Resource_er8ws")])
+possible_upgrade_sets = Array[ExtResource("3_vopsm")]([SubResource("Resource_jyh4y"), SubResource("Resource_1n8mx"), SubResource("Resource_hm4nq"), SubResource("Resource_s116l"), SubResource("Resource_a4fpy"), SubResource("Resource_er8ws")])
 
 [node name="UpTimer" type="Timer" parent="." unique_id=441701228]
 wait_time = 2.0

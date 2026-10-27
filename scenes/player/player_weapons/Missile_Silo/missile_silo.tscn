@@ -3,6 +3,25 @@
 [ext_resource type="Script" uid="uid://boa81m0e18a1n" path="res://scenes/player/player_weapons/missile_silo/missile_silo.gd" id="1_e740r"]
 [ext_resource type="Texture2D" uid="uid://cdo1hmi1povfe" path="res://art/sprites/bullets/Missile_Silo/MissileSiloDone-Sheet-Sheet.png" id="2_minx4"]
 [ext_resource type="PackedScene" uid="uid://4gto1ijk7tqs" path="res://scenes/player/player_weapons/missile_silo/missile.tscn" id="2_wy3lk"]
+[ext_resource type="Script" uid="uid://dq724vlrm8a05" path="res://scenes/ui/mechanics_text.gd" id="3_03w6n"]
+
+[sub_resource type="Resource" id="Resource_6d4r7"]
+script = ExtResource("3_03w6n")
+mechanic_name = "Damage"
+mechanic_value = "100"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_246l1"]
+script = ExtResource("3_03w6n")
+mechanic_name = "Cooldown"
+mechanic_value = "3 seconds"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_mjay7"]
+script = ExtResource("3_03w6n")
+mechanic_name = "Missiles"
+mechanic_value = "3"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tjbvn"]
 atlas = ExtResource("2_minx4")
@@ -46,7 +65,7 @@ bullet_scene = ExtResource("2_wy3lk")
 weapon_img_path = "res://art/sprites/bullets/Missile_Silo/Missile.png"
 display_name = "Missile Silo"
 description = "Homing missiles for distance kills"
-base_mechanics = Array[String](["Bullets: 3", "Damage: 100", "Cooldown: 3.0s", "Speed: 200"])
+base_mechanics = Array[ExtResource("3_03w6n")]([SubResource("Resource_6d4r7"), SubResource("Resource_246l1"), SubResource("Resource_mjay7")])
 dmg = 100
 num_bullets = 3
 bullet_speed = 300.0

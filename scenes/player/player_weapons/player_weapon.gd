@@ -9,7 +9,8 @@ extends Node2D
 @export var weapon_img_path : String
 @export var display_name : String 
 @export var description : String
-@export var base_mechanics : Array[String] = []
+
+@export var base_mechanics : Array[MechanicsText] = []
 
 """
 ===== UPGRADEABLE ATTRIBUTES ====

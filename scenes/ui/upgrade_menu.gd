@@ -115,9 +115,9 @@ func populate_upgrade_panels():
 			upgrade_panel.upgrade_name = choice.resource_name
 			# TODO: placeholder images
 			# upgrade_panel.img_filepath = 
-			upgrade_panel.mechanics = ([] as Array[String])
+			upgrade_panel.mechanics = ([] as Array[MechanicsText])
 			for component_upgrade in choice.upgrades:
-				upgrade_panel.mechanics.append(component_upgrade.resource_name)
+				upgrade_panel.mechanics.append(component_upgrade.mechanics_text)
 			upgrade_panel.img_filepath = weapon.weapon_img_path
 			
 			upgrade_panel.on_panel_pressed = func():
@@ -132,9 +132,7 @@ func populate_upgrade_panels():
 		elif choice is PlayerWeapon:
 			upgrade_panel.upgrade_name = choice.display_name if choice.display_name != null else choice.name
 			upgrade_panel.img_filepath = choice.weapon_img_path
-			upgrade_panel.mechanics = [choice.description if choice.description != null else "A new weapon!"] as Array[String]
-			for mechanic in choice.base_mechanics:
-				upgrade_panel.mechanics.append(mechanic as String)
+			upgrade_panel.mechanics = choice.base_mechanics
 			upgrade_panel.on_panel_pressed = func():
 				player.add_child(choice)
 				EventBus.finish_level_up.emit()
@@ -180,9 +178,7 @@ func create_start_weapon_upgrade_menu():
 	var upgrade_panel : MarginContainer = upgrade_panel_scene.instantiate()
 	upgrade_panel.upgrade_name = starting_weapon.display_name if starting_weapon.display_name != null else starting_weapon.name
 	upgrade_panel.img_filepath = starting_weapon.weapon_img_path
-	upgrade_panel.mechanics = [starting_weapon.description if starting_weapon.description != null else "A new weapon!"] as Array[String]
-	for mechanic in starting_weapon.base_mechanics:
-		upgrade_panel.mechanics.append(mechanic as String)
+	upgrade_panel.mechanics = starting_weapon.base_mechanics
 	upgrade_panel.on_panel_pressed = func():
 		player.add_child(starting_weapon)
 		EventBus.start_tutorial.emit()
