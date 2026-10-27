@@ -132,6 +132,7 @@ func populate_upgrade_panels():
 		elif choice is PlayerWeapon:
 			upgrade_panel.upgrade_name = choice.display_name if choice.display_name != null else choice.name
 			upgrade_panel.img_filepath = choice.weapon_img_path
+			upgrade_panel.description = choice.description
 			upgrade_panel.mechanics = choice.base_mechanics
 			upgrade_panel.on_panel_pressed = func():
 				player.add_child(choice)
@@ -178,6 +179,7 @@ func create_start_weapon_upgrade_menu():
 	var upgrade_panel : MarginContainer = upgrade_panel_scene.instantiate()
 	upgrade_panel.upgrade_name = starting_weapon.display_name if starting_weapon.display_name != null else starting_weapon.name
 	upgrade_panel.img_filepath = starting_weapon.weapon_img_path
+	upgrade_panel.description = starting_weapon.description
 	upgrade_panel.mechanics = starting_weapon.base_mechanics
 	upgrade_panel.on_panel_pressed = func():
 		player.add_child(starting_weapon)
