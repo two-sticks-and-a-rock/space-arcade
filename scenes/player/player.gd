@@ -26,8 +26,8 @@ func _ready():
 	hp_bar.max_value = max_hp
 	hp_bar.value = max_hp
 
-	var orbiter_ring = orbiter_ring_scene.instantiate() as Node2D
-	add_child(orbiter_ring)
+	# var orbiter_ring = orbiter_ring_scene.instantiate() as Node2D
+	# add_child(orbiter_ring)
 	# var frost_nova = frost_nova_scene.instantiate() as Node2D
 	# add_child(frost_nova)
 	# var ram_shield = ram_shield_scene.instantiate() as Node2D
