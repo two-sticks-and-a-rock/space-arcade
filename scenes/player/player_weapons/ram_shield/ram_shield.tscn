@@ -5,22 +5,24 @@
 [ext_resource type="Script" uid="uid://dq724vlrm8a05" path="res://scenes/ui/mechanics_text.gd" id="2_ks08d"]
 [ext_resource type="Texture2D" uid="uid://dr03oym73vfjn" path="res://art/sprites/bullets/shield3.png" id="3_fw3ta"]
 
-[sub_resource type="Resource" id="Resource_kj1qa"]
-script = ExtResource("2_ks08d")
-mechanic_name = "Damage"
-mechanic_value = "25"
-metadata/_custom_type_script = "uid://dq724vlrm8a05"
-
 [sub_resource type="Resource" id="Resource_fw3ta"]
 script = ExtResource("2_ks08d")
 mechanic_name = "Active"
 mechanic_value = "6 seconds"
+col_span = 1
 metadata/_custom_type_script = "uid://dq724vlrm8a05"
 
 [sub_resource type="Resource" id="Resource_ks08d"]
 script = ExtResource("2_ks08d")
 mechanic_name = "Cooldown"
 mechanic_value = "5 seconds"
+col_span = 1
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_kj1qa"]
+script = ExtResource("2_ks08d")
+mechanic_name = "Damage"
+mechanic_value = "25"
 metadata/_custom_type_script = "uid://dq724vlrm8a05"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ks08d"]

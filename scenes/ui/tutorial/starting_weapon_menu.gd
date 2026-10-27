@@ -11,11 +11,10 @@ func create_start_weapon_upgrade_menu():
 	visible = true
 
 	var upgrade_panel : MarginContainer = upgrade_panel_scene.instantiate()
-	# upgrade_panel.custom_minimum_size.x = 800
-	# upgrade_panel.custom_maximum_size.x = 800
 
 	upgrade_panel.upgrade_name = starting_weapon.display_name
 	upgrade_panel.img_filepath = starting_weapon.weapon_img_path
+	upgrade_panel.show_description = true
 	upgrade_panel.description = starting_weapon.description
 	upgrade_panel.mechanics = starting_weapon.base_mechanics
 	upgrade_panel.show_button = false
