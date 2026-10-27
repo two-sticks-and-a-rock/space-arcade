@@ -142,7 +142,7 @@ func populate_upgrade_panels():
 			upgrade_panel.upgrade_name = choice.display_name
 			upgrade_panel.img_filepath = choice.img_filepath
 			for mechanic in choice.mechanics:
-				upgrade_panel.mechanics.append(mechanic as String)
+				upgrade_panel.mechanics.append(mechanic)
 			upgrade_panel.on_panel_pressed = func():
 				choice._apply_upgrade(player)
 				EventBus.finish_level_up.emit()

@@ -14,6 +14,7 @@ metadata/_custom_type_script = "uid://dq724vlrm8a05"
 [sub_resource type="Resource" id="Resource_hjiyj"]
 script = ExtResource("3_egju8")
 display_name = "One Time Repair!"
+img_filepath = "res://art/sprites/upgrades/gear_heart.png"
 mechanics = Array[ExtResource("3_gxy1x")]([SubResource("Resource_t0cpw")])
 metadata/_custom_type_script = "uid://cceg5cly46iya"
 
