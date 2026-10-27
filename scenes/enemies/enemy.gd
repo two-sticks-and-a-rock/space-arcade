@@ -9,7 +9,7 @@ extends CharacterBody2D
 
 var speed = Vector2(randf_range(250.0, 300.0), 0.0)
 var speed_mod : float = 1.0
-var max_hp = 40
+var max_hp = 100
 var curr_hp = max_hp
 
 @onready var freeze_timer : Timer = Timer.new()
@@ -79,13 +79,13 @@ func set_enemy_class() -> void:
 	var enemy_class: int = randi_range(0, 4)
 	if enemy_class == 3:
 		$AnimatedSprite2D.frame = 1
-		max_hp = 60
+		max_hp = 150
 		curr_hp = max_hp
 		speed_mod = 0.8
 		scale = Vector2(1.2, 1.2)
 	if enemy_class == 4:
 		$AnimatedSprite2D.frame = 2
-		max_hp = 20
+		max_hp = 50
 		curr_hp = max_hp
 		speed_mod = 1.2
 		scale = Vector2(0.8, 0.8)
