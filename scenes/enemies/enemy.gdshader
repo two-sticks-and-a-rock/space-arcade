@@ -3,6 +3,9 @@ shader_type canvas_item;
 uniform vec4 blink_color: source_color;
 uniform float blink_intensity = 0;
 
+uniform vec4 status_color: source_color;
+uniform float status_intensity = 0;
+
 //void vertex() {
 	//// Called for every vertex the material is visible on.
 //}
@@ -11,6 +14,10 @@ void fragment() {
 	// Called for every pixel the material is visible on.
 	vec4 color = texture(TEXTURE, UV);
 	color = mix(color, blink_color, blink_intensity * color.a);
+	if (status_intensity != 0.0) 
+	{
+		color = mix(color, status_color, 0.5);
+	}
 	COLOR = color;
 }
 

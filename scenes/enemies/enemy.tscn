@@ -5,15 +5,23 @@
 [ext_resource type="PackedScene" uid="uid://oaoj8eb8rbpv" path="res://scenes/xp/xp_gear.tscn" id="2_38ino"]
 [ext_resource type="PackedScene" uid="uid://fsu3hsfbo4ju" path="res://scenes/enemies/explosion.tscn" id="3_lu5c6"]
 [ext_resource type="Material" uid="uid://bsorqcvx74ggk" path="res://scenes/enemies/enemy_shader.tres" id="4_lu5c6"]
+[ext_resource type="Texture2D" uid="uid://4pdkaji1nkmk" path="res://art/sprites/enemy/space_police_blu_bk_128.svg" id="6_n7575"]
 [ext_resource type="Material" uid="uid://d1chfq4lcsocs" path="res://scenes/sparks_material.tres" id="6_nb6gf"]
+[ext_resource type="Texture2D" uid="uid://h5glgsnprivf" path="res://art/sprites/enemy/space_police_red_128.svg" id="7_qch6t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kcn5b"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_8e3ao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n7575")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qch6t")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }]
@@ -34,6 +42,7 @@ metadata/_edit_group_ = true
 material = ExtResource("4_lu5c6")
 rotation = 1.5707964
 sprite_frames = SubResource("SpriteFrames_kcn5b")
+speed_scale = 0.0
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1359017325]
 rect = Rect2(-154, -138, 310, 272)

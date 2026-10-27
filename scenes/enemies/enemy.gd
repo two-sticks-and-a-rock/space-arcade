@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var explosion : PackedScene
 
 var speed = Vector2(randf_range(250.0, 300.0), 0.0)
+var speed_mod : float = 1.0
 var max_hp = 40
 var curr_hp = max_hp
 
@@ -50,14 +51,14 @@ func take_damage(dmg: int):
 
 func freeze(time: int):
 	if not is_frozen:
-		modulate = Color.AQUA
+		animated_sprite_2d.material.set_shader_parameter("status_intensity", 1.0)
 		is_frozen = true
 		speed = Vector2.ZERO
 		freeze_timer.start(time)
 		await freeze_timer.timeout
 		speed = Vector2(randf_range(250.0, 300.0), 0.0)
 		is_frozen = false
-		modulate = Color.WHITE
+		animated_sprite_2d.material.set_shader_parameter("status_intensity", 0.0)
 
 func _ready():
 	freeze_timer.one_shot = true
@@ -71,11 +72,28 @@ func _ready():
 	var mob_types = Array($AnimatedSprite2D.sprite_frames.get_animation_names())
 	$AnimatedSprite2D.animation = mob_types[0]
 	$AnimatedSprite2D.play()
+	
+	set_enemy_class()
+
+func set_enemy_class() -> void:
+	var enemy_class: int = randi_range(0, 4)
+	if enemy_class == 3:
+		$AnimatedSprite2D.frame = 1
+		max_hp = 60
+		curr_hp = max_hp
+		speed_mod = 0.8
+		scale = Vector2(1.2, 1.2)
+	if enemy_class == 4:
+		$AnimatedSprite2D.frame = 2
+		max_hp = 20
+		curr_hp = max_hp
+		speed_mod = 1.2
+		scale = Vector2(0.8, 0.8)
 
 func _physics_process(_delta):
 	if !is_frozen:
 		look_at(player.position)
-	velocity = speed.rotated(rotation)
+	velocity = speed.rotated(rotation) * speed_mod
 
 	if just_shoved:
 		velocity = shove_velocity
