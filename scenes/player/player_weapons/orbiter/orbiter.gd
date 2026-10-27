@@ -1,5 +1,7 @@
 extends PlayerBullet
 
+var original_position : Vector2
+
 func _ready():
 	$AnimatedSprite2D.frame = randi_range(0, 3)
 
