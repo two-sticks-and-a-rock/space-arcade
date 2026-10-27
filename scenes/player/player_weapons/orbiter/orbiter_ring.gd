@@ -16,7 +16,7 @@ func _reinstantiate_weapon():
 	for i in num_bullets:
 		var orbiter = bullet_scene.instantiate() as PlayerBullet
 		orbiter.position = child_pos
-		orbiter.bullet_scale = Vector2(bullet_size, bullet_size)*orbiter.scale_for_sprite
+		orbiter.bullet_scale = Vector2(bullet_size, bullet_size)
 		add_child(orbiter)
 		child_pos = child_pos.rotated(2*PI / num_bullets)
 		current_bullets.append(orbiter)
@@ -47,7 +47,7 @@ func _physics_process(delta):
 		if child is PlayerBullet:
 			var start_shrinking = !up_timer.is_stopped() && up_timer.time_left <= 1.0
 			if (start_shrinking):
-				if child.scale > Vector2.ZERO:
+				if child.scale > Vector2.ONE*0.25:
 					child.scale -= grow_rate
 					child.position -= child.position.normalized() * spiral_out_rate
 
