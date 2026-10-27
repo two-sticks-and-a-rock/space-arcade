@@ -30,9 +30,8 @@ func _on_down_timer_timeout():
 	up_timer.start()
 	down_timer.stop()
 
-	for child in get_children():
-		if child is Area2D:
-			child.process_mode = Node.PROCESS_MODE_INHERIT
+	# for child in get_children():
+	# 	if child is Area2D:
 
 func _on_up_timer_timeout():
 	down_timer.start()
@@ -42,12 +41,16 @@ func _on_up_timer_timeout():
 		if child is Area2D:
 			child.process_mode = Node.PROCESS_MODE_DISABLED
 
+# (x', y') = (x, y) *(rate/delta_t)
+# rate = (x',y')/(x,y) * delta_t
 func _physics_process(delta):
 	if (!up_timer.is_stopped() && up_timer.time_left <= 1.0):
 		for child in get_children():
 			if child is PlayerBullet && child.scale > Vector2.ZERO:
-				child.scale -= delta*Vector2.ONE
+				child.scale -= delta*bullet_size*Vector2.ONE
 	if (!down_timer.is_stopped() &&  down_timer.time_left <= 1.0):
 		for child in get_children():
+			if child.process_mode != Node.PROCESS_MODE_INHERIT:
+				child.process_mode = Node.PROCESS_MODE_INHERIT
 			if child is PlayerBullet && child.scale <=Vector2.ONE*bullet_size:
-				child.scale += delta*Vector2.ONE
+				child.scale += delta*Vector2.ONE*bullet_size
