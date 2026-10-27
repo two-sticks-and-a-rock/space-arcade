@@ -29,4 +29,4 @@ shape = SubResource("CircleShape2D_mx823")
 scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_mx823")
 
-[connection signal="body_entered" from="." to="." method="_on_orbiter_entered"]
+[connection signal="body_entered" from="." to="." method="_on_nova_entered"]
