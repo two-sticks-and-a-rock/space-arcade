@@ -21,7 +21,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("7_qch6t")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }]
@@ -42,6 +42,7 @@ metadata/_edit_group_ = true
 material = ExtResource("4_lu5c6")
 rotation = 1.5707964
 sprite_frames = SubResource("SpriteFrames_kcn5b")
+speed_scale = 0.0
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1359017325]
 rect = Rect2(-154, -138, 310, 272)
