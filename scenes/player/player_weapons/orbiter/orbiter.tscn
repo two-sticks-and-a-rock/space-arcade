@@ -1,13 +1,25 @@
 [gd_scene format=3 uid="uid://c37a5i01alcdn"]
 
-[ext_resource type="Texture2D" uid="uid://c3tnm6dujlkue" path="res://art/sprites/bullets/orbiter_placeholder 2.png" id="1_0r6aq"]
 [ext_resource type="Script" uid="uid://3q5f424e7g40" path="res://scenes/player/player_weapons/orbiter/orbiter.gd" id="1_fxk38"]
+[ext_resource type="Texture2D" uid="uid://d3me2ly7suixs" path="res://art/sprites/bullets/asteroids/asteroid_01.svg" id="2_ed4d4"]
+[ext_resource type="Texture2D" uid="uid://f1olffqd5wt0" path="res://art/sprites/bullets/asteroids/asteroid_02.svg" id="3_aemsv"]
+[ext_resource type="Texture2D" uid="uid://i4t3g5bkudeo" path="res://art/sprites/bullets/asteroids/asteroid_03.svg" id="4_g8pxc"]
+[ext_resource type="Texture2D" uid="uid://dhbrg0dp5q0bu" path="res://art/sprites/bullets/asteroids/asteroid_04.svg" id="5_1vhmx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kcn5b"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_0r6aq")
+"texture": ExtResource("2_ed4d4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aemsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g8pxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1vhmx")
 }],
 "loop": 1,
 "name": &"default",
