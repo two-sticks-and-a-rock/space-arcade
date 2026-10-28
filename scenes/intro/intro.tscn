@@ -40,7 +40,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/normal_font = ExtResource("4_ir5dn")
 theme_override_font_sizes/normal_font_size = 42
-text = "YOU FINALLY REPAIR AN OLD HIDDEN ESCAPE POD ON PLANET X-ILE CORRECTIONAL FACILITY, WHERE SOCIETY'S MOST \"DANGEROUS\" REBELS ARE KEPT LOCKED AWAY"
+bbcode_enabled = true
+text = "YOU FINALLY [color=#00D6FF]REPAIR[/color] AN [color=#FFD24A]OLD HIDDEN ESCAPE POD[/color] ON [color=#E63946]PLANET X-ILE CORRECTIONAL FACILITY[/color], WHERE SOCIETY'S MOST [color=#E63946]\"DANGEROUS\"[/color] REBELS ARE KEPT LOCKED AWAY"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -51,6 +52,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/normal_font = ExtResource("4_ir5dn")
 theme_override_font_sizes/normal_font_size = 42
+bbcode_enabled = true
 text = "YOU ESCAPE IN POD 06, PURSUED BY THE FACILITY'S ENFORCERS."
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -60,7 +62,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_fonts/normal_font = ExtResource("4_ir5dn")
 theme_override_font_sizes/normal_font_size = 42
-text = "NOW YOU MUST FIGHT TO SURVIVE, DESPERATELY CLINGING TO A LIFE CONDEMNED BY SOCIETY."
+bbcode_enabled = true
+text = "NOW YOU MUST [color=#FFD24A]FIGHT TO SURVIVE[/color], DESPERATELY CLINGING TO A LIFE [color=#E63946]CONDEMNED BY SOCIETY[/color]."
 horizontal_alignment = 1
 vertical_alignment = 1
 
