@@ -6,6 +6,19 @@
 [ext_resource type="PackedScene" uid="uid://ba6j0n3w5fvkl" path="res://scenes/ui/typing_text.tscn" id="3_ir5dn"]
 [ext_resource type="Theme" uid="uid://bin02r2f4xqh2" path="res://scenes/ui/themes/secondary_button.tres" id="4_8twl8"]
 [ext_resource type="FontFile" uid="uid://cf4k1f8oc0bdm" path="res://art/fonts/DotGothic16-Regular.ttf" id="4_ir5dn"]
+[ext_resource type="Texture2D" uid="uid://54aecrwwvlh4" path="res://art/sprites/ui/glow-border.png" id="7_8yty6"]
+[ext_resource type="Texture2D" uid="uid://d1ket6flnqnch" path="res://art/sprites/player/player_ship_v02_128x162.svg" id="8_exgwc"]
+[ext_resource type="PackedScene" uid="uid://blvvtghlt3kca" path="res://scenes/player/engine_particles.tscn" id="10_y6uum"]
+[ext_resource type="Texture2D" uid="uid://b1celxowwo2dv" path="res://art/sprites/enemy/space_police_128.svg" id="11_0mgqj"]
+
+[sub_resource type="Gradient" id="Gradient_xk0cr"]
+offsets = PackedFloat32Array(0.32937685, 0.61869437, 0.7403561)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_y6uum"]
+gradient = SubResource("Gradient_xk0cr")
+fill = 1
+fill_from = Vector2(0, 1)
 
 [node name="Intro" type="CanvasLayer" unique_id=1243987004]
 script = ExtResource("1_8twl8")
@@ -16,10 +29,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_1rrv8")
 
 [node name="Panel" type="Panel" parent="PanelContainer" unique_id=1591956543]
 layout_mode = 2
+theme = ExtResource("2_1rrv8")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=745086991]
 layout_mode = 2
@@ -82,5 +95,62 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("4_8twl8")
 text = "SKIP"
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1381518788]
+self_modulate = Color(0.44705883, 0.7176471, 1, 1)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -218.0
+offset_top = -323.0
+offset_right = 372.0
+offset_bottom = 300.5547
+grow_vertical = 0
+texture = SubResource("GradientTexture2D_y6uum")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1032272754]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = -280.0
+offset_right = 593.19995
+offset_bottom = -89.3999
+grow_vertical = 0
+rotation = -0.34732053
+scale = Vector2(0.75, 0.75)
+theme_override_constants/paragraph_separation = 8
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "WARNING!
+MAXIMUM SECURITY CORRECTIONAL ZONE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="RichTextLabel" unique_id=312850762]
+layout_mode = 0
+offset_left = -6.8
+offset_top = -7.4
+offset_right = 1017.2
+offset_bottom = 504.6
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("7_8yty6")
+
+[node name="Player" type="Sprite2D" parent="." unique_id=90154746]
+position = Vector2(1693, 770.00006)
+rotation = 0.9599311
+texture = ExtResource("8_exgwc")
+
+[node name="engine_pulse" parent="Player" unique_id=720350292 instance=ExtResource("10_y6uum")]
+
+[node name="Cop1" type="Sprite2D" parent="." unique_id=1815641298]
+position = Vector2(1295.4934, 903.5122)
+rotation = 0.9599311
+texture = ExtResource("11_0mgqj")
+
+[node name="Cop2" type="Sprite2D" parent="." unique_id=1126022785]
+position = Vector2(1471, 984.00006)
+rotation = 0.9599311
+texture = ExtResource("11_0mgqj")
 
 [connection signal="pressed" from="PanelContainer/ButtonBox/SkipButton" to="." method="_on_skip_button_pressed"]
