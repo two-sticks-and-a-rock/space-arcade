@@ -3,14 +3,65 @@
 [ext_resource type="Script" uid="uid://btilt47p7ljqj" path="res://scenes/enemies/enemy.gd" id="1_md0e3"]
 [ext_resource type="Texture2D" uid="uid://b1celxowwo2dv" path="res://art/sprites/enemy/space_police_128.svg" id="2_8e3ao"]
 [ext_resource type="PackedScene" uid="uid://oaoj8eb8rbpv" path="res://scenes/xp/xp_gear.tscn" id="2_38ino"]
-[ext_resource type="PackedScene" uid="uid://fsu3hsfbo4ju" path="res://scenes/enemies/explosion.tscn" id="3_lu5c6"]
+[ext_resource type="PackedScene" uid="uid://dmt2mfhs3ih4u" path="res://scenes/vfx/explosion.tscn" id="3_kugq1"]
 [ext_resource type="Material" uid="uid://bsorqcvx74ggk" path="res://scenes/enemies/enemy_shader.tres" id="4_lu5c6"]
+[ext_resource type="Texture2D" uid="uid://bmdlhyg3tgbci" path="res://art/sprites/enemy/enemy_damaged/space_police_128 damage_01.svg" id="5_kugq1"]
 [ext_resource type="Texture2D" uid="uid://4pdkaji1nkmk" path="res://art/sprites/enemy/space_police_blu_bk_128.svg" id="6_n7575"]
 [ext_resource type="Material" uid="uid://d1chfq4lcsocs" path="res://scenes/sparks_material.tres" id="6_nb6gf"]
+[ext_resource type="Texture2D" uid="uid://bg5wd04hx1y67" path="res://art/sprites/enemy/enemy_damaged/space_police_128 damage_blue_01.svg" id="6_x3klb"]
 [ext_resource type="Texture2D" uid="uid://h5glgsnprivf" path="res://art/sprites/enemy/space_police_red_128.svg" id="7_qch6t"]
+[ext_resource type="Texture2D" uid="uid://bos2pqk1f1mbc" path="res://art/sprites/enemy/enemy_damaged/space_police_128 damage_red_01.svg" id="7_smbsv"]
+[ext_resource type="Texture2D" uid="uid://cmvoxxpuj01mp" path="res://art/sprites/enemy/enemy_damaged/space_police_128 damage_02.svg" id="8_maese"]
+[ext_resource type="Texture2D" uid="uid://de3uxolm0nbqx" path="res://art/sprites/enemy/enemy_damaged/space_police_128 damage_blue_02.svg" id="9_4f0mh"]
+[ext_resource type="Texture2D" uid="uid://vrvbhffhu87s" path="res://art/sprites/enemy/enemy_damaged/space_police_128 damage_red_02.svg" id="10_gc4hx"]
+[ext_resource type="Texture2D" uid="uid://bg3eovnw3otts" path="res://art/sprites/enemy/enemy_damaged/space_police_128 damage_03.svg" id="11_f6y8w"]
+[ext_resource type="Texture2D" uid="uid://dtkdxxuu8y563" path="res://art/sprites/enemy/enemy_damaged/space_police_128 damage_blue_03.svg" id="12_y2gxb"]
+[ext_resource type="Texture2D" uid="uid://c53gnyk1gt32o" path="res://art/sprites/enemy/enemy_damaged/space_police_128 damage_red_03.svg" id="13_3xxyr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kcn5b"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_kugq1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x3klb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_smbsv")
+}],
+"loop": 1,
+"name": &"damaged_01",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_maese")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_4f0mh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gc4hx")
+}],
+"loop": 1,
+"name": &"damaged_02",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_f6y8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_y2gxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3xxyr")
+}],
+"loop": 1,
+"name": &"damaged_03",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_8e3ao")
@@ -35,13 +86,14 @@ collision_mask = 65
 motion_mode = 1
 script = ExtResource("1_md0e3")
 xp_scene = ExtResource("2_38ino")
-explosion = ExtResource("3_lu5c6")
+explosion = ExtResource("3_kugq1")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=249472969]
 material = ExtResource("4_lu5c6")
 rotation = 1.5707964
 sprite_frames = SubResource("SpriteFrames_kcn5b")
+animation = &"damaged_01"
 speed_scale = 0.0
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1359017325]

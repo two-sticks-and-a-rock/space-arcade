@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dmt2mfhs3ih4u"]
+
+[ext_resource type="Texture2D" uid="uid://dvfryqrtsjfnq" path="res://art/sprites/explosions/explosion_bubble_01.svg" id="1_12nbk"]
+[ext_resource type="Material" uid="uid://cklcmv6ulpn7t" path="res://scenes/vfx/explopsion_scatter_bubbles.tres" id="1_bknxo"]
+[ext_resource type="Texture2D" uid="uid://d4i3p80vdr8bx" path="res://art/sprites/explosions/explosion_bubble_01 3.svg" id="2_fpiil"]
+[ext_resource type="Script" uid="uid://dlfx34i8u01w2" path="res://scenes/vfx/explosion.gd" id="2_h3a20"]
+[ext_resource type="Material" uid="uid://d1chfq4lcsocs" path="res://scenes/sparks_material.tres" id="3_67m5i"]
+[ext_resource type="Texture2D" uid="uid://dtkole75yiyfu" path="res://art/sprites/explosions/explosion_bubble_02.svg" id="3_ph7k5"]
+[ext_resource type="Material" uid="uid://dwxvpnqlkb0at" path="res://scenes/vfx/explopsion_main_sphere.tres" id="4_dfxkk"]
+[ext_resource type="Texture2D" uid="uid://dkyv2mr3h50pg" path="res://art/sprites/explosions/explosion_bubble_01 2.svg" id="5_p0dwb"]
+
+[node name="explosion" type="Node2D" unique_id=1755444805]
+script = ExtResource("2_h3a20")
+
+[node name="main_multi_spheres" type="GPUParticles2D" parent="." unique_id=1819700848]
+emitting = false
+amount = 3
+texture = ExtResource("1_12nbk")
+lifetime = 0.7
+one_shot = true
+explosiveness = 1.0
+randomness = 0.1
+local_coords = true
+process_material = ExtResource("1_bknxo")
+
+[node name="warped bubbles" type="GPUParticles2D" parent="." unique_id=514666765]
+emitting = false
+texture = ExtResource("2_fpiil")
+lifetime = 0.7
+one_shot = true
+explosiveness = 1.0
+randomness = 0.1
+local_coords = true
+process_material = ExtResource("1_bknxo")
+
+[node name="warped bubbles2" type="GPUParticles2D" parent="." unique_id=699520480]
+emitting = false
+texture = ExtResource("5_p0dwb")
+lifetime = 0.7
+one_shot = true
+explosiveness = 1.0
+randomness = 0.1
+local_coords = true
+process_material = ExtResource("1_bknxo")
+
+[node name="main explosion bubble" type="GPUParticles2D" parent="." unique_id=1200345799]
+emitting = false
+amount = 1
+texture = ExtResource("3_ph7k5")
+one_shot = true
+explosiveness = 1.0
+randomness = 0.1
+local_coords = true
+process_material = ExtResource("4_dfxkk")
+
+[node name="sparks" type="GPUParticles2D" parent="." unique_id=2146170627]
+position = Vector2(16, -5)
+emitting = false
+amount = 20
+lifetime = 1.2
+one_shot = true
+explosiveness = 1.0
+local_coords = true
+process_material = ExtResource("3_67m5i")
+
+[node name="small bubbles" type="GPUParticles2D" parent="." unique_id=915119091]
+emitting = false
+amount = 10
+texture = ExtResource("1_12nbk")
+lifetime = 0.7
+one_shot = true
+explosiveness = 1.0
+randomness = 0.1
+local_coords = true
+process_material = ExtResource("1_bknxo")
