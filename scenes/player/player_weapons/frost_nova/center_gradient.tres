@@ -1,0 +1,8 @@
+[gd_resource type="GradientTexture2D" format=3 uid="uid://27nwwrw8l87j"]
+
+[ext_resource type="Gradient" uid="uid://dbt0htfxgp7i8" path="res://scenes/player/player_weapons/frost_nova/ring_gradient.tres" id="1_ottjy"]
+
+[resource]
+gradient = ExtResource("1_ottjy")
+fill = 1
+fill_from = Vector2(0.5, 0.5)

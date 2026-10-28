@@ -20,4 +20,3 @@ func _physics_process(_delta):
 	if !silo_sprite.is_playing():
 		fire_missiles.call_deferred()
 		silo_sprite.play()
-

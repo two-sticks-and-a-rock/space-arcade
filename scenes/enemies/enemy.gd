@@ -30,6 +30,18 @@ func take_damage(dmg: int):
 	sparks.restart()
 	sparks.emitting = true
 	
+	# damage enemy ships
+	# animated sprites for damaged_01 thru 03 match
+	# the order of the colors for the undamaged sprites
+	var _frame = animated_sprite_2d.frame
+	if (curr_hp < max_hp/4.0*3): 
+		animated_sprite_2d.play("damaged_01")
+	if (curr_hp < max_hp/4.0*2): 
+		animated_sprite_2d.play("damaged_02")
+	if (curr_hp < max_hp/4.0*1): 
+		animated_sprite_2d.play("damaged_03")
+	animated_sprite_2d.frame = _frame
+	
 	if (curr_hp <= 0):
 		var drop_xp = func():
 			var xp_drop = xp_scene.instantiate()
@@ -42,7 +54,7 @@ func take_damage(dmg: int):
 			var _explosion = explosion.instantiate()
 			_explosion.position = global_position
 			_explosion.rotation = global_rotation
-			_explosion.emitting = true
+			#_explosion.emitting = true
 			get_parent().add_child(_explosion)
 		explode.call_deferred()
 		queue_free()

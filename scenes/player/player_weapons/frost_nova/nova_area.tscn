@@ -1,23 +1,64 @@
 [gd_scene format=3 uid="uid://d3pffleq1i53h"]
 
+[ext_resource type="Shader" uid="uid://3kjq1nh5cfxl" path="res://scenes/player/player_weapons/frost_nova/nova_area.gdshader" id="1_jcg8f"]
 [ext_resource type="Script" uid="uid://cqhnqc658ps4y" path="res://scenes/player/player_weapons/frost_nova/nova_area.gd" id="1_rr2ip"]
-[ext_resource type="Texture2D" uid="uid://djsrn420s044r" path="res://art/sprites/bullets/TempFrostNova.png" id="2_ry7g0"]
+[ext_resource type="Texture2D" uid="uid://b0cpxf3vnsyj1" path="res://art/sprites/bullets/cyro_nova/ice_mosaic_thin_lines.svg" id="3_jlf32"]
+[ext_resource type="Texture2D" uid="uid://dikplrvoe6lny" path="res://art/sprites/bullets/cyro_nova/ice_mosaic_thick_lines.svg" id="4_sb11q"]
+[ext_resource type="Texture2D" uid="uid://6vhmcgxi8hg7" path="res://art/sprites/bullets/cyro_nova/ice_mosaic_uneven_01.svg" id="5_ruoas"]
+[ext_resource type="Texture2D" uid="uid://birq023mpgwc3" path="res://art/sprites/bullets/cyro_nova/ice_mosaic_thin_uneven_02.svg" id="6_mhedw"]
+[ext_resource type="Texture2D" uid="uid://27nwwrw8l87j" path="res://scenes/player/player_weapons/frost_nova/center_gradient.tres" id="8_mhedw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mx823"]
 radius = 256.0
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_sb11q"]
+
+[sub_resource type="Gradient" id="Gradient_dki7x"]
+offsets = PackedFloat32Array(0.5488722, 0.6553885, 0.7255639)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ey6my"]
+gradient = SubResource("Gradient_dki7x")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.113)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q8vnr"]
+shader = ExtResource("1_jcg8f")
+shader_parameter/intensity = 1.0
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_mx823"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_ry7g0")
+"duration": 0.2,
+"texture": ExtResource("3_jlf32")
+}, {
+"duration": 0.2,
+"texture": ExtResource("4_sb11q")
+}, {
+"duration": 0.2,
+"texture": ExtResource("5_ruoas")
+}, {
+"duration": 2.0,
+"texture": ExtResource("6_mhedw")
 }],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
+"loop": 0,
+"name": &"crack",
+"speed": 1.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_tb7nj"]
+offsets = PackedFloat32Array(0.24937344, 0.36340854, 0.4924812, 0.5839599)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.6156863, 0, 0, 0, 0, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sb11q"]
+gradient = SubResource("Gradient_tb7nj")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="NovaArea" type="Area2D" unique_id=418950395]
+show_behind_parent = true
+z_as_relative = false
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_rr2ip")
@@ -25,8 +66,41 @@ script = ExtResource("1_rr2ip")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2001573716]
 shape = SubResource("CircleShape2D_mx823")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1782490326]
-scale = Vector2(1.2, 1.2)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1701418042]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1948522563]
+sprite_frames = SubResource("SpriteFrames_sb11q")
+
+[node name="gradient2" type="Sprite2D" parent="AnimatedSprite2D" unique_id=1650273877]
+modulate = Color(0, 1.1085353, 1.353256, 1)
+clip_children = 1
+position = Vector2(6.0000153, 6.0000153)
+scale = Vector2(8.375, 8.375)
+texture = SubResource("GradientTexture2D_ey6my")
+
+[node name="gradient" type="Sprite2D" parent="AnimatedSprite2D/gradient2" unique_id=473807431]
+modulate = Color(0, 1.1085353, 1.353256, 1)
+texture = ExtResource("8_mhedw")
+
+[node name="cracked_ice_animation" type="AnimatedSprite2D" parent="AnimatedSprite2D/gradient2" unique_id=1886256471]
+self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
+material = SubResource("ShaderMaterial_q8vnr")
+position = Vector2(-0.7164195, -0.8358227)
+scale = Vector2(0.23880596, 0.23880596)
 sprite_frames = SubResource("SpriteFrames_mx823")
+animation = &"crack"
+frame = 3
+frame_progress = 1.0
+
+[node name="thin2" type="Sprite2D" parent="AnimatedSprite2D/gradient2" unique_id=466851216]
+self_modulate = Color(18.892157, 18.892157, 18.892157, 0.6862745)
+position = Vector2(-0.7164196, -0.7164196)
+rotation = 0.5235988
+scale = Vector2(0.29850745, 0.29850745)
+texture = ExtResource("3_jlf32")
+
+[node name="gradient3" type="Sprite2D" parent="AnimatedSprite2D/gradient2" unique_id=1468843314]
+visible = false
+texture = SubResource("GradientTexture2D_sb11q")
 
 [connection signal="body_entered" from="." to="." method="_on_nova_entered"]
