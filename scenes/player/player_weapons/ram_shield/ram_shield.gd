@@ -42,7 +42,6 @@ func _on_up_timer_timeout():
 	await animationPlayer.animation_finished
 
 func _physics_process(_delta):
-	#pass
 	#power_up.value = down_timer.wait_time-down_timer.time_left
 	if up_timer.is_stopped() == true: 
 		#shield_bubble.self_modulate = Color(1.0, 0.277, 0.15, 1.0)
@@ -54,6 +53,8 @@ func _physics_process(_delta):
 		
 		
 	if up_timer.is_stopped() != true: 
+		if up_timer.time_left <= 0.5:
+			ram_cap.detonate()
 		#shield_bubble.self_modulate = Color(1.0, 0.149, 0.945, 1.0)
 		
 		#power_up.tint_progress = Color("00ef15")
@@ -63,3 +64,5 @@ func _physics_process(_delta):
 		if up_timer.time_left <= time_warning: 
 			animationPlayer.play("time_out_warning")
 			await animationPlayer.animation_finished
+		
+		

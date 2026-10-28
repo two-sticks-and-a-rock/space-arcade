@@ -11,6 +11,17 @@ func _physics_process(_delta):
 
 func _on_ram_cap_entered(body: Node2D):
 	if (body.is_in_group("enemy")):
-		var cast_body = body as CharacterBody2D
-		cast_body.shove_enemy(-2*cast_body.velocity)
+		var enemy = body as CharacterBody2D
+		enemy.shove_enemy(-2*enemy.velocity)
 		body.take_damage(weapon.dmg)
+
+func detonate():
+	collider.scale += 1*Vector2.ONE
+	var enemies = get_overlapping_bodies().filter(func(body):
+		return body is CharacterBody2D)
+	for body in enemies:
+		var enemy = body as CharacterBody2D
+		enemy.shove_enemy(-4*enemy.velocity)
+		enemy.take_damage(weapon.dmg)
+	collider.scale -= 1*Vector2.ONE
+	

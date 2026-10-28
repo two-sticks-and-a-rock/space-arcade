@@ -34,7 +34,7 @@ corner_radius_bottom_left = 12
 corner_detail = 5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kcn5b"]
-radius = 147.16656
+radius = 226.14156
 
 [node name="player" type="StaticBody2D" unique_id=1664336922]
 z_index = 10
