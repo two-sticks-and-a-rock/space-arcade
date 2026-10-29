@@ -25,7 +25,7 @@ func _physics_process(_delta):
 	value = curr_xp * step_mult
 
 func set_next_xp_threshold() -> void:
-	xp_threshold *= 2
+	xp_threshold = floori(xp_threshold*1.25)+5
 
 func handle_level_up() -> void:
 	curr_xp -= max(xp_threshold, 0)
