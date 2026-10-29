@@ -11,6 +11,7 @@ func _apply_upgrade(player: Player):
 		player.heal_damage(ceil(player.max_hp * heal_percent))
 	else:
 		player.heal_damage(heal_value)
+	Sfx.play("heal_repair")
 
 func _remove_upgrade(_player: Player):
 	print("Consumable Upgrade. This upgrade is not removeable")

@@ -21,6 +21,7 @@ func _ready():
 func _on_down_timer_timeout():
 	up_timer.start()
 	down_timer.stop()
+	Sfx.play("shield_up")
 
 	ram_cap.sprite.self_modulate.a = 1
 	player.immune_to_damage = true
@@ -32,6 +33,7 @@ func _on_down_timer_timeout():
 func _on_up_timer_timeout():
 	down_timer.start()
 	up_timer.stop()
+	Sfx.play("shield_down")
 
 	ram_cap.sprite.self_modulate.a = 0.5
 	player.immune_to_damage = false
