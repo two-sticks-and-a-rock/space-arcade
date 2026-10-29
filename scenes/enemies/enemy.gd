@@ -12,7 +12,7 @@ var speed_mod : float = 1.0
 var max_hp = 100
 var curr_hp = max_hp
 
-var does_drop_xp = randi_range(0, 100)
+# var does_drop_xp = randi_range(0, 100)
 
 @onready var freeze_timer : Timer = Timer.new()
 var is_frozen: bool = false
@@ -49,8 +49,8 @@ func take_damage(dmg: int):
 			var xp_drop = xp_scene.instantiate()
 			xp_drop.global_position = global_position
 			get_parent().add_child(xp_drop)
-		if (does_drop_xp < 25):
-			drop_xp.call_deferred()
+		# if (does_drop_xp < 25):
+		drop_xp.call_deferred()
 		EventBus.enemy_death.emit()
 		
 		var explode = func():
