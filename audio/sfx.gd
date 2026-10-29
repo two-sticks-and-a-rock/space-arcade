@@ -4,14 +4,17 @@ extends Node
 const SOUNDS := {
 	"enemy_death": preload("res://audio/SFX/enemy_death.wav"),
 	"thruster_small": preload("res://audio/SFX/thruster_small.wav"),
-	"XP_pickup": preload("res://audio/SFX/XP_pickup.wav"),
+	"XP_pickup": preload("res://audio/SFX/new_XP.wav"),
+	"orbiter_activate": preload("res://audio/SFX/orbiter_sfx01.wav"),
+	"cryo_activate": preload ("res://audio/SFX/cryo_sfx01.wav"),
 }
 
 # Volume of each sound
 const VOLUMES := {
-	"enemy_death": -6.0,
+	"enemy_death": -8.0,
 	"thruster_small": -8.0,
-	"XP_pickup": -6.0,
+	"XP_pickup": -10.0,
+	"orbiter_activate": 6.0,
 }
 
 # the constant sound of the player's ship engines
