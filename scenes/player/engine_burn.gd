@@ -14,4 +14,3 @@ func _on_engine_burn() -> void:
 	engine_pulse_3.emitting = true
 	engine_pulse_4.restart()
 	engine_pulse_4.emitting = true
-	pass # Replace with function body.
