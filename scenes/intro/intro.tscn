@@ -11,12 +11,12 @@
 [ext_resource type="PackedScene" uid="uid://blvvtghlt3kca" path="res://scenes/player/engine_particles.tscn" id="10_y6uum"]
 [ext_resource type="Texture2D" uid="uid://b1celxowwo2dv" path="res://art/sprites/enemy/space_police_128.svg" id="11_0mgqj"]
 
-[sub_resource type="Gradient" id="Gradient_xk0cr"]
+[sub_resource type="Gradient" id="Gradient_y6uum"]
 offsets = PackedFloat32Array(0.32937685, 0.61869437, 0.7403561)
 colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_y6uum"]
-gradient = SubResource("Gradient_xk0cr")
+gradient = SubResource("Gradient_y6uum")
 fill = 1
 fill_from = Vector2(0, 1)
 
@@ -54,7 +54,7 @@ size_flags_horizontal = 4
 theme_override_fonts/normal_font = ExtResource("4_ir5dn")
 theme_override_font_sizes/normal_font_size = 42
 bbcode_enabled = true
-text = "YOU FINALLY [color=#00D6FF]REPAIR[/color] AN [color=#FFD24A]OLD HIDDEN ESCAPE POD[/color] ON [color=#E63946]PLANET X-ILE CORRECTIONAL FACILITY[/color], WHERE SOCIETY'S MOST [color=#E63946]\"DANGEROUS\"[/color] REBELS ARE KEPT LOCKED AWAY"
+text = "YOU FINALLY  [color=#FFD24A]REPAIR AN OLD HIDDEN ESCAPE POD[/color] ON [color=#E63946]PLANET X-ILE CORRECTIONAL FACILITY[/color], WHERE SOCIETY'S MOST [color=#E63946]\"DANGEROUS\"[/color] REBELS ARE KEPT LOCKED AWAY"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -112,10 +112,10 @@ texture = SubResource("GradientTexture2D_y6uum")
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 200.0
-offset_top = -280.0
-offset_right = 593.19995
-offset_bottom = -89.3999
+offset_left = 238.99997
+offset_top = -184.0
+offset_right = 632.19995
+offset_bottom = 6.6000977
 grow_vertical = 0
 rotation = -0.34732053
 scale = Vector2(0.75, 0.75)
