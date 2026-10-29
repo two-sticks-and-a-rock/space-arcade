@@ -24,10 +24,12 @@ func _reinstantiate_weapon():
 func _ready() -> void:
 	super()
 	up_timer.start()
+	Sfx.play("cryo_activate")
 
 func _on_down_timer_timeout():
 	up_timer.start()
 	down_timer.stop()
+	Sfx.play("cryo_activate")
 
 	for child in get_children():
 		if child is Area2D:

@@ -60,6 +60,7 @@ func take_damage(dmg: int):
 			#_explosion.emitting = true
 			get_parent().add_child(_explosion)
 		explode.call_deferred()
+		Sfx.play("enemy_death")
 		queue_free()
 		
 		

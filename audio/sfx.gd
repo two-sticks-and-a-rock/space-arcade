@@ -4,12 +4,17 @@ extends Node
 const SOUNDS := {
 	"enemy_death": preload("res://audio/SFX/enemy_death.wav"),
 	"thruster_small": preload("res://audio/SFX/thruster_small.wav"),
+	"XP_pickup": preload("res://audio/SFX/new_XP.wav"),
+	"orbiter_activate": preload("res://audio/SFX/orbiter_sfx01.wav"),
+	"cryo_activate": preload ("res://audio/SFX/cryo_sfx01.wav"),
 }
 
 # Volume of each sound
 const VOLUMES := {
-	"enemy_death": -6.0,
+	"enemy_death": -8.0,
 	"thruster_small": -8.0,
+	"XP_pickup": -10.0,
+	"orbiter_activate": 6.0,
 }
 
 # the constant sound of the player's ship engines
@@ -25,6 +30,7 @@ func _ready():
 		player.stream = SOUNDS[sound_name]
 		player.volume_db = VOLUMES.get(sound_name, 0.0)
 		player.max_polyphony = 6  # lets several play at once (lots of enemies dying)
+		player.bus = "SFX"
 		add_child(player)
 		_players[sound_name] = player
 	_idle.stream = engine_idle
@@ -40,7 +46,7 @@ func play(sound_name: String):
 
 # Called by the slingshot script when the player lets go of the mouse
 func thrust_start():
-	# Don't play for a click with no drag
+	# need to work on testing different sounds for different player speed 
 	if Mover.speed < 10.0:
 		return
 	play("thruster_small")
