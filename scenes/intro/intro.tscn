@@ -127,7 +127,7 @@ offset_bottom = 300.5547
 grow_vertical = 0
 texture = SubResource("GradientTexture2D_y6uum")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1032272754]
+[node name="NeonSign" type="RichTextLabel" parent="." unique_id=1032272754]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -146,7 +146,7 @@ MAXIMUM SECURITY CORRECTIONAL ZONE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="RichTextLabel" unique_id=312850762]
+[node name="TextureRect" type="TextureRect" parent="NeonSign" unique_id=312850762]
 layout_mode = 0
 offset_left = -6.8
 offset_top = -7.4
@@ -155,40 +155,54 @@ offset_bottom = 504.6
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("7_8yty6")
 
-[node name="Player" type="Sprite2D" parent="." unique_id=90154746]
-position = Vector2(1693, 770.00006)
+[node name="LookAt" type="Node2D" parent="." unique_id=1322795442]
+position = Vector2(2092, 339)
 rotation = 0.7853982
+scale = Vector2(1.9999998, 1.9999998)
+
+[node name="Player" type="Node2D" parent="." unique_id=1736424890]
+position = Vector2(1745.0001, 759.0002)
+rotation = -0.7853982
+
+[node name="Player" type="Sprite2D" parent="Player" unique_id=90154746]
+rotation = 1.5707964
 texture = ExtResource("8_exgwc")
 
-[node name="ShieldBubble" type="Sprite2D" parent="Player" unique_id=1151768452]
+[node name="ShieldBubble" type="Sprite2D" parent="Player/Player" unique_id=1151768452]
 visible = false
 self_modulate = Color(1, 0.14999998, 0.9433334, 1)
 scale = Vector2(2, 2)
 texture = SubResource("GradientTexture2D_0mgqj")
 
-[node name="engine_burn" type="Node2D" parent="Player" unique_id=1390726542]
+[node name="engine_burn" type="Node2D" parent="Player/Player" unique_id=1390726542]
 script = ExtResource("10_ueo4n")
 
-[node name="engine_pulse1" parent="Player/engine_burn" unique_id=720350292 instance=ExtResource("10_y6uum")]
+[node name="engine_pulse1" parent="Player/Player/engine_burn" unique_id=720350292 instance=ExtResource("10_y6uum")]
 position = Vector2(-32.999996, 69)
 
-[node name="engine_pulse2" parent="Player/engine_burn" unique_id=1649509619 instance=ExtResource("10_y6uum")]
+[node name="engine_pulse2" parent="Player/Player/engine_burn" unique_id=1649509619 instance=ExtResource("10_y6uum")]
 position = Vector2(-12.999996, 79)
 
-[node name="engine_pulse3" parent="Player/engine_burn" unique_id=1715766164 instance=ExtResource("10_y6uum")]
+[node name="engine_pulse3" parent="Player/Player/engine_burn" unique_id=1715766164 instance=ExtResource("10_y6uum")]
 position = Vector2(13.000004, 79)
 
-[node name="engine_pulse4" parent="Player/engine_burn" unique_id=1084839479 instance=ExtResource("10_y6uum")]
+[node name="engine_pulse4" parent="Player/Player/engine_burn" unique_id=1084839479 instance=ExtResource("10_y6uum")]
 position = Vector2(33.000004, 70)
 
-[node name="Cop1" type="Sprite2D" parent="." unique_id=1815641298]
-position = Vector2(1201.5287, 869.5287)
-rotation = 0.7853982
+[node name="Cop1" type="Node2D" parent="." unique_id=112388421]
+position = Vector2(1323, 869.99994)
+rotation = -0.3211406
+
+[node name="Cop1" type="Sprite2D" parent="Cop1" unique_id=1815641298]
+rotation = 1.5707964
 texture = ExtResource("11_0mgqj")
 
-[node name="Cop2" type="Sprite2D" parent="." unique_id=1126022785]
-position = Vector2(1485.5287, 983.52875)
-rotation = 0.7853982
+[node name="Cop2" type="Node2D" parent="." unique_id=1084788513]
+position = Vector2(1499.0001, 1027)
+rotation = -0.6273674
+
+[node name="Cop2" type="Sprite2D" parent="Cop2" unique_id=1099153367]
+rotation = 1.5707964
 texture = ExtResource("11_0mgqj")
 
 [connection signal="pressed" from="PanelContainer/ButtonBox/SkipButton" to="." method="_on_skip_button_pressed"]
