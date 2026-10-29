@@ -26,6 +26,7 @@ func set_shader_intensity(newValue: float):
 
 func take_damage(dmg: int):
 	curr_hp -= dmg
+	Sfx.play("hit_marker")
 	
 	var tween = get_tree().create_tween()
 	tween.tween_method(set_shader_intensity, 1.0, 0.0, 0.5)
