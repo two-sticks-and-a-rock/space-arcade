@@ -5,8 +5,11 @@ const SOUNDS := {
 	"enemy_death": preload("res://audio/SFX/enemy_death.wav"),
 	"thruster_small": preload("res://audio/SFX/thruster_small.wav"),
 	"XP_pickup": preload("res://audio/SFX/new_XP.wav"),
-	"orbiter_activate": preload("res://audio/SFX/orbiter_sfx01.wav"),
-	"cryo_activate": preload ("res://audio/SFX/cryo_sfx01.wav"),
+	"orbiter_activate": preload("res://audio/SFX/orbiter_sfx02.wav"),
+	"cryo_activate": preload("res://audio/SFX/cryo_sfx01.wav"),
+	"shield_up": preload("res://audio/SFX/doorOpen_002.ogg"),
+	"shield_down": preload("res://audio/SFX/doorClose_002.ogg"),
+	"heal_repair": preload ("res://audio/SFX/powerUp.wav"),
 }
 
 # Volume of each sound
@@ -15,11 +18,14 @@ const VOLUMES := {
 	"thruster_small": -8.0,
 	"XP_pickup": -10.0,
 	"orbiter_activate": 6.0,
+	"shield_up": -4.0,
+	"shield_down": -4.0,
+	"heal_repair": -3.0,
 }
 
 # the constant sound of the player's ship engines
 const engine_idle := preload("res://audio/SFX/engine_idle.wav")
-const engine_idle_volume := -8.0
+const engine_idle_volume := -6.0
 
 var _players := {}
 var _idle := AudioStreamPlayer2D.new()
