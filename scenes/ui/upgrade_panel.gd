@@ -41,7 +41,7 @@ func populate_mechanics():
 		var v_box = VBoxContainer.new()
 		v_box.alignment = BoxContainer.ALIGNMENT_CENTER
 		v_box.custom_minimum_size.x = 200.0
-		v_box.add_theme_constant_override("separation", -4)
+		v_box.add_theme_constant_override("separation", -8)
 
 		if mechanic.col_span == 2:
 			v_box.add_child(mechanic_subheader_label)
