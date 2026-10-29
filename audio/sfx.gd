@@ -40,6 +40,7 @@ var _last_played := {}
 var _idle := AudioStreamPlayer2D.new()
 
 func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS #hoping this fixes sound being cut during pause menus
 	for sound_name in SOUNDS:
 		var player := AudioStreamPlayer.new()
 		player.stream = SOUNDS[sound_name]
@@ -54,8 +55,6 @@ func _ready():
 	_idle.play()
 
 func play(sound_name: String):
-	if get_tree().paused and sound_name not in UI_SOUNDS:
-		return
 	if not _players.has(sound_name):
 		push_warning("Sfx: no sound called" + sound_name)
 		return
