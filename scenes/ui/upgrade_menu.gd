@@ -125,7 +125,7 @@ func populate_upgrade_panels():
 				choice.applied = true
 				weapon._reinstantiate_weapon()
 
-				if (processed.all_possible_upgrades_length <= 1):
+				if (processed.all_possible_upgrades_length + new_weapons.size() <= 1):
 					hit_max_level = true
 				EventBus.finish_level_up.emit()
 				_on_player_finish_level_up()
