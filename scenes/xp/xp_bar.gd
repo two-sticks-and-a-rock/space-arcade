@@ -3,11 +3,14 @@ extends ProgressBar
 var xp_threshold : int = 5
 
 @onready var viewport_width = get_viewport().size.x
+@onready var level_up_debug = $LevelUpDebug
 
 var curr_xp : int = 0
 var step_mult : int = 0
 
 var is_leveling_up = false
+var level = 0
+var levels : Array = [7,15,15,30,30]
 
 func _reset_xp() -> void:
 	curr_xp = 0
@@ -25,7 +28,13 @@ func _physics_process(_delta):
 	value = curr_xp * step_mult
 
 func set_next_xp_threshold() -> void:
-	xp_threshold = floori(xp_threshold*1.25)+5
+	level+=1
+	level_up_debug.text = "Level: " + str(level)
+
+	if (level < levels.size()):
+		xp_threshold = levels[level]
+	else:
+		xp_threshold = floori(xp_threshold*1.25)+5	
 
 func handle_level_up() -> void:
 	curr_xp -= max(xp_threshold, 0)
