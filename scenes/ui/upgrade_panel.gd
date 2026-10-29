@@ -33,26 +33,26 @@ func populate_mechanics():
 	var items_in_row = 0
 
 	for mechanic in mechanics:
-		print(mechanic.mechanic_name)
 		var mechanic_subheader_label = mechanic_subheader_label_scene.instantiate() as Label
 		mechanic_subheader_label.text = mechanic.mechanic_name
 		var mechanic_label = mechanic_label_scene.instantiate() as Label
 		mechanic_label.text = mechanic.mechanic_value
 
-		if mechanic.col_span == 2:
-			mechanics_container.add_child(mechanic_subheader_label)
-			mechanics_container.add_child(mechanic_label)
-			continue
-		
 		var v_box = VBoxContainer.new()
 		v_box.alignment = BoxContainer.ALIGNMENT_CENTER
 		v_box.custom_minimum_size.x = 200.0
 		v_box.add_theme_constant_override("separation", -4)
 
-		v_box.add_child(mechanic_subheader_label)
-		v_box.add_child(mechanic_label)
-		current_row.add_child(v_box)
-		items_in_row += 1
+		if mechanic.col_span == 2:
+			v_box.add_child(mechanic_subheader_label)
+			v_box.add_child(mechanic_label)
+			current_row.add_child(v_box)
+			items_in_row = 2
+		else:
+			v_box.add_child(mechanic_subheader_label)
+			v_box.add_child(mechanic_label)
+			current_row.add_child(v_box)
+			items_in_row += 1
 
 		if (items_in_row == 2):
 			mechanics_container.add_child(current_row)
@@ -60,7 +60,6 @@ func populate_mechanics():
 			items_in_row = 0
 		
 	if (items_in_row > 0):
-		print(items_in_row)
 		mechanics_container.add_child(current_row)
 	else:
 		current_row.queue_free()
