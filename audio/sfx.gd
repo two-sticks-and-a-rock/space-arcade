@@ -5,7 +5,7 @@ const SOUNDS := {
 	"enemy_death": preload("res://audio/SFX/enemy_death.wav"),
 	"thruster_small": preload("res://audio/SFX/thruster_small.wav"),
 	"XP_pickup": preload("res://audio/SFX/new_XP.wav"),
-	"orbiter_activate": preload("res://audio/SFX/orbiter_sfx01.wav"),
+	"orbiter_activate": preload("res://audio/SFX/orbiter_sfx02.wav"),
 	"cryo_activate": preload("res://audio/SFX/cryo_sfx01.wav"),
 	"shield_up": preload("res://audio/SFX/doorOpen_002.ogg"),
 	"shield_down": preload("res://audio/SFX/doorClose_002.ogg"),
