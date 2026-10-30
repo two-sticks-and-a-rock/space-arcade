@@ -74,7 +74,6 @@ scale = Vector2(8.375, 8.375)
 texture = SubResource("GradientTexture2D_ey6my")
 
 [node name="gradient" type="Sprite2D" parent="AnimatedSprite2D/gradient2" unique_id=473807431]
-visible = false
 modulate = Color(0, 1.1085353, 1.353256, 1)
 texture = ExtResource("8_mhedw")
 
