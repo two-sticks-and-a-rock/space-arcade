@@ -69,7 +69,7 @@ description = "Homing missiles target enemies"
 base_mechanics = Array[ExtResource("3_03w6n")]([SubResource("Resource_6d4r7"), SubResource("Resource_mjay7"), SubResource("Resource_246l1")])
 dmg = 100
 num_bullets = 3
-bullet_speed = 300.0
+bullet_speed = 400.0
 bullet_size = 1.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=825337014]
@@ -81,7 +81,7 @@ frame_progress = 0.49345353
 wait_time = 0.1
 
 [node name="DownTimer" type="Timer" parent="." unique_id=1088500671]
-wait_time = 3.0
+wait_time = 2.6
 
 [connection signal="timeout" from="UpTimer" to="." method="_on_up_timer_timeout"]
 [connection signal="timeout" from="DownTimer" to="." method="_on_missile_down_timer_timeout"]

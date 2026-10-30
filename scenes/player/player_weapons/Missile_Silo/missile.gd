@@ -14,7 +14,7 @@ func _ready():
 	global_rotation = randf_range(-PI / 4, PI / 4)
 	$AnimatedSprite2D.visible = false
 	detonation_timer.one_shot = true
-	detonation_timer.wait_time = 3.0
+	detonation_timer.wait_time = 5.0
 	detonation_timer.timeout.connect(_on_detonation_timer_timeout)
 	add_child(detonation_timer)
 
@@ -34,28 +34,30 @@ func seek():
 				target = colliding_with
 				target_position = target.global_position
 
+func explode():
+		var _explosion = explosion.instantiate()
+		_explosion.position = global_position
+		_explosion.rotation = global_rotation
+		get_parent().add_child(_explosion)
+
 func _on_detonation_timer_timeout():
-	var explode = func():
-			var _explosion = explosion.instantiate()
-			_explosion.position = global_position
-			_explosion.rotation = global_rotation
-			get_parent().add_child(_explosion)
 	explode.call_deferred()
+	Sfx.play("enemy_death")
 	queue_free()
 
 func _physics_process(delta: float) -> void:
-	if target == null && !launched:
+	if target == null:
 		# start seeking a target
 		seek()
 
-	if (!launched && target != null):
+	if !launched && target != null:
 		# keep tracking target until launch
 		look_at(target_position)
 
 	if launched:
 		if target != null:
 			# launch to target
-			global_position = lerp(global_position, target_position, .01)
+			global_position = global_position.move_toward(target.global_position, speed * delta)
 			if abs((global_position-target_position).length()) < 0.1:
 				target = null
 				target_position = Vector2.ZERO
@@ -67,5 +69,8 @@ func _physics_process(delta: float) -> void:
 func _on_missile_entered(body: Node2D) -> void:
 	if (body.is_in_group("enemy")):
 		body.take_damage(weapon.dmg)
+		explode.call_deferred()
+		Sfx.play("enemy_death")
 		queue_free()
+		
 	
