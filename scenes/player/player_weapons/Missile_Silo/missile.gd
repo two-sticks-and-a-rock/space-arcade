@@ -30,17 +30,19 @@ func seek():
 		var colliding_with = detector.get_collider()
 		if (colliding_with != null):
 			if !(colliding_with.is_marked):
-				colliding_with.is_marked = true
+				colliding_with.mark_enemy()
 				target = colliding_with
 				target_position = target.global_position
 
 func explode():
-		var _explosion = explosion.instantiate()
-		_explosion.position = global_position
-		_explosion.rotation = global_rotation
-		get_parent().add_child(_explosion)
+	var _explosion = explosion.instantiate()
+	_explosion.position = global_position
+	_explosion.rotation = global_rotation
+	get_parent().add_child(_explosion)
 
 func _on_detonation_timer_timeout():
+	if target != null:
+		target.unmark_enemy.call_deferred()
 	explode.call_deferred()
 	Sfx.play("enemy_death")
 	queue_free()
@@ -69,6 +71,8 @@ func _physics_process(delta: float) -> void:
 func _on_missile_entered(body: Node2D) -> void:
 	if (body.is_in_group("enemy")):
 		body.take_damage(weapon.dmg)
+		if target != null:
+			target.unmark_enemy.call_deferred()
 		explode.call_deferred()
 		Sfx.play("enemy_death")
 		queue_free()

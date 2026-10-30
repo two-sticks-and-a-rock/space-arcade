@@ -22,7 +22,6 @@ func _on_missile_down_timer_timeout():
 	fire_missiles()
 	silo_sprite.stop()
 	spawn_missiles()
-	silo_sprite.play()
 
 func spawn_missiles() -> void:
 	for i in (num_bullets):
@@ -32,11 +31,13 @@ func spawn_missiles() -> void:
 
 func fire_missiles() -> void:
 	for child in get_children():
-		if (child is PlayerBullet):
-			child.launch()
-			stagger_missiles_timer.start()
-			await stagger_missiles_timer.timeout
+		if (is_instance_valid(child)):
+			if (child is PlayerBullet):
+				child.launch()
+				stagger_missiles_timer.start()
+				await stagger_missiles_timer.timeout
 
 func _physics_process(_delta):
 	if(!silo_sprite.is_playing() && down_timer.is_stopped()):
 		down_timer.start()
+		silo_sprite.play()
