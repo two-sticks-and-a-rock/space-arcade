@@ -1,4 +1,7 @@
 extends PlayerWeapon
+"""
+ASTEROID BELT
+"""
 
 var distance_from_player = 200
 var min_distance_from_player = 80

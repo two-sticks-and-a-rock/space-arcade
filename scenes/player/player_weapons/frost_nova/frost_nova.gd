@@ -1,4 +1,7 @@
 extends PlayerWeapon
+"""
+CRYO PULSE
+"""
 
 var current_bullets : Array[PlayerBullet]
 
