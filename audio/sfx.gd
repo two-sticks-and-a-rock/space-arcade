@@ -11,6 +11,7 @@ const SOUNDS := {
 	"shield_down": preload("res://audio/SFX/doorClose_002.ogg"),
 	"heal_repair": preload ("res://audio/SFX/powerUp.wav"),
 	"hit_marker": preload("res://audio/SFX/hit_marker02.wav"),
+	"player_damaged": preload("res://audio/SFX/player_dmg01.wav")
 }
 
 #UI SFX here
@@ -28,13 +29,14 @@ const VOLUMES := {
 	"shield_down": -2.0,
 	"heal_repair": 2.0,
 	"cryo_activate": -10.0,
+	"player_damaged": -6.0,
 }
 
 # the constant sound of the player's ship engines
 const engine_idle := preload("res://audio/SFX/engine_idle.wav")
 const engine_idle_volume := -6.0
 
-const cooldown_sound := ["hit_marker"]
+const cooldown_sound := ["hit_marker", "player_damaged", "XP_pickup"]
 
 var _players := {}
 var _last_played := {}
@@ -46,7 +48,7 @@ func _ready():
 		var player := AudioStreamPlayer.new()
 		player.stream = SOUNDS[sound_name]
 		player.volume_db = VOLUMES.get(sound_name, 0.0)
-		player.max_polyphony = 6  # lets several play at once (lots of enemies dying)
+		player.max_polyphony = 5  # lets several play at once (lots of enemies dying)
 		player.bus = "SFX"
 		add_child(player)
 		_players[sound_name] = player
