@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://d3pffleq1i53h"]
 
-[ext_resource type="Shader" uid="uid://3kjq1nh5cfxl" path="res://scenes/player/player_weapons/frost_nova/nova_area.gdshader" id="1_jcg8f"]
 [ext_resource type="Script" uid="uid://cqhnqc658ps4y" path="res://scenes/player/player_weapons/frost_nova/nova_area.gd" id="1_rr2ip"]
 [ext_resource type="Texture2D" uid="uid://b0cpxf3vnsyj1" path="res://art/sprites/bullets/cyro_nova/ice_mosaic_thin_lines.svg" id="3_jlf32"]
 [ext_resource type="Texture2D" uid="uid://dikplrvoe6lny" path="res://art/sprites/bullets/cyro_nova/ice_mosaic_thick_lines.svg" id="4_sb11q"]
@@ -22,10 +21,6 @@ gradient = SubResource("Gradient_dki7x")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.113)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_q8vnr"]
-shader = ExtResource("1_jcg8f")
-shader_parameter/intensity = 1.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mx823"]
 animations = [{
@@ -79,12 +74,12 @@ scale = Vector2(8.375, 8.375)
 texture = SubResource("GradientTexture2D_ey6my")
 
 [node name="gradient" type="Sprite2D" parent="AnimatedSprite2D/gradient2" unique_id=473807431]
+visible = false
 modulate = Color(0, 1.1085353, 1.353256, 1)
 texture = ExtResource("8_mhedw")
 
 [node name="cracked_ice_animation" type="AnimatedSprite2D" parent="AnimatedSprite2D/gradient2" unique_id=1886256471]
 self_modulate = Color(18.892157, 18.892157, 18.892157, 1)
-material = SubResource("ShaderMaterial_q8vnr")
 position = Vector2(-0.7164195, -0.8358227)
 scale = Vector2(0.23880596, 0.23880596)
 sprite_frames = SubResource("SpriteFrames_mx823")

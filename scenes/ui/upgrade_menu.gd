@@ -97,7 +97,7 @@ func populate_upgrade_panels():
 	var processed = get_possible_upgrade_sets(player_weapons)
 	var new_weapons = get_unobtained_weapons(player_weapons)
 
-	var all_choices = processed.possible_upgrade_sets + new_weapons 
+	var all_choices = processed.possible_upgrade_sets + new_weapons + get_misc_upgrades()
 	var choices = choose_at_most_n(all_choices, 3)
 
 	for choice in choices:
@@ -109,8 +109,6 @@ func populate_upgrade_panels():
 			var weapon = processed.upgrade_set_name_to_weapon_map[choice.resource_name]
 			upgrade_panel.weapon_name = weapon.display_name if weapon.display_name != null else weapon.name 
 			upgrade_panel.upgrade_name = choice.resource_name
-			# TODO: placeholder images
-			# upgrade_panel.img_filepath = 
 			for component_upgrade in choice.upgrades:
 				upgrade_panel.mechanics.append(component_upgrade.mechanics_text)
 			upgrade_panel.img_filepath = weapon.weapon_img_path
