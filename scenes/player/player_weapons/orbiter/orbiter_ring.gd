@@ -22,7 +22,7 @@ func _reinstantiate_weapon():
 		var orbiter = bullet_scene.instantiate() as PlayerBullet
 		orbiter.position = child_pos
 		orbiter.original_position = child_pos
-		orbiter.bullet_scale = Vector2(bullet_size, bullet_size)
+		orbiter.set_bullet_scale(bullet_size) 
 		add_child(orbiter)
 		child_pos = child_pos.rotated(2*PI / num_bullets)
 		current_bullets.append(orbiter)
@@ -46,16 +46,16 @@ func _on_up_timer_timeout():
 	for child in get_children():
 		if child is PlayerBullet:
 			child.toggle_visibility(false)
-			child.scale = Vector2.ONE * min_scale
+			child.set_scale_for_animation(Vector2.ONE * min_scale)
 			child.position = child.original_position.normalized() * min_distance_from_player
 
 func _physics_process(delta):
-	var grow_rate : Vector2 = (bullet_size - min_scale) * delta * Vector2.ONE
 	var spiral_out_rate : float = (distance_from_player - min_distance_from_player) * delta
 	var fly_out_rate : float = (max_distance_from_player - distance_from_player) * delta
 
 	for child in get_children():
 		if child is PlayerBullet:
+			var grow_rate : Vector2 = (child.bullet_scale.x - min_scale) * delta * Vector2.ONE
 			var start_flying = !up_timer.is_stopped() && up_timer.time_left <= 1.0
 			if (start_flying):
 				child.position += child.position.normalized() * fly_out_rate
@@ -65,7 +65,9 @@ func _physics_process(delta):
 				# need to set process_mode here otherwise the asteroids don't rotate as they come up
 				child.toggle_visibility(true)
 		
-				if child.scale <= child.bullet_scale:
-					child.scale += grow_rate
+
+				if child.get_current_scale() <= child.bullet_scale:
+					child.set_scale_for_animation(child.get_current_scale() + grow_rate)
+
 					child.position += child.position.normalized() * spiral_out_rate
 			child.position = Vector2(child.position).rotated(bullet_speed)
