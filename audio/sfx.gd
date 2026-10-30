@@ -6,11 +6,11 @@ const SOUNDS := {
 	"thruster_small": preload("res://audio/SFX/thruster_small.wav"),
 	"XP_pickup": preload("res://audio/SFX/new_XP.wav"),
 	"orbiter_activate": preload("res://audio/SFX/orbiter_sfx02.wav"),
-	"cryo_activate": preload("res://audio/SFX/cryo_sfx01.wav"),
+	"cryo_activate": preload("res://audio/SFX/Frost_Nova_Full03.wav"),
 	"shield_up": preload("res://audio/SFX/doorOpen_002.ogg"),
 	"shield_down": preload("res://audio/SFX/doorClose_002.ogg"),
 	"heal_repair": preload ("res://audio/SFX/powerUp.wav"),
-	"hit_marker": preload("res://audio/SFX/hit_marker.wav"),
+	"hit_marker": preload("res://audio/SFX/hit_marker02.wav"),
 }
 
 #UI SFX here
@@ -27,6 +27,7 @@ const VOLUMES := {
 	"shield_up": -2.0,
 	"shield_down": -2.0,
 	"heal_repair": 2.0,
+	"cryo_activate": -10.0,
 }
 
 # the constant sound of the player's ship engines
