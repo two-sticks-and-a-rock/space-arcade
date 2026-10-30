@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://2hv84kuvt3gt"]
+
+[ext_resource type="Script" uid="uid://beyyno24ki1rl" path="res://scenes/player/player_weapons/Missile_Silo/target.gd" id="1_8sqk7"]
+
+[node name="Target" type="Node2D" unique_id=1788312183]
+script = ExtResource("1_8sqk7")
