@@ -84,4 +84,4 @@ wait_time = 0.1
 wait_time = 3.0
 
 [connection signal="timeout" from="UpTimer" to="." method="_on_up_timer_timeout"]
-[connection signal="timeout" from="DownTimer" to="." method="_on_down_timer_timeout"]
+[connection signal="timeout" from="DownTimer" to="." method="_on_missile_down_timer_timeout"]
