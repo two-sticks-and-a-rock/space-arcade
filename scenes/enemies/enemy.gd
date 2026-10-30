@@ -109,7 +109,6 @@ func set_enemy_class() -> void:
 
 func mark_enemy():
 	is_marked = true
-	print(is_marked)
 	$Target.visible = true
 	
 
