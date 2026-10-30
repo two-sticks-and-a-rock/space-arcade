@@ -47,6 +47,7 @@ func take_damage(dmg: int):
 	if immune_to_damage:
 		return
 	curr_hp -= dmg
+	Sfx.play("player_damaged")
 	
 	# blink tween and kick off animation for sparks
 	var tween = get_tree().create_tween()
