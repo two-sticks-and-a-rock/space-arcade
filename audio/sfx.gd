@@ -32,10 +32,10 @@ const VOLUMES := {
 	"shield_up": -4.0,
 	"shield_down": -4.0,
 	"heal_repair": 1.0,
-	"cryo_activate": -10.0,
+	"cryo_activate": -8.0,
 	"player_damaged": -6.0,
-	"frozen_enemy": -6.0,
-	"missile_launcher": -2.0,
+	"frozen_enemy": -8.0,
+	"missile_launcher": -1.0,
 	"missile_reload": -2.0,
 }
 
@@ -80,7 +80,7 @@ func thrust_start():
 	# need to work on testing different sounds for different player speed 
 	if Mover.speed < 10.0:
 		return
-	_players["thruster_small"].pitch_scale = randf_range(0.9, 1.1)
+	_players["thruster_small"].pitch_scale = randf_range(0.75, 1.12)
 	play("thruster_small")
 
 func play_after(sound_name: String, delay: float):
