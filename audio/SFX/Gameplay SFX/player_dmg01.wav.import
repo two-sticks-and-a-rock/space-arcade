@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://coww3syqj7nly"
-path="res://.godot/imported/player_dmg01.wav-8f4cec6dadd988d2c6b048cae5bcf906.sample"
+path="res://.godot/imported/player_dmg01.wav-b78c129af17dbdab4d51ae63a20083c6.sample"
 
 [deps]
 
-source_file="res://audio/SFX/player_dmg01.wav"
-dest_files=["res://.godot/imported/player_dmg01.wav-8f4cec6dadd988d2c6b048cae5bcf906.sample"]
+source_file="res://audio/SFX/Gameplay SFX/player_dmg01.wav"
+dest_files=["res://.godot/imported/player_dmg01.wav-b78c129af17dbdab4d51ae63a20083c6.sample"]
 
 [params]
 

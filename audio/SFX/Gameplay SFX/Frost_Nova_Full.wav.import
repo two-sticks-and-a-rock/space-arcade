@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://o4p1pkyhtvhs"
-path="res://.godot/imported/Frost_Nova_Full.wav-b9e947b141002e7ed734f55fc6a72a06.sample"
+path="res://.godot/imported/Frost_Nova_Full.wav-0ef4ec24a366135e25c84f902e2c58f2.sample"
 
 [deps]
 
-source_file="res://audio/SFX/Frost_Nova_Full.wav"
-dest_files=["res://.godot/imported/Frost_Nova_Full.wav-b9e947b141002e7ed734f55fc6a72a06.sample"]
+source_file="res://audio/SFX/Gameplay SFX/Frost_Nova_Full.wav"
+dest_files=["res://.godot/imported/Frost_Nova_Full.wav-0ef4ec24a366135e25c84f902e2c58f2.sample"]
 
 [params]
 

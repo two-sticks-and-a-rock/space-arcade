@@ -28,8 +28,9 @@ func spawn_missiles() -> void:
 		var missile = bullet_scene.instantiate()
 		missile.speed = bullet_speed
 		add_child(missile)
-
+		
 func fire_missiles() -> void:
+	Sfx.play("missile_launcher")
 	for child in get_children():
 		if (is_instance_valid(child)):
 			if (child is PlayerBullet):
@@ -41,3 +42,7 @@ func _physics_process(_delta):
 	if(!silo_sprite.is_playing() && down_timer.is_stopped()):
 		down_timer.start()
 		silo_sprite.play()
+
+func play_reload_sound() -> void:
+	var step = down_timer.wait_time / 3.0
+	Sfx.play_after("missile_reload", step)

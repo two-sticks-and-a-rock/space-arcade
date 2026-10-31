@@ -2,17 +2,20 @@ extends Node
 
 # Gameplay SFX that play once
 const SOUNDS := {
-	"enemy_death": preload("res://audio/SFX/enemy_death.wav"),
-	"thruster_small": preload("res://audio/SFX/thruster_small.wav"),
-	"XP_pickup": preload("res://audio/SFX/new_XP.wav"),
-	"orbiter_activate": preload("res://audio/SFX/orbiter_sfx02.wav"),
-	"cryo_activate": preload("res://audio/SFX/Frost_Nova_Icy02.wav"),
-	"shield_up": preload("res://audio/SFX/doorOpen_002.ogg"),
-	"shield_down": preload("res://audio/SFX/doorClose_002.ogg"),
-	"heal_repair": preload ("res://audio/SFX/powerUp.wav"),
-	"hit_marker": preload("res://audio/SFX/hit_marker02.wav"),
-	"player_damaged": preload("res://audio/SFX/player_dmg01.wav"),
-	"frozen_enemy": preload("res://audio/SFX/Enemy_Freeze.wav"),
+	"enemy_death": preload("res://audio/SFX/Gameplay SFX/enemy_death.wav"),
+	"thruster_small": preload("res://audio/SFX/Gameplay SFX/thruster_small.wav"),
+	"XP_pickup": preload("res://audio/SFX/Gameplay SFX/new_XP.wav"),
+	"orbiter_activate": preload("res://audio/SFX/Gameplay SFX/orbiter_sfx02.wav"),
+	"cryo_activate": preload("res://audio/SFX/Gameplay SFX/Frost_Nova_Icy02.wav"),
+	"shield_up": preload("res://audio/SFX/Gameplay SFX/doorOpen_002.ogg"),
+	"shield_down": preload("res://audio/SFX/Gameplay SFX/doorClose_002.ogg"),
+	"heal_repair": preload ("res://audio/SFX/Gameplay SFX/powerUp.wav"),
+	"hit_marker": preload("res://audio/SFX/Gameplay SFX/hit_marker02.wav"),
+	"player_damaged": preload("res://audio/SFX/Gameplay SFX/player_dmg01.wav"),
+	"frozen_enemy": preload("res://audio/SFX/Gameplay SFX/Enemy_Freeze.wav"),
+	"missile_launcher": preload("res://audio/SFX/Gameplay SFX/missile_launcher.wav"),
+	"missile_reload": preload("res://audio/SFX/Gameplay SFX/missile_reload.wav")
+	
 }
 
 #UI SFX here
@@ -32,10 +35,12 @@ const VOLUMES := {
 	"cryo_activate": -10.0,
 	"player_damaged": -6.0,
 	"frozen_enemy": -6.0,
+	"missile_launcher": -2.0,
+	"missile_reload": -2.0,
 }
 
 # the constant sound of the player's ship engines
-const engine_idle := preload("res://audio/SFX/engine_idle.wav")
+const engine_idle := preload("res://audio/SFX/Gameplay SFX/engine_idle.wav")
 const engine_idle_volume := -6.0
 
 const cooldown_sound := ["hit_marker", "player_damaged", "XP_pickup"]
@@ -75,5 +80,9 @@ func thrust_start():
 	# need to work on testing different sounds for different player speed 
 	if Mover.speed < 10.0:
 		return
-		_players["thruster_small"].pitch_scale = randf_range(0.50, 1.50) #I dont think this is doing anything in testing. Probably just remove it
+	_players["thruster_small"].pitch_scale = randf_range(0.9, 1.1)
 	play("thruster_small")
+
+func play_after(sound_name: String, delay: float):
+	await get_tree().create_timer(delay, false).timeout
+	play(sound_name)
