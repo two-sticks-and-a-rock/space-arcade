@@ -25,16 +25,16 @@ const UI_SOUNDS := [
 
 # Volume of each sound
 const VOLUMES := {
-	"enemy_death": -10.0,
-	"thruster_small": -10.0,
+	"enemy_death": -8.0,
+	"thruster_small": -8.0,
 	"XP_pickup": -8.0,
 	"orbiter_activate": 2.0,
 	"shield_up": -4.0,
 	"shield_down": -4.0,
-	"heal_repair": 1.0,
+	"heal_repair": -4.0,
 	"cryo_activate": -8.0,
 	"player_damaged": -6.0,
-	"frozen_enemy": -8.0,
+	"frozen_enemy": -12.0,
 	"missile_launcher": -1.0,
 	"missile_reload": -2.0,
 }
