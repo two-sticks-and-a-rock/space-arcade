@@ -4,6 +4,7 @@ var allow_input : bool = true
 var is_leveling_up : bool = true
 
 func _ready():
+	allow_input = false
 	EventBus.level_up.connect(_on_player_level_up)
 	EventBus.finish_level_up.connect(_on_player_finish_level_up)
 
