@@ -34,4 +34,5 @@ func create_icon():
 func _ready():
 	# commented out. Only necessary for generating preview texture
 	# create_icon()
+	Sfx.play("frozen_enemy")
 	pass
