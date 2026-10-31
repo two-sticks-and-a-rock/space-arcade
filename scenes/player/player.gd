@@ -17,7 +17,7 @@ extends StaticBody2D
 
 var max_hp : int = 500
 var curr_hp : int = max_hp
-var magnet_radius : int = 150
+var magnet_radius : int = 400
 
 var immune_to_damage : bool = false
 

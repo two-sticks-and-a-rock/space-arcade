@@ -4,23 +4,26 @@
 [ext_resource type="Script" uid="uid://bcp3gl8x6c5u6" path="res://scenes/player/player_weapons/ram_shield/ram_cap.gd" id="2_fw3ta"]
 [ext_resource type="Script" uid="uid://dq724vlrm8a05" path="res://scenes/ui/mechanics_text.gd" id="2_ks08d"]
 [ext_resource type="Texture2D" uid="uid://dr03oym73vfjn" path="res://art/sprites/bullets/shield3.png" id="3_fw3ta"]
-
-[sub_resource type="Resource" id="Resource_kj1qa"]
-script = ExtResource("2_ks08d")
-mechanic_name = "Damage"
-mechanic_value = "25"
-metadata/_custom_type_script = "uid://dq724vlrm8a05"
+[ext_resource type="Texture2D" uid="uid://d02jlsfaki1t2" path="res://scenes/player/player_weapons/ram_shield/shield_bubble_texture.tres" id="5_y5ytx"]
 
 [sub_resource type="Resource" id="Resource_fw3ta"]
 script = ExtResource("2_ks08d")
 mechanic_name = "Active"
 mechanic_value = "6 seconds"
+col_span = 1
 metadata/_custom_type_script = "uid://dq724vlrm8a05"
 
 [sub_resource type="Resource" id="Resource_ks08d"]
 script = ExtResource("2_ks08d")
 mechanic_name = "Cooldown"
 mechanic_value = "5 seconds"
+col_span = 1
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_kj1qa"]
+script = ExtResource("2_ks08d")
+mechanic_name = "Damage"
+mechanic_value = "25"
 metadata/_custom_type_script = "uid://dq724vlrm8a05"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ks08d"]
@@ -91,21 +94,9 @@ _data = {
 &"time_out_warning": SubResource("Animation_y5ytx")
 }
 
-[sub_resource type="Gradient" id="Gradient_mvvwu"]
-offsets = PackedFloat32Array(0.5012136, 0.85679615, 0.9368932, 1)
-colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_jhca6"]
-gradient = SubResource("Gradient_mvvwu")
-width = 128
-height = 128
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.17948718, 0.16239317)
-
 [node name="RamShield" type="Node2D" unique_id=1339649772]
 script = ExtResource("1_rl1gc")
-weapon_img_path = "res://art/sprites/bullets/shield3.png"
+weapon_img_path = "res://scenes/player/player_weapons/ram_shield/shield_bubble_texture.tres"
 display_name = "Stellar Shockwave"
 description = "Slingshot through enemies while active"
 base_mechanics = Array[ExtResource("2_ks08d")]([SubResource("Resource_kj1qa"), SubResource("Resource_fw3ta"), SubResource("Resource_ks08d")])
@@ -158,7 +149,7 @@ libraries/ = SubResource("AnimationLibrary_y5ytx")
 [node name="ShieldBubble" type="Sprite2D" parent="." unique_id=1167272965]
 self_modulate = Color(1, 0.14999998, 0.9433334, 1)
 scale = Vector2(2, 2)
-texture = SubResource("GradientTexture2D_jhca6")
+texture = ExtResource("5_y5ytx")
 
 [connection signal="timeout" from="UpTimer" to="." method="_on_up_timer_timeout"]
 [connection signal="timeout" from="DownTimer" to="." method="_on_down_timer_timeout"]

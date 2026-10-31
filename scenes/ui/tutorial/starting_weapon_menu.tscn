@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://cit5ai4x7l25n"]
+
+[ext_resource type="Script" uid="uid://b4w7rqmm3fgs1" path="res://scenes/ui/tutorial/starting_weapon_menu.gd" id="1_arbmg"]
+[ext_resource type="Theme" uid="uid://bgbg745kbdvs" path="res://scenes/ui/themes/menu_panel.tres" id="2_arbmg"]
+[ext_resource type="Theme" uid="uid://bin02r2f4xqh2" path="res://scenes/ui/themes/secondary_button.tres" id="3_yoea8"]
+[ext_resource type="PackedScene" uid="uid://dqp5rji23fo3i" path="res://scenes/ui/upgrade_panel.tscn" id="4_0o6ib"]
+[ext_resource type="Texture2D" uid="uid://cax173dos1bxq" path="res://art/sprites/xp/xp_drop.svg" id="4_arbmg"]
+[ext_resource type="Theme" uid="uid://caagyi3mx40y1" path="res://scenes/ui/themes/upgrade_panel.tres" id="5_5ya5x"]
+
+[node name="StartingWeapon" type="CanvasLayer" unique_id=1651193659]
+process_mode = 2
+layer = 2
+script = ExtResource("1_arbmg")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=795516997]
+custom_minimum_size = Vector2(0, 840)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 97.0
+offset_top = 96.0
+offset_right = -95.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_arbmg")
+
+[node name="Panel" type="Panel" parent="PanelContainer" unique_id=1913156313]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1847737050]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1420900529]
+layout_mode = 2
+
+[node name="ContinueButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=994090016]
+show_behind_parent = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("3_yoea8")
+text = "CONTINUE"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1881144327]
+layout_mode = 2
+alignment = 1
+
+[node name="UpgradePanel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1694010216 instance=ExtResource("4_0o6ib")]
+visible = false
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=114968939]
+layout_mode = 2
+theme_override_constants/separation = 36
+alignment = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=2055379696]
+custom_minimum_size = Vector2(1000, 60)
+layout_mode = 2
+theme = ExtResource("5_5ya5x")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "YOUR FIRST WEAPON IS THE [color=orange]STELLAR SHOCKWAVE[/color]"
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1334370210]
+custom_minimum_size = Vector2(1000, 60)
+layout_mode = 2
+theme = ExtResource("5_5ya5x")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "SLINGSHOT THROUGH ENEMIES WHILE ACTIVE"
+horizontal_alignment = 1
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1317977791]
+custom_minimum_size = Vector2(1000, 120)
+layout_mode = 2
+theme = ExtResource("5_5ya5x")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "CHECK [color=#00D6FF]ACTIVE[/color] AND [color=#FF2E4D]COOLDOWN TIMES[/color]. WEAPONS VISUALLY CHANGE BETWEEN STATES"
+horizontal_alignment = 1
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=919253501]
+custom_minimum_size = Vector2(1000, 60)
+layout_mode = 2
+theme = ExtResource("5_5ya5x")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "GATHERING XP PROVIDES MORE WEAPON UPGRADES"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1488684988]
+layout_mode = 2
+theme_override_constants/margin_bottom = 16
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/MarginContainer" unique_id=108062606]
+self_modulate = Color(1, 1, 1, 0.6)
+custom_minimum_size = Vector2(150, 0)
+custom_maximum_size = Vector2(150, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("4_arbmg")
+expand_mode = 4

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://io8xbp007rc5" path="res://scenes/player/player_weapons/Missile_Silo/missile.gd" id="1_gwmsv"]
 [ext_resource type="Texture2D" uid="uid://dccobl6wbufhp" path="res://art/sprites/bullets/Missile_Silo/missle.svg" id="2_gwmsv"]
+[ext_resource type="PackedScene" uid="uid://dmt2mfhs3ih4u" path="res://scenes/vfx/explosion.tscn" id="2_il172"]
 [ext_resource type="Texture2D" uid="uid://dvh4dfg30j2yq" path="res://art/sprites/bullets/Missile_Silo/rocket_flames.svg" id="3_sm706"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_il172"]
@@ -23,8 +24,10 @@ height = 34.0
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_gwmsv")
+explosion = ExtResource("2_il172")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=428360814]
+rotation = 1.5707964
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_il172")
 
@@ -37,7 +40,7 @@ texture = ExtResource("3_sm706")
 shape = SubResource("CapsuleShape2D_vwuxn")
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=223957172]
-target_position = Vector2(3, -960)
+target_position = Vector2(600, 0)
 collision_mask = 2
 
 [connection signal="body_entered" from="." to="." method="_on_missile_entered"]

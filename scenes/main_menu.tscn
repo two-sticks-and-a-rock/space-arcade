@@ -1,125 +1,17 @@
 [gd_scene format=3 uid="uid://qysnsonqoawh"]
 
+[ext_resource type="Script" uid="uid://dawx5fql824ud" path="res://scenes/ui/main_menu.gd" id="1_5dd4i"]
 [ext_resource type="Theme" uid="uid://bgbg745kbdvs" path="res://scenes/ui/themes/menu_panel.tres" id="1_8ln24"]
 [ext_resource type="Theme" uid="uid://drsxtvymgay2s" path="res://scenes/ui/themes/default/default.tres" id="1_ekxnf"]
+[ext_resource type="PackedScene" uid="uid://cojue0ljx8jqq" path="res://scenes/credits.tscn" id="1_jk1qb"]
 [ext_resource type="Script" uid="uid://j72tyyyq6qx7" path="res://scenes/ui/start_button.gd" id="2_bqqt6"]
-[ext_resource type="Shader" uid="uid://cmfedp0pgtqp0" path="res://scenes/space_background/space_background.gdshader" id="2_rtw2f"]
+[ext_resource type="PackedScene" uid="uid://djqpdvmvmj1j0" path="res://scenes/space_background/scrolling_space_background.tscn" id="2_rtw2f"]
 [ext_resource type="FontFile" uid="uid://b2ts7vai6rxct" path="res://art/fonts/ZenDots-Regular.ttf" id="2_wu84c"]
-[ext_resource type="Script" uid="uid://btv24rxgo8mfp" path="res://scenes/main_menu_space.gd" id="3_oa1go"]
 [ext_resource type="Theme" uid="uid://c2a4fd742m3xs" path="res://scenes/ui/themes/primary_button.tres" id="3_wu84c"]
+[ext_resource type="Theme" uid="uid://bin02r2f4xqh2" path="res://scenes/ui/themes/secondary_button.tres" id="7_oa1go"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
 bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="Gradient" id="Gradient_4lbsm"]
-offsets = PackedFloat32Array(0.6138015, 0.99878937)
-colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0.5)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_g3vb6"]
-noise_type = 5
-seed = 1
-frequency = 0.0073
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_oa1go"]
-width = 640
-height = 480
-noise = SubResource("FastNoiseLite_g3vb6")
-color_ramp = SubResource("Gradient_4lbsm")
-seamless = true
-
-[sub_resource type="Gradient" id="Gradient_1hxin"]
-offsets = PackedFloat32Array(0.6138015, 1)
-colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0.5)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_xds67"]
-noise_type = 5
-frequency = 0.0073
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tbmy8"]
-width = 640
-height = 480
-noise = SubResource("FastNoiseLite_xds67")
-color_ramp = SubResource("Gradient_1hxin")
-seamless = true
-
-[sub_resource type="Gradient" id="Gradient_xds67"]
-offsets = PackedFloat32Array(0.6138015, 1)
-colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0.5)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_n8jxq"]
-noise_type = 5
-seed = 3
-frequency = 0.0073
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jk1qb"]
-width = 640
-height = 480
-noise = SubResource("FastNoiseLite_n8jxq")
-color_ramp = SubResource("Gradient_xds67")
-seamless = true
-
-[sub_resource type="Gradient" id="Gradient_yll44"]
-offsets = PackedFloat32Array(0.90193707, 0.9116223)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_a600q"]
-noise_type = 3
-frequency = 0.8
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rtw2f"]
-width = 640
-height = 480
-noise = SubResource("FastNoiseLite_a600q")
-color_ramp = SubResource("Gradient_yll44")
-seamless = true
-
-[sub_resource type="Gradient" id="Gradient_oa1go"]
-offsets = PackedFloat32Array(0.9116223, 0.9213075)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_tbmy8"]
-noise_type = 3
-seed = 1
-frequency = 0.8
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5dd4i"]
-width = 640
-height = 480
-noise = SubResource("FastNoiseLite_tbmy8")
-color_ramp = SubResource("Gradient_oa1go")
-seamless = true
-
-[sub_resource type="Gradient" id="Gradient_lgwnu"]
-offsets = PackedFloat32Array(0.94067794, 0.9527845)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_flqon"]
-noise_type = 3
-seed = 2
-frequency = 0.8
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rcqid"]
-width = 640
-height = 480
-noise = SubResource("FastNoiseLite_flqon")
-color_ramp = SubResource("Gradient_lgwnu")
-seamless = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ln24"]
-shader = ExtResource("2_rtw2f")
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/star_1_scroll_mult = 0.01
-shader_parameter/star_2_scroll_mult = 0.05
-shader_parameter/star_3_scroll_mult = 1.0
-shader_parameter/dust_1_scroll_mult = 0.02
-shader_parameter/dust_2_scroll_mult = 0.025
-shader_parameter/dust_3_scroll_mult = 0.04
-shader_parameter/star_layer_1_noise = SubResource("NoiseTexture2D_rtw2f")
-shader_parameter/star_layer_2_noise = SubResource("NoiseTexture2D_5dd4i")
-shader_parameter/star_layer_3_noise = SubResource("NoiseTexture2D_rcqid")
-shader_parameter/dust_1_noise = SubResource("NoiseTexture2D_oa1go")
-shader_parameter/dust_2_noise = SubResource("NoiseTexture2D_tbmy8")
-shader_parameter/dust_3_noise = SubResource("NoiseTexture2D_jk1qb")
-shader_parameter/dust_1_color = Color(0.10980392, 0.06666667, 0.31764707, 1)
-shader_parameter/dust_2_color = Color(0.22734588, 0.19032764, 0.6832668, 1)
-shader_parameter/dust_3_color = Color(0.41864347, 0.4388024, 0.9223997, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ekxnf"]
 font = ExtResource("2_wu84c")
@@ -127,12 +19,12 @@ font_size = 124
 outline_size = 5
 outline_color = Color(0.654902, 0.48235294, 1, 1)
 
-[sub_resource type="Gradient" id="Gradient_bqqt6"]
+[sub_resource type="Gradient" id="Gradient_tbmy8"]
 offsets = PackedFloat32Array(0, 0.3828125, 0.8859375)
 colors = PackedColorArray(1, 1, 1, 0.76862746, 0.44705883, 0.7176471, 1, 0.74509805, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_kcn5b"]
-gradient = SubResource("Gradient_bqqt6")
+gradient = SubResource("Gradient_tbmy8")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(0.75, 0)
@@ -144,8 +36,9 @@ outline_color = Color(1, 0.8235294, 0.2901961, 1)
 
 [node name="MainMenu" type="CanvasLayer" unique_id=1257820333]
 follow_viewport_enabled = true
+script = ExtResource("1_5dd4i")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1321778678]
+[node name="MainMenu" type="PanelContainer" parent="." unique_id=1321778678]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -154,29 +47,27 @@ grow_vertical = 2
 theme = ExtResource("1_8ln24")
 theme_override_styles/panel = SubResource("StyleBoxFlat_bqqt6")
 
-[node name="ColorRect" type="ColorRect" parent="PanelContainer" unique_id=2127140818]
-material = SubResource("ShaderMaterial_8ln24")
+[node name="ColorRect" parent="MainMenu" unique_id=1412118752 instance=ExtResource("2_rtw2f")]
 layout_mode = 2
-script = ExtResource("3_oa1go")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=412903161]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu" unique_id=412903161]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("1_ekxnf")
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1767740051]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/VBoxContainer" unique_id=1767740051]
 layout_mode = 2
 theme_override_constants/separation = -28
 
-[node name="Stellar" type="Label" parent="PanelContainer/VBoxContainer/VBoxContainer" unique_id=1532057716]
+[node name="Stellar" type="Label" parent="MainMenu/VBoxContainer/VBoxContainer" unique_id=1532057716]
 layout_mode = 2
 text = "STELLAR"
 label_settings = SubResource("LabelSettings_ekxnf")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="PanelContainer/VBoxContainer/VBoxContainer/Stellar" unique_id=1733142]
+[node name="TextureRect" type="TextureRect" parent="MainMenu/VBoxContainer/VBoxContainer/Stellar" unique_id=1733142]
 show_behind_parent = true
 layout_mode = 0
 offset_left = 281.0
@@ -185,20 +76,20 @@ offset_right = 497.0
 offset_bottom = 187.0
 texture = SubResource("GradientTexture2D_kcn5b")
 
-[node name="Sling" type="Label" parent="PanelContainer/VBoxContainer/VBoxContainer" unique_id=1947671948]
+[node name="Sling" type="Label" parent="MainMenu/VBoxContainer/VBoxContainer" unique_id=1947671948]
 layout_mode = 2
 text = "SLINGSHOT"
 label_settings = SubResource("LabelSettings_8ln24")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Center" type="Line2D" parent="PanelContainer/VBoxContainer/VBoxContainer/Sling" unique_id=2074139520]
+[node name="Center" type="Line2D" parent="MainMenu/VBoxContainer/VBoxContainer/Sling" unique_id=2074139520]
 position = Vector2(0, 10)
 points = PackedVector2Array(841, 5, -96, 5)
 width = 5.0
 default_color = Color(1, 0.8235294, 0.2901961, 1)
 
-[node name="StartButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=580291399]
+[node name="StartButton" type="Button" parent="MainMenu/VBoxContainer" unique_id=580291399]
 custom_minimum_size = Vector2(400, 84)
 custom_maximum_size = Vector2(400, -1)
 layout_mode = 2
@@ -207,7 +98,7 @@ theme = ExtResource("3_wu84c")
 text = "START"
 script = ExtResource("2_bqqt6")
 
-[node name="ScoreboardButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=210280593]
+[node name="ScoreboardButton" type="Button" parent="MainMenu/VBoxContainer" unique_id=210280593]
 visible = false
 custom_minimum_size = Vector2(400, 84)
 custom_maximum_size = Vector2(400, -1)
@@ -217,17 +108,15 @@ theme = ExtResource("1_ekxnf")
 disabled = true
 text = "Scoreboard"
 
-[node name="CreditsButton" type="Button" parent="PanelContainer/VBoxContainer" unique_id=903967324]
-visible = false
+[node name="CreditsButton" type="Button" parent="MainMenu/VBoxContainer" unique_id=903967324]
 custom_minimum_size = Vector2(400, 84)
 custom_maximum_size = Vector2(400, -1)
 layout_mode = 2
 size_flags_horizontal = 4
-theme = ExtResource("1_ekxnf")
-disabled = true
-text = "Credits"
+theme = ExtResource("7_oa1go")
+text = "CREDITS"
 
-[node name="HSplitContainer" type="HSplitContainer" parent="PanelContainer" unique_id=139623170]
+[node name="HSplitContainer" type="HSplitContainer" parent="MainMenu" unique_id=139623170]
 visible = false
 layout_mode = 2
 size_flags_vertical = 8
@@ -235,7 +124,7 @@ offset_transform_enabled = true
 offset_transform_position = Vector2(0, -72)
 offset_transform_visual_only = false
 
-[node name="SettingsButton" type="Button" parent="PanelContainer/HSplitContainer" unique_id=80374222]
+[node name="SettingsButton" type="Button" parent="MainMenu/HSplitContainer" unique_id=80374222]
 custom_minimum_size = Vector2(400, 84)
 custom_maximum_size = Vector2(400, -1)
 layout_mode = 2
@@ -248,7 +137,7 @@ disabled = true
 text = "Settings
 "
 
-[node name="AccessibilityButton" type="Button" parent="PanelContainer/HSplitContainer" unique_id=2092247245]
+[node name="AccessibilityButton" type="Button" parent="MainMenu/HSplitContainer" unique_id=2092247245]
 custom_minimum_size = Vector2(400, 84)
 custom_maximum_size = Vector2(400, -1)
 layout_mode = 2
@@ -260,4 +149,8 @@ theme = ExtResource("1_ekxnf")
 disabled = true
 text = "Accessibility"
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/StartButton" to="PanelContainer/VBoxContainer/StartButton" method="_on_start_pressed"]
+[node name="Credits" parent="." unique_id=619831990 instance=ExtResource("1_jk1qb")]
+visible = false
+
+[connection signal="pressed" from="MainMenu/VBoxContainer/StartButton" to="MainMenu/VBoxContainer/StartButton" method="_on_start_pressed"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]

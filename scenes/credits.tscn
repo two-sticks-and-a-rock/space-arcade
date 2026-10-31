@@ -1,0 +1,198 @@
+[gd_scene format=3 uid="uid://cojue0ljx8jqq"]
+
+[ext_resource type="FontFile" uid="uid://b2ts7vai6rxct" path="res://art/fonts/ZenDots-Regular.ttf" id="2_2fbfq"]
+[ext_resource type="Theme" uid="uid://c2a4fd742m3xs" path="res://scenes/ui/themes/primary_button.tres" id="3_2fbfq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ckv8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kcn5b"]
+font = ExtResource("2_2fbfq")
+font_size = 72
+
+[sub_resource type="Gradient" id="Gradient_bqqt6"]
+offsets = PackedFloat32Array(0, 0.3828125, 0.8859375)
+colors = PackedColorArray(1, 1, 1, 0.76862746, 0.44705883, 0.7176471, 1, 0.74509805, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2fbfq"]
+gradient = SubResource("Gradient_bqqt6")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.75, 0)
+
+[node name="Credits" type="PanelContainer" unique_id=798604847]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2ckv8")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=659175606]
+layout_mode = 2
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_bottom = 36
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=2142712280]
+layout_mode = 2
+theme_override_constants/separation = 36
+alignment = 1
+
+[node name="Credits" type="Label" parent="MarginContainer/VBoxContainer" unique_id=569339972]
+layout_mode = 2
+text = "CREDITS"
+label_settings = SubResource("LabelSettings_kcn5b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Credits" unique_id=396102469]
+show_behind_parent = true
+layout_mode = 0
+offset_left = 915.0
+offset_top = -18.0
+offset_right = 1037.0
+offset_bottom = 104.0
+texture = SubResource("GradientTexture2D_2fbfq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=1717075601]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=795920588]
+layout_mode = 2
+theme_override_constants/separation = -16
+
+[node name="Producer" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1733302742]
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Producer"
+horizontal_alignment = 2
+
+[node name="CombatSystemDesign" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=654807509]
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Combat System Design"
+horizontal_alignment = 2
+
+[node name="UIUX" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=365147804]
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "UI/UX"
+horizontal_alignment = 2
+
+[node name="Narrative" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=285699531]
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Narrative"
+horizontal_alignment = 2
+
+[node name="Music" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=690436444]
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Music & SFX"
+horizontal_alignment = 2
+
+[node name="Art" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=734086377]
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Art & VFX"
+horizontal_alignment = 2
+
+[node name="Programming" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1865200890]
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Gameplay Programming"
+horizontal_alignment = 2
+
+[node name="Playtesting" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=829413163]
+custom_minimum_size = Vector2(800, 150)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Playtesting"
+horizontal_alignment = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer" unique_id=1689948985]
+layout_mode = 2
+theme_override_constants/separation = -16
+
+[node name="Producer" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=218943391]
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[color=FFD24A]Noatak Post[/color]"
+
+[node name="CombatSystemDesign" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=439632623]
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[color=FFD24A]DJ Sawyckyj-Moreland[/color]"
+
+[node name="UIUX" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1746672293]
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[color=FFD24A]Desirae Grandin[/color]"
+
+[node name="Narrative" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=365100435]
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[color=FFD24A]Aven Fay, Desirae Grandin[/color]"
+
+[node name="Music" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=1480990816]
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[color=FFD24A]Aven Fay[/color]"
+
+[node name="Art" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=542563023]
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[color=FFD24A]Lou Boudreau[/color]"
+
+[node name="Programming" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=480779774]
+custom_minimum_size = Vector2(800, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[color=FFD24A]Toya Rosuello[/color]"
+
+[node name="Playtesting" type="RichTextLabel" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=483463264]
+custom_minimum_size = Vector2(800, 150)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[color=FFD24A]Desirae Grandin
+DJ Sawyckyj-Moreland
+Lou Boudreau[/color]"
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=700439815]
+custom_minimum_size = Vector2(400, 84)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_2fbfq")
+text = "MAIN MENU"

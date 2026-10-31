@@ -1,5 +1,6 @@
 extends Area2D
 
+@onready var enemy : CharacterBody2D = get_parent()
 @onready var stun_timer : Timer = $StunTimer as Timer
 var dmg = 15
 
@@ -17,5 +18,6 @@ func _on_ram_entered(body: Node2D):
 		$CollisionShape2D.set_deferred("disabled", true)
 		stun_timer.start()
 		body.take_damage(dmg)
+		enemy.shove_enemy(-2*enemy.velocity)
 
 		

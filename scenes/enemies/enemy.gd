@@ -107,6 +107,15 @@ func set_enemy_class() -> void:
 		speed_mod = 1.2
 		scale = Vector2(0.8, 0.8)
 
+func mark_enemy():
+	is_marked = true
+	$Target.visible = true
+	
+
+func unmark_enemy():
+	is_marked = false
+	$Target.visible = false
+
 func _physics_process(_delta):
 	if !is_frozen:
 		look_at(player.position)

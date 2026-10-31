@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bg3eovnw3otts" path="res://art/sprites/enemy/enemy_damaged/space_police_128 damage_03.svg" id="11_f6y8w"]
 [ext_resource type="Texture2D" uid="uid://dtkdxxuu8y563" path="res://art/sprites/enemy/enemy_damaged/space_police_128 damage_blue_03.svg" id="12_y2gxb"]
 [ext_resource type="Texture2D" uid="uid://c53gnyk1gt32o" path="res://art/sprites/enemy/enemy_damaged/space_police_128 damage_red_03.svg" id="13_3xxyr"]
+[ext_resource type="PackedScene" uid="uid://2hv84kuvt3gt" path="res://scenes/player/player_weapons/Missile_Silo/missile_target.tscn" id="18_x3klb"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kcn5b"]
 animations = [{
@@ -115,5 +116,16 @@ lifetime = 0.8
 one_shot = true
 explosiveness = 1.0
 process_material = ExtResource("6_nb6gf")
+
+[node name="Target" parent="." unique_id=1788312183 instance=ExtResource("18_x3klb")]
+visible = false
+modulate = Color(1, 1, 1, 0.7372549)
+top_level = true
+scale = Vector2(0.25, 0.25)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="." unique_id=211688688]
+remote_path = NodePath("../Target")
+update_rotation = false
+update_scale = false
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]

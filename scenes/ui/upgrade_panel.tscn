@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://caagyi3mx40y1" path="res://scenes/ui/themes/upgrade_panel.tres" id="1_cdmev"]
 [ext_resource type="Script" uid="uid://btlxekjq0am2a" path="res://scenes/ui/upgrade_panel.gd" id="1_r60ue"]
 [ext_resource type="FontFile" uid="uid://dmw4grl0633hq" path="res://art/fonts/Saira-SemiBold.ttf" id="3_naqhr"]
+[ext_resource type="PackedScene" uid="uid://cnncu12523rpp" path="res://scenes/ui/upgrade_description.tscn" id="4_07vy7"]
 [ext_resource type="Theme" uid="uid://c18hn2sbqqhby" path="res://scenes/ui/themes/tertiary_button.tres" id="4_naqhr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_naqhr"]
@@ -22,14 +23,14 @@ font_size = 24
 font_color = Color(0.9019608, 0.91764706, 0.9843137, 1)
 
 [node name="UpgradePanel" type="MarginContainer" unique_id=1694010216]
-custom_minimum_size = Vector2(500, 720)
-custom_maximum_size = Vector2(-1, 720)
+custom_minimum_size = Vector2(500, 750)
+custom_maximum_size = Vector2(550, 750)
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -4.0
-offset_right = 8.0
-offset_bottom = 4.0
+offset_top = -360.0
+offset_right = 592.0
+offset_bottom = 360.0
 grow_vertical = 2
 theme = ExtResource("1_cdmev")
 script = ExtResource("1_r60ue")
@@ -55,10 +56,13 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_naqhr")
 
 [node name="VSplitContainer" type="VSplitContainer" parent="." unique_id=227808025]
 layout_mode = 2
+split_offsets = PackedInt32Array(243)
+split_offset = 243
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VSplitContainer" unique_id=817815659]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_constants/separation = 12
 
 [node name="PanelContainer" type="PanelContainer" parent="VSplitContainer/VBoxContainer" unique_id=1403588721]
 custom_minimum_size = Vector2(360, 0)
@@ -97,11 +101,19 @@ autowrap_mode = 2
 
 [node name="Img" type="TextureRect" parent="VSplitContainer/VBoxContainer" unique_id=1720966437]
 self_modulate = Color(0, 0, 0, 1)
-custom_minimum_size = Vector2(400, 125)
+custom_minimum_size = Vector2(500, 125)
 custom_maximum_size = Vector2(-1, 125)
 layout_mode = 2
 expand_mode = 1
 stretch_mode = 5
+
+[node name="UpgradeMechanicsText" parent="VSplitContainer/VBoxContainer" unique_id=616719383 instance=ExtResource("4_07vy7")]
+custom_maximum_size = Vector2(380, -1)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = ""
+fit_content = true
 
 [node name="MechanicsContainer" type="MarginContainer" parent="VSplitContainer/VBoxContainer" unique_id=131069695]
 layout_mode = 2
@@ -110,7 +122,7 @@ theme_override_constants/margin_right = 48
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VSplitContainer/VBoxContainer/MechanicsContainer" unique_id=193242907]
 layout_mode = 2
-theme_override_constants/separation = -4
+theme_override_constants/separation = 18
 
 [node name="PanelContainer2" type="PanelContainer" parent="VSplitContainer/VBoxContainer" unique_id=910805974]
 layout_mode = 2
