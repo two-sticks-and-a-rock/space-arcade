@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bf32p1j3wenxs"
+path="res://.godot/imported/hit_marker02.wav-2f4edb6cc139a7ec1211e6b10809dbaa.sample"
+
+[deps]
+
+source_file="res://audio/SFX/Gameplay SFX/hit_marker02.wav"
+dest_files=["res://.godot/imported/hit_marker02.wav-2f4edb6cc139a7ec1211e6b10809dbaa.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
