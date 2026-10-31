@@ -15,6 +15,10 @@ run/main_scene="uid://qysnsonqoawh"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://ceu8k8p7q2wgg"
+
 [autoload]
 
 Mover="*uid://dqp8wbinl3xpu"
@@ -26,6 +30,7 @@ Sfx="*uid://xu7s4ea4cqhs"
 Utils="*uid://ba8784ul7gm82"
 TempSaveData="*uid://dxs3kv2vcqt53"
 TinyShaderOptimizer="*uid://iuuyvsjys37a"
+Music="*uid://bqncxnribw6ry"
 
 [display]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://be3wnfcbyftqg"
-path="res://.godot/imported/thruster_small.wav-487f52d373e9ea287023ab9215054c3e.sample"
+path="res://.godot/imported/thruster_small.wav-851e9ce0b495d6bb078659c00fd703f4.sample"
 
 [deps]
 
-source_file="res://audio/SFX/thruster_small.wav"
-dest_files=["res://.godot/imported/thruster_small.wav-487f52d373e9ea287023ab9215054c3e.sample"]
+source_file="res://audio/SFX/Gameplay SFX/thruster_small.wav"
+dest_files=["res://.godot/imported/thruster_small.wav-851e9ce0b495d6bb078659c00fd703f4.sample"]
 
 [params]
 

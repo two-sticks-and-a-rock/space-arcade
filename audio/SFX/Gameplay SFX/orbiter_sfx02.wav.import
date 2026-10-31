@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b7k77hjjj1isf"
-path="res://.godot/imported/orbiter_sfx02.wav-7dcc4e27f93a84f5b313ce66b830ac0f.sample"
+path="res://.godot/imported/orbiter_sfx02.wav-b316409de0e9404e479f3d7352d862af.sample"
 
 [deps]
 
-source_file="res://audio/SFX/orbiter_sfx02.wav"
-dest_files=["res://.godot/imported/orbiter_sfx02.wav-7dcc4e27f93a84f5b313ce66b830ac0f.sample"]
+source_file="res://audio/SFX/Gameplay SFX/orbiter_sfx02.wav"
+dest_files=["res://.godot/imported/orbiter_sfx02.wav-b316409de0e9404e479f3d7352d862af.sample"]
 
 [params]
 

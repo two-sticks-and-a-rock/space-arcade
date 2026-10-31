@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://cge4mbet6j45j"
-path="res://.godot/imported/XP_pickup.wav-fb9299f0ad969dfeeff12631dc9727b7.sample"
+uid="uid://cy3ktawb7uvvb"
+path="res://.godot/imported/powerUp.wav-e106023dc9fc3221922ae0c7ea3d8319.sample"
 
 [deps]
 
-source_file="res://audio/SFX/XP_pickup.wav"
-dest_files=["res://.godot/imported/XP_pickup.wav-fb9299f0ad969dfeeff12631dc9727b7.sample"]
+source_file="res://audio/SFX/Gameplay SFX/powerUp.wav"
+dest_files=["res://.godot/imported/powerUp.wav-e106023dc9fc3221922ae0c7ea3d8319.sample"]
 
 [params]
 
