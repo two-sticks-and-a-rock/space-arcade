@@ -9,6 +9,9 @@ var freeze_time : float
 func _on_nova_entered(body: Node2D): #_on_nova_entered #_on_orbiter_entered
 	if body.is_in_group("enemy") && body.has_method("freeze"):
 		body.freeze(freeze_time)
+<<<<<<< HEAD
+		Sfx.play("frozen_enemy")
+=======
 
 func create_icon():
 	var fuzzy_circle_mask = gradient.texture.get_image()
@@ -34,4 +37,6 @@ func create_icon():
 func _ready():
 	# commented out. Only necessary for generating preview texture
 	# create_icon()
+	Sfx.play("frozen_enemy")
 	pass
+>>>>>>> aed6a7019e758bce360c6f42962816ee5a0b3e62

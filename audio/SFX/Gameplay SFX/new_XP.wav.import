@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b6oppht12h7lt"
-path="res://.godot/imported/new_XP.wav-d85ed610f413ed9b849b307de1d57cc8.sample"
+path="res://.godot/imported/new_XP.wav-93e44d7a382e7c8a6a67ce7645254d18.sample"
 
 [deps]
 
-source_file="res://audio/SFX/new_XP.wav"
-dest_files=["res://.godot/imported/new_XP.wav-d85ed610f413ed9b849b307de1d57cc8.sample"]
+source_file="res://audio/SFX/Gameplay SFX/new_XP.wav"
+dest_files=["res://.godot/imported/new_XP.wav-93e44d7a382e7c8a6a67ce7645254d18.sample"]
 
 [params]
 
