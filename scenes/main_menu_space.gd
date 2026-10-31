@@ -1,7 +1,7 @@
 extends ColorRect
 
-var scroll_x: float = 0.0
-var scroll_y: float = 0.0
+@export var scroll_x: float = 0.0
+@export  var scroll_y: float = 0.0
 
 @export var x_speed :float = 250
 @export var y_speed :float = 250
