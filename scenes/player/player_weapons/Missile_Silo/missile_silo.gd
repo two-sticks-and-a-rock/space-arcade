@@ -10,13 +10,19 @@ func _ready() -> void:
 	silo_sprite.sprite_frames.set_animation_speed("default", 3/down_timer.wait_time)
 
 func fire_missiles() -> void:
+	Sfx.play("missile_launcher")
 	for i in (num_bullets):
 		var missile = bullet_scene.instantiate()
 		missile.rotate(randf_range(-PI / 4, PI / 4))
 		missile.speed = Vector2(bullet_speed, 0)
 		add_child(missile)
+		
 
 func _physics_process(_delta):
 	if !silo_sprite.is_playing():
 		fire_missiles.call_deferred()
 		silo_sprite.play()
+
+func play_reload_sound() -> void:
+	var step = down_timer.wait_time / 3.0
+	Sfx.play_after("missile_reload", step)

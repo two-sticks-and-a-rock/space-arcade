@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dpu0nwh8nldel"
-path="res://.godot/imported/Enemy_Freeze.wav-dce55d1177254022008ffa262ad2fe1e.sample"
+path="res://.godot/imported/Enemy_Freeze.wav-04b6be0258fd49729dbc34af599e6da8.sample"
 
 [deps]
 
-source_file="res://audio/SFX/Enemy_Freeze.wav"
-dest_files=["res://.godot/imported/Enemy_Freeze.wav-dce55d1177254022008ffa262ad2fe1e.sample"]
+source_file="res://audio/SFX/Gameplay SFX/Enemy_Freeze.wav"
+dest_files=["res://.godot/imported/Enemy_Freeze.wav-04b6be0258fd49729dbc34af599e6da8.sample"]
 
 [params]
 
