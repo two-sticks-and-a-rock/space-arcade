@@ -14,7 +14,6 @@ const SOUNDS := {
 	"player_damaged": preload("res://audio/SFX/Gameplay SFX/player_dmg01.wav"),
 	"frozen_enemy": preload("res://audio/SFX/Gameplay SFX/Enemy_Freeze.wav"),
 	"missile_launcher": preload("res://audio/SFX/Gameplay SFX/missile_launcher.wav"),
-	"missile_reload": preload("res://audio/SFX/Gameplay SFX/missile_reload.wav"),
 	"UI_positive": preload("res://audio/SFX/UI SFX/UI_positive.wav"),
 	"UI_negative": preload("res://audio/SFX/UI SFX/UI_negative.wav")
 	
@@ -23,7 +22,7 @@ const SOUNDS := {
 const VOLUMES := {
 	"enemy_death": -5.5,
 	"thruster_small": -9.5,
-	"XP_pickup": -20.5,
+	"XP_pickup": -22.25,
 	"orbiter_activate": 1.25,
 	"shield_up": -7.0,
 	"shield_down": -7.0,
@@ -32,7 +31,6 @@ const VOLUMES := {
 	"player_damaged": -6.5,
 	"frozen_enemy": -18.0,
 	"missile_launcher": -3.0,
-	"missile_reload": -2.0,
 	"UI_positive": -5.5,
 	"UI_negative": -5.5,
 }
