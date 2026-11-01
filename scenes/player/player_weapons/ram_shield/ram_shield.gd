@@ -12,7 +12,13 @@ STELLAR SHOCKWAVE
 
 
 func _reinstantiate_weapon():
-	up_timer.start()
+	down_timer.start()
+	ram_cap.sprite.self_modulate.a = 0.5
+	player.immune_to_damage = false
+	power_up.max_value = down_timer.wait_time
+	ram_cap.collider.disabled = true
+	
+	animationPlayer.play("fade_out")
 
 func _ready():
 	super()
