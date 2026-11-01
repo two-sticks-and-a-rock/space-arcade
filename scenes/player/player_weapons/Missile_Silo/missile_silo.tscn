@@ -13,7 +13,7 @@
 [sub_resource type="Resource" id="Resource_6d4r7"]
 script = ExtResource("3_03w6n")
 mechanic_name = "Damage"
-mechanic_value = "100"
+mechanic_value = "75"
 metadata/_custom_type_script = "uid://dq724vlrm8a05"
 
 [sub_resource type="Resource" id="Resource_mjay7"]
@@ -25,7 +25,7 @@ metadata/_custom_type_script = "uid://dq724vlrm8a05"
 [sub_resource type="Resource" id="Resource_246l1"]
 script = ExtResource("3_03w6n")
 mechanic_name = "Cooldown"
-mechanic_value = "3 seconds"
+mechanic_value = "9 seconds"
 col_span = 1
 metadata/_custom_type_script = "uid://dq724vlrm8a05"
 
@@ -121,7 +121,7 @@ metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
 [sub_resource type="Resource" id="Resource_p07je"]
 script = ExtResource("3_03w6n")
 mechanic_name = "Cooldown"
-mechanic_value = "10 seconds -> 8 seconds"
+mechanic_value = "6 seconds -> 3 seconds"
 metadata/_custom_type_script = "uid://dq724vlrm8a05"
 
 [sub_resource type="Resource" id="Resource_mh1mp"]
