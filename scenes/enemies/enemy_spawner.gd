@@ -12,7 +12,7 @@ extends Node
 @onready var spawn_path : PathFollow2D = $EnemyPath/EnemySpawnLocation
 
 var started_spawning_bigger_elites = false
-var start_spawning_faster_elites = false
+var started_spawning_faster_elites = false
 
 enum EnemyClass {
 	BASE,
@@ -52,17 +52,17 @@ func _physics_process(delta):
 		enemy_frequency = enemy_frequency * 0.9
 		spawn_timer.wait_time = enemy_frequency
 
-	if (total_run_time >= 30 && !started_spawning_bigger_elites):
-		started_spawning_bigger_elites = true
-		
-		# 75% chance spawn base, 25% chance spawn elite big
-		enemy_spawn = [EnemyClass.BASE, EnemyClass.BASE, EnemyClass.BASE, EnemyClass.ELITE_BIG] 
-	
-	if (total_run_time >= 60 && !start_spawning_faster_elites):
-		start_spawning_faster_elites = true
+	if (total_run_time >= 30 && !started_spawning_faster_elites):
+		started_spawning_faster_elites = true
 
-		# 50% chance spawn base, 25% chance spawn elite big, 25% chance spawn elite fast
-		enemy_spawn = [EnemyClass.BASE, EnemyClass.BASE, EnemyClass.ELITE_BIG, EnemyClass.ELITE_FAST] 
+		# 75% chance spawn base, 25% chance spawn elite fast
+		enemy_spawn = [EnemyClass.BASE, EnemyClass.BASE, EnemyClass.BASE, EnemyClass.ELITE_FAST] 
+	
+	if (total_run_time >= 60 && !started_spawning_bigger_elites):
+		started_spawning_bigger_elites = true
+
+		# 50% chance spawn base, 25% chance spawn elite fast, 25% chance spawn elite big
+		enemy_spawn = [EnemyClass.BASE, EnemyClass.BASE, EnemyClass.ELITE_FAST, EnemyClass.ELITE_BIG] 
 
 	var spawned_enemies = get_children().filter(func(child):
 		return child is CharacterBody2D
