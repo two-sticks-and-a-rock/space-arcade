@@ -2,7 +2,6 @@ extends CanvasLayer
 
 @onready var upgrade_panel_scene : PackedScene = load("res://scenes/ui/upgrade_panel.tscn")
 @onready var h_container : HBoxContainer = $PanelContainer/MarginContainer/VBoxContainer/HBoxContainer
-var hit_max_level = false
 
 @onready var misc_upgrades_node : Node2D = $ConsumableUpgrades
 
@@ -118,8 +117,6 @@ func populate_upgrade_panels():
 				choice.applied = true
 				weapon._reinstantiate_weapon()
 
-				if (processed.all_possible_upgrades_length <= 1 && new_weapons.length + new_weapons.size() <= 1):
-					hit_max_level = true
 				EventBus.finish_level_up.emit()
 				_on_player_finish_level_up()
 		elif choice is PlayerWeapon:
@@ -150,8 +147,6 @@ func clear_upgrade_panels():
 			child.queue_free()
 
 func _on_player_level_up():
-	if (hit_max_level):
-		return
 	get_tree().paused = true
 	visible = true
 	
