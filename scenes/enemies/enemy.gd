@@ -12,8 +12,6 @@ var speed_mod : float = 1.0
 var max_hp = 100
 var curr_hp = max_hp
 
-# var does_drop_xp = randi_range(0, 100)
-
 @onready var freeze_timer : Timer = Timer.new()
 var is_frozen: bool = false
 var is_marked: bool = false
@@ -64,8 +62,6 @@ func take_damage(dmg: int):
 		Sfx.play("enemy_death")
 		queue_free()
 		
-		
-
 func freeze(time: int):
 	if not is_frozen:
 		animated_sprite_2d.material.set_shader_parameter("status_intensity", 1.0)
@@ -76,6 +72,9 @@ func freeze(time: int):
 		speed = Vector2(randf_range(250.0, 300.0), 0.0)
 		is_frozen = false
 		animated_sprite_2d.material.set_shader_parameter("status_intensity", 0.0)
+
+func spawn_enemy(enemy_class = 0):	
+	set_enemy_class(enemy_class)
 
 func _ready():
 	freeze_timer.one_shot = true
@@ -89,18 +88,15 @@ func _ready():
 	var mob_types = Array($AnimatedSprite2D.sprite_frames.get_animation_names())
 	$AnimatedSprite2D.animation = mob_types[0]
 	$AnimatedSprite2D.play()
-	
-	set_enemy_class()
 
-func set_enemy_class() -> void:
-	var enemy_class: int = randi_range(0, 4)
-	if enemy_class == 3:
+func set_enemy_class(enemy_class) -> void:
+	if enemy_class == 1: # ELITE_BIG
 		$AnimatedSprite2D.frame = 1
 		max_hp = 150
 		curr_hp = max_hp
 		speed_mod = 0.8
 		scale = Vector2(1.2, 1.2)
-	if enemy_class == 4:
+	if enemy_class == 2: # ELITE_FAST
 		$AnimatedSprite2D.frame = 2
 		max_hp = 50
 		curr_hp = max_hp
