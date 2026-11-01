@@ -21,6 +21,21 @@ var magnet_radius : int = 400
 
 var immune_to_damage : bool = false
 
+func add_new_weapon(weapon: PlayerWeapon):
+	add_child(weapon)
+
+	if (weapon.sprite != null):
+		print("HAS WEAPON SPRITE: " + str(weapon.sprite))
+		print(sprite.get_path_to(weapon.sprite))
+		var remote_transform = RemoteTransform2D.new()
+		remote_transform.rotate(PI/2) # most of our sprites face up so they needs to be offset
+		remote_transform.update_rotation = true
+		remote_transform.update_position = false
+		remote_transform.update_scale = false
+
+		sprite.add_child(remote_transform)
+		remote_transform.remote_path = remote_transform.get_path_to(weapon.sprite)
+
 func _ready():
 	EventBus.finish_level_up.connect(handle_finish_level_up)
 	hp_bar.max_value = max_hp

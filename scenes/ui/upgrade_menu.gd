@@ -126,7 +126,7 @@ func populate_upgrade_panels():
 			upgrade_panel.description = choice.description
 			upgrade_panel.mechanics = choice.base_mechanics
 			upgrade_panel.on_panel_pressed = func():
-				player.add_child(choice)
+				player.add_new_weapon(choice)
 				EventBus.finish_level_up.emit()
 				_on_player_finish_level_up()
 		elif choice is ConsumableUpgrade:

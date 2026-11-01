@@ -26,8 +26,7 @@ Only add an attribute here if multiple weapons will need it
 @export var num_bullets: int
 """
  Note: Some weapons only ever have one bullet. It's fine to just not use num_bullets
- Feel free to just instantiate the bullet directly like we do in "res://scenes/player/player_weapons/frost_nova/frost_nova.gd"
- for the Frost Nova/Cryo Pulse weapon
+ Feel free to just instantiate the bullet directly
 """
 @export var bullet_speed: float
 @export var bullet_size: float
@@ -37,6 +36,7 @@ Only add an attribute here if multiple weapons will need it
 
 @export var upgrades : Array[WeaponUpgrade] = []
 @export var possible_upgrade_sets : Array[WeaponUpgradeSet] = []
+@export var sprite: Node2D 
 
 func _ready():
 	_reinstantiate_weapon()

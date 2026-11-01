@@ -184,7 +184,7 @@ animations = [{
 "speed": 0.3
 }]
 
-[node name="Missile_Silo" type="Node2D" unique_id=356839213]
+[node name="Missile_Silo" type="Node2D" unique_id=356839213 node_paths=PackedStringArray("sprite")]
 script = ExtResource("1_e740r")
 bullet_scene = ExtResource("2_wy3lk")
 weapon_img_path = "res://art/sprites/bullets/Missile_Silo/missle.svg"
@@ -196,6 +196,7 @@ num_bullets = 3
 bullet_speed = 400.0
 bullet_size = 1.0
 possible_upgrade_sets = Array[ExtResource("4_vnd8m")]([SubResource("Resource_apa5x"), SubResource("Resource_tre67"), SubResource("Resource_7ma44"), SubResource("Resource_urqw0"), SubResource("Resource_2u2rv"), SubResource("Resource_gnxix")])
+sprite = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=825337014]
 sprite_frames = SubResource("SpriteFrames_wy3lk")
