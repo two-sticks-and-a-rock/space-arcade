@@ -18,7 +18,7 @@ func _ready():
 	super()
 	power_up.value = down_timer.wait_time
 	power_up.max_value = down_timer.wait_time
-	player.immune_to_damage = true
+	player.set_damage_immunity(true)
 
 func _on_down_timer_timeout():
 	up_timer.start()
@@ -26,7 +26,7 @@ func _on_down_timer_timeout():
 	Sfx.play("shield_up")
 
 	ram_cap.sprite.self_modulate.a = 1
-	player.immune_to_damage = true
+	player.set_damage_immunity(true)
 	ram_cap.collider.disabled = false
 	
 	animationPlayer.play_backwards("fade_out")
@@ -38,7 +38,7 @@ func _on_up_timer_timeout():
 	Sfx.play("shield_down")
 
 	ram_cap.sprite.self_modulate.a = 0.5
-	player.immune_to_damage = false
+	player.set_damage_immunity(false)
 	power_up.max_value = down_timer.wait_time
 	ram_cap.collider.disabled = true
 	

@@ -25,6 +25,17 @@ radius = 64.0
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvxji"]
 bg_color = Color(1, 0.8235294, 0.2901961, 1)
 
+[sub_resource type="Gradient" id="Gradient_myrg7"]
+offsets = PackedFloat32Array(0.8635015, 0.9347181)
+colors = PackedColorArray(1, 0.14901961, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kcn5b"]
+gradient = SubResource("Gradient_myrg7")
+width = 150
+height = 10
+fill = 2
+fill_from = Vector2(0.5, 0.5)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5gtgg"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 12
@@ -95,6 +106,22 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_lvxji")
 step = 1.0
 value = 100.0
 show_percentage = false
+
+[node name="ImmunityIndicator" type="TextureRect" parent="hp" unique_id=1813728472]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -17.5
+offset_right = 13.0
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_kcn5b")
 
 [node name="Hud" type="CanvasLayer" parent="." unique_id=852667993]
 script = ExtResource("7_h17s1")

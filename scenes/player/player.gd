@@ -58,6 +58,10 @@ func handle_finish_level_up():
 func set_shader_intensity(newValue: float): 
 	sprite_2d.material.set_shader_parameter("blink_intensity", newValue)
 
+func set_damage_immunity(immune: bool):
+	immune_to_damage = immune
+	$hp/ImmunityIndicator.visible = immune
+
 func take_damage(dmg: int):
 	if immune_to_damage:
 		return
