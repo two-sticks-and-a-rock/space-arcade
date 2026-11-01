@@ -1,5 +1,7 @@
 extends Node
 
+@export var run_time : float = 0
+
 @export var max_enemies : int = 300
 
 @export var enemy_scene : PackedScene
@@ -27,7 +29,13 @@ func _on_enemy_timer_timeout() -> void:
 	enemy.position = spawn_path.position
 	add_child(enemy)
 
-func _physics_process(_delta):
+func _physics_process(delta):
+	run_time += delta
+	if run_time >= 30:
+		run_time = 0
+		enemy_frequency = enemy_frequency * 0.9
+		spawn_timer.wait_time = enemy_frequency
+
 	var spawned_enemies = get_children().filter(func(child):
 		return child is CharacterBody2D
 	).size()
