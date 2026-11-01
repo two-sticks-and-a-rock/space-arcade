@@ -4,6 +4,11 @@
 [ext_resource type="Texture2D" uid="uid://cdo1hmi1povfe" path="res://art/sprites/bullets/Missile_Silo/MissileSiloDone-Sheet-Sheet.png" id="2_minx4"]
 [ext_resource type="PackedScene" uid="uid://4gto1ijk7tqs" path="res://scenes/player/player_weapons/Missile_Silo/missile.tscn" id="2_wy3lk"]
 [ext_resource type="Script" uid="uid://dq724vlrm8a05" path="res://scenes/ui/mechanics_text.gd" id="3_03w6n"]
+[ext_resource type="Script" uid="uid://cv1cwxelnr7jm" path="res://scenes/player/player_weapons/weapon_upgrades/weapon_upgrade_set.gd" id="4_vnd8m"]
+[ext_resource type="Script" uid="uid://dh8gni2x2uubt" path="res://scenes/player/player_weapons/weapon_upgrades/weapon_upgrade.gd" id="5_apa5x"]
+[ext_resource type="Script" uid="uid://cfgllll1jbmru" path="res://scenes/player/player_weapons/weapon_upgrades/damage_upgrade.gd" id="6_ns3u3"]
+[ext_resource type="Script" uid="uid://dtutoa66ihr48" path="res://scenes/player/player_weapons/weapon_upgrades/num_bullets_upgrade.gd" id="7_up2lq"]
+[ext_resource type="Script" uid="uid://jd2xcnw1xep3" path="res://scenes/player/player_weapons/weapon_upgrades/downtime_upgrade.gd" id="8_tre67"]
 
 [sub_resource type="Resource" id="Resource_6d4r7"]
 script = ExtResource("3_03w6n")
@@ -23,6 +28,125 @@ mechanic_name = "Cooldown"
 mechanic_value = "3 seconds"
 col_span = 1
 metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_up2lq"]
+script = ExtResource("3_03w6n")
+mechanic_name = "Damage"
+mechanic_value = "75 -> 100"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_ns3u3"]
+script = ExtResource("6_ns3u3")
+mechanics_text = SubResource("Resource_up2lq")
+metadata/_custom_type_script = "uid://cfgllll1jbmru"
+
+[sub_resource type="Resource" id="Resource_apa5x"]
+resource_name = "More Damage"
+script = ExtResource("4_vnd8m")
+upgrades = Array[ExtResource("5_apa5x")]([SubResource("Resource_ns3u3")])
+metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
+
+[sub_resource type="Resource" id="Resource_c20tc"]
+script = ExtResource("3_03w6n")
+mechanic_name = "Missiles"
+mechanic_value = "3 -> 5"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_kyk20"]
+script = ExtResource("7_up2lq")
+num_bullets_increase = 2
+mechanics_text = SubResource("Resource_c20tc")
+metadata/_custom_type_script = "uid://dtutoa66ihr48"
+
+[sub_resource type="Resource" id="Resource_tre67"]
+resource_name = "More Missiles"
+script = ExtResource("4_vnd8m")
+upgrades = Array[ExtResource("5_apa5x")]([SubResource("Resource_kyk20")])
+metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
+
+[sub_resource type="Resource" id="Resource_08j3i"]
+script = ExtResource("3_03w6n")
+mechanic_name = "Cooldown"
+mechanic_value = "9 seconds -> 6 seconds"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_s5kk0"]
+script = ExtResource("8_tre67")
+downtimer_decrease = 3.0
+mechanics_text = SubResource("Resource_08j3i")
+metadata/_custom_type_script = "uid://jd2xcnw1xep3"
+
+[sub_resource type="Resource" id="Resource_7ma44"]
+resource_name = "Improved Cooldown"
+script = ExtResource("4_vnd8m")
+upgrades = Array[ExtResource("5_apa5x")]([SubResource("Resource_s5kk0")])
+metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
+
+[sub_resource type="Resource" id="Resource_6c75u"]
+script = ExtResource("3_03w6n")
+mechanic_name = "Damage"
+mechanic_value = "100 -> 150"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_oykw4"]
+script = ExtResource("6_ns3u3")
+damage_increase = 50
+mechanics_text = SubResource("Resource_6c75u")
+metadata/_custom_type_script = "uid://cfgllll1jbmru"
+
+[sub_resource type="Resource" id="Resource_urqw0"]
+resource_name = "Even More Damage"
+script = ExtResource("4_vnd8m")
+upgrades = Array[ExtResource("5_apa5x")]([SubResource("Resource_oykw4")])
+metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
+
+[sub_resource type="Resource" id="Resource_gaiuc"]
+script = ExtResource("3_03w6n")
+mechanic_name = "Missiles"
+mechanic_value = "5 -> 8"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_fy7c8"]
+script = ExtResource("7_up2lq")
+num_bullets_increase = 3
+mechanics_text = SubResource("Resource_gaiuc")
+metadata/_custom_type_script = "uid://dtutoa66ihr48"
+
+[sub_resource type="Resource" id="Resource_2u2rv"]
+resource_name = "Even More Missiles"
+script = ExtResource("4_vnd8m")
+upgrades = Array[ExtResource("5_apa5x")]([SubResource("Resource_fy7c8")])
+metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
+
+[sub_resource type="Resource" id="Resource_p07je"]
+script = ExtResource("3_03w6n")
+mechanic_name = "Cooldown"
+mechanic_value = "10 seconds -> 8 seconds"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_mh1mp"]
+script = ExtResource("8_tre67")
+downtimer_decrease = 3.0
+mechanics_text = SubResource("Resource_p07je")
+metadata/_custom_type_script = "uid://jd2xcnw1xep3"
+
+[sub_resource type="Resource" id="Resource_4mlj3"]
+script = ExtResource("3_03w6n")
+mechanic_name = "Missiles"
+mechanic_value = "8 -> 10"
+metadata/_custom_type_script = "uid://dq724vlrm8a05"
+
+[sub_resource type="Resource" id="Resource_1k7ex"]
+script = ExtResource("7_up2lq")
+num_bullets_increase = 2
+mechanics_text = SubResource("Resource_4mlj3")
+metadata/_custom_type_script = "uid://dtutoa66ihr48"
+
+[sub_resource type="Resource" id="Resource_gnxix"]
+resource_name = "Maximum Missiles"
+script = ExtResource("4_vnd8m")
+upgrades = Array[ExtResource("5_apa5x")]([SubResource("Resource_mh1mp"), SubResource("Resource_1k7ex")])
+metadata/_custom_type_script = "uid://cv1cwxelnr7jm"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tjbvn"]
 atlas = ExtResource("2_minx4")
@@ -67,10 +191,11 @@ weapon_img_path = "res://art/sprites/bullets/Missile_Silo/missle.svg"
 display_name = "Missile Silo"
 description = "Homing missiles target enemies"
 base_mechanics = Array[ExtResource("3_03w6n")]([SubResource("Resource_6d4r7"), SubResource("Resource_mjay7"), SubResource("Resource_246l1")])
-dmg = 100
+dmg = 75
 num_bullets = 3
 bullet_speed = 400.0
 bullet_size = 1.0
+possible_upgrade_sets = Array[ExtResource("4_vnd8m")]([SubResource("Resource_apa5x"), SubResource("Resource_tre67"), SubResource("Resource_7ma44"), SubResource("Resource_urqw0"), SubResource("Resource_2u2rv"), SubResource("Resource_gnxix")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=825337014]
 sprite_frames = SubResource("SpriteFrames_wy3lk")
@@ -81,7 +206,7 @@ frame_progress = 0.49345353
 wait_time = 0.1
 
 [node name="DownTimer" type="Timer" parent="." unique_id=1088500671]
-wait_time = 2.6
+wait_time = 6.0
 
 [connection signal="timeout" from="UpTimer" to="." method="_on_up_timer_timeout"]
 [connection signal="timeout" from="DownTimer" to="." method="_on_missile_down_timer_timeout"]
