@@ -11,7 +11,9 @@ func _ready():
 func _on_credits_button_pressed():
 	credits.visible = true
 	main_menu_ui.visible = false
+	Sfx.play("UI_positive")
 
 func _on_credits_main_menu_button_pressed():
 	credits.visible = false
 	main_menu_ui.visible = true
+	Sfx.play("UI_negative")

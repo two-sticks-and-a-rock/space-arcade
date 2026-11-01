@@ -28,6 +28,7 @@ func _on_continue_pressed():
 	EventBus.start_tutorial.emit()
 	visible = false
 	get_tree().paused = false
+	Sfx.play("UI_positive")
 
 func _ready():
 	continue_button.pressed.connect(_on_continue_pressed)

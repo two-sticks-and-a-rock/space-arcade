@@ -48,3 +48,4 @@ func _input(_event: InputEvent) -> void:
 
 func _on_continue_run_button_pressed() -> void:
 	unpause()
+	Sfx.play("UI_negative")

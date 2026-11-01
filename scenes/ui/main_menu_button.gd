@@ -5,5 +5,6 @@ extends Button
 func _on_main_menu_pressed():
 	get_tree().change_scene_to_packed(main_menu_scene)
 	get_tree().paused = false
+	Sfx.play("UI_negative")
 
 	EventBus.switch_scenes.emit(EventBus.SceneType.MENU)

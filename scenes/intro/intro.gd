@@ -86,7 +86,9 @@ func _physics_process(delta):
 func _on_skip_button_pressed():
 	if num_presses >= 1 || intro_text_box.is_all_text_shown:
 		get_tree().change_scene_to_packed(level_scene)
+		Sfx.play("UI_positive")
 	else:
 		skip_button.text = "CONTINUE..."
 		intro_text_box.show_all_text()
 		num_presses += 1
+		Sfx.play("UI_positive")
