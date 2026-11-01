@@ -206,7 +206,7 @@ frame_progress = 0.49345353
 wait_time = 0.1
 
 [node name="DownTimer" type="Timer" parent="." unique_id=1088500671]
-wait_time = 6.0
+wait_time = 8.6
 
 [connection signal="timeout" from="UpTimer" to="." method="_on_up_timer_timeout"]
 [connection signal="timeout" from="DownTimer" to="." method="_on_missile_down_timer_timeout"]
