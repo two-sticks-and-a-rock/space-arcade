@@ -30,11 +30,11 @@ func spawn_missiles() -> void:
 		add_child(missile)
 		
 func fire_missiles() -> void:
+	Sfx.play("missile_launcher")
 	for child in get_children():
 		if (is_instance_valid(child)):
 			
 			if (child is PlayerBullet):
-				Sfx.play("missile_launcher")
 				child.launch()
 				stagger_missiles_timer.start()
 				await stagger_missiles_timer.timeout
