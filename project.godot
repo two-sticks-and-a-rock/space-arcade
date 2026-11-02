@@ -13,6 +13,7 @@ config_version=5
 config/name="Space Arcade"
 run/main_scene="uid://qysnsonqoawh"
 config/features=PackedStringArray("4.7", "GL Compatibility")
+boot_splash/image="uid://h58uwipq3mf3"
 config/icon="res://icon.svg"
 
 [audio]
